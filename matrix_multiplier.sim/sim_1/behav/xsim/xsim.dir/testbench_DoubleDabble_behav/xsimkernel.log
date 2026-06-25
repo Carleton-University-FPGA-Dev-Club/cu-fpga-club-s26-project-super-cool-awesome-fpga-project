@@ -2,3 +2,6 @@ Running: xsim.dir/testbench_DoubleDabble_behav/xsimk.exe -simmode gui -wdb testb
 Design successfully loaded
 Design Loading Memory Usage: 7364 KB (Peak: 7364 KB)
 Design Loading CPU Usage: 46 ms
+Simulation completed
+Simulation Memory Usage: 7872 KB (Peak: 7872 KB)
+Simulation CPU Usage: 109 ms

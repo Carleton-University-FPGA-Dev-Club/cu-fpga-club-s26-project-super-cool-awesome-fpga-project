@@ -52,6 +52,7 @@ module double_dabble(
                     shifter[15:12] = shifter[15:12] + 4'b0011;
            end
         end
+        //creates the final bcd number
         final_output = shifter[19:8]; 
     end
 endmodule
