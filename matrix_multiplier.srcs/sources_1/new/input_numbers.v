@@ -81,7 +81,5 @@ module input_numbers(
         //less than 8 clicks, then it will continue clicking
         if(index < 8)
             index <= index + 1;   
-        else 
-            index <= 0;
     end
 endmodule

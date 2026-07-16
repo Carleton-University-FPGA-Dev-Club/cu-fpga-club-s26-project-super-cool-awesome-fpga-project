@@ -26,7 +26,7 @@ eval( EAInclude(ISEJScriptLib) );
 // pre-commands:
 ISETouchFile( "init_design", "begin" );
 ISEStep( "vivado",
-         "-log MatrixMultiplierCode.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source MatrixMultiplierCode.tcl -notrace" );
+         "-log hdmi_out_wrapper.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source hdmi_out_wrapper.tcl -notrace" );
 
 
 

@@ -1,0 +1,119 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
+| Date         : Thu Jul 16 12:00:45 2026
+| Host         : DESKTOP-LRI6JJ9 running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file hdmi_out_wrapper_control_sets_placed.rpt
+| Design       : hdmi_out_wrapper
+| Device       : xc7z020
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    41 |
+|    Minimum number of control sets                        |    41 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |   146 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    41 |
+| >= 0 to < 4        |     2 |
+| >= 4 to < 6        |     1 |
+| >= 6 to < 8        |     0 |
+| >= 8 to < 10       |     0 |
+| >= 10 to < 12      |     2 |
+| >= 12 to < 14      |    25 |
+| >= 14 to < 16      |     1 |
+| >= 16              |    10 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |             267 |           73 |
+| No           | No                    | Yes                    |               6 |            2 |
+| No           | Yes                   | No                     |              84 |           33 |
+| Yes          | No                    | No                     |             157 |           36 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |             420 |           95 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++-------------------------------------+---------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+------------------+----------------+--------------+
+|             Clock Signal            |                                                    Enable Signal                                                    |                                        Set/Reset Signal                                        | Slice Load Count | Bel Load Count | Bels / Slice |
++-------------------------------------+---------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+------------------+----------------+--------------+
+|  hdmi_out_i/clk_wiz_0/inst/clk_out1 |                                                                                                                     | hdmi_out_i/rgb2dvi_0/U0/ClockGenInternal.ClockGenX/in0                                         |                1 |              2 |         2.00 |
+|  hdmi_out_i/clk_wiz_0/inst/clk_out1 |                                                                                                                     | hdmi_out_i/v_tc_0/U0/U_TC_TOP/GEN_GENERATOR.U_TC_GEN/hsync_int1                                |                1 |              3 |         3.00 |
+|  hdmi_out_i/clk_wiz_0/inst/clk_out1 |                                                                                                                     | hdmi_out_i/rgb2dvi_0/U0/ClockGenInternal.ClockGenX/LockLostReset/SyncAsyncx/oSyncStages[1]     |                1 |              4 |         4.00 |
+|  System_clock_IBUF                  | hdmi_out_i/hdmi_code_0/inst/y_coordinate                                                                            | hdmi_out_i/v_tc_0/U0/U_TC_TOP/GEN_GENERATOR.U_TC_GEN/vsync_out                                 |                4 |             10 |         2.50 |
+|  hdmi_out_i/clk_wiz_0/inst/clk_out1 |                                                                                                                     | hdmi_out_i/rgb2dvi_0/U0/DataEncoders[0].DataEncoder/pDataOutRaw[9]_i_1__1_n_0                  |                5 |             10 |         2.00 |
+|  System_clock_IBUF                  | hdmi_out_i/v_tc_0/U0/U_TC_TOP/GEN_GENERATOR.U_TC_GEN/active_video_reg_0                                             | hdmi_out_i/v_tc_0/U0/U_TC_TOP/GEN_GENERATOR.U_TC_GEN/hsync_out                                 |                3 |             12 |         4.00 |
+|  hdmi_out_i/clk_wiz_0/inst/clk_out1 | hdmi_out_i/v_tc_0/U0/U_TC_TOP/GEN_DETECTION.U_tc_DET/det_v0active_start_hori_int                                    | hdmi_out_i/v_tc_0/U0/U_TC_TOP/GEN_DETECTION.U_tc_DET/det_v0active_start_hori_int[11]_i_1_n_0   |                2 |             12 |         6.00 |
+|  hdmi_out_i/clk_wiz_0/inst/clk_out1 | hdmi_out_i/v_tc_0/U0/U_TC_TOP/GEN_DETECTION.U_tc_DET/det_v0active_start_int                                         |                                                                                                |                3 |             12 |         4.00 |
+|  hdmi_out_i/clk_wiz_0/inst/clk_out1 |                                                                                                                     | hdmi_out_i/v_tc_0/U0/U_TC_TOP/GEN_GENERATOR.U_TC_GEN/h_count[0]_i_1_n_0                        |                3 |             12 |         4.00 |
+|  hdmi_out_i/clk_wiz_0/inst/clk_out1 |                                                                                                                     | hdmi_out_i/v_tc_0/U0/U_TC_TOP/GEN_GENERATOR.U_TC_GEN/htotal[10]_i_1_n_0                        |                4 |             12 |         3.00 |
+|  hdmi_out_i/clk_wiz_0/inst/clk_out1 | hdmi_out_i/v_tc_0/U0/U_TC_TOP/GEN_DETECTION.U_tc_DET/h_count                                                        | hdmi_out_i/v_tc_0/U0/U_TC_TOP/GEN_DETECTION.U_tc_DET/found_eof                                 |                3 |             12 |         4.00 |
+|  hdmi_out_i/clk_wiz_0/inst/clk_out1 | hdmi_out_i/v_tc_0/U0/U_TC_TOP/GEN_DETECTION.U_tc_DET/hblank_count                                                   | hdmi_out_i/v_tc_0/U0/U_TC_TOP/GEN_DETECTION.U_tc_DET/DET_HBLANK.hblank_count[0]_i_1_n_0        |                3 |             12 |         4.00 |
+|  hdmi_out_i/clk_wiz_0/inst/clk_out1 | hdmi_out_i/v_tc_0/U0/U_TC_TOP/GEN_DETECTION.U_tc_DET/hsync_count                                                    | hdmi_out_i/v_tc_0/U0/U_TC_TOP/GEN_DETECTION.U_tc_DET/DET_HSYNC.hsync_count[0]_i_1_n_0          |                3 |             12 |         4.00 |
+|  hdmi_out_i/clk_wiz_0/inst/clk_out1 | hdmi_out_i/v_tc_0/U0/U_TC_TOP/GEN_DETECTION.U_tc_DET/vblank_count                                                   | hdmi_out_i/v_tc_0/U0/U_TC_TOP/GEN_DETECTION.U_tc_DET/DET_VBLANK.vblank_count[0]_i_1_n_0        |                3 |             12 |         4.00 |
+|  hdmi_out_i/clk_wiz_0/inst/clk_out1 | hdmi_out_i/v_tc_0/U0/U_TC_TOP/GEN_DETECTION.U_tc_DET/vsync_count                                                    | hdmi_out_i/v_tc_0/U0/U_TC_TOP/GEN_DETECTION.U_tc_DET/DET_VSYNC.vsync_count[0]_i_1_n_0          |                3 |             12 |         4.00 |
+|  hdmi_out_i/clk_wiz_0/inst/clk_out1 | hdmi_out_i/v_tc_0/U0/U_TC_TOP/GEN_DETECTION.U_tc_DET/det_v0fp_start_hori_int                                        | hdmi_out_i/v_tc_0/U0/U_TC_TOP/GEN_DETECTION.U_tc_DET/det_v0fp_start_hori_int[11]_i_1_n_0       |                2 |             12 |         6.00 |
+|  hdmi_out_i/clk_wiz_0/inst/clk_out1 | hdmi_out_i/v_tc_0/U0/U_TC_TOP/GEN_DETECTION.U_tc_DET/DET_HACTIVE.active_video_d_reg_n_0                             | hdmi_out_i/v_tc_0/U0/U_TC_TOP/GEN_DETECTION.U_tc_DET/DET_HACTIVE.active_video_count[0]_i_1_n_0 |                3 |             12 |         4.00 |
+|  hdmi_out_i/clk_wiz_0/inst/clk_out1 | hdmi_out_i/v_tc_0/U0/U_TC_TOP/GEN_GENERATOR.U_TC_GEN/v_count                                                        | hdmi_out_i/v_tc_0/U0/U_TC_TOP/GEN_GENERATOR.U_TC_GEN/v_count[0]_i_1__0_n_0                     |                3 |             12 |         4.00 |
+|  hdmi_out_i/clk_wiz_0/inst/clk_out1 | hdmi_out_i/v_tc_0/U0/U_TC_TOP/GEN_DETECTION.U_tc_DET/active_video_toggled                                           | hdmi_out_i/v_tc_0/U0/U_TC_TOP/lost_lock                                                        |                2 |             12 |         6.00 |
+|  hdmi_out_i/clk_wiz_0/inst/clk_out1 | hdmi_out_i/v_tc_0/U0/U_TC_TOP/GEN_DETECTION.U_tc_DET/det_v0total_int                                                |                                                                                                |                3 |             12 |         4.00 |
+|  hdmi_out_i/clk_wiz_0/inst/clk_out1 | hdmi_out_i/v_tc_0/U0/U_TC_TOP/GEN_DETECTION.U_tc_DET/det_v0fp_start_int                                             |                                                                                                |                2 |             12 |         6.00 |
+|  hdmi_out_i/clk_wiz_0/inst/clk_out1 | hdmi_out_i/v_tc_0/U0/U_TC_TOP/GEN_DETECTION.U_tc_DET/found_eof                                                      | hdmi_out_i/v_tc_0/U0/U_TC_TOP/GEN_DETECTION.U_tc_DET/v_count[0]_i_1_n_0                        |                3 |             12 |         4.00 |
+|  hdmi_out_i/clk_wiz_0/inst/clk_out1 | hdmi_out_i/v_tc_0/U0/U_TC_TOP/GEN_DETECTION.U_tc_DET/det_hfp_start_int                                              |                                                                                                |                2 |             12 |         6.00 |
+|  hdmi_out_i/clk_wiz_0/inst/clk_out1 | hdmi_out_i/v_tc_0/U0/U_TC_TOP/GEN_DETECTION.U_tc_DET/det_hfp_start_int                                              | hdmi_out_i/v_tc_0/U0/U_TC_TOP/lost_lock                                                        |                2 |             12 |         6.00 |
+|  hdmi_out_i/clk_wiz_0/inst/clk_out1 | hdmi_out_i/v_tc_0/U0/U_TC_TOP/GEN_DETECTION.U_tc_DET/det_hbp_start_int                                              |                                                                                                |                3 |             12 |         4.00 |
+|  hdmi_out_i/clk_wiz_0/inst/clk_out1 | hdmi_out_i/v_tc_0/U0/U_TC_TOP/GEN_DETECTION.U_tc_DET/det_hbp_start_int                                              | hdmi_out_i/v_tc_0/U0/U_TC_TOP/lost_lock                                                        |                2 |             12 |         6.00 |
+|  hdmi_out_i/clk_wiz_0/inst/clk_out1 | hdmi_out_i/v_tc_0/U0/U_TC_TOP/GEN_DETECTION.U_tc_DET/det_hactive_start_int                                          |                                                                                                |                3 |             12 |         4.00 |
+|  hdmi_out_i/clk_wiz_0/inst/clk_out1 | hdmi_out_i/v_tc_0/U0/U_TC_TOP/GEN_DETECTION.U_tc_DET/det_hactive_start_int                                          | hdmi_out_i/v_tc_0/U0/U_TC_TOP/lost_lock                                                        |                3 |             12 |         4.00 |
+|  hdmi_out_i/clk_wiz_0/inst/clk_out1 | hdmi_out_i/v_tc_0/U0/U_TC_TOP/GEN_DETECTION.U_tc_DET/det_hsync_start_int                                            |                                                                                                |                2 |             12 |         6.00 |
+|  hdmi_out_i/clk_wiz_0/inst/clk_out1 | hdmi_out_i/v_tc_0/U0/U_TC_TOP/GEN_DETECTION.U_tc_DET/det_hsync_start_int                                            | hdmi_out_i/v_tc_0/U0/U_TC_TOP/lost_lock                                                        |                2 |             12 |         6.00 |
+|  hdmi_out_i/clk_wiz_0/inst/clk_out1 |                                                                                                                     | hdmi_out_i/v_tc_0/U0/U_TC_TOP/GEN_GENERATOR.U_TC_GEN/p_4_in                                    |                4 |             15 |         3.75 |
+|  hdmi_out_i/clk_wiz_0/inst/clk_out1 | hdmi_out_i/v_tc_0/U0/U_TC_TOP/GEN_DETECTION.U_tc_DET/DET_VSYNC.GEN_DET_VSYNC_LOCK.det_v0sync_start_last[11]_i_1_n_0 | hdmi_out_i/v_tc_0/U0/U_TC_TOP/lost_lock                                                        |                6 |             24 |         4.00 |
+|  hdmi_out_i/clk_wiz_0/inst/clk_out1 | hdmi_out_i/v_tc_0/U0/U_TC_TOP/GEN_DETECTION.U_tc_DET/det_v0active_start_int                                         | hdmi_out_i/v_tc_0/U0/U_TC_TOP/lost_lock                                                        |                4 |             24 |         6.00 |
+|  hdmi_out_i/clk_wiz_0/inst/clk_out1 | hdmi_out_i/v_tc_0/U0/U_TC_TOP/GEN_DETECTION.U_tc_DET/det_v0bp_start_int                                             |                                                                                                |                5 |             24 |         4.80 |
+|  hdmi_out_i/clk_wiz_0/inst/clk_out1 | hdmi_out_i/v_tc_0/U0/U_TC_TOP/GEN_DETECTION.U_tc_DET/det_v0fp_start_int                                             | hdmi_out_i/v_tc_0/U0/U_TC_TOP/lost_lock                                                        |                4 |             24 |         6.00 |
+|  hdmi_out_i/clk_wiz_0/inst/clk_out1 | hdmi_out_i/v_tc_0/U0/U_TC_TOP/GEN_DETECTION.U_tc_DET/det_v0sync_start_int                                           |                                                                                                |                5 |             24 |         4.80 |
+|  hdmi_out_i/clk_wiz_0/inst/clk_out1 | hdmi_out_i/v_tc_0/U0/U_TC_TOP/GEN_DETECTION.U_tc_DET/found_eof                                                      |                                                                                                |                8 |             25 |         3.12 |
+|  hdmi_out_i/clk_wiz_0/inst/clk_out1 | hdmi_out_i/v_tc_0/U0/U_TC_TOP/GEN_DETECTION.U_tc_DET/vsync_delay                                                    | hdmi_out_i/v_tc_0/U0/U_TC_TOP/lost_lock                                                        |                4 |             26 |         6.50 |
+|  hdmi_out_i/clk_wiz_0/inst/clk_out1 |                                                                                                                     | hdmi_out_i/rgb2dvi_0/U0/DataEncoders[0].DataEncoder/SR[0]                                      |               16 |             32 |         2.00 |
+|  hdmi_out_i/clk_wiz_0/inst/clk_out1 | hdmi_out_i/v_tc_0/U0/U_TC_TOP/update_reg                                                                            | hdmi_out_i/v_tc_0/U0/U_TC_TOP/GEN_GENERATOR.U_TC_GEN/htotal[10]_i_1_n_0                        |               31 |            120 |         3.87 |
+|  hdmi_out_i/clk_wiz_0/inst/clk_out1 |                                                                                                                     |                                                                                                |               73 |            267 |         3.66 |
++-------------------------------------+---------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+------------------+----------------+--------------+
+
+

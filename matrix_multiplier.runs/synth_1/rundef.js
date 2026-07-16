@@ -24,7 +24,7 @@ eval( EAInclude(ISEJScriptLib) );
 
 
 ISEStep( "vivado",
-         "-log MatrixMultiplierCode.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source MatrixMultiplierCode.tcl" );
+         "-log hdmi_out_wrapper.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source hdmi_out_wrapper.tcl" );
 
 
 

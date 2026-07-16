@@ -41,4 +41,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log MatrixMultiplierCode.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source MatrixMultiplierCode.tcl
+EAStep vivado -log hdmi_out_wrapper.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source hdmi_out_wrapper.tcl
