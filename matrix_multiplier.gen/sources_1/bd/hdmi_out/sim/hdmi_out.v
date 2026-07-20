@@ -2,7 +2,7 @@
 //Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-//Date        : Thu Jul 16 11:54:42 2026
+//Date        : Mon Jul 20 12:17:03 2026
 //Host        : DESKTOP-LRI6JJ9 running 64-bit major release  (build 9200)
 //Command     : generate_target hdmi_out.bd
 //Design      : hdmi_out
@@ -25,7 +25,7 @@ module hdmi_out
   (* X_INTERFACE_INFO = "digilentinc.com:interface:tmds:1.0 hdmi_out " *) output [2:0]hdmi_out_data_n;
   (* X_INTERFACE_INFO = "digilentinc.com:interface:tmds:1.0 hdmi_out " *) output [2:0]hdmi_out_data_p;
 
-  wire clk_in1_0_1;
+  wire System_clock_1;
   wire clk_wiz_0_clk_out1;
   wire [11:0]constant_0_12width_dout;
   wire [0:0]constant_0_dout;
@@ -39,14 +39,14 @@ module hdmi_out
   wire v_tc_0_hsync_out;
   wire v_tc_0_vsync_out;
 
-  assign clk_in1_0_1 = System_clock;
+  assign System_clock_1 = System_clock;
   assign hdmi_hdp[0] = constant_1_dout;
   assign hdmi_out_clk_n = rgb2dvi_0_TMDS_CLK_N;
   assign hdmi_out_clk_p = rgb2dvi_0_TMDS_CLK_P;
   assign hdmi_out_data_n[2:0] = rgb2dvi_0_TMDS_DATA_N;
   assign hdmi_out_data_p[2:0] = rgb2dvi_0_TMDS_DATA_P;
   hdmi_out_clk_wiz_0_0 clk_wiz_0
-       (.clk_in1(clk_in1_0_1),
+       (.clk_in1(System_clock_1),
         .clk_out1(clk_wiz_0_clk_out1),
         .reset(constant_0_dout));
   hdmi_out_xlconstant_0_1 constant_0
@@ -56,7 +56,7 @@ module hdmi_out
   hdmi_out_xlconstant_0_2 constant_1
        (.dout(constant_1_dout));
   hdmi_out_hdmi_code_0_0 hdmi_code_0
-       (.clk(clk_in1_0_1),
+       (.clk(clk_wiz_0_clk_out1),
         .double_dabble(constant_0_12width_dout),
         .hsync(v_tc_0_hsync_out),
         .vid_out(hdmi_code_0_vid_out),
@@ -74,18 +74,12 @@ module hdmi_out
         .vid_pVDE(v_tc_0_active_video_out),
         .vid_pVSync(v_tc_0_vsync_out));
   hdmi_out_v_tc_0_0 v_tc_0
-       (.active_video_in(1'b0),
-        .active_video_out(v_tc_0_active_video_out),
+       (.active_video_out(v_tc_0_active_video_out),
         .clk(clk_wiz_0_clk_out1),
         .clken(constant_1_dout),
-        .det_clken(1'b1),
         .gen_clken(1'b1),
-        .hblank_in(1'b0),
-        .hsync_in(1'b0),
         .hsync_out(v_tc_0_hsync_out),
         .resetn(constant_1_dout),
         .sof_state(1'b0),
-        .vblank_in(1'b0),
-        .vsync_in(1'b0),
         .vsync_out(v_tc_0_vsync_out));
 endmodule

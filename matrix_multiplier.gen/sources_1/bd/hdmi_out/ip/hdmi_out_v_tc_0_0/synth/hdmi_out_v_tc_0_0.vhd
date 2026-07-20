@@ -60,14 +60,8 @@ ENTITY hdmi_out_v_tc_0_0 IS
   PORT (
     clk : IN STD_LOGIC;
     clken : IN STD_LOGIC;
-    det_clken : IN STD_LOGIC;
     gen_clken : IN STD_LOGIC;
     sof_state : IN STD_LOGIC;
-    hsync_in : IN STD_LOGIC;
-    hblank_in : IN STD_LOGIC;
-    vsync_in : IN STD_LOGIC;
-    vblank_in : IN STD_LOGIC;
-    active_video_in : IN STD_LOGIC;
     hsync_out : OUT STD_LOGIC;
     hblank_out : OUT STD_LOGIC;
     vsync_out : OUT STD_LOGIC;
@@ -232,24 +226,19 @@ ARCHITECTURE hdmi_out_v_tc_0_0_arch OF hdmi_out_v_tc_0_0 IS
   ATTRIBUTE CORE_GENERATION_INFO OF hdmi_out_v_tc_0_0_arch: ARCHITECTURE IS "hdmi_out_v_tc_0_0,v_tc,{x_ipProduct=Vivado 2023.2,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=v_tc,x_ipVersion=6.2,x_ipCoreRevision=7,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_HAS_AXI4_LITE=0,C_HAS_INTC_IF=0,C_ARBITRARY_RES_EN=0,C_VID_PPC=4,C_GEN_INTERLACED=0,C_GEN_HACTIVE_SIZE=1280,C_GEN_VACTIVE_SIZE=720,C_GEN_CPARITY=0,C_GEN_FIELDID_POLARITY=1,C_GEN_VBLANK_POLARITY=1,C_GEN_HBLANK_POLARITY=1,C_GEN_VSYNC_POLARITY=1,C_GEN_HSYNC_POLARITY=1,C_GEN_AVIDEO_POLARITY=1,C_GEN_ACHROMA_POLARITY=1,C_GE" & 
 "N_VIDEO_FORMAT=2,C_GEN_HFRAME_SIZE=1650,C_GEN_F0_VFRAME_SIZE=750,C_GEN_F1_VFRAME_SIZE=750,C_GEN_HSYNC_START=1390,C_GEN_HSYNC_END=1430,C_GEN_F0_VBLANK_HSTART=1280,C_GEN_F0_VBLANK_HEND=1280,C_GEN_F0_VSYNC_VSTART=724,C_GEN_F0_VSYNC_VEND=729,C_GEN_F0_VSYNC_HSTART=1280,C_GEN_F0_VSYNC_HEND=1280,C_GEN_F1_VBLANK_HSTART=1280,C_GEN_F1_VBLANK_HEND=1280,C_GEN_F1_VSYNC_VSTART=724,C_GEN_F1_VSYNC_VEND=729,C_GEN_F1_VSYNC_HSTART=1280,C_GEN_F1_VSYNC_HEND=1280,C_FSYNC_HSTART0=0,C_FSYNC_VSTART0=0,C_FSYNC_HSTART1=0," & 
 "C_FSYNC_VSTART1=0,C_FSYNC_HSTART2=0,C_FSYNC_VSTART2=0,C_FSYNC_HSTART3=0,C_FSYNC_VSTART3=0,C_FSYNC_HSTART4=0,C_FSYNC_VSTART4=0,C_FSYNC_HSTART5=0,C_FSYNC_VSTART5=0,C_FSYNC_HSTART6=0,C_FSYNC_VSTART6=0,C_FSYNC_HSTART7=0,C_FSYNC_VSTART7=0,C_FSYNC_HSTART8=0,C_FSYNC_VSTART8=0,C_FSYNC_HSTART9=0,C_FSYNC_VSTART9=0,C_FSYNC_HSTART10=0,C_FSYNC_VSTART10=0,C_FSYNC_HSTART11=0,C_FSYNC_VSTART11=0,C_FSYNC_HSTART12=0,C_FSYNC_VSTART12=0,C_FSYNC_HSTART13=0,C_FSYNC_VSTART13=0,C_FSYNC_HSTART14=0,C_FSYNC_VSTART14=0,C_FS" & 
-"YNC_HSTART15=0,C_FSYNC_VSTART15=0,C_MAX_PIXELS=4096,C_MAX_LINES=4096,C_NUM_FSYNCS=1,C_INTERLACE_EN=0,C_GEN_AUTO_SWITCH=1,C_DETECT_EN=1,C_SYNC_EN=0,C_GENERATE_EN=1,C_DET_HSYNC_EN=1,C_DET_VSYNC_EN=1,C_DET_HBLANK_EN=1,C_DET_VBLANK_EN=1,C_DET_AVIDEO_EN=1,C_DET_ACHROMA_EN=0,C_GEN_HSYNC_EN=1,C_GEN_VSYNC_EN=1,C_GEN_HBLANK_EN=1,C_GEN_VBLANK_EN=1,C_GEN_AVIDEO_EN=1,C_GEN_ACHROMA_EN=0,C_GEN_FIELDID_EN=0,C_DET_FIELDID_EN=0}";
+"YNC_HSTART15=0,C_FSYNC_VSTART15=0,C_MAX_PIXELS=4096,C_MAX_LINES=4096,C_NUM_FSYNCS=1,C_INTERLACE_EN=0,C_GEN_AUTO_SWITCH=0,C_DETECT_EN=0,C_SYNC_EN=0,C_GENERATE_EN=1,C_DET_HSYNC_EN=1,C_DET_VSYNC_EN=1,C_DET_HBLANK_EN=1,C_DET_VBLANK_EN=1,C_DET_AVIDEO_EN=1,C_DET_ACHROMA_EN=0,C_GEN_HSYNC_EN=1,C_GEN_VSYNC_EN=1,C_GEN_HBLANK_EN=1,C_GEN_VBLANK_EN=1,C_GEN_AVIDEO_EN=1,C_GEN_ACHROMA_EN=0,C_GEN_FIELDID_EN=0,C_DET_FIELDID_EN=0}";
   ATTRIBUTE X_INTERFACE_INFO : STRING;
   ATTRIBUTE X_INTERFACE_PARAMETER : STRING;
-  ATTRIBUTE X_INTERFACE_INFO OF active_video_in: SIGNAL IS "xilinx.com:interface:video_timing:2.0 vtiming_in ACTIVE_VIDEO";
   ATTRIBUTE X_INTERFACE_INFO OF active_video_out: SIGNAL IS "xilinx.com:interface:video_timing:2.0 vtiming_out ACTIVE_VIDEO";
   ATTRIBUTE X_INTERFACE_PARAMETER OF clk: SIGNAL IS "XIL_INTERFACENAME clk_intf, ASSOCIATED_BUSIF vtiming_in:vtiming_out, ASSOCIATED_RESET resetn, ASSOCIATED_CLKEN clken, FREQ_HZ 74250000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN /clk_wiz_0_clk_out1, INSERT_VIP 0";
   ATTRIBUTE X_INTERFACE_INFO OF clk: SIGNAL IS "xilinx.com:signal:clock:1.0 clk_intf CLK";
   ATTRIBUTE X_INTERFACE_PARAMETER OF clken: SIGNAL IS "XIL_INTERFACENAME clken_intf, POLARITY ACTIVE_HIGH";
   ATTRIBUTE X_INTERFACE_INFO OF clken: SIGNAL IS "xilinx.com:signal:clockenable:1.0 clken_intf CE";
-  ATTRIBUTE X_INTERFACE_INFO OF hblank_in: SIGNAL IS "xilinx.com:interface:video_timing:2.0 vtiming_in HBLANK";
   ATTRIBUTE X_INTERFACE_INFO OF hblank_out: SIGNAL IS "xilinx.com:interface:video_timing:2.0 vtiming_out HBLANK";
-  ATTRIBUTE X_INTERFACE_INFO OF hsync_in: SIGNAL IS "xilinx.com:interface:video_timing:2.0 vtiming_in HSYNC";
   ATTRIBUTE X_INTERFACE_INFO OF hsync_out: SIGNAL IS "xilinx.com:interface:video_timing:2.0 vtiming_out HSYNC";
   ATTRIBUTE X_INTERFACE_PARAMETER OF resetn: SIGNAL IS "XIL_INTERFACENAME resetn_intf, POLARITY ACTIVE_LOW, INSERT_VIP 0";
   ATTRIBUTE X_INTERFACE_INFO OF resetn: SIGNAL IS "xilinx.com:signal:reset:1.0 resetn_intf RST";
-  ATTRIBUTE X_INTERFACE_INFO OF vblank_in: SIGNAL IS "xilinx.com:interface:video_timing:2.0 vtiming_in VBLANK";
   ATTRIBUTE X_INTERFACE_INFO OF vblank_out: SIGNAL IS "xilinx.com:interface:video_timing:2.0 vtiming_out VBLANK";
-  ATTRIBUTE X_INTERFACE_INFO OF vsync_in: SIGNAL IS "xilinx.com:interface:video_timing:2.0 vtiming_in VSYNC";
   ATTRIBUTE X_INTERFACE_INFO OF vsync_out: SIGNAL IS "xilinx.com:interface:video_timing:2.0 vtiming_out VSYNC";
 BEGIN
   U0 : v_tc
@@ -323,8 +312,8 @@ BEGIN
       C_MAX_LINES => 4096,
       C_NUM_FSYNCS => 1,
       C_INTERLACE_EN => 0,
-      C_GEN_AUTO_SWITCH => 1,
-      C_DETECT_EN => 1,
+      C_GEN_AUTO_SWITCH => 0,
+      C_DETECT_EN => 0,
       C_SYNC_EN => 0,
       C_GENERATE_EN => 1,
       C_DET_HSYNC_EN => 1,
@@ -347,15 +336,15 @@ BEGIN
       clken => clken,
       s_axi_aclk => '0',
       s_axi_aclken => '1',
-      det_clken => det_clken,
+      det_clken => '1',
       gen_clken => gen_clken,
       sof_state => sof_state,
       field_id_in => '0',
-      hsync_in => hsync_in,
-      hblank_in => hblank_in,
-      vsync_in => vsync_in,
-      vblank_in => vblank_in,
-      active_video_in => active_video_in,
+      hsync_in => '0',
+      hblank_in => '0',
+      vsync_in => '0',
+      vblank_in => '0',
+      active_video_in => '0',
       active_chroma_in => '0',
       hsync_out => hsync_out,
       hblank_out => hblank_out,

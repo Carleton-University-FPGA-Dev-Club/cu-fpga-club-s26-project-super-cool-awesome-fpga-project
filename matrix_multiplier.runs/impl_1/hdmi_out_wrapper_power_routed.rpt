@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-| Date             : Thu Jul 16 12:02:31 2026
+| Date             : Mon Jul 20 12:32:06 2026
 | Host             : DESKTOP-LRI6JJ9 running 64-bit major release  (build 9200)
 | Command          : report_power -file hdmi_out_wrapper_power_routed.rpt -pb hdmi_out_wrapper_power_summary_routed.pb -rpx hdmi_out_wrapper_power_routed.rpx
 | Design           : hdmi_out_wrapper
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.503        |
+| Total On-Chip Power (W)  | 0.499        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.391        |
+| Dynamic (W)              | 0.387        |
 | Device Static (W)        | 0.112        |
 | Effective TJA (C/W)      | 11.5         |
 | Max Ambient (C)          | 79.2         |
@@ -52,18 +52,18 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.007 |        9 |       --- |             --- |
-| Slice Logic    |     0.001 |     1933 |       --- |             --- |
-|   LUT as Logic |    <0.001 |      625 |     53200 |            1.17 |
-|   CARRY4       |    <0.001 |      135 |     13300 |            1.02 |
-|   Register     |    <0.001 |      934 |    106400 |            0.88 |
-|   Others       |     0.000 |       47 |       --- |             --- |
-| Signals        |     0.001 |     1310 |       --- |             --- |
+| Clocks         |     0.005 |        8 |       --- |             --- |
+| Slice Logic    |    <0.001 |      587 |       --- |             --- |
+|   LUT as Logic |    <0.001 |      213 |     53200 |            0.40 |
+|   CARRY4       |    <0.001 |       30 |     13300 |            0.23 |
+|   Register     |    <0.001 |      258 |    106400 |            0.24 |
+|   Others       |     0.000 |       46 |       --- |             --- |
+| Signals        |    <0.001 |      411 |       --- |             --- |
 | MMCM           |     0.114 |        1 |         4 |           25.00 |
-| PLL            |     0.135 |        1 |         4 |           25.00 |
-| I/O            |     0.132 |       10 |       125 |            8.00 |
+| PLL            |     0.131 |        1 |         4 |           25.00 |
+| I/O            |     0.136 |       10 |       125 |            8.00 |
 | Static Power   |     0.112 |          |           |                 |
-| Total          |     0.503 |          |           |                 |
+| Total          |     0.499 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -73,9 +73,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.034 |       0.025 |      0.009 |       NA    | Unspecified | NA         |
-| Vccaux    |       1.800 |     0.142 |       0.131 |      0.011 |       NA    | Unspecified | NA         |
-| Vcco33    |       3.300 |     0.041 |       0.040 |      0.001 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.030 |       0.021 |      0.009 |       NA    | Unspecified | NA         |
+| Vccaux    |       1.800 |     0.141 |       0.129 |      0.011 |       NA    | Unspecified | NA         |
+| Vcco33    |       3.300 |     0.042 |       0.041 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -136,13 +136,12 @@ Table of Contents
 +-------------------------------+--------------------------------------------------------------+-----------------+
 | Clock                         | Domain                                                       | Constraint (ns) |
 +-------------------------------+--------------------------------------------------------------+-----------------+
-| CLKFBIN                       | hdmi_out_i/rgb2dvi_0/U0/ClockGenInternal.ClockGenX/CLKFBIN   |            13.5 |
-| PixelClkIO                    | hdmi_out_i/rgb2dvi_0/U0/ClockGenInternal.ClockGenX/PixelClk  |            13.5 |
-| SerialClkIO                   | hdmi_out_i/rgb2dvi_0/U0/ClockGenInternal.ClockGenX/SerialClk |             2.7 |
+| CLKFBIN                       | hdmi_out_i/rgb2dvi_0/U0/ClockGenInternal.ClockGenX/CLKFBIN   |            14.0 |
+| PixelClkIO                    | hdmi_out_i/rgb2dvi_0/U0/ClockGenInternal.ClockGenX/PixelClk  |            14.0 |
+| SerialClkIO                   | hdmi_out_i/rgb2dvi_0/U0/ClockGenInternal.ClockGenX/SerialClk |             2.8 |
 | System_clock                  | System_clock                                                 |             8.3 |
-| System_clock                  | System_clock_IBUF                                            |             8.3 |
-| clk_out1_hdmi_out_clk_wiz_0_0 | hdmi_out_i/clk_wiz_0/inst/clk_out1_hdmi_out_clk_wiz_0_0      |            13.5 |
-| clkfbout_hdmi_out_clk_wiz_0_0 | hdmi_out_i/clk_wiz_0/inst/clkfbout_hdmi_out_clk_wiz_0_0      |            40.0 |
+| clk_out1_hdmi_out_clk_wiz_0_0 | hdmi_out_i/clk_wiz_0/inst/clk_out1_hdmi_out_clk_wiz_0_0      |            14.0 |
+| clkfbout_hdmi_out_clk_wiz_0_0 | hdmi_out_i/clk_wiz_0/inst/clkfbout_hdmi_out_clk_wiz_0_0      |            41.7 |
 +-------------------------------+--------------------------------------------------------------+-----------------+
 
 
@@ -155,14 +154,12 @@ Table of Contents
 +------------------+-----------+
 | Name             | Power (W) |
 +------------------+-----------+
-| hdmi_out_wrapper |     0.391 |
-|   hdmi_out_i     |     0.391 |
+| hdmi_out_wrapper |     0.387 |
+|   hdmi_out_i     |     0.387 |
 |     clk_wiz_0    |     0.114 |
 |       inst       |     0.114 |
-|     rgb2dvi_0    |     0.271 |
-|       U0         |     0.271 |
-|     v_tc_0       |     0.005 |
-|       U0         |     0.005 |
+|     rgb2dvi_0    |     0.272 |
+|       U0         |     0.272 |
 +------------------+-----------+
 
 

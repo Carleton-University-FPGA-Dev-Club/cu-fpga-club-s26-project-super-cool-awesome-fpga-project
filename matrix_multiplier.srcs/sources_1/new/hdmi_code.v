@@ -35,23 +35,22 @@ module hdmi_code(
     reg [11:0] y_coordinate = 0;
     
     always @(posedge clk) begin 
-        if (hsync == 1'b1) begin 
+        if (!video_active) begin 
             x_coordinate <= 0;
-        end 
-        else if (video_active) begin 
-            x_coordinate <= x_coordinate + 1;
-        end
-        
-        if (vsync == 1'b1) begin 
-            y_coordinate <= 0;
-        end 
-        else if (hsync == 1'b1) begin 
-            if(y_coordinate < 12'd720) begin 
-                y_coordinate <= y_coordinate + 1;
+            if (vsync) begin
+                y_coordinate <= 0;
             end
         end
-    end 
-    
+        else begin
+            if (x_coordinate == 12'd1279) begin 
+                x_coordinate <= 0;
+                y_coordinate <= y_coordinate + 1;
+            end else begin 
+                x_coordinate <= x_coordinate + 1;
+            end
+        end
+    end
+                
     wire matrix_a11;
     assign matrix_a11 = (x_coordinate >= 12'd100 && x_coordinate < 12'd300) && (y_coordinate >= 12'd100 && y_coordinate < 12'd300);
     

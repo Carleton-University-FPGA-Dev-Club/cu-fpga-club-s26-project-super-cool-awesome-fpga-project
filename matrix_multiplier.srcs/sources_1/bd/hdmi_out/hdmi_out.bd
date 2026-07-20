@@ -149,8 +149,8 @@
           "HAS_AXI4_LITE": {
             "value": "false"
           },
-          "auto_generation_mode": {
-            "value": "true"
+          "enable_detection": {
+            "value": "false"
           }
         }
       },
@@ -171,12 +171,16 @@
             "direction": "I",
             "parameters": {
               "FREQ_HZ": {
-                "value": "125000000",
-                "value_src": "user_prop"
+                "value": "74250000",
+                "value_src": "ip_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
               },
               "CLK_DOMAIN": {
-                "value": "hdmi_out_clk_in1_0",
-                "value_src": "default_prop"
+                "value": "/clk_wiz_0_clk_out1",
+                "value_src": "ip_prop"
               }
             }
           },
@@ -226,18 +230,18 @@
       }
     },
     "nets": {
-      "clk_in1_0_1": {
+      "System_clock_1": {
         "ports": [
           "System_clock",
-          "clk_wiz_0/clk_in1",
-          "hdmi_code_0/clk"
+          "clk_wiz_0/clk_in1"
         ]
       },
       "clk_wiz_0_clk_out1": {
         "ports": [
           "clk_wiz_0/clk_out1",
           "rgb2dvi_0/PixelClk",
-          "v_tc_0/clk"
+          "v_tc_0/clk",
+          "hdmi_code_0/clk"
         ]
       },
       "constant_0_12width_dout": {

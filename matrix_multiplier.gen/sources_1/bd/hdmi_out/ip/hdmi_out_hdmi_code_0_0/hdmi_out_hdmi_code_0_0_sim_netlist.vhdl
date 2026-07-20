@@ -2,7 +2,7 @@
 -- Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
--- Date        : Sun Jul 12 11:47:23 2026
+-- Date        : Mon Jul 20 12:19:19 2026
 -- Host        : DESKTOP-LRI6JJ9 running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
 --               c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/ip/hdmi_out_hdmi_code_0_0/hdmi_out_hdmi_code_0_0_sim_netlist.vhdl
@@ -18,17 +18,15 @@ use UNISIM.VCOMPONENTS.ALL;
 entity hdmi_out_hdmi_code_0_0_hdmi_code is
   port (
     vid_out : out STD_LOGIC_VECTOR ( 0 to 0 );
-    vsync : in STD_LOGIC;
+    video_active : in STD_LOGIC;
     clk : in STD_LOGIC;
-    hsync : in STD_LOGIC;
-    video_active : in STD_LOGIC
+    vsync : in STD_LOGIC
   );
   attribute ORIG_REF_NAME : string;
   attribute ORIG_REF_NAME of hdmi_out_hdmi_code_0_0_hdmi_code : entity is "hdmi_code";
 end hdmi_out_hdmi_code_0_0_hdmi_code;
 
 architecture STRUCTURE of hdmi_out_hdmi_code_0_0_hdmi_code is
-  signal p_0_in : STD_LOGIC_VECTOR ( 9 downto 0 );
   signal \vid_out[0]_INST_0_i_1_n_0\ : STD_LOGIC;
   signal \vid_out[0]_INST_0_i_2_n_0\ : STD_LOGIC;
   signal \vid_out[0]_INST_0_i_3_n_0\ : STD_LOGIC;
@@ -36,16 +34,19 @@ architecture STRUCTURE of hdmi_out_hdmi_code_0_0_hdmi_code is
   signal \vid_out[0]_INST_0_i_5_n_0\ : STD_LOGIC;
   signal \vid_out[0]_INST_0_i_6_n_0\ : STD_LOGIC;
   signal \vid_out[0]_INST_0_i_7_n_0\ : STD_LOGIC;
-  signal \x_coordinate[0]_i_2_n_0\ : STD_LOGIC;
-  signal x_coordinate_reg : STD_LOGIC_VECTOR ( 11 downto 2 );
-  signal \x_coordinate_reg[0]_i_1_n_0\ : STD_LOGIC;
-  signal \x_coordinate_reg[0]_i_1_n_1\ : STD_LOGIC;
-  signal \x_coordinate_reg[0]_i_1_n_2\ : STD_LOGIC;
-  signal \x_coordinate_reg[0]_i_1_n_3\ : STD_LOGIC;
-  signal \x_coordinate_reg[0]_i_1_n_4\ : STD_LOGIC;
-  signal \x_coordinate_reg[0]_i_1_n_5\ : STD_LOGIC;
-  signal \x_coordinate_reg[0]_i_1_n_6\ : STD_LOGIC;
-  signal \x_coordinate_reg[0]_i_1_n_7\ : STD_LOGIC;
+  signal \x_coordinate[0]_i_1_n_0\ : STD_LOGIC;
+  signal \x_coordinate[0]_i_3_n_0\ : STD_LOGIC;
+  signal \x_coordinate[0]_i_4_n_0\ : STD_LOGIC;
+  signal \x_coordinate[0]_i_5_n_0\ : STD_LOGIC;
+  signal x_coordinate_reg : STD_LOGIC_VECTOR ( 10 downto 0 );
+  signal \x_coordinate_reg[0]_i_2_n_0\ : STD_LOGIC;
+  signal \x_coordinate_reg[0]_i_2_n_1\ : STD_LOGIC;
+  signal \x_coordinate_reg[0]_i_2_n_2\ : STD_LOGIC;
+  signal \x_coordinate_reg[0]_i_2_n_3\ : STD_LOGIC;
+  signal \x_coordinate_reg[0]_i_2_n_4\ : STD_LOGIC;
+  signal \x_coordinate_reg[0]_i_2_n_5\ : STD_LOGIC;
+  signal \x_coordinate_reg[0]_i_2_n_6\ : STD_LOGIC;
+  signal \x_coordinate_reg[0]_i_2_n_7\ : STD_LOGIC;
   signal \x_coordinate_reg[4]_i_1_n_0\ : STD_LOGIC;
   signal \x_coordinate_reg[4]_i_1_n_1\ : STD_LOGIC;
   signal \x_coordinate_reg[4]_i_1_n_2\ : STD_LOGIC;
@@ -54,108 +55,120 @@ architecture STRUCTURE of hdmi_out_hdmi_code_0_0_hdmi_code is
   signal \x_coordinate_reg[4]_i_1_n_5\ : STD_LOGIC;
   signal \x_coordinate_reg[4]_i_1_n_6\ : STD_LOGIC;
   signal \x_coordinate_reg[4]_i_1_n_7\ : STD_LOGIC;
-  signal \x_coordinate_reg[8]_i_1_n_1\ : STD_LOGIC;
   signal \x_coordinate_reg[8]_i_1_n_2\ : STD_LOGIC;
   signal \x_coordinate_reg[8]_i_1_n_3\ : STD_LOGIC;
-  signal \x_coordinate_reg[8]_i_1_n_4\ : STD_LOGIC;
   signal \x_coordinate_reg[8]_i_1_n_5\ : STD_LOGIC;
   signal \x_coordinate_reg[8]_i_1_n_6\ : STD_LOGIC;
   signal \x_coordinate_reg[8]_i_1_n_7\ : STD_LOGIC;
-  signal \x_coordinate_reg_n_0_[0]\ : STD_LOGIC;
-  signal \x_coordinate_reg_n_0_[1]\ : STD_LOGIC;
-  signal y_coordinate : STD_LOGIC;
-  signal \y_coordinate[9]_i_3_n_0\ : STD_LOGIC;
-  signal \y_coordinate[9]_i_4_n_0\ : STD_LOGIC;
-  signal y_coordinate_reg : STD_LOGIC_VECTOR ( 9 downto 2 );
+  signal \y_coordinate[0]_i_1_n_0\ : STD_LOGIC;
+  signal \y_coordinate[0]_i_2_n_0\ : STD_LOGIC;
+  signal \y_coordinate[0]_i_4_n_0\ : STD_LOGIC;
+  signal y_coordinate_reg : STD_LOGIC_VECTOR ( 11 downto 2 );
+  signal \y_coordinate_reg[0]_i_3_n_0\ : STD_LOGIC;
+  signal \y_coordinate_reg[0]_i_3_n_1\ : STD_LOGIC;
+  signal \y_coordinate_reg[0]_i_3_n_2\ : STD_LOGIC;
+  signal \y_coordinate_reg[0]_i_3_n_3\ : STD_LOGIC;
+  signal \y_coordinate_reg[0]_i_3_n_4\ : STD_LOGIC;
+  signal \y_coordinate_reg[0]_i_3_n_5\ : STD_LOGIC;
+  signal \y_coordinate_reg[0]_i_3_n_6\ : STD_LOGIC;
+  signal \y_coordinate_reg[0]_i_3_n_7\ : STD_LOGIC;
+  signal \y_coordinate_reg[4]_i_1_n_0\ : STD_LOGIC;
+  signal \y_coordinate_reg[4]_i_1_n_1\ : STD_LOGIC;
+  signal \y_coordinate_reg[4]_i_1_n_2\ : STD_LOGIC;
+  signal \y_coordinate_reg[4]_i_1_n_3\ : STD_LOGIC;
+  signal \y_coordinate_reg[4]_i_1_n_4\ : STD_LOGIC;
+  signal \y_coordinate_reg[4]_i_1_n_5\ : STD_LOGIC;
+  signal \y_coordinate_reg[4]_i_1_n_6\ : STD_LOGIC;
+  signal \y_coordinate_reg[4]_i_1_n_7\ : STD_LOGIC;
+  signal \y_coordinate_reg[8]_i_1_n_1\ : STD_LOGIC;
+  signal \y_coordinate_reg[8]_i_1_n_2\ : STD_LOGIC;
+  signal \y_coordinate_reg[8]_i_1_n_3\ : STD_LOGIC;
+  signal \y_coordinate_reg[8]_i_1_n_4\ : STD_LOGIC;
+  signal \y_coordinate_reg[8]_i_1_n_5\ : STD_LOGIC;
+  signal \y_coordinate_reg[8]_i_1_n_6\ : STD_LOGIC;
+  signal \y_coordinate_reg[8]_i_1_n_7\ : STD_LOGIC;
   signal \y_coordinate_reg_n_0_[0]\ : STD_LOGIC;
   signal \y_coordinate_reg_n_0_[1]\ : STD_LOGIC;
-  signal \NLW_x_coordinate_reg[8]_i_1_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 to 3 );
-  attribute ADDER_THRESHOLD : integer;
-  attribute ADDER_THRESHOLD of \x_coordinate_reg[0]_i_1\ : label is 11;
-  attribute ADDER_THRESHOLD of \x_coordinate_reg[4]_i_1\ : label is 11;
-  attribute ADDER_THRESHOLD of \x_coordinate_reg[8]_i_1\ : label is 11;
+  signal \NLW_x_coordinate_reg[8]_i_1_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 2 );
+  signal \NLW_x_coordinate_reg[8]_i_1_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 to 3 );
+  signal \NLW_y_coordinate_reg[8]_i_1_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 to 3 );
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of \y_coordinate[1]_i_1\ : label is "soft_lutpair3";
-  attribute SOFT_HLUTNM of \y_coordinate[2]_i_1\ : label is "soft_lutpair3";
-  attribute SOFT_HLUTNM of \y_coordinate[3]_i_1\ : label is "soft_lutpair1";
-  attribute SOFT_HLUTNM of \y_coordinate[4]_i_1\ : label is "soft_lutpair1";
-  attribute SOFT_HLUTNM of \y_coordinate[6]_i_1\ : label is "soft_lutpair2";
-  attribute SOFT_HLUTNM of \y_coordinate[7]_i_1\ : label is "soft_lutpair2";
-  attribute SOFT_HLUTNM of \y_coordinate[8]_i_1\ : label is "soft_lutpair0";
-  attribute SOFT_HLUTNM of \y_coordinate[9]_i_2\ : label is "soft_lutpair0";
+  attribute SOFT_HLUTNM of \vid_out[0]_INST_0_i_3\ : label is "soft_lutpair0";
+  attribute SOFT_HLUTNM of \x_coordinate[0]_i_3\ : label is "soft_lutpair0";
+  attribute ADDER_THRESHOLD : integer;
+  attribute ADDER_THRESHOLD of \y_coordinate_reg[0]_i_3\ : label is 11;
+  attribute ADDER_THRESHOLD of \y_coordinate_reg[4]_i_1\ : label is 11;
+  attribute ADDER_THRESHOLD of \y_coordinate_reg[8]_i_1\ : label is 11;
 begin
 \vid_out[0]_INST_0\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"2020202020202000"
+      INIT => X"0000000011111110"
     )
         port map (
-      I0 => video_active,
-      I1 => \vid_out[0]_INST_0_i_1_n_0\,
-      I2 => \vid_out[0]_INST_0_i_2_n_0\,
-      I3 => \vid_out[0]_INST_0_i_3_n_0\,
-      I4 => y_coordinate_reg(7),
-      I5 => y_coordinate_reg(8),
+      I0 => \vid_out[0]_INST_0_i_1_n_0\,
+      I1 => \vid_out[0]_INST_0_i_2_n_0\,
+      I2 => \vid_out[0]_INST_0_i_3_n_0\,
+      I3 => x_coordinate_reg(7),
+      I4 => x_coordinate_reg(8),
+      I5 => \vid_out[0]_INST_0_i_4_n_0\,
       O => vid_out(0)
     );
 \vid_out[0]_INST_0_i_1\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"FFBAFFFFFFBAFFBA"
+      INIT => X"00000000000077F7"
     )
         port map (
-      I0 => \vid_out[0]_INST_0_i_4_n_0\,
-      I1 => \vid_out[0]_INST_0_i_5_n_0\,
-      I2 => x_coordinate_reg(8),
-      I3 => y_coordinate_reg(9),
-      I4 => \vid_out[0]_INST_0_i_6_n_0\,
-      I5 => y_coordinate_reg(8),
+      I0 => y_coordinate_reg(6),
+      I1 => y_coordinate_reg(5),
+      I2 => \vid_out[0]_INST_0_i_5_n_0\,
+      I3 => y_coordinate_reg(3),
+      I4 => y_coordinate_reg(8),
+      I5 => y_coordinate_reg(7),
       O => \vid_out[0]_INST_0_i_1_n_0\
     );
-\vid_out[0]_INST_0_i_2\: unisim.vcomponents.LUT5
+\vid_out[0]_INST_0_i_2\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"FFFFFFFE"
+      INIT => X"FFFFFFFEFFFFFFFF"
     )
         port map (
-      I0 => x_coordinate_reg(8),
-      I1 => x_coordinate_reg(7),
-      I2 => \vid_out[0]_INST_0_i_7_n_0\,
+      I0 => y_coordinate_reg(10),
+      I1 => y_coordinate_reg(11),
+      I2 => x_coordinate_reg(10),
       I3 => x_coordinate_reg(9),
-      I4 => x_coordinate_reg(10),
+      I4 => y_coordinate_reg(9),
+      I5 => video_active,
       O => \vid_out[0]_INST_0_i_2_n_0\
     );
-\vid_out[0]_INST_0_i_3\: unisim.vcomponents.LUT6
+\vid_out[0]_INST_0_i_3\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"EEEEEEEAAAAAAAAA"
+      INIT => X"88888880"
     )
         port map (
-      I0 => y_coordinate_reg(9),
-      I1 => y_coordinate_reg(6),
-      I2 => y_coordinate_reg(4),
-      I3 => y_coordinate_reg(2),
-      I4 => y_coordinate_reg(3),
-      I5 => y_coordinate_reg(5),
+      I0 => x_coordinate_reg(6),
+      I1 => x_coordinate_reg(5),
+      I2 => x_coordinate_reg(4),
+      I3 => x_coordinate_reg(3),
+      I4 => x_coordinate_reg(2),
       O => \vid_out[0]_INST_0_i_3_n_0\
     );
-\vid_out[0]_INST_0_i_4\: unisim.vcomponents.LUT3
+\vid_out[0]_INST_0_i_4\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"FE"
+      INIT => X"4F44"
     )
         port map (
-      I0 => x_coordinate_reg(9),
-      I1 => x_coordinate_reg(11),
-      I2 => x_coordinate_reg(10),
+      I0 => \vid_out[0]_INST_0_i_6_n_0\,
+      I1 => y_coordinate_reg(8),
+      I2 => \vid_out[0]_INST_0_i_7_n_0\,
+      I3 => x_coordinate_reg(8),
       O => \vid_out[0]_INST_0_i_4_n_0\
     );
-\vid_out[0]_INST_0_i_5\: unisim.vcomponents.LUT6
+\vid_out[0]_INST_0_i_5\: unisim.vcomponents.LUT2
     generic map(
-      INIT => X"0000000000005777"
+      INIT => X"1"
     )
         port map (
-      I0 => x_coordinate_reg(5),
-      I1 => x_coordinate_reg(4),
-      I2 => x_coordinate_reg(3),
-      I3 => x_coordinate_reg(2),
-      I4 => x_coordinate_reg(7),
-      I5 => x_coordinate_reg(6),
+      I0 => y_coordinate_reg(2),
+      I1 => y_coordinate_reg(4),
       O => \vid_out[0]_INST_0_i_5_n_0\
     );
 \vid_out[0]_INST_0_i_6\: unisim.vcomponents.LUT6
@@ -165,32 +178,67 @@ begin
         port map (
       I0 => y_coordinate_reg(5),
       I1 => y_coordinate_reg(4),
-      I2 => y_coordinate_reg(3),
-      I3 => y_coordinate_reg(2),
-      I4 => y_coordinate_reg(7),
-      I5 => y_coordinate_reg(6),
+      I2 => y_coordinate_reg(2),
+      I3 => y_coordinate_reg(3),
+      I4 => y_coordinate_reg(6),
+      I5 => y_coordinate_reg(7),
       O => \vid_out[0]_INST_0_i_6_n_0\
     );
 \vid_out[0]_INST_0_i_7\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"EEEEEEEAAAAAAAAA"
+      INIT => X"00000000000015FF"
     )
         port map (
-      I0 => x_coordinate_reg(11),
-      I1 => x_coordinate_reg(6),
-      I2 => x_coordinate_reg(4),
-      I3 => x_coordinate_reg(2),
-      I4 => x_coordinate_reg(3),
-      I5 => x_coordinate_reg(5),
+      I0 => x_coordinate_reg(4),
+      I1 => x_coordinate_reg(2),
+      I2 => x_coordinate_reg(3),
+      I3 => x_coordinate_reg(5),
+      I4 => x_coordinate_reg(6),
+      I5 => x_coordinate_reg(7),
       O => \vid_out[0]_INST_0_i_7_n_0\
     );
-\x_coordinate[0]_i_2\: unisim.vcomponents.LUT1
+\x_coordinate[0]_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"00000004FFFFFFFF"
+    )
+        port map (
+      I0 => x_coordinate_reg(9),
+      I1 => x_coordinate_reg(7),
+      I2 => x_coordinate_reg(8),
+      I3 => \x_coordinate[0]_i_3_n_0\,
+      I4 => \x_coordinate[0]_i_4_n_0\,
+      I5 => video_active,
+      O => \x_coordinate[0]_i_1_n_0\
+    );
+\x_coordinate[0]_i_3\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"7FFF"
+    )
+        port map (
+      I0 => x_coordinate_reg(6),
+      I1 => x_coordinate_reg(5),
+      I2 => x_coordinate_reg(2),
+      I3 => x_coordinate_reg(3),
+      O => \x_coordinate[0]_i_3_n_0\
+    );
+\x_coordinate[0]_i_4\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"7FFF"
+    )
+        port map (
+      I0 => x_coordinate_reg(10),
+      I1 => x_coordinate_reg(1),
+      I2 => x_coordinate_reg(4),
+      I3 => x_coordinate_reg(0),
+      O => \x_coordinate[0]_i_4_n_0\
+    );
+\x_coordinate[0]_i_5\: unisim.vcomponents.LUT1
     generic map(
       INIT => X"1"
     )
         port map (
-      I0 => \x_coordinate_reg_n_0_[0]\,
-      O => \x_coordinate[0]_i_2_n_0\
+      I0 => x_coordinate_reg(0),
+      O => \x_coordinate[0]_i_5_n_0\
     );
 \x_coordinate_reg[0]\: unisim.vcomponents.FDRE
     generic map(
@@ -198,27 +246,26 @@ begin
     )
         port map (
       C => clk,
-      CE => video_active,
-      D => \x_coordinate_reg[0]_i_1_n_7\,
-      Q => \x_coordinate_reg_n_0_[0]\,
-      R => hsync
+      CE => '1',
+      D => \x_coordinate_reg[0]_i_2_n_7\,
+      Q => x_coordinate_reg(0),
+      R => \x_coordinate[0]_i_1_n_0\
     );
-\x_coordinate_reg[0]_i_1\: unisim.vcomponents.CARRY4
+\x_coordinate_reg[0]_i_2\: unisim.vcomponents.CARRY4
      port map (
       CI => '0',
-      CO(3) => \x_coordinate_reg[0]_i_1_n_0\,
-      CO(2) => \x_coordinate_reg[0]_i_1_n_1\,
-      CO(1) => \x_coordinate_reg[0]_i_1_n_2\,
-      CO(0) => \x_coordinate_reg[0]_i_1_n_3\,
+      CO(3) => \x_coordinate_reg[0]_i_2_n_0\,
+      CO(2) => \x_coordinate_reg[0]_i_2_n_1\,
+      CO(1) => \x_coordinate_reg[0]_i_2_n_2\,
+      CO(0) => \x_coordinate_reg[0]_i_2_n_3\,
       CYINIT => '0',
       DI(3 downto 0) => B"0001",
-      O(3) => \x_coordinate_reg[0]_i_1_n_4\,
-      O(2) => \x_coordinate_reg[0]_i_1_n_5\,
-      O(1) => \x_coordinate_reg[0]_i_1_n_6\,
-      O(0) => \x_coordinate_reg[0]_i_1_n_7\,
-      S(3 downto 2) => x_coordinate_reg(3 downto 2),
-      S(1) => \x_coordinate_reg_n_0_[1]\,
-      S(0) => \x_coordinate[0]_i_2_n_0\
+      O(3) => \x_coordinate_reg[0]_i_2_n_4\,
+      O(2) => \x_coordinate_reg[0]_i_2_n_5\,
+      O(1) => \x_coordinate_reg[0]_i_2_n_6\,
+      O(0) => \x_coordinate_reg[0]_i_2_n_7\,
+      S(3 downto 1) => x_coordinate_reg(3 downto 1),
+      S(0) => \x_coordinate[0]_i_5_n_0\
     );
 \x_coordinate_reg[10]\: unisim.vcomponents.FDRE
     generic map(
@@ -226,21 +273,10 @@ begin
     )
         port map (
       C => clk,
-      CE => video_active,
+      CE => '1',
       D => \x_coordinate_reg[8]_i_1_n_5\,
       Q => x_coordinate_reg(10),
-      R => hsync
-    );
-\x_coordinate_reg[11]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => clk,
-      CE => video_active,
-      D => \x_coordinate_reg[8]_i_1_n_4\,
-      Q => x_coordinate_reg(11),
-      R => hsync
+      R => \x_coordinate[0]_i_1_n_0\
     );
 \x_coordinate_reg[1]\: unisim.vcomponents.FDRE
     generic map(
@@ -248,10 +284,10 @@ begin
     )
         port map (
       C => clk,
-      CE => video_active,
-      D => \x_coordinate_reg[0]_i_1_n_6\,
-      Q => \x_coordinate_reg_n_0_[1]\,
-      R => hsync
+      CE => '1',
+      D => \x_coordinate_reg[0]_i_2_n_6\,
+      Q => x_coordinate_reg(1),
+      R => \x_coordinate[0]_i_1_n_0\
     );
 \x_coordinate_reg[2]\: unisim.vcomponents.FDRE
     generic map(
@@ -259,10 +295,10 @@ begin
     )
         port map (
       C => clk,
-      CE => video_active,
-      D => \x_coordinate_reg[0]_i_1_n_5\,
+      CE => '1',
+      D => \x_coordinate_reg[0]_i_2_n_5\,
       Q => x_coordinate_reg(2),
-      R => hsync
+      R => \x_coordinate[0]_i_1_n_0\
     );
 \x_coordinate_reg[3]\: unisim.vcomponents.FDRE
     generic map(
@@ -270,10 +306,10 @@ begin
     )
         port map (
       C => clk,
-      CE => video_active,
-      D => \x_coordinate_reg[0]_i_1_n_4\,
+      CE => '1',
+      D => \x_coordinate_reg[0]_i_2_n_4\,
       Q => x_coordinate_reg(3),
-      R => hsync
+      R => \x_coordinate[0]_i_1_n_0\
     );
 \x_coordinate_reg[4]\: unisim.vcomponents.FDRE
     generic map(
@@ -281,14 +317,14 @@ begin
     )
         port map (
       C => clk,
-      CE => video_active,
+      CE => '1',
       D => \x_coordinate_reg[4]_i_1_n_7\,
       Q => x_coordinate_reg(4),
-      R => hsync
+      R => \x_coordinate[0]_i_1_n_0\
     );
 \x_coordinate_reg[4]_i_1\: unisim.vcomponents.CARRY4
      port map (
-      CI => \x_coordinate_reg[0]_i_1_n_0\,
+      CI => \x_coordinate_reg[0]_i_2_n_0\,
       CO(3) => \x_coordinate_reg[4]_i_1_n_0\,
       CO(2) => \x_coordinate_reg[4]_i_1_n_1\,
       CO(1) => \x_coordinate_reg[4]_i_1_n_2\,
@@ -307,10 +343,10 @@ begin
     )
         port map (
       C => clk,
-      CE => video_active,
+      CE => '1',
       D => \x_coordinate_reg[4]_i_1_n_6\,
       Q => x_coordinate_reg(5),
-      R => hsync
+      R => \x_coordinate[0]_i_1_n_0\
     );
 \x_coordinate_reg[6]\: unisim.vcomponents.FDRE
     generic map(
@@ -318,10 +354,10 @@ begin
     )
         port map (
       C => clk,
-      CE => video_active,
+      CE => '1',
       D => \x_coordinate_reg[4]_i_1_n_5\,
       Q => x_coordinate_reg(6),
-      R => hsync
+      R => \x_coordinate[0]_i_1_n_0\
     );
 \x_coordinate_reg[7]\: unisim.vcomponents.FDRE
     generic map(
@@ -329,10 +365,10 @@ begin
     )
         port map (
       C => clk,
-      CE => video_active,
+      CE => '1',
       D => \x_coordinate_reg[4]_i_1_n_4\,
       Q => x_coordinate_reg(7),
-      R => hsync
+      R => \x_coordinate[0]_i_1_n_0\
     );
 \x_coordinate_reg[8]\: unisim.vcomponents.FDRE
     generic map(
@@ -340,25 +376,25 @@ begin
     )
         port map (
       C => clk,
-      CE => video_active,
+      CE => '1',
       D => \x_coordinate_reg[8]_i_1_n_7\,
       Q => x_coordinate_reg(8),
-      R => hsync
+      R => \x_coordinate[0]_i_1_n_0\
     );
 \x_coordinate_reg[8]_i_1\: unisim.vcomponents.CARRY4
      port map (
       CI => \x_coordinate_reg[4]_i_1_n_0\,
-      CO(3) => \NLW_x_coordinate_reg[8]_i_1_CO_UNCONNECTED\(3),
-      CO(2) => \x_coordinate_reg[8]_i_1_n_1\,
+      CO(3 downto 2) => \NLW_x_coordinate_reg[8]_i_1_CO_UNCONNECTED\(3 downto 2),
       CO(1) => \x_coordinate_reg[8]_i_1_n_2\,
       CO(0) => \x_coordinate_reg[8]_i_1_n_3\,
       CYINIT => '0',
       DI(3 downto 0) => B"0000",
-      O(3) => \x_coordinate_reg[8]_i_1_n_4\,
+      O(3) => \NLW_x_coordinate_reg[8]_i_1_O_UNCONNECTED\(3),
       O(2) => \x_coordinate_reg[8]_i_1_n_5\,
       O(1) => \x_coordinate_reg[8]_i_1_n_6\,
       O(0) => \x_coordinate_reg[8]_i_1_n_7\,
-      S(3 downto 0) => x_coordinate_reg(11 downto 8)
+      S(3) => '0',
+      S(2 downto 0) => x_coordinate_reg(10 downto 8)
     );
 \x_coordinate_reg[9]\: unisim.vcomponents.FDRE
     generic map(
@@ -366,150 +402,40 @@ begin
     )
         port map (
       C => clk,
-      CE => video_active,
+      CE => '1',
       D => \x_coordinate_reg[8]_i_1_n_6\,
       Q => x_coordinate_reg(9),
-      R => hsync
+      R => \x_coordinate[0]_i_1_n_0\
     );
-\y_coordinate[0]_i_1\: unisim.vcomponents.LUT1
+\y_coordinate[0]_i_1\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"2"
+    )
+        port map (
+      I0 => vsync,
+      I1 => video_active,
+      O => \y_coordinate[0]_i_1_n_0\
+    );
+\y_coordinate[0]_i_2\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"0000000400000000"
+    )
+        port map (
+      I0 => x_coordinate_reg(9),
+      I1 => x_coordinate_reg(7),
+      I2 => x_coordinate_reg(8),
+      I3 => \x_coordinate[0]_i_3_n_0\,
+      I4 => \x_coordinate[0]_i_4_n_0\,
+      I5 => video_active,
+      O => \y_coordinate[0]_i_2_n_0\
+    );
+\y_coordinate[0]_i_4\: unisim.vcomponents.LUT1
     generic map(
       INIT => X"1"
     )
         port map (
       I0 => \y_coordinate_reg_n_0_[0]\,
-      O => p_0_in(0)
-    );
-\y_coordinate[1]_i_1\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"6"
-    )
-        port map (
-      I0 => \y_coordinate_reg_n_0_[0]\,
-      I1 => \y_coordinate_reg_n_0_[1]\,
-      O => p_0_in(1)
-    );
-\y_coordinate[2]_i_1\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"78"
-    )
-        port map (
-      I0 => \y_coordinate_reg_n_0_[0]\,
-      I1 => \y_coordinate_reg_n_0_[1]\,
-      I2 => y_coordinate_reg(2),
-      O => p_0_in(2)
-    );
-\y_coordinate[3]_i_1\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"7F80"
-    )
-        port map (
-      I0 => \y_coordinate_reg_n_0_[1]\,
-      I1 => \y_coordinate_reg_n_0_[0]\,
-      I2 => y_coordinate_reg(2),
-      I3 => y_coordinate_reg(3),
-      O => p_0_in(3)
-    );
-\y_coordinate[4]_i_1\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"7FFF8000"
-    )
-        port map (
-      I0 => y_coordinate_reg(2),
-      I1 => \y_coordinate_reg_n_0_[0]\,
-      I2 => \y_coordinate_reg_n_0_[1]\,
-      I3 => y_coordinate_reg(3),
-      I4 => y_coordinate_reg(4),
-      O => p_0_in(4)
-    );
-\y_coordinate[5]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"7FFFFFFF80000000"
-    )
-        port map (
-      I0 => y_coordinate_reg(3),
-      I1 => \y_coordinate_reg_n_0_[1]\,
-      I2 => \y_coordinate_reg_n_0_[0]\,
-      I3 => y_coordinate_reg(2),
-      I4 => y_coordinate_reg(4),
-      I5 => y_coordinate_reg(5),
-      O => p_0_in(5)
-    );
-\y_coordinate[6]_i_1\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"6"
-    )
-        port map (
-      I0 => \y_coordinate[9]_i_4_n_0\,
-      I1 => y_coordinate_reg(6),
-      O => p_0_in(6)
-    );
-\y_coordinate[7]_i_1\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"78"
-    )
-        port map (
-      I0 => \y_coordinate[9]_i_4_n_0\,
-      I1 => y_coordinate_reg(6),
-      I2 => y_coordinate_reg(7),
-      O => p_0_in(7)
-    );
-\y_coordinate[8]_i_1\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"7F80"
-    )
-        port map (
-      I0 => y_coordinate_reg(6),
-      I1 => \y_coordinate[9]_i_4_n_0\,
-      I2 => y_coordinate_reg(7),
-      I3 => y_coordinate_reg(8),
-      O => p_0_in(8)
-    );
-\y_coordinate[9]_i_1\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"8"
-    )
-        port map (
-      I0 => hsync,
-      I1 => \y_coordinate[9]_i_3_n_0\,
-      O => y_coordinate
-    );
-\y_coordinate[9]_i_2\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"7FFF8000"
-    )
-        port map (
-      I0 => y_coordinate_reg(7),
-      I1 => \y_coordinate[9]_i_4_n_0\,
-      I2 => y_coordinate_reg(6),
-      I3 => y_coordinate_reg(8),
-      I4 => y_coordinate_reg(9),
-      O => p_0_in(9)
-    );
-\y_coordinate[9]_i_3\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"01555555FFFFFFFF"
-    )
-        port map (
-      I0 => y_coordinate_reg(8),
-      I1 => y_coordinate_reg(4),
-      I2 => y_coordinate_reg(5),
-      I3 => y_coordinate_reg(7),
-      I4 => y_coordinate_reg(6),
-      I5 => y_coordinate_reg(9),
-      O => \y_coordinate[9]_i_3_n_0\
-    );
-\y_coordinate[9]_i_4\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"8000000000000000"
-    )
-        port map (
-      I0 => y_coordinate_reg(5),
-      I1 => y_coordinate_reg(3),
-      I2 => \y_coordinate_reg_n_0_[1]\,
-      I3 => \y_coordinate_reg_n_0_[0]\,
-      I4 => y_coordinate_reg(2),
-      I5 => y_coordinate_reg(4),
-      O => \y_coordinate[9]_i_4_n_0\
+      O => \y_coordinate[0]_i_4_n_0\
     );
 \y_coordinate_reg[0]\: unisim.vcomponents.FDRE
     generic map(
@@ -517,10 +443,49 @@ begin
     )
         port map (
       C => clk,
-      CE => y_coordinate,
-      D => p_0_in(0),
+      CE => \y_coordinate[0]_i_2_n_0\,
+      D => \y_coordinate_reg[0]_i_3_n_7\,
       Q => \y_coordinate_reg_n_0_[0]\,
-      R => vsync
+      R => \y_coordinate[0]_i_1_n_0\
+    );
+\y_coordinate_reg[0]_i_3\: unisim.vcomponents.CARRY4
+     port map (
+      CI => '0',
+      CO(3) => \y_coordinate_reg[0]_i_3_n_0\,
+      CO(2) => \y_coordinate_reg[0]_i_3_n_1\,
+      CO(1) => \y_coordinate_reg[0]_i_3_n_2\,
+      CO(0) => \y_coordinate_reg[0]_i_3_n_3\,
+      CYINIT => '0',
+      DI(3 downto 0) => B"0001",
+      O(3) => \y_coordinate_reg[0]_i_3_n_4\,
+      O(2) => \y_coordinate_reg[0]_i_3_n_5\,
+      O(1) => \y_coordinate_reg[0]_i_3_n_6\,
+      O(0) => \y_coordinate_reg[0]_i_3_n_7\,
+      S(3 downto 2) => y_coordinate_reg(3 downto 2),
+      S(1) => \y_coordinate_reg_n_0_[1]\,
+      S(0) => \y_coordinate[0]_i_4_n_0\
+    );
+\y_coordinate_reg[10]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => clk,
+      CE => \y_coordinate[0]_i_2_n_0\,
+      D => \y_coordinate_reg[8]_i_1_n_5\,
+      Q => y_coordinate_reg(10),
+      R => \y_coordinate[0]_i_1_n_0\
+    );
+\y_coordinate_reg[11]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => clk,
+      CE => \y_coordinate[0]_i_2_n_0\,
+      D => \y_coordinate_reg[8]_i_1_n_4\,
+      Q => y_coordinate_reg(11),
+      R => \y_coordinate[0]_i_1_n_0\
     );
 \y_coordinate_reg[1]\: unisim.vcomponents.FDRE
     generic map(
@@ -528,10 +493,10 @@ begin
     )
         port map (
       C => clk,
-      CE => y_coordinate,
-      D => p_0_in(1),
+      CE => \y_coordinate[0]_i_2_n_0\,
+      D => \y_coordinate_reg[0]_i_3_n_6\,
       Q => \y_coordinate_reg_n_0_[1]\,
-      R => vsync
+      R => \y_coordinate[0]_i_1_n_0\
     );
 \y_coordinate_reg[2]\: unisim.vcomponents.FDRE
     generic map(
@@ -539,10 +504,10 @@ begin
     )
         port map (
       C => clk,
-      CE => y_coordinate,
-      D => p_0_in(2),
+      CE => \y_coordinate[0]_i_2_n_0\,
+      D => \y_coordinate_reg[0]_i_3_n_5\,
       Q => y_coordinate_reg(2),
-      R => vsync
+      R => \y_coordinate[0]_i_1_n_0\
     );
 \y_coordinate_reg[3]\: unisim.vcomponents.FDRE
     generic map(
@@ -550,10 +515,10 @@ begin
     )
         port map (
       C => clk,
-      CE => y_coordinate,
-      D => p_0_in(3),
+      CE => \y_coordinate[0]_i_2_n_0\,
+      D => \y_coordinate_reg[0]_i_3_n_4\,
       Q => y_coordinate_reg(3),
-      R => vsync
+      R => \y_coordinate[0]_i_1_n_0\
     );
 \y_coordinate_reg[4]\: unisim.vcomponents.FDRE
     generic map(
@@ -561,10 +526,25 @@ begin
     )
         port map (
       C => clk,
-      CE => y_coordinate,
-      D => p_0_in(4),
+      CE => \y_coordinate[0]_i_2_n_0\,
+      D => \y_coordinate_reg[4]_i_1_n_7\,
       Q => y_coordinate_reg(4),
-      R => vsync
+      R => \y_coordinate[0]_i_1_n_0\
+    );
+\y_coordinate_reg[4]_i_1\: unisim.vcomponents.CARRY4
+     port map (
+      CI => \y_coordinate_reg[0]_i_3_n_0\,
+      CO(3) => \y_coordinate_reg[4]_i_1_n_0\,
+      CO(2) => \y_coordinate_reg[4]_i_1_n_1\,
+      CO(1) => \y_coordinate_reg[4]_i_1_n_2\,
+      CO(0) => \y_coordinate_reg[4]_i_1_n_3\,
+      CYINIT => '0',
+      DI(3 downto 0) => B"0000",
+      O(3) => \y_coordinate_reg[4]_i_1_n_4\,
+      O(2) => \y_coordinate_reg[4]_i_1_n_5\,
+      O(1) => \y_coordinate_reg[4]_i_1_n_6\,
+      O(0) => \y_coordinate_reg[4]_i_1_n_7\,
+      S(3 downto 0) => y_coordinate_reg(7 downto 4)
     );
 \y_coordinate_reg[5]\: unisim.vcomponents.FDRE
     generic map(
@@ -572,10 +552,10 @@ begin
     )
         port map (
       C => clk,
-      CE => y_coordinate,
-      D => p_0_in(5),
+      CE => \y_coordinate[0]_i_2_n_0\,
+      D => \y_coordinate_reg[4]_i_1_n_6\,
       Q => y_coordinate_reg(5),
-      R => vsync
+      R => \y_coordinate[0]_i_1_n_0\
     );
 \y_coordinate_reg[6]\: unisim.vcomponents.FDRE
     generic map(
@@ -583,10 +563,10 @@ begin
     )
         port map (
       C => clk,
-      CE => y_coordinate,
-      D => p_0_in(6),
+      CE => \y_coordinate[0]_i_2_n_0\,
+      D => \y_coordinate_reg[4]_i_1_n_5\,
       Q => y_coordinate_reg(6),
-      R => vsync
+      R => \y_coordinate[0]_i_1_n_0\
     );
 \y_coordinate_reg[7]\: unisim.vcomponents.FDRE
     generic map(
@@ -594,10 +574,10 @@ begin
     )
         port map (
       C => clk,
-      CE => y_coordinate,
-      D => p_0_in(7),
+      CE => \y_coordinate[0]_i_2_n_0\,
+      D => \y_coordinate_reg[4]_i_1_n_4\,
       Q => y_coordinate_reg(7),
-      R => vsync
+      R => \y_coordinate[0]_i_1_n_0\
     );
 \y_coordinate_reg[8]\: unisim.vcomponents.FDRE
     generic map(
@@ -605,10 +585,25 @@ begin
     )
         port map (
       C => clk,
-      CE => y_coordinate,
-      D => p_0_in(8),
+      CE => \y_coordinate[0]_i_2_n_0\,
+      D => \y_coordinate_reg[8]_i_1_n_7\,
       Q => y_coordinate_reg(8),
-      R => vsync
+      R => \y_coordinate[0]_i_1_n_0\
+    );
+\y_coordinate_reg[8]_i_1\: unisim.vcomponents.CARRY4
+     port map (
+      CI => \y_coordinate_reg[4]_i_1_n_0\,
+      CO(3) => \NLW_y_coordinate_reg[8]_i_1_CO_UNCONNECTED\(3),
+      CO(2) => \y_coordinate_reg[8]_i_1_n_1\,
+      CO(1) => \y_coordinate_reg[8]_i_1_n_2\,
+      CO(0) => \y_coordinate_reg[8]_i_1_n_3\,
+      CYINIT => '0',
+      DI(3 downto 0) => B"0000",
+      O(3) => \y_coordinate_reg[8]_i_1_n_4\,
+      O(2) => \y_coordinate_reg[8]_i_1_n_5\,
+      O(1) => \y_coordinate_reg[8]_i_1_n_6\,
+      O(0) => \y_coordinate_reg[8]_i_1_n_7\,
+      S(3 downto 0) => y_coordinate_reg(11 downto 8)
     );
 \y_coordinate_reg[9]\: unisim.vcomponents.FDRE
     generic map(
@@ -616,10 +611,10 @@ begin
     )
         port map (
       C => clk,
-      CE => y_coordinate,
-      D => p_0_in(9),
+      CE => \y_coordinate[0]_i_2_n_0\,
+      D => \y_coordinate_reg[8]_i_1_n_6\,
       Q => y_coordinate_reg(9),
-      R => vsync
+      R => \y_coordinate[0]_i_1_n_0\
     );
 end STRUCTURE;
 library IEEE;
@@ -652,7 +647,7 @@ architecture STRUCTURE of hdmi_out_hdmi_code_0_0 is
   attribute X_INTERFACE_INFO : string;
   attribute X_INTERFACE_INFO of clk : signal is "xilinx.com:signal:clock:1.0 clk CLK";
   attribute X_INTERFACE_PARAMETER : string;
-  attribute X_INTERFACE_PARAMETER of clk : signal is "XIL_INTERFACENAME clk, FREQ_HZ 125000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN hdmi_out_clk_in1_0, INSERT_VIP 0";
+  attribute X_INTERFACE_PARAMETER of clk : signal is "XIL_INTERFACENAME clk, FREQ_HZ 74250000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN /clk_wiz_0_clk_out1, INSERT_VIP 0";
 begin
   vid_out(23) <= \^vid_out\(23);
   vid_out(22) <= \^vid_out\(23);
@@ -681,7 +676,6 @@ begin
 inst: entity work.hdmi_out_hdmi_code_0_0_hdmi_code
      port map (
       clk => clk,
-      hsync => hsync,
       vid_out(0) => \^vid_out\(23),
       video_active => video_active,
       vsync => vsync

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1784217288" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/matrix_multiplier.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1784564810" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/matrix_multiplier.dcp">
   <File Type="PA-TCL" Name="hdmi_out_wrapper.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="hdmi_out_wrapper_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="hdmi_out_wrapper_reports.tcl"/>
@@ -73,6 +73,7 @@
     <Filter Type="Constrs"/>
     <File Path="$PSRCDIR/constrs_1/new/constraints.xdc">
       <FileInfo>
+        <Attr Name="UserDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
       </FileInfo>
@@ -110,12 +111,11 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2023">
-      <Desc>Vivado Synthesis Defaults</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2023"/>
     <Step Id="synth_design"/>
   </Strategy>
   <BlockFileSet Type="BlockSrcs" Name="hdmi_out_rgb2dvi_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="hdmi_out_clk_wiz_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="hdmi_out_v_tc_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="hdmi_out_hdmi_code_0_0"/>
 </GenRun>

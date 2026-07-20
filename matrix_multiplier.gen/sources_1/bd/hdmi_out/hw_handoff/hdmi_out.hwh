@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu Jul 16 11:54:42 2026" VIVADOVERSION="2023.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon Jul 20 12:17:04 2026" VIVADOVERSION="2023.2">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z020" NAME="hdmi_out" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -7,7 +7,6 @@
     <PORT CLKFREQUENCY="125000000" DIR="I" NAME="System_clock" SIGIS="clk" SIGNAME="External_Ports_System_clock">
       <CONNECTIONS>
         <CONNECTION INSTANCE="clk_wiz_0" PORT="clk_in1"/>
-        <CONNECTION INSTANCE="hdmi_code_0" PORT="clk"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="O" LEFT="0" NAME="hdmi_hdp" RIGHT="0" SIGIS="undef" SIGNAME="constant_1_dout">
@@ -638,6 +637,7 @@
           <CONNECTIONS>
             <CONNECTION INSTANCE="rgb2dvi_0" PORT="PixelClk"/>
             <CONNECTION INSTANCE="v_tc_0" PORT="clk"/>
+            <CONNECTION INSTANCE="hdmi_code_0" PORT="clk"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="locked" SIGIS="undef"/>
@@ -710,9 +710,9 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT CLKFREQUENCY="125000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_System_clock">
+        <PORT CLKFREQUENCY="74250000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="clk_wiz_0_clk_out1">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="System_clock"/>
+            <CONNECTION INSTANCE="clk_wiz_0" PORT="clk_out1"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="11" NAME="double_dabble" RIGHT="0" SIGIS="undef" SIGNAME="constant_0_12width_dout">
@@ -837,7 +837,7 @@
       </DOCUMENTS>
       <PARAMETERS>
         <PARAMETER NAME="C_ARBITRARY_RES_EN" VALUE="0"/>
-        <PARAMETER NAME="C_DETECT_EN" VALUE="1"/>
+        <PARAMETER NAME="C_DETECT_EN" VALUE="0"/>
         <PARAMETER NAME="C_DET_ACHROMA_EN" VALUE="0"/>
         <PARAMETER NAME="C_DET_AVIDEO_EN" VALUE="1"/>
         <PARAMETER NAME="C_DET_FIELDID_EN" VALUE="0"/>
@@ -880,7 +880,7 @@
         <PARAMETER NAME="C_GENERATE_EN" VALUE="1"/>
         <PARAMETER NAME="C_GEN_ACHROMA_EN" VALUE="0"/>
         <PARAMETER NAME="C_GEN_ACHROMA_POLARITY" VALUE="1"/>
-        <PARAMETER NAME="C_GEN_AUTO_SWITCH" VALUE="1"/>
+        <PARAMETER NAME="C_GEN_AUTO_SWITCH" VALUE="0"/>
         <PARAMETER NAME="C_GEN_AVIDEO_EN" VALUE="1"/>
         <PARAMETER NAME="C_GEN_AVIDEO_POLARITY" VALUE="1"/>
         <PARAMETER NAME="C_GEN_CPARITY" VALUE="0"/>
@@ -999,8 +999,8 @@
         <PARAMETER NAME="active_chroma_generation" VALUE="false"/>
         <PARAMETER NAME="active_video_detection" VALUE="true"/>
         <PARAMETER NAME="active_video_generation" VALUE="true"/>
-        <PARAMETER NAME="auto_generation_mode" VALUE="true"/>
-        <PARAMETER NAME="enable_detection" VALUE="true"/>
+        <PARAMETER NAME="auto_generation_mode" VALUE="false"/>
+        <PARAMETER NAME="enable_detection" VALUE="false"/>
         <PARAMETER NAME="enable_generation" VALUE="true"/>
         <PARAMETER NAME="frame_syncs" VALUE="1"/>
         <PARAMETER NAME="horizontal_blank_detection" VALUE="true"/>
@@ -1016,7 +1016,6 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" NAME="active_video_in" SIGIS="undef"/>
         <PORT DIR="O" NAME="active_video_out" SIGIS="undef" SIGNAME="v_tc_0_active_video_out">
           <CONNECTIONS>
             <CONNECTION INSTANCE="rgb2dvi_0" PORT="vid_pVDE"/>
@@ -1033,12 +1032,9 @@
             <CONNECTION INSTANCE="constant_1" PORT="dout"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="det_clken" SIGIS="undef"/>
         <PORT DIR="O" LEFT="0" NAME="fsync_out" RIGHT="0" SIGIS="undef"/>
         <PORT DIR="I" NAME="gen_clken" SIGIS="undef"/>
-        <PORT DIR="I" NAME="hblank_in" SIGIS="undef"/>
         <PORT DIR="O" NAME="hblank_out" SIGIS="undef"/>
-        <PORT DIR="I" NAME="hsync_in" SIGIS="undef"/>
         <PORT DIR="O" NAME="hsync_out" SIGIS="undef" SIGNAME="v_tc_0_hsync_out">
           <CONNECTIONS>
             <CONNECTION INSTANCE="rgb2dvi_0" PORT="vid_pHSync"/>
@@ -1051,9 +1047,7 @@
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="sof_state" SIGIS="undef"/>
-        <PORT DIR="I" NAME="vblank_in" SIGIS="undef"/>
         <PORT DIR="O" NAME="vblank_out" SIGIS="undef"/>
-        <PORT DIR="I" NAME="vsync_in" SIGIS="undef"/>
         <PORT DIR="O" NAME="vsync_out" SIGIS="undef" SIGNAME="v_tc_0_vsync_out">
           <CONNECTIONS>
             <CONNECTION INSTANCE="rgb2dvi_0" PORT="vid_pVSync"/>
@@ -1062,15 +1056,6 @@
         </PORT>
       </PORTS>
       <BUSINTERFACES>
-        <BUSINTERFACE BUSNAME="__NOC__" NAME="vtiming_in" TYPE="TARGET" VLNV="xilinx.com:interface:video_timing:2.0">
-          <PORTMAPS>
-            <PORTMAP LOGICAL="ACTIVE_VIDEO" PHYSICAL="active_video_in"/>
-            <PORTMAP LOGICAL="HBLANK" PHYSICAL="hblank_in"/>
-            <PORTMAP LOGICAL="HSYNC" PHYSICAL="hsync_in"/>
-            <PORTMAP LOGICAL="VBLANK" PHYSICAL="vblank_in"/>
-            <PORTMAP LOGICAL="VSYNC" PHYSICAL="vsync_in"/>
-          </PORTMAPS>
-        </BUSINTERFACE>
         <BUSINTERFACE BUSNAME="__NOC__" NAME="vtiming_out" TYPE="INITIATOR" VLNV="xilinx.com:interface:video_timing:2.0">
           <PORTMAPS>
             <PORTMAP LOGICAL="ACTIVE_VIDEO" PHYSICAL="active_video_out"/>
