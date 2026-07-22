@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-| Date             : Mon Jul 20 12:32:06 2026
+| Date             : Wed Jul 22 16:10:58 2026
 | Host             : DESKTOP-LRI6JJ9 running 64-bit major release  (build 9200)
 | Command          : report_power -file hdmi_out_wrapper_power_routed.rpt -pb hdmi_out_wrapper_power_summary_routed.pb -rpx hdmi_out_wrapper_power_routed.rpx
 | Design           : hdmi_out_wrapper
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.499        |
+| Total On-Chip Power (W)  | 0.500        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.387        |
+| Dynamic (W)              | 0.388        |
 | Device Static (W)        | 0.112        |
 | Effective TJA (C/W)      | 11.5         |
 | Max Ambient (C)          | 79.2         |
@@ -52,18 +52,18 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.005 |        8 |       --- |             --- |
-| Slice Logic    |    <0.001 |      587 |       --- |             --- |
-|   LUT as Logic |    <0.001 |      213 |     53200 |            0.40 |
-|   CARRY4       |    <0.001 |       30 |     13300 |            0.23 |
-|   Register     |    <0.001 |      258 |    106400 |            0.24 |
+| Clocks         |     0.006 |        8 |       --- |             --- |
+| Slice Logic    |    <0.001 |      944 |       --- |             --- |
+|   LUT as Logic |    <0.001 |      450 |     53200 |            0.85 |
+|   CARRY4       |    <0.001 |       61 |     13300 |            0.46 |
+|   Register     |    <0.001 |      279 |    106400 |            0.26 |
 |   Others       |     0.000 |       46 |       --- |             --- |
-| Signals        |    <0.001 |      411 |       --- |             --- |
+| Signals        |    <0.001 |      709 |       --- |             --- |
 | MMCM           |     0.114 |        1 |         4 |           25.00 |
 | PLL            |     0.131 |        1 |         4 |           25.00 |
 | I/O            |     0.136 |       10 |       125 |            8.00 |
 | Static Power   |     0.112 |          |           |                 |
-| Total          |     0.499 |          |           |                 |
+| Total          |     0.500 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -73,7 +73,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.030 |       0.021 |      0.009 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.030 |       0.022 |      0.009 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.141 |       0.129 |      0.011 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.042 |       0.041 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -154,8 +154,8 @@ Table of Contents
 +------------------+-----------+
 | Name             | Power (W) |
 +------------------+-----------+
-| hdmi_out_wrapper |     0.387 |
-|   hdmi_out_i     |     0.387 |
+| hdmi_out_wrapper |     0.388 |
+|   hdmi_out_i     |     0.388 |
 |     clk_wiz_0    |     0.114 |
 |       inst       |     0.114 |
 |     rgb2dvi_0    |     0.272 |
