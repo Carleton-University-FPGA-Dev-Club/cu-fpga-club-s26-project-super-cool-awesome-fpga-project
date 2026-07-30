@@ -18,6 +18,9 @@
 // Additional Comments:
 // 
 //////////////////////////////////////////////////////////////////////////////////
+
+//ADD MULTIPLICATION SIGN, ADDING ADDITIONAL COORDINATION FOR NUMBERS BASED ON MATRIX
+//ADD MATRIX EDGES 
 module hdmi_code(
     input wire clk, 
     input wire hsync, //jump to next row (controls x-pixels)
@@ -58,19 +61,37 @@ module hdmi_code(
     wire number_9;
     wire number_0;
                 
-    wire matrix_a1;
-    wire matrix_a2;
-    wire matrix_a3;
-    wire multiply;
+    wire matrix_outline1;
+    wire matrix_outline2;
+    wire matrix_outline3;
+    
+    wire multiply; 
     wire diagonal;
     wire equals;
     
-    assign matrix_a1 = (x_coordinate >= 12'd100 && x_coordinate < 12'd375) && (y_coordinate >= 12'd223 && y_coordinate < 12'd498);
-    assign matrix_a2 = (x_coordinate >= 12'd455 && x_coordinate < 12'd730) && (y_coordinate >= 12'd223 && y_coordinate < 12'd498); 
-    assign matrix_a3 = (x_coordinate >= 12'd830 && x_coordinate < 12'd1175) && (y_coordinate >= 12'd223 && y_coordinate < 12'd498);
+    assign matrix_outline1 = ((x_coordinate >= 12'd90 && x_coordinate < 12'd130) && (y_coordinate >= 12'd213 && y_coordinate < 12'd223))|| //left side, left matrix
+    ((x_coordinate >= 12'd90 && x_coordinate < 12'd100) && (y_coordinate >= 12'd213 && y_coordinate < 12'd508))||
+    ((x_coordinate >= 12'd90 && x_coordinate < 12'd130) && (y_coordinate >= 12'd498 && y_coordinate < 12'd508))||
+    ((x_coordinate >= 12'd345 && x_coordinate < 12'd385) && (y_coordinate >= 12'd213 && y_coordinate < 12'd223))|| //right side, left matrix
+    ((x_coordinate >= 12'd375 && x_coordinate < 12'd385) && (y_coordinate >= 12'd213 && y_coordinate < 12'd508))||
+    ((x_coordinate >= 12'd345 && x_coordinate < 12'd385) && (y_coordinate >= 12'd498 && y_coordinate < 12'd508));
     
-    assign diagonal = (x_coordinate >= 12'd390 && x_coordinate < 12'd460) && (y_coordinate >= (2 * x_coordinate + 10) && y_coordinate < (2 * x_coordinate - 300));
-    assign multiply = ((x_coordinate >= 12'd390 && x_coordinate < 12'd460) && (y_coordinate >= (1 * x_coordinate - 12'd75)&& y_coordinate < ( 1 * x_coordinate - 12'd167))); //|| ((x_coordinate >= 12'd390 && x_coordinate < 12'd460) && (y_coordinate >= (x_coordinate - 167) && y_coordinate < (x_coordinate - 75)));
+    assign matrix_outline2 = ((x_coordinate >= 12'd445 && x_coordinate < 12'd485) && (y_coordinate >= 12'd213 && y_coordinate < 12'd223))|| //left side, middle matrix
+    ((x_coordinate >= 12'd445 && x_coordinate < 12'd455) && (y_coordinate >= 12'd213 && y_coordinate < 12'd508))||
+    ((x_coordinate >= 12'd445 && x_coordinate < 12'd485) && (y_coordinate >= 12'd498 && y_coordinate < 12'd508))||
+    ((x_coordinate >= 12'd700 && x_coordinate < 12'd740) && (y_coordinate >= 12'd213 && y_coordinate < 12'd223))|| //right side, middle matrix
+    ((x_coordinate >= 12'd730 && x_coordinate < 12'd740) && (y_coordinate >= 12'd213 && y_coordinate < 12'd508))||
+    ((x_coordinate >= 12'd700 && x_coordinate < 12'd740) && (y_coordinate >= 12'd498 && y_coordinate < 12'd508));
+    
+    assign matrix_outline3 = ((x_coordinate >= 12'd820 && x_coordinate < 12'd860) && (y_coordinate >= 12'd213 && y_coordinate < 12'd223))|| //left side, right matrix
+    ((x_coordinate >= 12'd820 && x_coordinate < 12'd830) && (y_coordinate >= 12'd213 && y_coordinate < 12'd508))||
+    ((x_coordinate >= 12'd820 && x_coordinate < 12'd860) && (y_coordinate >= 12'd498 && y_coordinate < 12'd508))||
+    ((x_coordinate >= 12'd1175 && x_coordinate < 12'd1205) && (y_coordinate >= 12'd213 && y_coordinate < 12'd223))|| //left side, right matrix
+    ((x_coordinate >= 12'd1195 && x_coordinate < 12'd1205) && (y_coordinate >= 12'd213 && y_coordinate < 12'd508))||
+    ((x_coordinate >= 12'd1175 && x_coordinate < 12'd1205) && (y_coordinate >= 12'd498 && y_coordinate < 12'd508));                                                                     
+    
+    assign diagonal = ((x_coordinate >= 12'd395 && x_coordinate < 12'd435) && (y_coordinate >= (x_coordinate - 12'd59) && y_coordinate < (x_coordinate - 12'd49)))||
+    ((x_coordinate >= 12'd395 && x_coordinate < 12'd435) && (y_coordinate >= (12'd771 - x_coordinate) && y_coordinate < (12'd781 - x_coordinate)));
     
     assign equals = ((x_coordinate >= 12'd755 && x_coordinate < 12'd805) && (y_coordinate >= 12'd333 && y_coordinate < 12'd343))||
     ((x_coordinate >= 12'd755 && x_coordinate < 12'd805) && (y_coordinate >= 12'd383 && y_coordinate < 12'd393));
@@ -188,19 +209,19 @@ module hdmi_code(
             vid_out = 24'h000000;
         end
         else begin 
-            if (matrix_a1||matrix_a2||matrix_a3||number_1||number_2||number_3||number_4||number_5||number_6||number_7||number_8||number_9||number_0||diagonal||multiply||equals) begin 
+            if (number_1||number_2||number_3||number_4||number_5||number_6||number_7||number_8||number_9||number_0||diagonal||multiply||equals||matrix_outline1||matrix_outline2||matrix_outline3) begin 
                vid_out = 24'hFFFFFF;
-               if (matrix_a1)begin
+               if (matrix_outline1)begin
                     vid_out = 24'hEAFC3F;
                     end
-               if (matrix_a2)begin
+               if (matrix_outline2)begin
                     vid_out = 24'hFA2378;
                     end
-               if (matrix_a3)begin
+               if (matrix_outline3)begin
                     vid_out = 24'hDB29CA;
                     end
                if (multiply||equals|diagonal)begin
-                    vid_out = 24'hFFFFFF;
+                    vid_out = 24'h79FFF7;
                     end
                if (number_1||number_2||number_3||number_4||number_5||number_6||number_7||number_8||number_9||number_0)begin 
                     vid_out = 24'hFFFFFF;
