@@ -21,6 +21,7 @@
 
 module MatrixMultiplierCode(
     //variables are presented as a(row)(column)_matrixNumber
+    
     //for matrix 1
     input [3:0] a11_1,
     input [3:0] a12_1,
