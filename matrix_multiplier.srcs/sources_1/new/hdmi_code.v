@@ -134,7 +134,6 @@ module hdmi_code(
     wire matrix_outline3;
     
     wire multiply; 
-    wire diagonal;
     wire equals;
     
     assign matrix_outline1 = ((x_coordinate >= 12'd90 && x_coordinate < 12'd130) && (y_coordinate >= 12'd213 && y_coordinate < 12'd223))|| //left side, left matrix
@@ -158,7 +157,7 @@ module hdmi_code(
     ((x_coordinate >= 12'd1195 && x_coordinate < 12'd1205) && (y_coordinate >= 12'd213 && y_coordinate < 12'd508))||
     ((x_coordinate >= 12'd1175 && x_coordinate < 12'd1205) && (y_coordinate >= 12'd498 && y_coordinate < 12'd508));                                                                     
     
-    assign diagonal = ((x_coordinate >= 12'd395 && x_coordinate < 12'd435) && (y_coordinate >= (x_coordinate - 12'd59) && y_coordinate < (x_coordinate - 12'd49)))||
+    assign multiply = ((x_coordinate >= 12'd395 && x_coordinate < 12'd435) && (y_coordinate >= (x_coordinate - 12'd59) && y_coordinate < (x_coordinate - 12'd49)))||
     ((x_coordinate >= 12'd395 && x_coordinate < 12'd435) && (y_coordinate >= (12'd771 - x_coordinate) && y_coordinate < (12'd781 - x_coordinate)));
     
     assign equals = ((x_coordinate >= 12'd755 && x_coordinate < 12'd805) && (y_coordinate >= 12'd333 && y_coordinate < 12'd343))||
@@ -277,7 +276,7 @@ module hdmi_code(
             vid_out = 24'h000000;
         end
         else begin 
-            if (number_1||number_2||number_3||number_4||number_5||number_6||number_7||number_8||number_9||number_0||diagonal||multiply||equals||matrix_outline1||matrix_outline2||matrix_outline3) begin 
+            if (number_1||number_2||number_3||number_4||number_5||number_6||number_7||number_8||number_9||number_0||multiply||equals||matrix_outline1||matrix_outline2||matrix_outline3) begin 
                vid_out = 24'hFFFFFF;
                if (matrix_outline1)begin
                     vid_out = 24'hEAFC3F;
@@ -288,7 +287,7 @@ module hdmi_code(
                if (matrix_outline3)begin
                     vid_out = 24'hDB29CA;
                     end
-               if (multiply||equals||diagonal)begin
+               if (multiply||equals)begin
                     vid_out = 24'h79FFF7;
                     end
                if (number_1||number_2||number_3||number_4||number_5||number_6||number_7||number_8||number_9||number_0)begin 
