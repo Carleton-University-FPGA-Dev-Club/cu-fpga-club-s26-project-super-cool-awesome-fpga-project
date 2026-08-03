@@ -2,7 +2,7 @@
 // Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-// Date        : Tue Jul 28 17:50:44 2026
+// Date        : Sun Aug  2 21:08:55 2026
 // Host        : DESKTOP-LRI6JJ9 running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
 //               c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/ip/hdmi_out_hdmi_code_0_0/hdmi_out_hdmi_code_0_0_sim_netlist.v
@@ -22,12 +22,14 @@ module hdmi_out_hdmi_code_0_0
     vsync,
     video_active,
     double_dabble,
+    compartment,
     vid_out);
   (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, FREQ_HZ 74250000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN /clk_wiz_0_clk_out1, INSERT_VIP 0" *) input clk;
   input hsync;
   input vsync;
   input video_active;
   input [11:0]double_dabble;
+  input [3:0]compartment;
   output [23:0]vid_out;
 
   wire clk;
@@ -65,12 +67,12 @@ endmodule
 (* ORIG_REF_NAME = "hdmi_code" *) 
 module hdmi_out_hdmi_code_0_0_hdmi_code
    (vid_out,
-    clk,
     video_active,
+    clk,
     vsync);
   output [8:0]vid_out;
-  input clk;
   input video_active;
+  input clk;
   input vsync;
 
   wire clk;
@@ -231,7 +233,7 @@ module hdmi_out_hdmi_code_0_0_hdmi_code
   wire i__carry__0_i_3_n_0;
   wire i__carry__0_i_4__0_n_0;
   wire i__carry__0_i_4__1_n_0;
-  wire i__carry__0_i_4__2_n_0;
+  wire i__carry__0_i_4_n_0;
   wire i__carry__1_i_1__0_n_0;
   wire i__carry__1_i_1__1_n_0;
   wire i__carry__1_i_2__0_n_0;
@@ -266,75 +268,9 @@ module hdmi_out_hdmi_code_0_0_hdmi_code
   wire i__carry_i_8_n_0;
   wire [10:0]p_0_in;
   wire [8:0]vid_out;
-  wire \vid_out[0]_INST_0_i_10_n_0 ;
-  wire \vid_out[0]_INST_0_i_11_n_0 ;
-  wire \vid_out[0]_INST_0_i_12_n_0 ;
-  wire \vid_out[0]_INST_0_i_13_n_0 ;
-  wire \vid_out[0]_INST_0_i_14_n_0 ;
-  wire \vid_out[0]_INST_0_i_1_n_0 ;
-  wire \vid_out[0]_INST_0_i_2_n_0 ;
-  wire \vid_out[0]_INST_0_i_3_n_0 ;
-  wire \vid_out[0]_INST_0_i_4_n_0 ;
-  wire \vid_out[0]_INST_0_i_5_n_0 ;
-  wire \vid_out[0]_INST_0_i_6_n_0 ;
-  wire \vid_out[0]_INST_0_i_7_n_0 ;
-  wire \vid_out[0]_INST_0_i_8_n_0 ;
-  wire \vid_out[0]_INST_0_i_9_n_0 ;
-  wire \vid_out[18]_INST_0_i_10_n_0 ;
-  wire \vid_out[18]_INST_0_i_11_n_0 ;
-  wire \vid_out[18]_INST_0_i_12_n_0 ;
-  wire \vid_out[18]_INST_0_i_13_n_0 ;
-  wire \vid_out[18]_INST_0_i_1_n_0 ;
-  wire \vid_out[18]_INST_0_i_2_n_0 ;
-  wire \vid_out[18]_INST_0_i_3_n_0 ;
-  wire \vid_out[18]_INST_0_i_4_n_0 ;
-  wire \vid_out[18]_INST_0_i_5_n_0 ;
-  wire \vid_out[18]_INST_0_i_6_n_0 ;
-  wire \vid_out[18]_INST_0_i_7_n_0 ;
-  wire \vid_out[18]_INST_0_i_8_n_0 ;
-  wire \vid_out[18]_INST_0_i_9_n_0 ;
-  wire \vid_out[3]_INST_0_i_100_n_0 ;
-  wire \vid_out[3]_INST_0_i_101_n_0 ;
-  wire \vid_out[3]_INST_0_i_102_n_0 ;
-  wire \vid_out[3]_INST_0_i_103_n_0 ;
-  wire \vid_out[3]_INST_0_i_104_n_0 ;
-  wire \vid_out[3]_INST_0_i_105_n_0 ;
-  wire \vid_out[3]_INST_0_i_106_n_0 ;
-  wire \vid_out[3]_INST_0_i_107_n_0 ;
-  wire \vid_out[3]_INST_0_i_108_n_0 ;
-  wire \vid_out[3]_INST_0_i_109_n_0 ;
   wire \vid_out[3]_INST_0_i_10_n_0 ;
-  wire \vid_out[3]_INST_0_i_110_n_0 ;
-  wire \vid_out[3]_INST_0_i_111_n_0 ;
-  wire \vid_out[3]_INST_0_i_112_n_0 ;
-  wire \vid_out[3]_INST_0_i_113_n_0 ;
-  wire \vid_out[3]_INST_0_i_114_n_0 ;
-  wire \vid_out[3]_INST_0_i_115_n_0 ;
-  wire \vid_out[3]_INST_0_i_116_n_0 ;
-  wire \vid_out[3]_INST_0_i_117_n_0 ;
-  wire \vid_out[3]_INST_0_i_118_n_0 ;
-  wire \vid_out[3]_INST_0_i_119_n_0 ;
   wire \vid_out[3]_INST_0_i_11_n_0 ;
-  wire \vid_out[3]_INST_0_i_120_n_0 ;
-  wire \vid_out[3]_INST_0_i_121_n_0 ;
-  wire \vid_out[3]_INST_0_i_122_n_0 ;
-  wire \vid_out[3]_INST_0_i_123_n_0 ;
-  wire \vid_out[3]_INST_0_i_124_n_0 ;
-  wire \vid_out[3]_INST_0_i_125_n_0 ;
-  wire \vid_out[3]_INST_0_i_126_n_0 ;
-  wire \vid_out[3]_INST_0_i_127_n_0 ;
-  wire \vid_out[3]_INST_0_i_128_n_0 ;
-  wire \vid_out[3]_INST_0_i_129_n_0 ;
   wire \vid_out[3]_INST_0_i_12_n_0 ;
-  wire \vid_out[3]_INST_0_i_130_n_0 ;
-  wire \vid_out[3]_INST_0_i_131_n_0 ;
-  wire \vid_out[3]_INST_0_i_132_n_0 ;
-  wire \vid_out[3]_INST_0_i_133_n_0 ;
-  wire \vid_out[3]_INST_0_i_134_n_0 ;
-  wire \vid_out[3]_INST_0_i_135_n_0 ;
-  wire \vid_out[3]_INST_0_i_136_n_0 ;
-  wire \vid_out[3]_INST_0_i_137_n_0 ;
-  wire \vid_out[3]_INST_0_i_138_n_0 ;
   wire \vid_out[3]_INST_0_i_13_n_0 ;
   wire \vid_out[3]_INST_0_i_14_n_0 ;
   wire \vid_out[3]_INST_0_i_15_n_0 ;
@@ -399,68 +335,42 @@ module hdmi_out_hdmi_code_0_0_hdmi_code
   wire \vid_out[3]_INST_0_i_69_n_0 ;
   wire \vid_out[3]_INST_0_i_6_n_0 ;
   wire \vid_out[3]_INST_0_i_70_n_0 ;
-  wire \vid_out[3]_INST_0_i_71_n_0 ;
-  wire \vid_out[3]_INST_0_i_72_n_0 ;
-  wire \vid_out[3]_INST_0_i_73_n_0 ;
-  wire \vid_out[3]_INST_0_i_74_n_0 ;
-  wire \vid_out[3]_INST_0_i_75_n_0 ;
-  wire \vid_out[3]_INST_0_i_76_n_0 ;
-  wire \vid_out[3]_INST_0_i_77_n_0 ;
-  wire \vid_out[3]_INST_0_i_78_n_0 ;
-  wire \vid_out[3]_INST_0_i_79_n_0 ;
   wire \vid_out[3]_INST_0_i_7_n_0 ;
-  wire \vid_out[3]_INST_0_i_80_n_0 ;
-  wire \vid_out[3]_INST_0_i_81_n_0 ;
-  wire \vid_out[3]_INST_0_i_82_n_0 ;
-  wire \vid_out[3]_INST_0_i_83_n_0 ;
-  wire \vid_out[3]_INST_0_i_84_n_0 ;
-  wire \vid_out[3]_INST_0_i_85_n_0 ;
-  wire \vid_out[3]_INST_0_i_86_n_0 ;
-  wire \vid_out[3]_INST_0_i_87_n_0 ;
-  wire \vid_out[3]_INST_0_i_88_n_0 ;
-  wire \vid_out[3]_INST_0_i_89_n_0 ;
   wire \vid_out[3]_INST_0_i_8_n_0 ;
-  wire \vid_out[3]_INST_0_i_90_n_0 ;
-  wire \vid_out[3]_INST_0_i_91_n_0 ;
-  wire \vid_out[3]_INST_0_i_92_n_0 ;
-  wire \vid_out[3]_INST_0_i_93_n_0 ;
-  wire \vid_out[3]_INST_0_i_94_n_0 ;
-  wire \vid_out[3]_INST_0_i_95_n_0 ;
-  wire \vid_out[3]_INST_0_i_96_n_0 ;
-  wire \vid_out[3]_INST_0_i_97_n_0 ;
-  wire \vid_out[3]_INST_0_i_98_n_0 ;
-  wire \vid_out[3]_INST_0_i_99_n_0 ;
   wire \vid_out[3]_INST_0_i_9_n_0 ;
-  wire \vid_out[6]_INST_0_i_10_n_0 ;
-  wire \vid_out[6]_INST_0_i_11_n_0 ;
-  wire \vid_out[6]_INST_0_i_12_n_0 ;
-  wire \vid_out[6]_INST_0_i_13_n_0 ;
-  wire \vid_out[6]_INST_0_i_14_n_0 ;
-  wire \vid_out[6]_INST_0_i_15_n_0 ;
-  wire \vid_out[6]_INST_0_i_16_n_0 ;
-  wire \vid_out[6]_INST_0_i_1_n_0 ;
-  wire \vid_out[6]_INST_0_i_2_n_0 ;
-  wire \vid_out[6]_INST_0_i_3_n_0 ;
-  wire \vid_out[6]_INST_0_i_4_n_0 ;
-  wire \vid_out[6]_INST_0_i_5_n_0 ;
-  wire \vid_out[6]_INST_0_i_6_n_0 ;
-  wire \vid_out[6]_INST_0_i_7_n_0 ;
-  wire \vid_out[6]_INST_0_i_8_n_0 ;
-  wire \vid_out[6]_INST_0_i_9_n_0 ;
+  wire \vid_out[4]_INST_0_i_10_n_0 ;
+  wire \vid_out[4]_INST_0_i_11_n_0 ;
+  wire \vid_out[4]_INST_0_i_12_n_0 ;
+  wire \vid_out[4]_INST_0_i_13_n_0 ;
+  wire \vid_out[4]_INST_0_i_14_n_0 ;
+  wire \vid_out[4]_INST_0_i_15_n_0 ;
+  wire \vid_out[4]_INST_0_i_1_n_0 ;
+  wire \vid_out[4]_INST_0_i_2_n_0 ;
+  wire \vid_out[4]_INST_0_i_3_n_0 ;
+  wire \vid_out[4]_INST_0_i_4_n_0 ;
+  wire \vid_out[4]_INST_0_i_5_n_0 ;
+  wire \vid_out[4]_INST_0_i_6_n_0 ;
+  wire \vid_out[4]_INST_0_i_7_n_0 ;
+  wire \vid_out[4]_INST_0_i_8_n_0 ;
+  wire \vid_out[4]_INST_0_i_9_n_0 ;
   wire \vid_out[7]_INST_0_i_1_n_0 ;
-  wire \vid_out[9]_INST_0_i_1_n_0 ;
-  wire \vid_out[9]_INST_0_i_2_n_0 ;
+  wire \vid_out[7]_INST_0_i_2_n_0 ;
+  wire \vid_out[7]_INST_0_i_3_n_0 ;
+  wire \vid_out[7]_INST_0_i_4_n_0 ;
+  wire \vid_out[7]_INST_0_i_5_n_0 ;
+  wire \vid_out[7]_INST_0_i_6_n_0 ;
+  wire \vid_out[7]_INST_0_i_7_n_0 ;
+  wire \vid_out[7]_INST_0_i_8_n_0 ;
+  wire \vid_out[7]_INST_0_i_9_n_0 ;
   wire video_active;
   wire vsync;
   wire \x_coordinate[0]_i_1_n_0 ;
   wire \x_coordinate[0]_i_3_n_0 ;
   wire \x_coordinate[0]_i_4_n_0 ;
-  wire \x_coordinate[0]_i_5_n_0 ;
   wire [10:0]x_coordinate_reg;
   wire \y_coordinate[0]_i_1_n_0 ;
   wire \y_coordinate[0]_i_2_n_0 ;
   wire \y_coordinate[0]_i_4_n_0 ;
-  wire \y_coordinate[0]_i_5_n_0 ;
   wire [11:0]y_coordinate_reg;
   wire \y_coordinate_reg[0]_i_3_n_0 ;
   wire \y_coordinate_reg[0]_i_3_n_1 ;
@@ -637,7 +547,7 @@ module hdmi_out_hdmi_code_0_0_hdmi_code
         .CYINIT(1'b0),
         .DI({1'b0,1'b0,i__carry__0_i_1_n_0,i__carry__0_i_2_n_0}),
         .O(\NLW_diagonal2_inferred__0/i__carry__0_O_UNCONNECTED [3:0]),
-        .S({1'b0,1'b0,i__carry__0_i_3_n_0,i__carry__0_i_4__0_n_0}));
+        .S({1'b0,1'b0,i__carry__0_i_3_n_0,i__carry__0_i_4_n_0}));
   (* COMPARATOR_THRESHOLD = "11" *) 
   CARRY4 \diagonal2_inferred__1/i__carry 
        (.CI(1'b0),
@@ -653,7 +563,7 @@ module hdmi_out_hdmi_code_0_0_hdmi_code
         .CYINIT(1'b0),
         .DI({1'b0,1'b0,i__carry__0_i_1__0_n_0,i__carry__0_i_2__0_n_0}),
         .O(\NLW_diagonal2_inferred__1/i__carry__0_O_UNCONNECTED [3:0]),
-        .S({1'b0,1'b0,i__carry__0_i_3__0_n_0,i__carry__0_i_4__1_n_0}));
+        .S({1'b0,1'b0,i__carry__0_i_3__0_n_0,i__carry__0_i_4__0_n_0}));
   (* COMPARATOR_THRESHOLD = "11" *) 
   CARRY4 \diagonal2_inferred__2/i__carry 
        (.CI(1'b0),
@@ -669,7 +579,7 @@ module hdmi_out_hdmi_code_0_0_hdmi_code
         .CYINIT(1'b0),
         .DI({1'b0,1'b0,i__carry__0_i_1__1_n_0,i__carry__0_i_2__1_n_0}),
         .O(\NLW_diagonal2_inferred__2/i__carry__0_O_UNCONNECTED [3:0]),
-        .S({1'b0,1'b0,i__carry__0_i_3__1_n_0,i__carry__0_i_4__2_n_0}));
+        .S({1'b0,1'b0,i__carry__0_i_3__1_n_0,i__carry__0_i_4__1_n_0}));
   CARRY4 diagonal3__0_carry
        (.CI(1'b0),
         .CO({diagonal3__0_carry_n_0,diagonal3__0_carry_n_1,diagonal3__0_carry_n_2,diagonal3__0_carry_n_3}),
@@ -952,35 +862,35 @@ module hdmi_out_hdmi_code_0_0_hdmi_code
     i__carry__0_i_3__4
        (.I0(x_coordinate_reg[6]),
         .O(i__carry__0_i_3__4_n_0));
-  LUT1 #(
-    .INIT(2'h1)) 
-    i__carry__0_i_4
-       (.I0(x_coordinate_reg[5]),
-        .O(p_0_in[5]));
   LUT4 #(
     .INIT(16'h9009)) 
-    i__carry__0_i_4__0
+    i__carry__0_i_4
        (.I0(\diagonal3_inferred__0/i__carry__1_n_7 ),
         .I1(y_coordinate_reg[9]),
         .I2(\diagonal3_inferred__0/i__carry__0_n_4 ),
+        .I3(y_coordinate_reg[8]),
+        .O(i__carry__0_i_4_n_0));
+  LUT4 #(
+    .INIT(16'h9009)) 
+    i__carry__0_i_4__0
+       (.I0(\diagonal3_inferred__1/i__carry__1_n_7 ),
+        .I1(y_coordinate_reg[9]),
+        .I2(\diagonal3_inferred__1/i__carry__0_n_4 ),
         .I3(y_coordinate_reg[8]),
         .O(i__carry__0_i_4__0_n_0));
   LUT4 #(
     .INIT(16'h9009)) 
     i__carry__0_i_4__1
-       (.I0(\diagonal3_inferred__1/i__carry__1_n_7 ),
-        .I1(y_coordinate_reg[9]),
-        .I2(\diagonal3_inferred__1/i__carry__0_n_4 ),
-        .I3(y_coordinate_reg[8]),
-        .O(i__carry__0_i_4__1_n_0));
-  LUT4 #(
-    .INIT(16'h9009)) 
-    i__carry__0_i_4__2
        (.I0(\diagonal3_inferred__2/i__carry__1_n_7 ),
         .I1(y_coordinate_reg[9]),
         .I2(\diagonal3_inferred__2/i__carry__0_n_4 ),
         .I3(y_coordinate_reg[8]),
-        .O(i__carry__0_i_4__2_n_0));
+        .O(i__carry__0_i_4__1_n_0));
+  LUT1 #(
+    .INIT(2'h1)) 
+    i__carry__0_i_4__2
+       (.I0(x_coordinate_reg[5]),
+        .O(p_0_in[5]));
   LUT1 #(
     .INIT(2'h1)) 
     i__carry__1_i_1
@@ -1244,1855 +1154,1010 @@ module hdmi_out_hdmi_code_0_0_hdmi_code
         .I3(y_coordinate_reg[1]),
         .O(i__carry_i_8__1_n_0));
   LUT6 #(
-    .INIT(64'h000000000000F700)) 
+    .INIT(64'h000000000000AA8A)) 
     \vid_out[0]_INST_0 
-       (.I0(\vid_out[3]_INST_0_i_3_n_0 ),
-        .I1(\vid_out[3]_INST_0_i_4_n_0 ),
-        .I2(\vid_out[3]_INST_0_i_1_n_0 ),
-        .I3(video_active),
-        .I4(\vid_out[0]_INST_0_i_1_n_0 ),
-        .I5(\vid_out[3]_INST_0_i_2_n_0 ),
-        .O(vid_out[2]));
-  LUT5 #(
-    .INIT(32'hFFF44444)) 
-    \vid_out[0]_INST_0_i_1 
-       (.I0(\vid_out[0]_INST_0_i_2_n_0 ),
-        .I1(\vid_out[0]_INST_0_i_3_n_0 ),
-        .I2(\vid_out[0]_INST_0_i_4_n_0 ),
-        .I3(\vid_out[0]_INST_0_i_5_n_0 ),
-        .I4(\vid_out[3]_INST_0_i_8_n_0 ),
-        .O(\vid_out[0]_INST_0_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair23" *) 
-  LUT4 #(
-    .INIT(16'h8000)) 
-    \vid_out[0]_INST_0_i_10 
-       (.I0(y_coordinate_reg[3]),
-        .I1(y_coordinate_reg[2]),
-        .I2(y_coordinate_reg[5]),
-        .I3(y_coordinate_reg[4]),
-        .O(\vid_out[0]_INST_0_i_10_n_0 ));
-  LUT6 #(
-    .INIT(64'h000000000057FFFF)) 
-    \vid_out[0]_INST_0_i_11 
-       (.I0(y_coordinate_reg[2]),
-        .I1(y_coordinate_reg[1]),
-        .I2(y_coordinate_reg[0]),
-        .I3(y_coordinate_reg[3]),
-        .I4(y_coordinate_reg[4]),
-        .I5(y_coordinate_reg[5]),
-        .O(\vid_out[0]_INST_0_i_11_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair32" *) 
-  LUT2 #(
-    .INIT(4'h8)) 
-    \vid_out[0]_INST_0_i_12 
-       (.I0(x_coordinate_reg[5]),
-        .I1(x_coordinate_reg[4]),
-        .O(\vid_out[0]_INST_0_i_12_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair26" *) 
-  LUT3 #(
-    .INIT(8'h01)) 
-    \vid_out[0]_INST_0_i_13 
-       (.I0(x_coordinate_reg[5]),
-        .I1(x_coordinate_reg[4]),
-        .I2(x_coordinate_reg[3]),
-        .O(\vid_out[0]_INST_0_i_13_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
-  LUT5 #(
-    .INIT(32'h88888880)) 
-    \vid_out[0]_INST_0_i_14 
-       (.I0(x_coordinate_reg[5]),
-        .I1(x_coordinate_reg[6]),
-        .I2(x_coordinate_reg[3]),
-        .I3(x_coordinate_reg[2]),
-        .I4(x_coordinate_reg[4]),
-        .O(\vid_out[0]_INST_0_i_14_n_0 ));
-  LUT6 #(
-    .INIT(64'hDDDD0DDDDDDDDDDD)) 
-    \vid_out[0]_INST_0_i_2 
-       (.I0(\vid_out[0]_INST_0_i_6_n_0 ),
-        .I1(\vid_out[0]_INST_0_i_7_n_0 ),
-        .I2(x_coordinate_reg[7]),
-        .I3(x_coordinate_reg[6]),
-        .I4(\vid_out[0]_INST_0_i_8_n_0 ),
-        .I5(\vid_out[0]_INST_0_i_9_n_0 ),
-        .O(\vid_out[0]_INST_0_i_2_n_0 ));
-  LUT6 #(
-    .INIT(64'h0000313100000003)) 
-    \vid_out[0]_INST_0_i_3 
-       (.I0(\vid_out[0]_INST_0_i_10_n_0 ),
-        .I1(\vid_out[6]_INST_0_i_13_n_0 ),
-        .I2(\vid_out[6]_INST_0_i_14_n_0 ),
-        .I3(\vid_out[0]_INST_0_i_11_n_0 ),
-        .I4(y_coordinate_reg[11]),
-        .I5(y_coordinate_reg[8]),
-        .O(\vid_out[0]_INST_0_i_3_n_0 ));
-  LUT6 #(
-    .INIT(64'h8880808080808080)) 
-    \vid_out[0]_INST_0_i_4 
-       (.I0(\vid_out[0]_INST_0_i_9_n_0 ),
-        .I1(x_coordinate_reg[7]),
-        .I2(x_coordinate_reg[6]),
-        .I3(x_coordinate_reg[3]),
-        .I4(x_coordinate_reg[2]),
-        .I5(\vid_out[0]_INST_0_i_12_n_0 ),
-        .O(\vid_out[0]_INST_0_i_4_n_0 ));
-  LUT6 #(
-    .INIT(64'h8AAAAAAAAAAAAAAA)) 
-    \vid_out[0]_INST_0_i_5 
-       (.I0(\vid_out[0]_INST_0_i_6_n_0 ),
-        .I1(\vid_out[3]_INST_0_i_39_n_0 ),
-        .I2(x_coordinate_reg[5]),
-        .I3(x_coordinate_reg[6]),
-        .I4(x_coordinate_reg[7]),
-        .I5(x_coordinate_reg[8]),
-        .O(\vid_out[0]_INST_0_i_5_n_0 ));
-  LUT6 #(
-    .INIT(64'h0055005500000040)) 
-    \vid_out[0]_INST_0_i_6 
-       (.I0(\vid_out[3]_INST_0_i_77_n_0 ),
-        .I1(x_coordinate_reg[3]),
-        .I2(\vid_out[0]_INST_0_i_12_n_0 ),
-        .I3(\vid_out[3]_INST_0_i_31_n_0 ),
-        .I4(\vid_out[3]_INST_0_i_71_n_0 ),
-        .I5(x_coordinate_reg[6]),
-        .O(\vid_out[0]_INST_0_i_6_n_0 ));
-  LUT6 #(
-    .INIT(64'h4000000044444444)) 
-    \vid_out[0]_INST_0_i_7 
-       (.I0(\vid_out[3]_INST_0_i_31_n_0 ),
-        .I1(x_coordinate_reg[6]),
-        .I2(x_coordinate_reg[2]),
-        .I3(x_coordinate_reg[0]),
-        .I4(x_coordinate_reg[1]),
-        .I5(\vid_out[0]_INST_0_i_13_n_0 ),
-        .O(\vid_out[0]_INST_0_i_7_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair0" *) 
-  LUT5 #(
-    .INIT(32'h11155555)) 
-    \vid_out[0]_INST_0_i_8 
-       (.I0(x_coordinate_reg[5]),
-        .I1(x_coordinate_reg[4]),
-        .I2(x_coordinate_reg[1]),
-        .I3(x_coordinate_reg[2]),
-        .I4(x_coordinate_reg[3]),
-        .O(\vid_out[0]_INST_0_i_8_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair16" *) 
-  LUT5 #(
-    .INIT(32'h00101010)) 
-    \vid_out[0]_INST_0_i_9 
-       (.I0(x_coordinate_reg[10]),
-        .I1(x_coordinate_reg[8]),
-        .I2(x_coordinate_reg[9]),
-        .I3(\vid_out[0]_INST_0_i_14_n_0 ),
-        .I4(x_coordinate_reg[7]),
-        .O(\vid_out[0]_INST_0_i_9_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
-  LUT5 #(
-    .INIT(32'hA8AAAAAA)) 
-    \vid_out[13]_INST_0 
        (.I0(video_active),
-        .I1(\vid_out[3]_INST_0_i_2_n_0 ),
-        .I2(\vid_out[3]_INST_0_i_1_n_0 ),
-        .I3(\vid_out[3]_INST_0_i_4_n_0 ),
-        .I4(\vid_out[3]_INST_0_i_3_n_0 ),
-        .O(vid_out[7]));
-  LUT6 #(
-    .INIT(64'hFD000000FF00FF00)) 
-    \vid_out[18]_INST_0 
-       (.I0(\vid_out[3]_INST_0_i_3_n_0 ),
         .I1(\vid_out[3]_INST_0_i_1_n_0 ),
         .I2(\vid_out[3]_INST_0_i_2_n_0 ),
-        .I3(video_active),
-        .I4(\vid_out[18]_INST_0_i_1_n_0 ),
-        .I5(\vid_out[3]_INST_0_i_4_n_0 ),
-        .O(vid_out[4]));
-  (* SOFT_HLUTNM = "soft_lutpair24" *) 
-  LUT4 #(
-    .INIT(16'h0004)) 
-    \vid_out[18]_INST_0_i_1 
-       (.I0(\vid_out[18]_INST_0_i_2_n_0 ),
-        .I1(\vid_out[3]_INST_0_i_3_n_0 ),
-        .I2(\vid_out[18]_INST_0_i_3_n_0 ),
-        .I3(\vid_out[6]_INST_0_i_1_n_0 ),
-        .O(\vid_out[18]_INST_0_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair16" *) 
-  LUT5 #(
-    .INIT(32'hFFFFF080)) 
-    \vid_out[18]_INST_0_i_10 
-       (.I0(x_coordinate_reg[7]),
-        .I1(\vid_out[0]_INST_0_i_14_n_0 ),
-        .I2(x_coordinate_reg[9]),
-        .I3(x_coordinate_reg[8]),
-        .I4(x_coordinate_reg[10]),
-        .O(\vid_out[18]_INST_0_i_10_n_0 ));
-  LUT6 #(
-    .INIT(64'hAAAAAAAA88800000)) 
-    \vid_out[18]_INST_0_i_11 
-       (.I0(\vid_out[3]_INST_0_i_37_n_0 ),
-        .I1(x_coordinate_reg[3]),
-        .I2(x_coordinate_reg[2]),
-        .I3(x_coordinate_reg[1]),
-        .I4(x_coordinate_reg[4]),
-        .I5(x_coordinate_reg[5]),
-        .O(\vid_out[18]_INST_0_i_11_n_0 ));
-  LUT6 #(
-    .INIT(64'hF4F5F5F5F5F5F5F5)) 
-    \vid_out[18]_INST_0_i_12 
-       (.I0(x_coordinate_reg[6]),
-        .I1(\vid_out[3]_INST_0_i_71_n_0 ),
-        .I2(\vid_out[3]_INST_0_i_31_n_0 ),
-        .I3(x_coordinate_reg[5]),
-        .I4(x_coordinate_reg[4]),
-        .I5(x_coordinate_reg[3]),
-        .O(\vid_out[18]_INST_0_i_12_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair27" *) 
-  LUT3 #(
-    .INIT(8'h80)) 
-    \vid_out[18]_INST_0_i_13 
-       (.I0(x_coordinate_reg[3]),
-        .I1(x_coordinate_reg[0]),
-        .I2(x_coordinate_reg[1]),
-        .O(\vid_out[18]_INST_0_i_13_n_0 ));
-  LUT6 #(
-    .INIT(64'hEEFFEEFEFFFFFEFE)) 
-    \vid_out[18]_INST_0_i_2 
-       (.I0(\vid_out[18]_INST_0_i_4_n_0 ),
-        .I1(\vid_out[18]_INST_0_i_5_n_0 ),
-        .I2(\vid_out[3]_INST_0_i_7_n_0 ),
-        .I3(\vid_out[6]_INST_0_i_5_n_0 ),
-        .I4(\vid_out[3]_INST_0_i_6_n_0 ),
-        .I5(\vid_out[6]_INST_0_i_7_n_0 ),
-        .O(\vid_out[18]_INST_0_i_2_n_0 ));
-  LUT6 #(
-    .INIT(64'hEEFFEEFEFFFFFEFE)) 
-    \vid_out[18]_INST_0_i_3 
-       (.I0(\vid_out[18]_INST_0_i_6_n_0 ),
-        .I1(\vid_out[18]_INST_0_i_7_n_0 ),
-        .I2(\vid_out[0]_INST_0_i_5_n_0 ),
-        .I3(\vid_out[6]_INST_0_i_5_n_0 ),
-        .I4(\vid_out[0]_INST_0_i_4_n_0 ),
-        .I5(\vid_out[6]_INST_0_i_7_n_0 ),
-        .O(\vid_out[18]_INST_0_i_3_n_0 ));
-  LUT6 #(
-    .INIT(64'h0000000000400000)) 
-    \vid_out[18]_INST_0_i_4 
-       (.I0(\vid_out[3]_INST_0_i_24_n_0 ),
-        .I1(\vid_out[0]_INST_0_i_3_n_0 ),
-        .I2(x_coordinate_reg[10]),
-        .I3(x_coordinate_reg[8]),
-        .I4(\vid_out[18]_INST_0_i_8_n_0 ),
-        .I5(x_coordinate_reg[9]),
-        .O(\vid_out[18]_INST_0_i_4_n_0 ));
-  LUT6 #(
-    .INIT(64'h0000040000000000)) 
-    \vid_out[18]_INST_0_i_5 
-       (.I0(\vid_out[3]_INST_0_i_70_n_0 ),
-        .I1(\vid_out[0]_INST_0_i_3_n_0 ),
-        .I2(x_coordinate_reg[10]),
-        .I3(\y_coordinate[0]_i_4_n_0 ),
-        .I4(\vid_out[3]_INST_0_i_97_n_0 ),
-        .I5(\vid_out[18]_INST_0_i_9_n_0 ),
-        .O(\vid_out[18]_INST_0_i_5_n_0 ));
-  LUT6 #(
-    .INIT(64'h4444444440404000)) 
-    \vid_out[18]_INST_0_i_6 
-       (.I0(\vid_out[18]_INST_0_i_10_n_0 ),
-        .I1(\vid_out[0]_INST_0_i_3_n_0 ),
-        .I2(x_coordinate_reg[9]),
-        .I3(\vid_out[18]_INST_0_i_11_n_0 ),
-        .I4(x_coordinate_reg[8]),
-        .I5(x_coordinate_reg[10]),
-        .O(\vid_out[18]_INST_0_i_6_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair8" *) 
-  LUT5 #(
-    .INIT(32'h00000004)) 
-    \vid_out[18]_INST_0_i_7 
-       (.I0(\vid_out[18]_INST_0_i_12_n_0 ),
-        .I1(\vid_out[0]_INST_0_i_3_n_0 ),
-        .I2(x_coordinate_reg[10]),
-        .I3(x_coordinate_reg[9]),
-        .I4(\vid_out[0]_INST_0_i_7_n_0 ),
-        .O(\vid_out[18]_INST_0_i_7_n_0 ));
-  LUT6 #(
-    .INIT(64'hA8A8A8A8A888A8A8)) 
-    \vid_out[18]_INST_0_i_8 
-       (.I0(x_coordinate_reg[7]),
-        .I1(x_coordinate_reg[6]),
-        .I2(x_coordinate_reg[5]),
-        .I3(x_coordinate_reg[4]),
-        .I4(\x_coordinate[0]_i_4_n_0 ),
-        .I5(\vid_out[18]_INST_0_i_13_n_0 ),
-        .O(\vid_out[18]_INST_0_i_8_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair33" *) 
-  LUT2 #(
-    .INIT(4'h8)) 
-    \vid_out[18]_INST_0_i_9 
-       (.I0(x_coordinate_reg[9]),
-        .I1(x_coordinate_reg[8]),
-        .O(\vid_out[18]_INST_0_i_9_n_0 ));
-  LUT6 #(
-    .INIT(64'h00000000FFF70000)) 
-    \vid_out[1]_INST_0 
-       (.I0(\vid_out[3]_INST_0_i_3_n_0 ),
-        .I1(\vid_out[3]_INST_0_i_4_n_0 ),
-        .I2(\vid_out[3]_INST_0_i_1_n_0 ),
-        .I3(\vid_out[3]_INST_0_i_2_n_0 ),
-        .I4(video_active),
-        .I5(\vid_out[0]_INST_0_i_1_n_0 ),
-        .O(vid_out[1]));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
-  LUT5 #(
-    .INIT(32'hE000F0F0)) 
-    \vid_out[3]_INST_0 
-       (.I0(\vid_out[3]_INST_0_i_1_n_0 ),
-        .I1(\vid_out[3]_INST_0_i_2_n_0 ),
-        .I2(video_active),
         .I3(\vid_out[3]_INST_0_i_3_n_0 ),
         .I4(\vid_out[3]_INST_0_i_4_n_0 ),
+        .I5(\vid_out[3]_INST_0_i_5_n_0 ),
+        .O(vid_out[2]));
+  LUT6 #(
+    .INIT(64'hAAAAAAAAAAAAAA8A)) 
+    \vid_out[13]_INST_0 
+       (.I0(video_active),
+        .I1(\vid_out[3]_INST_0_i_1_n_0 ),
+        .I2(\vid_out[3]_INST_0_i_2_n_0 ),
+        .I3(\vid_out[3]_INST_0_i_3_n_0 ),
+        .I4(\vid_out[3]_INST_0_i_4_n_0 ),
+        .I5(\vid_out[3]_INST_0_i_5_n_0 ),
+        .O(vid_out[7]));
+  LUT6 #(
+    .INIT(64'h0100000000000000)) 
+    \vid_out[18]_INST_0 
+       (.I0(\vid_out[3]_INST_0_i_5_n_0 ),
+        .I1(\vid_out[3]_INST_0_i_4_n_0 ),
+        .I2(\vid_out[3]_INST_0_i_3_n_0 ),
+        .I3(\vid_out[3]_INST_0_i_2_n_0 ),
+        .I4(\vid_out[3]_INST_0_i_1_n_0 ),
+        .I5(video_active),
+        .O(vid_out[4]));
+  LUT6 #(
+    .INIT(64'h0000AAAA0000AA8A)) 
+    \vid_out[1]_INST_0 
+       (.I0(video_active),
+        .I1(\vid_out[3]_INST_0_i_1_n_0 ),
+        .I2(\vid_out[3]_INST_0_i_2_n_0 ),
+        .I3(\vid_out[3]_INST_0_i_3_n_0 ),
+        .I4(\vid_out[3]_INST_0_i_4_n_0 ),
+        .I5(\vid_out[3]_INST_0_i_5_n_0 ),
+        .O(vid_out[1]));
+  LUT6 #(
+    .INIT(64'hA0A0A0A0A0A0A080)) 
+    \vid_out[3]_INST_0 
+       (.I0(video_active),
+        .I1(\vid_out[3]_INST_0_i_1_n_0 ),
+        .I2(\vid_out[3]_INST_0_i_2_n_0 ),
+        .I3(\vid_out[3]_INST_0_i_3_n_0 ),
+        .I4(\vid_out[3]_INST_0_i_4_n_0 ),
+        .I5(\vid_out[3]_INST_0_i_5_n_0 ),
         .O(vid_out[8]));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
-  LUT2 #(
-    .INIT(4'hE)) 
+  LUT6 #(
+    .INIT(64'hFFFFFFFFFFFFFF01)) 
     \vid_out[3]_INST_0_i_1 
-       (.I0(\vid_out[9]_INST_0_i_1_n_0 ),
-        .I1(\vid_out[0]_INST_0_i_1_n_0 ),
+       (.I0(\vid_out[3]_INST_0_i_6_n_0 ),
+        .I1(\vid_out[3]_INST_0_i_7_n_0 ),
+        .I2(\vid_out[3]_INST_0_i_8_n_0 ),
+        .I3(\vid_out[7]_INST_0_i_2_n_0 ),
+        .I4(\vid_out[3]_INST_0_i_9_n_0 ),
+        .I5(\vid_out[3]_INST_0_i_10_n_0 ),
         .O(\vid_out[3]_INST_0_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'hFFFFFFFFFFFF0777)) 
+    .INIT(64'h040404040F040404)) 
     \vid_out[3]_INST_0_i_10 
-       (.I0(diagonal270_in),
-        .I1(diagonal271_in),
-        .I2(diagonal267_in),
-        .I3(diagonal268_in),
-        .I4(\vid_out[3]_INST_0_i_30_n_0 ),
-        .I5(\vid_out[3]_INST_0_i_31_n_0 ),
+       (.I0(\vid_out[3]_INST_0_i_8_n_0 ),
+        .I1(\vid_out[4]_INST_0_i_4_n_0 ),
+        .I2(\vid_out[7]_INST_0_i_4_n_0 ),
+        .I3(\vid_out[3]_INST_0_i_17_n_0 ),
+        .I4(\vid_out[3]_INST_0_i_38_n_0 ),
+        .I5(\vid_out[3]_INST_0_i_39_n_0 ),
         .O(\vid_out[3]_INST_0_i_10_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair7" *) 
-  LUT4 #(
-    .INIT(16'hFFFE)) 
-    \vid_out[3]_INST_0_i_100 
-       (.I0(x_coordinate_reg[10]),
-        .I1(x_coordinate_reg[7]),
-        .I2(x_coordinate_reg[8]),
-        .I3(x_coordinate_reg[9]),
-        .O(\vid_out[3]_INST_0_i_100_n_0 ));
   LUT6 #(
-    .INIT(64'h00000007000F000F)) 
-    \vid_out[3]_INST_0_i_101 
-       (.I0(y_coordinate_reg[1]),
-        .I1(y_coordinate_reg[2]),
-        .I2(y_coordinate_reg[5]),
-        .I3(y_coordinate_reg[6]),
-        .I4(y_coordinate_reg[3]),
-        .I5(y_coordinate_reg[4]),
-        .O(\vid_out[3]_INST_0_i_101_n_0 ));
-  LUT6 #(
-    .INIT(64'hAAAAAAAAAAAA8880)) 
-    \vid_out[3]_INST_0_i_102 
-       (.I0(y_coordinate_reg[5]),
-        .I1(y_coordinate_reg[2]),
-        .I2(y_coordinate_reg[1]),
-        .I3(y_coordinate_reg[0]),
-        .I4(y_coordinate_reg[3]),
-        .I5(y_coordinate_reg[4]),
-        .O(\vid_out[3]_INST_0_i_102_n_0 ));
-  LUT6 #(
-    .INIT(64'h000000007FFFFFFF)) 
-    \vid_out[3]_INST_0_i_103 
-       (.I0(\vid_out[3]_INST_0_i_75_n_0 ),
-        .I1(y_coordinate_reg[7]),
-        .I2(y_coordinate_reg[5]),
-        .I3(y_coordinate_reg[4]),
-        .I4(y_coordinate_reg[3]),
-        .I5(\vid_out[3]_INST_0_i_121_n_0 ),
-        .O(\vid_out[3]_INST_0_i_103_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair13" *) 
-  LUT5 #(
-    .INIT(32'hFF80FF88)) 
-    \vid_out[3]_INST_0_i_104 
-       (.I0(y_coordinate_reg[6]),
-        .I1(y_coordinate_reg[7]),
-        .I2(y_coordinate_reg[5]),
-        .I3(\vid_out[3]_INST_0_i_89_n_0 ),
-        .I4(\vid_out[3]_INST_0_i_72_n_0 ),
-        .O(\vid_out[3]_INST_0_i_104_n_0 ));
-  LUT6 #(
-    .INIT(64'h0000000000000040)) 
-    \vid_out[3]_INST_0_i_105 
-       (.I0(\vid_out[3]_INST_0_i_125_n_0 ),
-        .I1(x_coordinate_reg[7]),
-        .I2(x_coordinate_reg[4]),
-        .I3(x_coordinate_reg[6]),
-        .I4(x_coordinate_reg[5]),
-        .I5(\vid_out[3]_INST_0_i_82_n_0 ),
-        .O(\vid_out[3]_INST_0_i_105_n_0 ));
-  LUT6 #(
-    .INIT(64'h0000000000010000)) 
-    \vid_out[3]_INST_0_i_106 
-       (.I0(y_coordinate_reg[11]),
-        .I1(y_coordinate_reg[10]),
-        .I2(y_coordinate_reg[9]),
-        .I3(y_coordinate_reg[8]),
-        .I4(y_coordinate_reg[7]),
-        .I5(\vid_out[3]_INST_0_i_101_n_0 ),
-        .O(\vid_out[3]_INST_0_i_106_n_0 ));
-  LUT6 #(
-    .INIT(64'hFEFF000000000000)) 
-    \vid_out[3]_INST_0_i_107 
-       (.I0(x_coordinate_reg[0]),
-        .I1(x_coordinate_reg[1]),
-        .I2(x_coordinate_reg[2]),
-        .I3(\vid_out[0]_INST_0_i_13_n_0 ),
-        .I4(\vid_out[3]_INST_0_i_128_n_0 ),
-        .I5(x_coordinate_reg[6]),
-        .O(\vid_out[3]_INST_0_i_107_n_0 ));
-  LUT6 #(
-    .INIT(64'hFFFFFFFFFFE3FFFF)) 
-    \vid_out[3]_INST_0_i_108 
-       (.I0(\vid_out[3]_INST_0_i_133_n_0 ),
-        .I1(x_coordinate_reg[3]),
-        .I2(x_coordinate_reg[4]),
-        .I3(x_coordinate_reg[5]),
-        .I4(\vid_out[3]_INST_0_i_37_n_0 ),
-        .I5(\vid_out[3]_INST_0_i_82_n_0 ),
-        .O(\vid_out[3]_INST_0_i_108_n_0 ));
-  LUT6 #(
-    .INIT(64'h00000000777FFFFF)) 
-    \vid_out[3]_INST_0_i_109 
-       (.I0(\vid_out[0]_INST_0_i_12_n_0 ),
-        .I1(\vid_out[3]_INST_0_i_37_n_0 ),
-        .I2(x_coordinate_reg[1]),
-        .I3(x_coordinate_reg[2]),
-        .I4(x_coordinate_reg[3]),
-        .I5(\vid_out[3]_INST_0_i_82_n_0 ),
-        .O(\vid_out[3]_INST_0_i_109_n_0 ));
-  LUT6 #(
-    .INIT(64'h0001010111111111)) 
+    .INIT(64'hDDDDDFFFDFFFDFFF)) 
     \vid_out[3]_INST_0_i_11 
-       (.I0(x_coordinate_reg[5]),
+       (.I0(\vid_out[3]_INST_0_i_32_n_0 ),
+        .I1(\vid_out[3]_INST_0_i_40_n_0 ),
+        .I2(diagonal268_in),
+        .I3(diagonal267_in),
+        .I4(diagonal271_in),
+        .I5(diagonal270_in),
+        .O(\vid_out[3]_INST_0_i_11_n_0 ));
+  LUT6 #(
+    .INIT(64'hFFFEFEFEEEEEEEEE)) 
+    \vid_out[3]_INST_0_i_12 
+       (.I0(x_coordinate_reg[6]),
         .I1(x_coordinate_reg[4]),
         .I2(x_coordinate_reg[2]),
         .I3(x_coordinate_reg[1]),
         .I4(x_coordinate_reg[0]),
         .I5(x_coordinate_reg[3]),
-        .O(\vid_out[3]_INST_0_i_11_n_0 ));
-  LUT6 #(
-    .INIT(64'h0000000000000001)) 
-    \vid_out[3]_INST_0_i_110 
-       (.I0(x_coordinate_reg[3]),
-        .I1(x_coordinate_reg[2]),
-        .I2(x_coordinate_reg[4]),
-        .I3(x_coordinate_reg[6]),
-        .I4(x_coordinate_reg[7]),
-        .I5(x_coordinate_reg[5]),
-        .O(\vid_out[3]_INST_0_i_110_n_0 ));
-  LUT6 #(
-    .INIT(64'hFFFEFFFFFEFEFEFE)) 
-    \vid_out[3]_INST_0_i_111 
-       (.I0(x_coordinate_reg[8]),
-        .I1(x_coordinate_reg[10]),
-        .I2(x_coordinate_reg[9]),
-        .I3(x_coordinate_reg[6]),
-        .I4(\y_coordinate[0]_i_4_n_0 ),
-        .I5(x_coordinate_reg[7]),
-        .O(\vid_out[3]_INST_0_i_111_n_0 ));
-  LUT6 #(
-    .INIT(64'h33333333777F7F7F)) 
-    \vid_out[3]_INST_0_i_112 
-       (.I0(x_coordinate_reg[5]),
-        .I1(x_coordinate_reg[7]),
-        .I2(x_coordinate_reg[4]),
-        .I3(x_coordinate_reg[3]),
-        .I4(\vid_out[3]_INST_0_i_133_n_0 ),
-        .I5(x_coordinate_reg[6]),
-        .O(\vid_out[3]_INST_0_i_112_n_0 ));
-  LUT6 #(
-    .INIT(64'hFEEEEEEECCCCCCCC)) 
-    \vid_out[3]_INST_0_i_113 
-       (.I0(x_coordinate_reg[7]),
-        .I1(\vid_out[3]_INST_0_i_77_n_0 ),
-        .I2(x_coordinate_reg[5]),
-        .I3(x_coordinate_reg[6]),
-        .I4(\vid_out[3]_INST_0_i_138_n_0 ),
-        .I5(x_coordinate_reg[8]),
-        .O(\vid_out[3]_INST_0_i_113_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair19" *) 
-  LUT4 #(
-    .INIT(16'h0007)) 
-    \vid_out[3]_INST_0_i_114 
-       (.I0(x_coordinate_reg[2]),
-        .I1(x_coordinate_reg[3]),
-        .I2(x_coordinate_reg[4]),
-        .I3(x_coordinate_reg[5]),
-        .O(\vid_out[3]_INST_0_i_114_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair6" *) 
-  LUT5 #(
-    .INIT(32'h777F7F7F)) 
-    \vid_out[3]_INST_0_i_115 
-       (.I0(x_coordinate_reg[4]),
-        .I1(x_coordinate_reg[7]),
-        .I2(x_coordinate_reg[3]),
-        .I3(x_coordinate_reg[2]),
-        .I4(x_coordinate_reg[1]),
-        .O(\vid_out[3]_INST_0_i_115_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair11" *) 
-  LUT5 #(
-    .INIT(32'h01111111)) 
-    \vid_out[3]_INST_0_i_116 
-       (.I0(x_coordinate_reg[4]),
-        .I1(x_coordinate_reg[6]),
-        .I2(x_coordinate_reg[3]),
-        .I3(x_coordinate_reg[2]),
-        .I4(x_coordinate_reg[1]),
-        .O(\vid_out[3]_INST_0_i_116_n_0 ));
-  LUT6 #(
-    .INIT(64'hFFFFFFFF0000FF80)) 
-    \vid_out[3]_INST_0_i_117 
-       (.I0(x_coordinate_reg[3]),
-        .I1(x_coordinate_reg[4]),
-        .I2(x_coordinate_reg[5]),
-        .I3(x_coordinate_reg[6]),
-        .I4(\vid_out[3]_INST_0_i_31_n_0 ),
-        .I5(\vid_out[3]_INST_0_i_77_n_0 ),
-        .O(\vid_out[3]_INST_0_i_117_n_0 ));
-  LUT6 #(
-    .INIT(64'hAAAAAAA8AAA8AAA8)) 
-    \vid_out[3]_INST_0_i_118 
-       (.I0(x_coordinate_reg[8]),
-        .I1(x_coordinate_reg[5]),
-        .I2(x_coordinate_reg[7]),
-        .I3(x_coordinate_reg[6]),
-        .I4(x_coordinate_reg[3]),
-        .I5(x_coordinate_reg[4]),
-        .O(\vid_out[3]_INST_0_i_118_n_0 ));
-  LUT6 #(
-    .INIT(64'h0000000111111111)) 
-    \vid_out[3]_INST_0_i_119 
-       (.I0(\vid_out[3]_INST_0_i_97_n_0 ),
-        .I1(\vid_out[3]_INST_0_i_77_n_0 ),
-        .I2(x_coordinate_reg[4]),
-        .I3(x_coordinate_reg[3]),
-        .I4(\vid_out[3]_INST_0_i_133_n_0 ),
-        .I5(x_coordinate_reg[5]),
-        .O(\vid_out[3]_INST_0_i_119_n_0 ));
-  LUT6 #(
-    .INIT(64'hAAAAAA0202020202)) 
-    \vid_out[3]_INST_0_i_12 
-       (.I0(\vid_out[3]_INST_0_i_32_n_0 ),
-        .I1(y_coordinate_reg[7]),
-        .I2(\vid_out[3]_INST_0_i_33_n_0 ),
-        .I3(\vid_out[3]_INST_0_i_34_n_0 ),
-        .I4(y_coordinate_reg[3]),
-        .I5(y_coordinate_reg[4]),
         .O(\vid_out[3]_INST_0_i_12_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair34" *) 
-  LUT2 #(
-    .INIT(4'h7)) 
-    \vid_out[3]_INST_0_i_120 
-       (.I0(x_coordinate_reg[8]),
-        .I1(x_coordinate_reg[6]),
-        .O(\vid_out[3]_INST_0_i_120_n_0 ));
-  LUT6 #(
-    .INIT(64'hFFFFFFFEFFFEFFFE)) 
-    \vid_out[3]_INST_0_i_121 
-       (.I0(y_coordinate_reg[11]),
-        .I1(y_coordinate_reg[10]),
-        .I2(y_coordinate_reg[9]),
-        .I3(y_coordinate_reg[8]),
-        .I4(y_coordinate_reg[7]),
-        .I5(y_coordinate_reg[6]),
-        .O(\vid_out[3]_INST_0_i_121_n_0 ));
-  LUT2 #(
-    .INIT(4'h8)) 
-    \vid_out[3]_INST_0_i_122 
-       (.I0(y_coordinate_reg[3]),
-        .I1(y_coordinate_reg[4]),
-        .O(\vid_out[3]_INST_0_i_122_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair26" *) 
-  LUT3 #(
-    .INIT(8'h57)) 
-    \vid_out[3]_INST_0_i_123 
-       (.I0(x_coordinate_reg[4]),
-        .I1(x_coordinate_reg[2]),
-        .I2(x_coordinate_reg[3]),
-        .O(\vid_out[3]_INST_0_i_123_n_0 ));
-  LUT6 #(
-    .INIT(64'hFFFDFFFDFFFDFFFF)) 
-    \vid_out[3]_INST_0_i_124 
-       (.I0(\vid_out[0]_INST_0_i_8_n_0 ),
-        .I1(x_coordinate_reg[6]),
-        .I2(\vid_out[3]_INST_0_i_77_n_0 ),
-        .I3(\vid_out[3]_INST_0_i_31_n_0 ),
-        .I4(x_coordinate_reg[5]),
-        .I5(x_coordinate_reg[4]),
-        .O(\vid_out[3]_INST_0_i_124_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair25" *) 
-  LUT3 #(
-    .INIT(8'h07)) 
-    \vid_out[3]_INST_0_i_125 
-       (.I0(x_coordinate_reg[1]),
-        .I1(x_coordinate_reg[2]),
-        .I2(x_coordinate_reg[3]),
-        .O(\vid_out[3]_INST_0_i_125_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair20" *) 
-  LUT2 #(
-    .INIT(4'h7)) 
-    \vid_out[3]_INST_0_i_126 
-       (.I0(y_coordinate_reg[5]),
-        .I1(y_coordinate_reg[7]),
-        .O(\vid_out[3]_INST_0_i_126_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
-  LUT5 #(
-    .INIT(32'h88888000)) 
-    \vid_out[3]_INST_0_i_127 
-       (.I0(y_coordinate_reg[7]),
-        .I1(y_coordinate_reg[6]),
-        .I2(y_coordinate_reg[0]),
-        .I3(y_coordinate_reg[1]),
-        .I4(y_coordinate_reg[2]),
-        .O(\vid_out[3]_INST_0_i_127_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair21" *) 
-  LUT5 #(
-    .INIT(32'h7777777F)) 
-    \vid_out[3]_INST_0_i_128 
-       (.I0(y_coordinate_reg[7]),
-        .I1(y_coordinate_reg[6]),
-        .I2(y_coordinate_reg[5]),
-        .I3(y_coordinate_reg[3]),
-        .I4(y_coordinate_reg[4]),
-        .O(\vid_out[3]_INST_0_i_128_n_0 ));
-  LUT6 #(
-    .INIT(64'h4444444044404440)) 
-    \vid_out[3]_INST_0_i_129 
-       (.I0(\vid_out[3]_INST_0_i_31_n_0 ),
-        .I1(x_coordinate_reg[6]),
-        .I2(x_coordinate_reg[5]),
-        .I3(x_coordinate_reg[4]),
-        .I4(x_coordinate_reg[3]),
-        .I5(x_coordinate_reg[2]),
-        .O(\vid_out[3]_INST_0_i_129_n_0 ));
-  LUT6 #(
-    .INIT(64'hFFFFEEEFFFFFEFEF)) 
-    \vid_out[3]_INST_0_i_13 
-       (.I0(\vid_out[3]_INST_0_i_35_n_0 ),
-        .I1(\vid_out[3]_INST_0_i_36_n_0 ),
-        .I2(x_coordinate_reg[8]),
-        .I3(\vid_out[3]_INST_0_i_37_n_0 ),
-        .I4(\vid_out[3]_INST_0_i_38_n_0 ),
-        .I5(\vid_out[3]_INST_0_i_9_n_0 ),
-        .O(\vid_out[3]_INST_0_i_13_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair25" *) 
-  LUT3 #(
-    .INIT(8'hE0)) 
-    \vid_out[3]_INST_0_i_130 
-       (.I0(x_coordinate_reg[1]),
-        .I1(x_coordinate_reg[2]),
-        .I2(x_coordinate_reg[3]),
-        .O(\vid_out[3]_INST_0_i_130_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair17" *) 
-  LUT5 #(
-    .INIT(32'hAAAAAAA8)) 
-    \vid_out[3]_INST_0_i_131 
-       (.I0(x_coordinate_reg[5]),
-        .I1(x_coordinate_reg[2]),
-        .I2(x_coordinate_reg[1]),
-        .I3(x_coordinate_reg[3]),
-        .I4(x_coordinate_reg[4]),
-        .O(\vid_out[3]_INST_0_i_131_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair18" *) 
-  LUT5 #(
-    .INIT(32'h00000001)) 
-    \vid_out[3]_INST_0_i_132 
-       (.I0(x_coordinate_reg[8]),
-        .I1(x_coordinate_reg[10]),
-        .I2(x_coordinate_reg[9]),
-        .I3(x_coordinate_reg[7]),
-        .I4(x_coordinate_reg[6]),
-        .O(\vid_out[3]_INST_0_i_132_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair30" *) 
-  LUT2 #(
-    .INIT(4'hE)) 
-    \vid_out[3]_INST_0_i_133 
-       (.I0(x_coordinate_reg[2]),
-        .I1(x_coordinate_reg[1]),
-        .O(\vid_out[3]_INST_0_i_133_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair32" *) 
-  LUT2 #(
-    .INIT(4'hE)) 
-    \vid_out[3]_INST_0_i_134 
-       (.I0(x_coordinate_reg[6]),
-        .I1(x_coordinate_reg[5]),
-        .O(\vid_out[3]_INST_0_i_134_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair6" *) 
-  LUT4 #(
-    .INIT(16'h7FFF)) 
-    \vid_out[3]_INST_0_i_135 
-       (.I0(x_coordinate_reg[4]),
-        .I1(x_coordinate_reg[3]),
-        .I2(x_coordinate_reg[1]),
-        .I3(x_coordinate_reg[2]),
-        .O(\vid_out[3]_INST_0_i_135_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
-  LUT4 #(
-    .INIT(16'h1555)) 
-    \vid_out[3]_INST_0_i_136 
-       (.I0(x_coordinate_reg[5]),
-        .I1(x_coordinate_reg[3]),
-        .I2(x_coordinate_reg[2]),
-        .I3(x_coordinate_reg[4]),
-        .O(\vid_out[3]_INST_0_i_136_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair10" *) 
-  LUT4 #(
-    .INIT(16'h7FFF)) 
-    \vid_out[3]_INST_0_i_137 
-       (.I0(x_coordinate_reg[5]),
-        .I1(x_coordinate_reg[6]),
-        .I2(x_coordinate_reg[7]),
-        .I3(x_coordinate_reg[8]),
-        .O(\vid_out[3]_INST_0_i_137_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair31" *) 
-  LUT2 #(
-    .INIT(4'hE)) 
-    \vid_out[3]_INST_0_i_138 
-       (.I0(x_coordinate_reg[3]),
-        .I1(x_coordinate_reg[4]),
-        .O(\vid_out[3]_INST_0_i_138_n_0 ));
-  LUT6 #(
-    .INIT(64'h777777777777FF7F)) 
-    \vid_out[3]_INST_0_i_14 
+  LUT5 #(
+    .INIT(32'h88888880)) 
+    \vid_out[3]_INST_0_i_13 
        (.I0(x_coordinate_reg[8]),
         .I1(x_coordinate_reg[9]),
-        .I2(x_coordinate_reg[5]),
-        .I3(\vid_out[3]_INST_0_i_39_n_0 ),
+        .I2(\vid_out[3]_INST_0_i_23_n_0 ),
+        .I3(x_coordinate_reg[6]),
+        .I4(x_coordinate_reg[7]),
+        .O(\vid_out[3]_INST_0_i_13_n_0 ));
+  LUT6 #(
+    .INIT(64'hEFEEEFEFEFEFEFEF)) 
+    \vid_out[3]_INST_0_i_14 
+       (.I0(\vid_out[3]_INST_0_i_41_n_0 ),
+        .I1(\vid_out[3]_INST_0_i_42_n_0 ),
+        .I2(x_coordinate_reg[8]),
+        .I3(\vid_out[3]_INST_0_i_32_n_0 ),
         .I4(x_coordinate_reg[6]),
         .I5(x_coordinate_reg[7]),
         .O(\vid_out[3]_INST_0_i_14_n_0 ));
   LUT6 #(
-    .INIT(64'h0004040400040004)) 
+    .INIT(64'hAAAAAAFEFEFEFEFE)) 
     \vid_out[3]_INST_0_i_15 
-       (.I0(\vid_out[3]_INST_0_i_40_n_0 ),
-        .I1(\vid_out[3]_INST_0_i_41_n_0 ),
-        .I2(\vid_out[3]_INST_0_i_42_n_0 ),
-        .I3(\vid_out[3]_INST_0_i_43_n_0 ),
-        .I4(\vid_out[3]_INST_0_i_44_n_0 ),
-        .I5(\vid_out[3]_INST_0_i_45_n_0 ),
+       (.I0(\vid_out[3]_INST_0_i_43_n_0 ),
+        .I1(y_coordinate_reg[7]),
+        .I2(\vid_out[3]_INST_0_i_44_n_0 ),
+        .I3(\vid_out[3]_INST_0_i_45_n_0 ),
+        .I4(y_coordinate_reg[3]),
+        .I5(y_coordinate_reg[4]),
         .O(\vid_out[3]_INST_0_i_15_n_0 ));
-  LUT5 #(
-    .INIT(32'h54FF5454)) 
+  LUT6 #(
+    .INIT(64'h0000777FFFFFFFFF)) 
     \vid_out[3]_INST_0_i_16 
-       (.I0(\vid_out[3]_INST_0_i_46_n_0 ),
-        .I1(\vid_out[3]_INST_0_i_47_n_0 ),
-        .I2(\vid_out[3]_INST_0_i_48_n_0 ),
-        .I3(\vid_out[3]_INST_0_i_49_n_0 ),
-        .I4(\vid_out[3]_INST_0_i_44_n_0 ),
+       (.I0(x_coordinate_reg[4]),
+        .I1(x_coordinate_reg[3]),
+        .I2(x_coordinate_reg[1]),
+        .I3(x_coordinate_reg[2]),
+        .I4(x_coordinate_reg[5]),
+        .I5(x_coordinate_reg[6]),
         .O(\vid_out[3]_INST_0_i_16_n_0 ));
   LUT6 #(
-    .INIT(64'hFFFEFEFEFFFEFFFE)) 
+    .INIT(64'hD5D5D5D5D5D5D555)) 
     \vid_out[3]_INST_0_i_17 
-       (.I0(\vid_out[3]_INST_0_i_50_n_0 ),
-        .I1(\vid_out[3]_INST_0_i_51_n_0 ),
-        .I2(\vid_out[3]_INST_0_i_52_n_0 ),
-        .I3(\vid_out[3]_INST_0_i_43_n_0 ),
-        .I4(\vid_out[3]_INST_0_i_53_n_0 ),
-        .I5(\vid_out[3]_INST_0_i_54_n_0 ),
+       (.I0(\vid_out[3]_INST_0_i_46_n_0 ),
+        .I1(x_coordinate_reg[6]),
+        .I2(x_coordinate_reg[5]),
+        .I3(x_coordinate_reg[2]),
+        .I4(x_coordinate_reg[4]),
+        .I5(x_coordinate_reg[3]),
         .O(\vid_out[3]_INST_0_i_17_n_0 ));
-  LUT6 #(
-    .INIT(64'hFFAEAEAEFFEEFFEE)) 
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  LUT5 #(
+    .INIT(32'hAAAA0080)) 
     \vid_out[3]_INST_0_i_18 
-       (.I0(\vid_out[3]_INST_0_i_55_n_0 ),
-        .I1(\vid_out[3]_INST_0_i_48_n_0 ),
-        .I2(\vid_out[3]_INST_0_i_56_n_0 ),
-        .I3(\vid_out[3]_INST_0_i_57_n_0 ),
-        .I4(\vid_out[3]_INST_0_i_58_n_0 ),
-        .I5(\vid_out[3]_INST_0_i_59_n_0 ),
+       (.I0(\vid_out[3]_INST_0_i_47_n_0 ),
+        .I1(x_coordinate_reg[5]),
+        .I2(x_coordinate_reg[6]),
+        .I3(\vid_out[3]_INST_0_i_48_n_0 ),
+        .I4(x_coordinate_reg[7]),
         .O(\vid_out[3]_INST_0_i_18_n_0 ));
   LUT6 #(
-    .INIT(64'hFFFFFFFFF222F2F2)) 
+    .INIT(64'h1333133300003000)) 
     \vid_out[3]_INST_0_i_19 
+       (.I0(\vid_out[3]_INST_0_i_49_n_0 ),
+        .I1(\vid_out[3]_INST_0_i_50_n_0 ),
+        .I2(y_coordinate_reg[7]),
+        .I3(y_coordinate_reg[6]),
+        .I4(\vid_out[3]_INST_0_i_51_n_0 ),
+        .I5(y_coordinate_reg[8]),
+        .O(\vid_out[3]_INST_0_i_19_n_0 ));
+  LUT6 #(
+    .INIT(64'hABABAB00ABABABAB)) 
+    \vid_out[3]_INST_0_i_2 
+       (.I0(\vid_out[3]_INST_0_i_11_n_0 ),
+        .I1(x_coordinate_reg[5]),
+        .I2(\vid_out[3]_INST_0_i_12_n_0 ),
+        .I3(\vid_out[3]_INST_0_i_13_n_0 ),
+        .I4(\vid_out[3]_INST_0_i_14_n_0 ),
+        .I5(\vid_out[3]_INST_0_i_15_n_0 ),
+        .O(\vid_out[3]_INST_0_i_2_n_0 ));
+  LUT6 #(
+    .INIT(64'hFFBA0000FFBAFFBA)) 
+    \vid_out[3]_INST_0_i_20 
+       (.I0(\vid_out[3]_INST_0_i_37_n_0 ),
+        .I1(x_coordinate_reg[7]),
+        .I2(\vid_out[3]_INST_0_i_16_n_0 ),
+        .I3(\vid_out[7]_INST_0_i_5_n_0 ),
+        .I4(\vid_out[3]_INST_0_i_52_n_0 ),
+        .I5(\vid_out[3]_INST_0_i_47_n_0 ),
+        .O(\vid_out[3]_INST_0_i_20_n_0 ));
+  LUT6 #(
+    .INIT(64'h04000400FFFF0400)) 
+    \vid_out[3]_INST_0_i_21 
+       (.I0(\vid_out[3]_INST_0_i_53_n_0 ),
+        .I1(y_coordinate_reg[5]),
+        .I2(\vid_out[3]_INST_0_i_54_n_0 ),
+        .I3(\vid_out[3]_INST_0_i_55_n_0 ),
+        .I4(\vid_out[3]_INST_0_i_56_n_0 ),
+        .I5(\vid_out[3]_INST_0_i_57_n_0 ),
+        .O(\vid_out[3]_INST_0_i_21_n_0 ));
+  LUT6 #(
+    .INIT(64'h00A8AAAA00A800A8)) 
+    \vid_out[3]_INST_0_i_22 
+       (.I0(\vid_out[3]_INST_0_i_19_n_0 ),
+        .I1(\vid_out[3]_INST_0_i_58_n_0 ),
+        .I2(\vid_out[3]_INST_0_i_24_n_0 ),
+        .I3(\vid_out[3]_INST_0_i_25_n_0 ),
+        .I4(\vid_out[3]_INST_0_i_16_n_0 ),
+        .I5(\vid_out[3]_INST_0_i_59_n_0 ),
+        .O(\vid_out[3]_INST_0_i_22_n_0 ));
+  LUT6 #(
+    .INIT(64'hAAAAAAAAAAAA8880)) 
+    \vid_out[3]_INST_0_i_23 
+       (.I0(x_coordinate_reg[5]),
+        .I1(x_coordinate_reg[2]),
+        .I2(x_coordinate_reg[0]),
+        .I3(x_coordinate_reg[1]),
+        .I4(x_coordinate_reg[3]),
+        .I5(x_coordinate_reg[4]),
+        .O(\vid_out[3]_INST_0_i_23_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair6" *) 
+  LUT3 #(
+    .INIT(8'h7F)) 
+    \vid_out[3]_INST_0_i_24 
+       (.I0(x_coordinate_reg[7]),
+        .I1(x_coordinate_reg[8]),
+        .I2(x_coordinate_reg[6]),
+        .O(\vid_out[3]_INST_0_i_24_n_0 ));
+  LUT6 #(
+    .INIT(64'hFFFFAAAAFFFFFBFF)) 
+    \vid_out[3]_INST_0_i_25 
        (.I0(\vid_out[3]_INST_0_i_60_n_0 ),
         .I1(\vid_out[3]_INST_0_i_61_n_0 ),
         .I2(\vid_out[3]_INST_0_i_62_n_0 ),
-        .I3(\vid_out[3]_INST_0_i_63_n_0 ),
-        .I4(\vid_out[3]_INST_0_i_64_n_0 ),
-        .I5(\vid_out[3]_INST_0_i_65_n_0 ),
-        .O(\vid_out[3]_INST_0_i_19_n_0 ));
-  LUT4 #(
-    .INIT(16'hFEAA)) 
-    \vid_out[3]_INST_0_i_2 
-       (.I0(\vid_out[3]_INST_0_i_5_n_0 ),
-        .I1(\vid_out[3]_INST_0_i_6_n_0 ),
-        .I2(\vid_out[3]_INST_0_i_7_n_0 ),
-        .I3(\vid_out[3]_INST_0_i_8_n_0 ),
-        .O(\vid_out[3]_INST_0_i_2_n_0 ));
+        .I3(x_coordinate_reg[3]),
+        .I4(\vid_out[3]_INST_0_i_63_n_0 ),
+        .I5(x_coordinate_reg[6]),
+        .O(\vid_out[3]_INST_0_i_25_n_0 ));
   LUT6 #(
-    .INIT(64'hFBAAFBFBFBBBFBFB)) 
-    \vid_out[3]_INST_0_i_20 
-       (.I0(\vid_out[3]_INST_0_i_66_n_0 ),
-        .I1(\vid_out[3]_INST_0_i_49_n_0 ),
-        .I2(\vid_out[3]_INST_0_i_62_n_0 ),
-        .I3(\vid_out[3]_INST_0_i_53_n_0 ),
-        .I4(\vid_out[3]_INST_0_i_67_n_0 ),
-        .I5(\vid_out[3]_INST_0_i_68_n_0 ),
-        .O(\vid_out[3]_INST_0_i_20_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair7" *) 
-  LUT5 #(
-    .INIT(32'h00000200)) 
-    \vid_out[3]_INST_0_i_21 
-       (.I0(x_coordinate_reg[7]),
-        .I1(x_coordinate_reg[8]),
-        .I2(x_coordinate_reg[9]),
-        .I3(x_coordinate_reg[10]),
-        .I4(\vid_out[3]_INST_0_i_24_n_0 ),
-        .O(\vid_out[3]_INST_0_i_21_n_0 ));
-  LUT6 #(
-    .INIT(64'h00000000002FFFFF)) 
-    \vid_out[3]_INST_0_i_22 
-       (.I0(\vid_out[3]_INST_0_i_69_n_0 ),
+    .INIT(64'hAAAAAAAA80000000)) 
+    \vid_out[3]_INST_0_i_26 
+       (.I0(\vid_out[3]_INST_0_i_59_n_0 ),
         .I1(x_coordinate_reg[2]),
         .I2(x_coordinate_reg[3]),
         .I3(x_coordinate_reg[4]),
         .I4(x_coordinate_reg[5]),
         .I5(x_coordinate_reg[6]),
-        .O(\vid_out[3]_INST_0_i_22_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair15" *) 
-  LUT5 #(
-    .INIT(32'h00000040)) 
-    \vid_out[3]_INST_0_i_23 
-       (.I0(\vid_out[3]_INST_0_i_70_n_0 ),
-        .I1(x_coordinate_reg[9]),
-        .I2(x_coordinate_reg[8]),
-        .I3(x_coordinate_reg[7]),
-        .I4(x_coordinate_reg[10]),
-        .O(\vid_out[3]_INST_0_i_23_n_0 ));
-  LUT6 #(
-    .INIT(64'hC8888888C888C888)) 
-    \vid_out[3]_INST_0_i_24 
-       (.I0(x_coordinate_reg[6]),
-        .I1(x_coordinate_reg[7]),
-        .I2(x_coordinate_reg[4]),
-        .I3(x_coordinate_reg[5]),
-        .I4(x_coordinate_reg[3]),
-        .I5(\vid_out[3]_INST_0_i_71_n_0 ),
-        .O(\vid_out[3]_INST_0_i_24_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair9" *) 
-  LUT5 #(
-    .INIT(32'hAAAA8000)) 
-    \vid_out[3]_INST_0_i_25 
-       (.I0(x_coordinate_reg[4]),
-        .I1(x_coordinate_reg[2]),
-        .I2(x_coordinate_reg[0]),
-        .I3(x_coordinate_reg[1]),
-        .I4(x_coordinate_reg[3]),
-        .O(\vid_out[3]_INST_0_i_25_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair20" *) 
-  LUT5 #(
-    .INIT(32'hBFFFFFFF)) 
-    \vid_out[3]_INST_0_i_26 
-       (.I0(\vid_out[3]_INST_0_i_72_n_0 ),
-        .I1(y_coordinate_reg[5]),
-        .I2(y_coordinate_reg[7]),
-        .I3(y_coordinate_reg[6]),
-        .I4(y_coordinate_reg[8]),
         .O(\vid_out[3]_INST_0_i_26_n_0 ));
-  LUT6 #(
-    .INIT(64'hFEFFFEFEFEFEFEFE)) 
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  LUT5 #(
+    .INIT(32'hDDDFFFFF)) 
     \vid_out[3]_INST_0_i_27 
-       (.I0(y_coordinate_reg[9]),
-        .I1(y_coordinate_reg[10]),
-        .I2(y_coordinate_reg[11]),
-        .I3(\vid_out[6]_INST_0_i_14_n_0 ),
-        .I4(y_coordinate_reg[8]),
-        .I5(\vid_out[0]_INST_0_i_10_n_0 ),
+       (.I0(\vid_out[3]_INST_0_i_64_n_0 ),
+        .I1(\x_coordinate[0]_i_4_n_0 ),
+        .I2(x_coordinate_reg[5]),
+        .I3(x_coordinate_reg[6]),
+        .I4(\vid_out[3]_INST_0_i_12_n_0 ),
         .O(\vid_out[3]_INST_0_i_27_n_0 ));
   LUT6 #(
-    .INIT(64'h1555555555555555)) 
+    .INIT(64'hFFFFFFFFFFFF4000)) 
     \vid_out[3]_INST_0_i_28 
-       (.I0(\vid_out[3]_INST_0_i_73_n_0 ),
-        .I1(y_coordinate_reg[0]),
-        .I2(y_coordinate_reg[2]),
-        .I3(y_coordinate_reg[1]),
-        .I4(y_coordinate_reg[3]),
-        .I5(y_coordinate_reg[4]),
+       (.I0(\vid_out[3]_INST_0_i_62_n_0 ),
+        .I1(x_coordinate_reg[1]),
+        .I2(x_coordinate_reg[2]),
+        .I3(x_coordinate_reg[3]),
+        .I4(x_coordinate_reg[7]),
+        .I5(x_coordinate_reg[6]),
         .O(\vid_out[3]_INST_0_i_28_n_0 ));
   LUT6 #(
-    .INIT(64'h8880808088808880)) 
+    .INIT(64'h00000000FE000000)) 
     \vid_out[3]_INST_0_i_29 
-       (.I0(y_coordinate_reg[7]),
-        .I1(y_coordinate_reg[6]),
-        .I2(y_coordinate_reg[5]),
-        .I3(y_coordinate_reg[4]),
-        .I4(y_coordinate_reg[3]),
-        .I5(\vid_out[3]_INST_0_i_74_n_0 ),
+       (.I0(x_coordinate_reg[6]),
+        .I1(x_coordinate_reg[7]),
+        .I2(\vid_out[3]_INST_0_i_65_n_0 ),
+        .I3(x_coordinate_reg[9]),
+        .I4(x_coordinate_reg[8]),
+        .I5(x_coordinate_reg[10]),
         .O(\vid_out[3]_INST_0_i_29_n_0 ));
   LUT6 #(
-    .INIT(64'hFEFEFE00FEFEFEFE)) 
+    .INIT(64'hF100FFFFF100F100)) 
     \vid_out[3]_INST_0_i_3 
-       (.I0(\vid_out[3]_INST_0_i_9_n_0 ),
-        .I1(\vid_out[3]_INST_0_i_10_n_0 ),
-        .I2(\vid_out[3]_INST_0_i_11_n_0 ),
-        .I3(\vid_out[3]_INST_0_i_12_n_0 ),
-        .I4(\vid_out[3]_INST_0_i_13_n_0 ),
-        .I5(\vid_out[3]_INST_0_i_14_n_0 ),
+       (.I0(\vid_out[3]_INST_0_i_16_n_0 ),
+        .I1(\vid_out[3]_INST_0_i_17_n_0 ),
+        .I2(\vid_out[3]_INST_0_i_18_n_0 ),
+        .I3(\vid_out[3]_INST_0_i_19_n_0 ),
+        .I4(\vid_out[3]_INST_0_i_20_n_0 ),
+        .I5(\vid_out[3]_INST_0_i_21_n_0 ),
         .O(\vid_out[3]_INST_0_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair29" *) 
-  LUT3 #(
-    .INIT(8'hFE)) 
+  LUT6 #(
+    .INIT(64'hBAFF0000BAFFBAFF)) 
     \vid_out[3]_INST_0_i_30 
-       (.I0(x_coordinate_reg[6]),
-        .I1(x_coordinate_reg[10]),
-        .I2(x_coordinate_reg[9]),
+       (.I0(\x_coordinate[0]_i_4_n_0 ),
+        .I1(\vid_out[3]_INST_0_i_66_n_0 ),
+        .I2(\vid_out[3]_INST_0_i_48_n_0 ),
+        .I3(\vid_out[3]_INST_0_i_64_n_0 ),
+        .I4(\vid_out[3]_INST_0_i_67_n_0 ),
+        .I5(\vid_out[3]_INST_0_i_29_n_0 ),
         .O(\vid_out[3]_INST_0_i_30_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair33" *) 
+  (* SOFT_HLUTNM = "soft_lutpair8" *) 
   LUT2 #(
-    .INIT(4'h7)) 
+    .INIT(4'hE)) 
     \vid_out[3]_INST_0_i_31 
-       (.I0(x_coordinate_reg[8]),
-        .I1(x_coordinate_reg[7]),
+       (.I0(y_coordinate_reg[5]),
+        .I1(y_coordinate_reg[6]),
         .O(\vid_out[3]_INST_0_i_31_n_0 ));
   LUT6 #(
-    .INIT(64'h7FFFFFFFFFFFFFFF)) 
+    .INIT(64'h0FFF0FFF0FFF7FFF)) 
     \vid_out[3]_INST_0_i_32 
+       (.I0(x_coordinate_reg[1]),
+        .I1(x_coordinate_reg[0]),
+        .I2(x_coordinate_reg[5]),
+        .I3(x_coordinate_reg[4]),
+        .I4(x_coordinate_reg[3]),
+        .I5(x_coordinate_reg[2]),
+        .O(\vid_out[3]_INST_0_i_32_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  LUT5 #(
+    .INIT(32'h01FFFFFF)) 
+    \vid_out[3]_INST_0_i_33 
+       (.I0(y_coordinate_reg[3]),
+        .I1(y_coordinate_reg[4]),
+        .I2(y_coordinate_reg[5]),
+        .I3(y_coordinate_reg[7]),
+        .I4(y_coordinate_reg[6]),
+        .O(\vid_out[3]_INST_0_i_33_n_0 ));
+  LUT6 #(
+    .INIT(64'h2AAAAAAAAAAAAAAA)) 
+    \vid_out[3]_INST_0_i_34 
+       (.I0(\vid_out[3]_INST_0_i_46_n_0 ),
+        .I1(x_coordinate_reg[4]),
+        .I2(x_coordinate_reg[3]),
+        .I3(x_coordinate_reg[5]),
+        .I4(x_coordinate_reg[6]),
+        .I5(\vid_out[3]_INST_0_i_61_n_0 ),
+        .O(\vid_out[3]_INST_0_i_34_n_0 ));
+  LUT6 #(
+    .INIT(64'h8880808088888888)) 
+    \vid_out[3]_INST_0_i_35 
+       (.I0(y_coordinate_reg[7]),
+        .I1(y_coordinate_reg[6]),
+        .I2(y_coordinate_reg[2]),
+        .I3(y_coordinate_reg[1]),
+        .I4(y_coordinate_reg[0]),
+        .I5(\vid_out[3]_INST_0_i_68_n_0 ),
+        .O(\vid_out[3]_INST_0_i_35_n_0 ));
+  LUT6 #(
+    .INIT(64'hFFFFFFFF07FFFFFF)) 
+    \vid_out[3]_INST_0_i_36 
+       (.I0(x_coordinate_reg[2]),
+        .I1(x_coordinate_reg[1]),
+        .I2(x_coordinate_reg[3]),
+        .I3(x_coordinate_reg[7]),
+        .I4(x_coordinate_reg[4]),
+        .I5(\vid_out[3]_INST_0_i_66_n_0 ),
+        .O(\vid_out[3]_INST_0_i_36_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair14" *) 
+  LUT3 #(
+    .INIT(8'hFE)) 
+    \vid_out[3]_INST_0_i_37 
+       (.I0(x_coordinate_reg[8]),
+        .I1(x_coordinate_reg[10]),
+        .I2(x_coordinate_reg[9]),
+        .O(\vid_out[3]_INST_0_i_37_n_0 ));
+  LUT6 #(
+    .INIT(64'h0001000100010003)) 
+    \vid_out[3]_INST_0_i_38 
+       (.I0(x_coordinate_reg[7]),
+        .I1(x_coordinate_reg[8]),
+        .I2(x_coordinate_reg[10]),
+        .I3(x_coordinate_reg[9]),
+        .I4(x_coordinate_reg[5]),
+        .I5(\vid_out[4]_INST_0_i_15_n_0 ),
+        .O(\vid_out[3]_INST_0_i_38_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair9" *) 
+  LUT5 #(
+    .INIT(32'h07FFFFFF)) 
+    \vid_out[3]_INST_0_i_39 
+       (.I0(\vid_out[3]_INST_0_i_45_n_0 ),
+        .I1(y_coordinate_reg[3]),
+        .I2(y_coordinate_reg[4]),
+        .I3(y_coordinate_reg[5]),
+        .I4(y_coordinate_reg[7]),
+        .O(\vid_out[3]_INST_0_i_39_n_0 ));
+  LUT6 #(
+    .INIT(64'hFFFFAAFBAAAAAAAA)) 
+    \vid_out[3]_INST_0_i_4 
+       (.I0(\vid_out[3]_INST_0_i_22_n_0 ),
+        .I1(\vid_out[3]_INST_0_i_23_n_0 ),
+        .I2(\vid_out[3]_INST_0_i_24_n_0 ),
+        .I3(\vid_out[3]_INST_0_i_25_n_0 ),
+        .I4(\vid_out[3]_INST_0_i_26_n_0 ),
+        .I5(\vid_out[3]_INST_0_i_21_n_0 ),
+        .O(\vid_out[3]_INST_0_i_4_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair7" *) 
+  LUT5 #(
+    .INIT(32'hFEFFFFFF)) 
+    \vid_out[3]_INST_0_i_40 
+       (.I0(x_coordinate_reg[9]),
+        .I1(x_coordinate_reg[10]),
+        .I2(x_coordinate_reg[6]),
+        .I3(x_coordinate_reg[7]),
+        .I4(x_coordinate_reg[8]),
+        .O(\vid_out[3]_INST_0_i_40_n_0 ));
+  LUT6 #(
+    .INIT(64'hAAAAAAA8AAA8AAA8)) 
+    \vid_out[3]_INST_0_i_41 
+       (.I0(y_coordinate_reg[7]),
+        .I1(y_coordinate_reg[4]),
+        .I2(y_coordinate_reg[6]),
+        .I3(y_coordinate_reg[5]),
+        .I4(y_coordinate_reg[3]),
+        .I5(\vid_out[7]_INST_0_i_9_n_0 ),
+        .O(\vid_out[3]_INST_0_i_41_n_0 ));
+  LUT6 #(
+    .INIT(64'hFFFFABFFFFFFFFFF)) 
+    \vid_out[3]_INST_0_i_42 
+       (.I0(\vid_out[3]_INST_0_i_50_n_0 ),
+        .I1(y_coordinate_reg[7]),
+        .I2(y_coordinate_reg[6]),
+        .I3(y_coordinate_reg[8]),
+        .I4(x_coordinate_reg[10]),
+        .I5(x_coordinate_reg[9]),
+        .O(\vid_out[3]_INST_0_i_42_n_0 ));
+  LUT6 #(
+    .INIT(64'h8000000000000000)) 
+    \vid_out[3]_INST_0_i_43 
        (.I0(y_coordinate_reg[1]),
         .I1(y_coordinate_reg[0]),
         .I2(y_coordinate_reg[4]),
         .I3(y_coordinate_reg[5]),
         .I4(y_coordinate_reg[2]),
         .I5(y_coordinate_reg[3]),
-        .O(\vid_out[3]_INST_0_i_32_n_0 ));
+        .O(\vid_out[3]_INST_0_i_43_n_0 ));
   LUT6 #(
-    .INIT(64'h5555555554000000)) 
-    \vid_out[3]_INST_0_i_33 
+    .INIT(64'h5555555540404000)) 
+    \vid_out[3]_INST_0_i_44 
        (.I0(y_coordinate_reg[5]),
-        .I1(y_coordinate_reg[1]),
-        .I2(y_coordinate_reg[0]),
-        .I3(y_coordinate_reg[3]),
-        .I4(y_coordinate_reg[2]),
+        .I1(y_coordinate_reg[3]),
+        .I2(y_coordinate_reg[2]),
+        .I3(y_coordinate_reg[1]),
+        .I4(y_coordinate_reg[0]),
         .I5(y_coordinate_reg[4]),
-        .O(\vid_out[3]_INST_0_i_33_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair28" *) 
+        .O(\vid_out[3]_INST_0_i_44_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair16" *) 
   LUT3 #(
     .INIT(8'h80)) 
-    \vid_out[3]_INST_0_i_34 
+    \vid_out[3]_INST_0_i_45 
        (.I0(y_coordinate_reg[0]),
         .I1(y_coordinate_reg[2]),
         .I2(y_coordinate_reg[1]),
-        .O(\vid_out[3]_INST_0_i_34_n_0 ));
+        .O(\vid_out[3]_INST_0_i_45_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  LUT4 #(
+    .INIT(16'h0001)) 
+    \vid_out[3]_INST_0_i_46 
+       (.I0(x_coordinate_reg[7]),
+        .I1(x_coordinate_reg[9]),
+        .I2(x_coordinate_reg[10]),
+        .I3(x_coordinate_reg[8]),
+        .O(\vid_out[3]_INST_0_i_46_n_0 ));
   LUT6 #(
-    .INIT(64'hAAAAAAA8AAA8AAA8)) 
-    \vid_out[3]_INST_0_i_35 
-       (.I0(y_coordinate_reg[7]),
-        .I1(y_coordinate_reg[4]),
-        .I2(y_coordinate_reg[6]),
-        .I3(y_coordinate_reg[5]),
-        .I4(y_coordinate_reg[3]),
-        .I5(\vid_out[3]_INST_0_i_75_n_0 ),
-        .O(\vid_out[3]_INST_0_i_35_n_0 ));
+    .INIT(64'h0000000000002F00)) 
+    \vid_out[3]_INST_0_i_47 
+       (.I0(\vid_out[3]_INST_0_i_69_n_0 ),
+        .I1(\vid_out[4]_INST_0_i_12_n_0 ),
+        .I2(x_coordinate_reg[7]),
+        .I3(x_coordinate_reg[8]),
+        .I4(x_coordinate_reg[9]),
+        .I5(x_coordinate_reg[10]),
+        .O(\vid_out[3]_INST_0_i_47_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT5 #(
-    .INIT(32'hDFDFDFFF)) 
-    \vid_out[3]_INST_0_i_36 
-       (.I0(x_coordinate_reg[9]),
-        .I1(x_coordinate_reg[10]),
-        .I2(y_coordinate_reg[8]),
-        .I3(y_coordinate_reg[6]),
-        .I4(y_coordinate_reg[7]),
-        .O(\vid_out[3]_INST_0_i_36_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair22" *) 
-  LUT2 #(
-    .INIT(4'h8)) 
-    \vid_out[3]_INST_0_i_37 
-       (.I0(x_coordinate_reg[6]),
-        .I1(x_coordinate_reg[7]),
-        .O(\vid_out[3]_INST_0_i_37_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair12" *) 
+    .INIT(32'h1555FFFF)) 
+    \vid_out[3]_INST_0_i_48 
+       (.I0(x_coordinate_reg[3]),
+        .I1(x_coordinate_reg[0]),
+        .I2(x_coordinate_reg[1]),
+        .I3(x_coordinate_reg[2]),
+        .I4(x_coordinate_reg[4]),
+        .O(\vid_out[3]_INST_0_i_48_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair10" *) 
+  LUT4 #(
+    .INIT(16'h8000)) 
+    \vid_out[3]_INST_0_i_49 
+       (.I0(y_coordinate_reg[3]),
+        .I1(y_coordinate_reg[2]),
+        .I2(y_coordinate_reg[5]),
+        .I3(y_coordinate_reg[4]),
+        .O(\vid_out[3]_INST_0_i_49_n_0 ));
+  LUT6 #(
+    .INIT(64'h7500FFFF75007500)) 
+    \vid_out[3]_INST_0_i_5 
+       (.I0(\vid_out[3]_INST_0_i_27_n_0 ),
+        .I1(\vid_out[3]_INST_0_i_28_n_0 ),
+        .I2(\vid_out[3]_INST_0_i_29_n_0 ),
+        .I3(\vid_out[3]_INST_0_i_19_n_0 ),
+        .I4(\vid_out[3]_INST_0_i_30_n_0 ),
+        .I5(\vid_out[3]_INST_0_i_21_n_0 ),
+        .O(\vid_out[3]_INST_0_i_5_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair13" *) 
   LUT3 #(
     .INIT(8'hFE)) 
-    \vid_out[3]_INST_0_i_38 
+    \vid_out[3]_INST_0_i_50 
        (.I0(y_coordinate_reg[11]),
         .I1(y_coordinate_reg[10]),
         .I2(y_coordinate_reg[9]),
-        .O(\vid_out[3]_INST_0_i_38_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair9" *) 
+        .O(\vid_out[3]_INST_0_i_50_n_0 ));
+  LUT6 #(
+    .INIT(64'h00000000001FFFFF)) 
+    \vid_out[3]_INST_0_i_51 
+       (.I0(y_coordinate_reg[1]),
+        .I1(y_coordinate_reg[0]),
+        .I2(y_coordinate_reg[2]),
+        .I3(y_coordinate_reg[3]),
+        .I4(y_coordinate_reg[4]),
+        .I5(y_coordinate_reg[5]),
+        .O(\vid_out[3]_INST_0_i_51_n_0 ));
+  LUT6 #(
+    .INIT(64'h1033113311331133)) 
+    \vid_out[3]_INST_0_i_52 
+       (.I0(x_coordinate_reg[5]),
+        .I1(x_coordinate_reg[7]),
+        .I2(\vid_out[3]_INST_0_i_69_n_0 ),
+        .I3(x_coordinate_reg[6]),
+        .I4(x_coordinate_reg[4]),
+        .I5(x_coordinate_reg[3]),
+        .O(\vid_out[3]_INST_0_i_52_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair10" *) 
+  LUT4 #(
+    .INIT(16'h01FF)) 
+    \vid_out[3]_INST_0_i_53 
+       (.I0(y_coordinate_reg[1]),
+        .I1(y_coordinate_reg[2]),
+        .I2(y_coordinate_reg[3]),
+        .I3(y_coordinate_reg[4]),
+        .O(\vid_out[3]_INST_0_i_53_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair15" *) 
+  LUT3 #(
+    .INIT(8'h7F)) 
+    \vid_out[3]_INST_0_i_54 
+       (.I0(y_coordinate_reg[8]),
+        .I1(y_coordinate_reg[7]),
+        .I2(y_coordinate_reg[6]),
+        .O(\vid_out[3]_INST_0_i_54_n_0 ));
+  LUT6 #(
+    .INIT(64'h0001010101010101)) 
+    \vid_out[3]_INST_0_i_55 
+       (.I0(y_coordinate_reg[9]),
+        .I1(y_coordinate_reg[10]),
+        .I2(y_coordinate_reg[11]),
+        .I3(y_coordinate_reg[8]),
+        .I4(\vid_out[4]_INST_0_i_9_n_0 ),
+        .I5(\vid_out[3]_INST_0_i_49_n_0 ),
+        .O(\vid_out[3]_INST_0_i_55_n_0 ));
+  LUT6 #(
+    .INIT(64'hA888A888A8A8A888)) 
+    \vid_out[3]_INST_0_i_56 
+       (.I0(\vid_out[4]_INST_0_i_9_n_0 ),
+        .I1(y_coordinate_reg[5]),
+        .I2(y_coordinate_reg[4]),
+        .I3(y_coordinate_reg[3]),
+        .I4(y_coordinate_reg[2]),
+        .I5(\vid_out[3]_INST_0_i_70_n_0 ),
+        .O(\vid_out[3]_INST_0_i_56_n_0 ));
+  LUT6 #(
+    .INIT(64'hFAF8F8F8F8F8F8F8)) 
+    \vid_out[3]_INST_0_i_57 
+       (.I0(\vid_out[4]_INST_0_i_9_n_0 ),
+        .I1(y_coordinate_reg[5]),
+        .I2(\vid_out[3]_INST_0_i_7_n_0 ),
+        .I3(\vid_out[3]_INST_0_i_45_n_0 ),
+        .I4(y_coordinate_reg[4]),
+        .I5(y_coordinate_reg[3]),
+        .O(\vid_out[3]_INST_0_i_57_n_0 ));
+  LUT6 #(
+    .INIT(64'h000000000000007F)) 
+    \vid_out[3]_INST_0_i_58 
+       (.I0(x_coordinate_reg[2]),
+        .I1(x_coordinate_reg[1]),
+        .I2(x_coordinate_reg[0]),
+        .I3(x_coordinate_reg[3]),
+        .I4(x_coordinate_reg[4]),
+        .I5(x_coordinate_reg[5]),
+        .O(\vid_out[3]_INST_0_i_58_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
   LUT5 #(
-    .INIT(32'h00000057)) 
-    \vid_out[3]_INST_0_i_39 
+    .INIT(32'h00200000)) 
+    \vid_out[3]_INST_0_i_59 
+       (.I0(\vid_out[4]_INST_0_i_11_n_0 ),
+        .I1(x_coordinate_reg[8]),
+        .I2(x_coordinate_reg[7]),
+        .I3(x_coordinate_reg[10]),
+        .I4(x_coordinate_reg[9]),
+        .O(\vid_out[3]_INST_0_i_59_n_0 ));
+  LUT6 #(
+    .INIT(64'hE0EEEEEEEEEEEEEE)) 
+    \vid_out[3]_INST_0_i_6 
+       (.I0(\vid_out[4]_INST_0_i_8_n_0 ),
+        .I1(\vid_out[3]_INST_0_i_31_n_0 ),
+        .I2(\vid_out[3]_INST_0_i_32_n_0 ),
+        .I3(\vid_out[3]_INST_0_i_33_n_0 ),
+        .I4(x_coordinate_reg[6]),
+        .I5(\vid_out[3]_INST_0_i_34_n_0 ),
+        .O(\vid_out[3]_INST_0_i_6_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair14" *) 
+  LUT2 #(
+    .INIT(4'hE)) 
+    \vid_out[3]_INST_0_i_60 
+       (.I0(x_coordinate_reg[9]),
+        .I1(x_coordinate_reg[10]),
+        .O(\vid_out[3]_INST_0_i_60_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair11" *) 
+  LUT3 #(
+    .INIT(8'hA8)) 
+    \vid_out[3]_INST_0_i_61 
        (.I0(x_coordinate_reg[2]),
         .I1(x_coordinate_reg[0]),
         .I2(x_coordinate_reg[1]),
-        .I3(x_coordinate_reg[4]),
-        .I4(x_coordinate_reg[3]),
-        .O(\vid_out[3]_INST_0_i_39_n_0 ));
-  LUT6 #(
-    .INIT(64'h0000000000000002)) 
-    \vid_out[3]_INST_0_i_4 
-       (.I0(\vid_out[3]_INST_0_i_15_n_0 ),
-        .I1(\vid_out[3]_INST_0_i_16_n_0 ),
-        .I2(\vid_out[3]_INST_0_i_17_n_0 ),
-        .I3(\vid_out[3]_INST_0_i_18_n_0 ),
-        .I4(\vid_out[3]_INST_0_i_19_n_0 ),
-        .I5(\vid_out[3]_INST_0_i_20_n_0 ),
-        .O(\vid_out[3]_INST_0_i_4_n_0 ));
-  LUT6 #(
-    .INIT(64'h1111001000100010)) 
-    \vid_out[3]_INST_0_i_40 
-       (.I0(\vid_out[3]_INST_0_i_76_n_0 ),
-        .I1(\vid_out[3]_INST_0_i_77_n_0 ),
-        .I2(\vid_out[3]_INST_0_i_43_n_0 ),
-        .I3(\vid_out[3]_INST_0_i_78_n_0 ),
-        .I4(\vid_out[3]_INST_0_i_60_n_0 ),
-        .I5(\vid_out[3]_INST_0_i_79_n_0 ),
-        .O(\vid_out[3]_INST_0_i_40_n_0 ));
-  LUT6 #(
-    .INIT(64'hFFFFDD0DFFFFFFFF)) 
-    \vid_out[3]_INST_0_i_41 
-       (.I0(\vid_out[3]_INST_0_i_60_n_0 ),
-        .I1(\vid_out[3]_INST_0_i_80_n_0 ),
-        .I2(\vid_out[3]_INST_0_i_62_n_0 ),
-        .I3(\vid_out[3]_INST_0_i_81_n_0 ),
-        .I4(\vid_out[3]_INST_0_i_82_n_0 ),
-        .I5(\x_coordinate[0]_i_5_n_0 ),
-        .O(\vid_out[3]_INST_0_i_41_n_0 ));
-  LUT6 #(
-    .INIT(64'h808080AAAAAAAAAA)) 
-    \vid_out[3]_INST_0_i_42 
-       (.I0(\vid_out[3]_INST_0_i_60_n_0 ),
-        .I1(\vid_out[3]_INST_0_i_83_n_0 ),
-        .I2(\vid_out[3]_INST_0_i_84_n_0 ),
-        .I3(\vid_out[3]_INST_0_i_85_n_0 ),
-        .I4(\vid_out[3]_INST_0_i_86_n_0 ),
-        .I5(\vid_out[3]_INST_0_i_87_n_0 ),
-        .O(\vid_out[3]_INST_0_i_42_n_0 ));
-  LUT6 #(
-    .INIT(64'h0000000000008A00)) 
-    \vid_out[3]_INST_0_i_43 
-       (.I0(y_coordinate_reg[4]),
-        .I1(y_coordinate_reg[3]),
-        .I2(\vid_out[3]_INST_0_i_88_n_0 ),
-        .I3(y_coordinate_reg[7]),
-        .I4(\vid_out[3]_INST_0_i_89_n_0 ),
-        .I5(\vid_out[3]_INST_0_i_90_n_0 ),
-        .O(\vid_out[3]_INST_0_i_43_n_0 ));
-  LUT6 #(
-    .INIT(64'hFDDDFDDDFDDDFFFF)) 
-    \vid_out[3]_INST_0_i_44 
-       (.I0(\vid_out[3]_INST_0_i_91_n_0 ),
-        .I1(\vid_out[3]_INST_0_i_83_n_0 ),
-        .I2(\vid_out[3]_INST_0_i_92_n_0 ),
-        .I3(\vid_out[3]_INST_0_i_93_n_0 ),
-        .I4(\vid_out[3]_INST_0_i_94_n_0 ),
-        .I5(\vid_out[3]_INST_0_i_95_n_0 ),
-        .O(\vid_out[3]_INST_0_i_44_n_0 ));
-  LUT6 #(
-    .INIT(64'h0000000002FF0000)) 
-    \vid_out[3]_INST_0_i_45 
-       (.I0(\vid_out[3]_INST_0_i_96_n_0 ),
-        .I1(\vid_out[3]_INST_0_i_97_n_0 ),
-        .I2(\vid_out[3]_INST_0_i_82_n_0 ),
-        .I3(\vid_out[3]_INST_0_i_98_n_0 ),
-        .I4(\vid_out[3]_INST_0_i_67_n_0 ),
-        .I5(\vid_out[3]_INST_0_i_63_n_0 ),
-        .O(\vid_out[3]_INST_0_i_45_n_0 ));
-  LUT6 #(
-    .INIT(64'hFFFFFFFFFFFFECCF)) 
-    \vid_out[3]_INST_0_i_46 
-       (.I0(x_coordinate_reg[1]),
-        .I1(\vid_out[3]_INST_0_i_99_n_0 ),
-        .I2(x_coordinate_reg[3]),
-        .I3(x_coordinate_reg[2]),
-        .I4(x_coordinate_reg[4]),
-        .I5(\vid_out[3]_INST_0_i_100_n_0 ),
-        .O(\vid_out[3]_INST_0_i_46_n_0 ));
-  LUT5 #(
-    .INIT(32'h00000004)) 
-    \vid_out[3]_INST_0_i_47 
-       (.I0(\vid_out[3]_INST_0_i_101_n_0 ),
-        .I1(y_coordinate_reg[7]),
-        .I2(\vid_out[3]_INST_0_i_89_n_0 ),
-        .I3(\vid_out[3]_INST_0_i_102_n_0 ),
-        .I4(y_coordinate_reg[6]),
-        .O(\vid_out[3]_INST_0_i_47_n_0 ));
-  LUT2 #(
-    .INIT(4'h1)) 
-    \vid_out[3]_INST_0_i_48 
-       (.I0(\vid_out[3]_INST_0_i_103_n_0 ),
-        .I1(\vid_out[3]_INST_0_i_104_n_0 ),
-        .O(\vid_out[3]_INST_0_i_48_n_0 ));
-  LUT6 #(
-    .INIT(64'hAAABFFFFFFFFFFFF)) 
-    \vid_out[3]_INST_0_i_49 
-       (.I0(\vid_out[3]_INST_0_i_104_n_0 ),
-        .I1(y_coordinate_reg[4]),
-        .I2(y_coordinate_reg[3]),
-        .I3(y_coordinate_reg[5]),
-        .I4(y_coordinate_reg[6]),
-        .I5(y_coordinate_reg[7]),
-        .O(\vid_out[3]_INST_0_i_49_n_0 ));
-  LUT6 #(
-    .INIT(64'h08AA080808080808)) 
-    \vid_out[3]_INST_0_i_5 
-       (.I0(\vid_out[0]_INST_0_i_3_n_0 ),
-        .I1(\vid_out[3]_INST_0_i_21_n_0 ),
-        .I2(\vid_out[3]_INST_0_i_22_n_0 ),
-        .I3(x_coordinate_reg[6]),
-        .I4(\y_coordinate[0]_i_4_n_0 ),
-        .I5(\vid_out[3]_INST_0_i_23_n_0 ),
-        .O(\vid_out[3]_INST_0_i_5_n_0 ));
-  LUT6 #(
-    .INIT(64'hFF00020002000200)) 
-    \vid_out[3]_INST_0_i_50 
-       (.I0(\vid_out[3]_INST_0_i_105_n_0 ),
-        .I1(\vid_out[3]_INST_0_i_102_n_0 ),
-        .I2(y_coordinate_reg[6]),
-        .I3(\vid_out[3]_INST_0_i_106_n_0 ),
-        .I4(\vid_out[3]_INST_0_i_107_n_0 ),
-        .I5(\vid_out[3]_INST_0_i_98_n_0 ),
-        .O(\vid_out[3]_INST_0_i_50_n_0 ));
-  LUT6 #(
-    .INIT(64'h5555775700000000)) 
-    \vid_out[3]_INST_0_i_51 
-       (.I0(\vid_out[3]_INST_0_i_108_n_0 ),
-        .I1(\vid_out[3]_INST_0_i_109_n_0 ),
-        .I2(x_coordinate_reg[8]),
-        .I3(\vid_out[3]_INST_0_i_110_n_0 ),
-        .I4(\vid_out[3]_INST_0_i_77_n_0 ),
-        .I5(\vid_out[3]_INST_0_i_57_n_0 ),
-        .O(\vid_out[3]_INST_0_i_51_n_0 ));
-  LUT6 #(
-    .INIT(64'h101010FF10101010)) 
-    \vid_out[3]_INST_0_i_52 
-       (.I0(\vid_out[3]_INST_0_i_111_n_0 ),
-        .I1(\vid_out[3]_INST_0_i_112_n_0 ),
-        .I2(\vid_out[3]_INST_0_i_62_n_0 ),
-        .I3(\vid_out[3]_INST_0_i_78_n_0 ),
-        .I4(\vid_out[3]_INST_0_i_113_n_0 ),
-        .I5(\vid_out[3]_INST_0_i_47_n_0 ),
-        .O(\vid_out[3]_INST_0_i_52_n_0 ));
-  LUT6 #(
-    .INIT(64'h000000000000005D)) 
-    \vid_out[3]_INST_0_i_53 
-       (.I0(x_coordinate_reg[7]),
-        .I1(\vid_out[3]_INST_0_i_114_n_0 ),
-        .I2(x_coordinate_reg[6]),
-        .I3(\vid_out[3]_INST_0_i_77_n_0 ),
-        .I4(x_coordinate_reg[8]),
-        .I5(\vid_out[6]_INST_0_i_11_n_0 ),
-        .O(\vid_out[3]_INST_0_i_53_n_0 ));
-  LUT6 #(
-    .INIT(64'hFDFFFFFFFDFDCCCC)) 
-    \vid_out[3]_INST_0_i_54 
-       (.I0(\y_coordinate[0]_i_4_n_0 ),
-        .I1(\vid_out[3]_INST_0_i_82_n_0 ),
-        .I2(x_coordinate_reg[6]),
-        .I3(x_coordinate_reg[5]),
-        .I4(x_coordinate_reg[7]),
-        .I5(\vid_out[3]_INST_0_i_115_n_0 ),
-        .O(\vid_out[3]_INST_0_i_54_n_0 ));
-  LUT6 #(
-    .INIT(64'h00000000000000A8)) 
-    \vid_out[3]_INST_0_i_55 
-       (.I0(\vid_out[3]_INST_0_i_60_n_0 ),
-        .I1(x_coordinate_reg[6]),
-        .I2(x_coordinate_reg[5]),
-        .I3(\vid_out[3]_INST_0_i_31_n_0 ),
-        .I4(\vid_out[3]_INST_0_i_116_n_0 ),
-        .I5(\vid_out[3]_INST_0_i_117_n_0 ),
-        .O(\vid_out[3]_INST_0_i_55_n_0 ));
-  LUT6 #(
-    .INIT(64'h7070707777777777)) 
-    \vid_out[3]_INST_0_i_56 
-       (.I0(\vid_out[3]_INST_0_i_118_n_0 ),
-        .I1(\vid_out[3]_INST_0_i_119_n_0 ),
-        .I2(\vid_out[3]_INST_0_i_120_n_0 ),
-        .I3(\vid_out[3]_INST_0_i_85_n_0 ),
-        .I4(x_coordinate_reg[5]),
-        .I5(\vid_out[3]_INST_0_i_92_n_0 ),
-        .O(\vid_out[3]_INST_0_i_56_n_0 ));
-  LUT6 #(
-    .INIT(64'h0000000015550000)) 
-    \vid_out[3]_INST_0_i_57 
-       (.I0(\vid_out[3]_INST_0_i_121_n_0 ),
-        .I1(\vid_out[3]_INST_0_i_122_n_0 ),
-        .I2(y_coordinate_reg[5]),
-        .I3(\vid_out[3]_INST_0_i_75_n_0 ),
-        .I4(y_coordinate_reg[7]),
-        .I5(\vid_out[3]_INST_0_i_101_n_0 ),
-        .O(\vid_out[3]_INST_0_i_57_n_0 ));
-  LUT6 #(
-    .INIT(64'h0000000001000000)) 
-    \vid_out[3]_INST_0_i_58 
-       (.I0(x_coordinate_reg[8]),
-        .I1(\vid_out[3]_INST_0_i_77_n_0 ),
-        .I2(x_coordinate_reg[6]),
-        .I3(\vid_out[3]_INST_0_i_114_n_0 ),
-        .I4(x_coordinate_reg[7]),
-        .I5(\vid_out[6]_INST_0_i_12_n_0 ),
-        .O(\vid_out[3]_INST_0_i_58_n_0 ));
-  LUT6 #(
-    .INIT(64'hFFFFFFDFFFFFFFFF)) 
-    \vid_out[3]_INST_0_i_59 
-       (.I0(\y_coordinate[0]_i_4_n_0 ),
-        .I1(\vid_out[3]_INST_0_i_82_n_0 ),
-        .I2(x_coordinate_reg[7]),
-        .I3(x_coordinate_reg[6]),
-        .I4(\vid_out[3]_INST_0_i_123_n_0 ),
-        .I5(x_coordinate_reg[5]),
-        .O(\vid_out[3]_INST_0_i_59_n_0 ));
-  LUT6 #(
-    .INIT(64'h4040404040404000)) 
-    \vid_out[3]_INST_0_i_6 
-       (.I0(\vid_out[3]_INST_0_i_24_n_0 ),
-        .I1(\x_coordinate[0]_i_3_n_0 ),
-        .I2(x_coordinate_reg[7]),
-        .I3(\vid_out[3]_INST_0_i_25_n_0 ),
-        .I4(x_coordinate_reg[6]),
-        .I5(x_coordinate_reg[5]),
-        .O(\vid_out[3]_INST_0_i_6_n_0 ));
-  LUT6 #(
-    .INIT(64'h0004000005050000)) 
-    \vid_out[3]_INST_0_i_60 
-       (.I0(\vid_out[3]_INST_0_i_101_n_0 ),
-        .I1(\vid_out[3]_INST_0_i_72_n_0 ),
-        .I2(\vid_out[3]_INST_0_i_89_n_0 ),
-        .I3(y_coordinate_reg[5]),
-        .I4(y_coordinate_reg[7]),
-        .I5(y_coordinate_reg[6]),
-        .O(\vid_out[3]_INST_0_i_60_n_0 ));
-  LUT6 #(
-    .INIT(64'hA8AAA8A8AAAAAAAA)) 
-    \vid_out[3]_INST_0_i_61 
-       (.I0(\vid_out[3]_INST_0_i_124_n_0 ),
-        .I1(\vid_out[3]_INST_0_i_97_n_0 ),
-        .I2(\vid_out[3]_INST_0_i_77_n_0 ),
-        .I3(\vid_out[3]_INST_0_i_125_n_0 ),
-        .I4(\vid_out[0]_INST_0_i_12_n_0 ),
-        .I5(\vid_out[3]_INST_0_i_93_n_0 ),
         .O(\vid_out[3]_INST_0_i_61_n_0 ));
-  LUT6 #(
-    .INIT(64'h0105050001000500)) 
+  LUT2 #(
+    .INIT(4'h7)) 
     \vid_out[3]_INST_0_i_62 
-       (.I0(\vid_out[3]_INST_0_i_121_n_0 ),
-        .I1(\vid_out[3]_INST_0_i_75_n_0 ),
-        .I2(\vid_out[3]_INST_0_i_126_n_0 ),
-        .I3(y_coordinate_reg[4]),
-        .I4(y_coordinate_reg[3]),
-        .I5(\vid_out[3]_INST_0_i_34_n_0 ),
+       (.I0(x_coordinate_reg[5]),
+        .I1(x_coordinate_reg[4]),
         .O(\vid_out[3]_INST_0_i_62_n_0 ));
-  LUT6 #(
-    .INIT(64'h0000000000001550)) 
+  LUT2 #(
+    .INIT(4'h7)) 
     \vid_out[3]_INST_0_i_63 
-       (.I0(\vid_out[3]_INST_0_i_77_n_0 ),
-        .I1(x_coordinate_reg[3]),
-        .I2(x_coordinate_reg[4]),
-        .I3(x_coordinate_reg[5]),
-        .I4(x_coordinate_reg[6]),
-        .I5(\vid_out[3]_INST_0_i_31_n_0 ),
+       (.I0(x_coordinate_reg[8]),
+        .I1(x_coordinate_reg[7]),
         .O(\vid_out[3]_INST_0_i_63_n_0 ));
   LUT6 #(
-    .INIT(64'h555F5D5FFFFFFFFF)) 
+    .INIT(64'h15FF15FF15FF55FF)) 
     \vid_out[3]_INST_0_i_64 
-       (.I0(\vid_out[3]_INST_0_i_92_n_0 ),
-        .I1(\x_coordinate[0]_i_4_n_0 ),
-        .I2(\vid_out[3]_INST_0_i_97_n_0 ),
-        .I3(x_coordinate_reg[5]),
-        .I4(x_coordinate_reg[4]),
-        .I5(x_coordinate_reg[8]),
-        .O(\vid_out[3]_INST_0_i_64_n_0 ));
-  LUT5 #(
-    .INIT(32'h30330022)) 
-    \vid_out[3]_INST_0_i_65 
-       (.I0(\vid_out[3]_INST_0_i_63_n_0 ),
-        .I1(\vid_out[3]_INST_0_i_104_n_0 ),
-        .I2(\vid_out[3]_INST_0_i_127_n_0 ),
-        .I3(\vid_out[3]_INST_0_i_128_n_0 ),
-        .I4(\vid_out[3]_INST_0_i_105_n_0 ),
-        .O(\vid_out[3]_INST_0_i_65_n_0 ));
-  LUT6 #(
-    .INIT(64'h00000000444444F4)) 
-    \vid_out[3]_INST_0_i_66 
-       (.I0(\vid_out[3]_INST_0_i_95_n_0 ),
-        .I1(\vid_out[3]_INST_0_i_62_n_0 ),
-        .I2(\vid_out[3]_INST_0_i_57_n_0 ),
-        .I3(\vid_out[3]_INST_0_i_129_n_0 ),
-        .I4(\vid_out[3]_INST_0_i_77_n_0 ),
-        .I5(\vid_out[3]_INST_0_i_94_n_0 ),
-        .O(\vid_out[3]_INST_0_i_66_n_0 ));
-  LUT6 #(
-    .INIT(64'hFFFFFFF0FFDDFFDD)) 
-    \vid_out[3]_INST_0_i_67 
-       (.I0(\vid_out[3]_INST_0_i_130_n_0 ),
-        .I1(\x_coordinate[0]_i_5_n_0 ),
-        .I2(\vid_out[3]_INST_0_i_97_n_0 ),
-        .I3(\vid_out[3]_INST_0_i_77_n_0 ),
-        .I4(\vid_out[3]_INST_0_i_131_n_0 ),
-        .I5(x_coordinate_reg[8]),
-        .O(\vid_out[3]_INST_0_i_67_n_0 ));
-  LUT6 #(
-    .INIT(64'hAAAAAAAA00088888)) 
-    \vid_out[3]_INST_0_i_68 
-       (.I0(\vid_out[3]_INST_0_i_54_n_0 ),
-        .I1(\vid_out[3]_INST_0_i_132_n_0 ),
-        .I2(x_coordinate_reg[3]),
-        .I3(\vid_out[3]_INST_0_i_133_n_0 ),
-        .I4(\vid_out[0]_INST_0_i_12_n_0 ),
-        .I5(\vid_out[6]_INST_0_i_10_n_0 ),
-        .O(\vid_out[3]_INST_0_i_68_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair30" *) 
-  LUT2 #(
-    .INIT(4'h7)) 
-    \vid_out[3]_INST_0_i_69 
-       (.I0(x_coordinate_reg[1]),
-        .I1(x_coordinate_reg[0]),
-        .O(\vid_out[3]_INST_0_i_69_n_0 ));
-  LUT6 #(
-    .INIT(64'h02222222AAAAAAAA)) 
-    \vid_out[3]_INST_0_i_7 
-       (.I0(\vid_out[3]_INST_0_i_23_n_0 ),
-        .I1(x_coordinate_reg[5]),
-        .I2(x_coordinate_reg[3]),
-        .I3(x_coordinate_reg[2]),
-        .I4(x_coordinate_reg[4]),
-        .I5(x_coordinate_reg[6]),
-        .O(\vid_out[3]_INST_0_i_7_n_0 ));
-  LUT6 #(
-    .INIT(64'h0101011111111111)) 
-    \vid_out[3]_INST_0_i_70 
-       (.I0(x_coordinate_reg[7]),
-        .I1(x_coordinate_reg[6]),
-        .I2(x_coordinate_reg[4]),
-        .I3(x_coordinate_reg[2]),
-        .I4(x_coordinate_reg[3]),
-        .I5(x_coordinate_reg[5]),
-        .O(\vid_out[3]_INST_0_i_70_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair27" *) 
-  LUT3 #(
-    .INIT(8'h1F)) 
-    \vid_out[3]_INST_0_i_71 
-       (.I0(x_coordinate_reg[1]),
-        .I1(x_coordinate_reg[0]),
-        .I2(x_coordinate_reg[2]),
-        .O(\vid_out[3]_INST_0_i_71_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair23" *) 
-  LUT4 #(
-    .INIT(16'h01FF)) 
-    \vid_out[3]_INST_0_i_72 
-       (.I0(y_coordinate_reg[1]),
-        .I1(y_coordinate_reg[3]),
-        .I2(y_coordinate_reg[2]),
-        .I3(y_coordinate_reg[4]),
-        .O(\vid_out[3]_INST_0_i_72_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair14" *) 
-  LUT5 #(
-    .INIT(32'hFFFFFFFE)) 
-    \vid_out[3]_INST_0_i_73 
-       (.I0(y_coordinate_reg[5]),
-        .I1(y_coordinate_reg[11]),
-        .I2(y_coordinate_reg[10]),
-        .I3(y_coordinate_reg[9]),
-        .I4(y_coordinate_reg[8]),
-        .O(\vid_out[3]_INST_0_i_73_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
-  LUT3 #(
-    .INIT(8'h57)) 
-    \vid_out[3]_INST_0_i_74 
-       (.I0(y_coordinate_reg[2]),
-        .I1(y_coordinate_reg[1]),
-        .I2(y_coordinate_reg[0]),
-        .O(\vid_out[3]_INST_0_i_74_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair28" *) 
-  LUT3 #(
-    .INIT(8'hFE)) 
-    \vid_out[3]_INST_0_i_75 
-       (.I0(y_coordinate_reg[2]),
-        .I1(y_coordinate_reg[1]),
-        .I2(y_coordinate_reg[0]),
-        .O(\vid_out[3]_INST_0_i_75_n_0 ));
-  LUT6 #(
-    .INIT(64'h5555555555555540)) 
-    \vid_out[3]_INST_0_i_76 
-       (.I0(\vid_out[3]_INST_0_i_31_n_0 ),
-        .I1(x_coordinate_reg[1]),
-        .I2(x_coordinate_reg[2]),
-        .I3(x_coordinate_reg[3]),
-        .I4(x_coordinate_reg[4]),
-        .I5(\vid_out[3]_INST_0_i_134_n_0 ),
-        .O(\vid_out[3]_INST_0_i_76_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair8" *) 
-  LUT2 #(
-    .INIT(4'hE)) 
-    \vid_out[3]_INST_0_i_77 
-       (.I0(x_coordinate_reg[9]),
-        .I1(x_coordinate_reg[10]),
-        .O(\vid_out[3]_INST_0_i_77_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair10" *) 
-  LUT5 #(
-    .INIT(32'h07FF05FF)) 
-    \vid_out[3]_INST_0_i_78 
        (.I0(x_coordinate_reg[6]),
-        .I1(x_coordinate_reg[5]),
-        .I2(x_coordinate_reg[7]),
-        .I3(x_coordinate_reg[8]),
-        .I4(\vid_out[3]_INST_0_i_135_n_0 ),
-        .O(\vid_out[3]_INST_0_i_78_n_0 ));
-  LUT6 #(
-    .INIT(64'hFFFF000080000000)) 
-    \vid_out[3]_INST_0_i_79 
-       (.I0(x_coordinate_reg[6]),
-        .I1(\vid_out[0]_INST_0_i_12_n_0 ),
-        .I2(x_coordinate_reg[2]),
-        .I3(x_coordinate_reg[3]),
-        .I4(x_coordinate_reg[8]),
-        .I5(x_coordinate_reg[7]),
-        .O(\vid_out[3]_INST_0_i_79_n_0 ));
-  LUT4 #(
-    .INIT(16'hF111)) 
-    \vid_out[3]_INST_0_i_8 
-       (.I0(\vid_out[3]_INST_0_i_26_n_0 ),
-        .I1(\vid_out[3]_INST_0_i_27_n_0 ),
-        .I2(\vid_out[3]_INST_0_i_28_n_0 ),
-        .I3(\vid_out[3]_INST_0_i_29_n_0 ),
-        .O(\vid_out[3]_INST_0_i_8_n_0 ));
-  LUT6 #(
-    .INIT(64'h55555777FFFFFFFF)) 
-    \vid_out[3]_INST_0_i_80 
-       (.I0(x_coordinate_reg[5]),
-        .I1(x_coordinate_reg[4]),
-        .I2(x_coordinate_reg[2]),
-        .I3(x_coordinate_reg[1]),
-        .I4(x_coordinate_reg[3]),
-        .I5(\vid_out[3]_INST_0_i_37_n_0 ),
-        .O(\vid_out[3]_INST_0_i_80_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
-  LUT5 #(
-    .INIT(32'h01FFFFFF)) 
-    \vid_out[3]_INST_0_i_81 
-       (.I0(x_coordinate_reg[3]),
         .I1(x_coordinate_reg[4]),
         .I2(x_coordinate_reg[5]),
         .I3(x_coordinate_reg[7]),
-        .I4(x_coordinate_reg[6]),
-        .O(\vid_out[3]_INST_0_i_81_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair18" *) 
-  LUT3 #(
-    .INIT(8'hFE)) 
-    \vid_out[3]_INST_0_i_82 
-       (.I0(x_coordinate_reg[8]),
-        .I1(x_coordinate_reg[10]),
-        .I2(x_coordinate_reg[9]),
-        .O(\vid_out[3]_INST_0_i_82_n_0 ));
-  LUT6 #(
-    .INIT(64'h0000000000000008)) 
-    \vid_out[3]_INST_0_i_83 
-       (.I0(x_coordinate_reg[9]),
-        .I1(\vid_out[3]_INST_0_i_136_n_0 ),
-        .I2(x_coordinate_reg[7]),
-        .I3(x_coordinate_reg[6]),
-        .I4(x_coordinate_reg[10]),
-        .I5(x_coordinate_reg[8]),
-        .O(\vid_out[3]_INST_0_i_83_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair19" *) 
-  LUT5 #(
-    .INIT(32'hFFFEAAAA)) 
-    \vid_out[3]_INST_0_i_84 
-       (.I0(x_coordinate_reg[5]),
-        .I1(x_coordinate_reg[3]),
-        .I2(x_coordinate_reg[1]),
-        .I3(x_coordinate_reg[2]),
-        .I4(x_coordinate_reg[4]),
-        .O(\vid_out[3]_INST_0_i_84_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair11" *) 
-  LUT4 #(
-    .INIT(16'hEEEA)) 
-    \vid_out[3]_INST_0_i_85 
-       (.I0(x_coordinate_reg[4]),
-        .I1(x_coordinate_reg[3]),
-        .I2(x_coordinate_reg[2]),
-        .I3(x_coordinate_reg[1]),
-        .O(\vid_out[3]_INST_0_i_85_n_0 ));
-  LUT6 #(
-    .INIT(64'hEFFFFFFFFFFFFFFF)) 
-    \vid_out[3]_INST_0_i_86 
-       (.I0(x_coordinate_reg[10]),
-        .I1(x_coordinate_reg[9]),
-        .I2(x_coordinate_reg[8]),
-        .I3(x_coordinate_reg[7]),
-        .I4(x_coordinate_reg[6]),
-        .I5(x_coordinate_reg[5]),
-        .O(\vid_out[3]_INST_0_i_86_n_0 ));
-  LUT6 #(
-    .INIT(64'hFEEEEFEFFFFFFFFF)) 
-    \vid_out[3]_INST_0_i_87 
-       (.I0(\vid_out[3]_INST_0_i_77_n_0 ),
-        .I1(\vid_out[3]_INST_0_i_137_n_0 ),
-        .I2(x_coordinate_reg[2]),
-        .I3(x_coordinate_reg[1]),
         .I4(x_coordinate_reg[3]),
-        .I5(x_coordinate_reg[4]),
-        .O(\vid_out[3]_INST_0_i_87_n_0 ));
+        .I5(\vid_out[3]_INST_0_i_61_n_0 ),
+        .O(\vid_out[3]_INST_0_i_64_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  LUT4 #(
+    .INIT(16'hE000)) 
+    \vid_out[3]_INST_0_i_65 
+       (.I0(x_coordinate_reg[2]),
+        .I1(x_coordinate_reg[3]),
+        .I2(x_coordinate_reg[4]),
+        .I3(x_coordinate_reg[5]),
+        .O(\vid_out[3]_INST_0_i_65_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT2 #(
-    .INIT(4'h7)) 
-    \vid_out[3]_INST_0_i_88 
-       (.I0(y_coordinate_reg[1]),
-        .I1(y_coordinate_reg[2]),
-        .O(\vid_out[3]_INST_0_i_88_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair14" *) 
+    .INIT(4'hE)) 
+    \vid_out[3]_INST_0_i_66 
+       (.I0(x_coordinate_reg[6]),
+        .I1(x_coordinate_reg[5]),
+        .O(\vid_out[3]_INST_0_i_66_n_0 ));
+  LUT6 #(
+    .INIT(64'hFFFFFFFFFF008000)) 
+    \vid_out[3]_INST_0_i_67 
+       (.I0(x_coordinate_reg[2]),
+        .I1(x_coordinate_reg[3]),
+        .I2(x_coordinate_reg[4]),
+        .I3(x_coordinate_reg[6]),
+        .I4(x_coordinate_reg[5]),
+        .I5(x_coordinate_reg[7]),
+        .O(\vid_out[3]_INST_0_i_67_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  LUT3 #(
+    .INIT(8'h01)) 
+    \vid_out[3]_INST_0_i_68 
+       (.I0(y_coordinate_reg[5]),
+        .I1(y_coordinate_reg[4]),
+        .I2(y_coordinate_reg[3]),
+        .O(\vid_out[3]_INST_0_i_68_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair0" *) 
+  LUT3 #(
+    .INIT(8'h01)) 
+    \vid_out[3]_INST_0_i_69 
+       (.I0(x_coordinate_reg[0]),
+        .I1(x_coordinate_reg[1]),
+        .I2(x_coordinate_reg[2]),
+        .O(\vid_out[3]_INST_0_i_69_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair13" *) 
   LUT4 #(
     .INIT(16'hFFFE)) 
-    \vid_out[3]_INST_0_i_89 
+    \vid_out[3]_INST_0_i_7 
        (.I0(y_coordinate_reg[8]),
         .I1(y_coordinate_reg[9]),
         .I2(y_coordinate_reg[10]),
         .I3(y_coordinate_reg[11]),
-        .O(\vid_out[3]_INST_0_i_89_n_0 ));
+        .O(\vid_out[3]_INST_0_i_7_n_0 ));
+  LUT2 #(
+    .INIT(4'h1)) 
+    \vid_out[3]_INST_0_i_70 
+       (.I0(y_coordinate_reg[0]),
+        .I1(y_coordinate_reg[1]),
+        .O(\vid_out[3]_INST_0_i_70_n_0 ));
   LUT6 #(
-    .INIT(64'h8888888088808880)) 
+    .INIT(64'h11151515FFFFFFFF)) 
+    \vid_out[3]_INST_0_i_8 
+       (.I0(\vid_out[3]_INST_0_i_31_n_0 ),
+        .I1(y_coordinate_reg[4]),
+        .I2(y_coordinate_reg[3]),
+        .I3(y_coordinate_reg[2]),
+        .I4(y_coordinate_reg[1]),
+        .I5(y_coordinate_reg[7]),
+        .O(\vid_out[3]_INST_0_i_8_n_0 ));
+  LUT6 #(
+    .INIT(64'h000800080008AAAA)) 
     \vid_out[3]_INST_0_i_9 
-       (.I0(x_coordinate_reg[4]),
-        .I1(x_coordinate_reg[5]),
-        .I2(x_coordinate_reg[3]),
-        .I3(x_coordinate_reg[2]),
-        .I4(x_coordinate_reg[1]),
-        .I5(x_coordinate_reg[0]),
+       (.I0(\vid_out[4]_INST_0_i_5_n_0 ),
+        .I1(\vid_out[3]_INST_0_i_35_n_0 ),
+        .I2(\vid_out[3]_INST_0_i_36_n_0 ),
+        .I3(\vid_out[3]_INST_0_i_37_n_0 ),
+        .I4(\vid_out[4]_INST_0_i_8_n_0 ),
+        .I5(\vid_out[3]_INST_0_i_33_n_0 ),
         .O(\vid_out[3]_INST_0_i_9_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair21" *) 
-  LUT2 #(
-    .INIT(4'hE)) 
-    \vid_out[3]_INST_0_i_90 
-       (.I0(y_coordinate_reg[5]),
-        .I1(y_coordinate_reg[6]),
-        .O(\vid_out[3]_INST_0_i_90_n_0 ));
   LUT6 #(
-    .INIT(64'hFFFFFFFFFFFFFF1F)) 
-    \vid_out[3]_INST_0_i_91 
-       (.I0(x_coordinate_reg[3]),
-        .I1(x_coordinate_reg[2]),
-        .I2(x_coordinate_reg[4]),
-        .I3(\vid_out[3]_INST_0_i_137_n_0 ),
-        .I4(x_coordinate_reg[9]),
-        .I5(x_coordinate_reg[10]),
-        .O(\vid_out[3]_INST_0_i_91_n_0 ));
-  LUT6 #(
-    .INIT(64'h0000000000FF2FFF)) 
-    \vid_out[3]_INST_0_i_92 
-       (.I0(\vid_out[3]_INST_0_i_123_n_0 ),
-        .I1(x_coordinate_reg[5]),
-        .I2(x_coordinate_reg[6]),
-        .I3(x_coordinate_reg[8]),
-        .I4(x_coordinate_reg[7]),
-        .I5(\vid_out[3]_INST_0_i_77_n_0 ),
-        .O(\vid_out[3]_INST_0_i_92_n_0 ));
-  LUT6 #(
-    .INIT(64'hAAA0AA80AA80AA80)) 
-    \vid_out[3]_INST_0_i_93 
-       (.I0(x_coordinate_reg[8]),
-        .I1(x_coordinate_reg[4]),
-        .I2(x_coordinate_reg[5]),
-        .I3(\vid_out[3]_INST_0_i_97_n_0 ),
-        .I4(x_coordinate_reg[2]),
-        .I5(x_coordinate_reg[3]),
-        .O(\vid_out[3]_INST_0_i_93_n_0 ));
-  LUT6 #(
-    .INIT(64'h5555555500045555)) 
-    \vid_out[3]_INST_0_i_94 
-       (.I0(\vid_out[3]_INST_0_i_77_n_0 ),
-        .I1(\vid_out[0]_INST_0_i_13_n_0 ),
-        .I2(x_coordinate_reg[1]),
-        .I3(x_coordinate_reg[2]),
-        .I4(x_coordinate_reg[6]),
-        .I5(\vid_out[3]_INST_0_i_31_n_0 ),
-        .O(\vid_out[3]_INST_0_i_94_n_0 ));
-  LUT6 #(
-    .INIT(64'hEAAAAAAAAAAAAAAA)) 
-    \vid_out[3]_INST_0_i_95 
-       (.I0(\vid_out[3]_INST_0_i_77_n_0 ),
-        .I1(x_coordinate_reg[5]),
-        .I2(x_coordinate_reg[6]),
-        .I3(x_coordinate_reg[7]),
-        .I4(x_coordinate_reg[8]),
-        .I5(\vid_out[3]_INST_0_i_85_n_0 ),
-        .O(\vid_out[3]_INST_0_i_95_n_0 ));
-  LUT6 #(
-    .INIT(64'h57777777FFFFFFFF)) 
-    \vid_out[3]_INST_0_i_96 
-       (.I0(x_coordinate_reg[5]),
-        .I1(x_coordinate_reg[3]),
-        .I2(x_coordinate_reg[1]),
-        .I3(x_coordinate_reg[0]),
-        .I4(x_coordinate_reg[2]),
-        .I5(x_coordinate_reg[4]),
-        .O(\vid_out[3]_INST_0_i_96_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair29" *) 
-  LUT2 #(
-    .INIT(4'hE)) 
-    \vid_out[3]_INST_0_i_97 
-       (.I0(x_coordinate_reg[6]),
-        .I1(x_coordinate_reg[7]),
-        .O(\vid_out[3]_INST_0_i_97_n_0 ));
-  LUT6 #(
-    .INIT(64'h0001000000010001)) 
-    \vid_out[3]_INST_0_i_98 
-       (.I0(x_coordinate_reg[9]),
-        .I1(x_coordinate_reg[8]),
-        .I2(x_coordinate_reg[7]),
-        .I3(x_coordinate_reg[10]),
-        .I4(\vid_out[3]_INST_0_i_11_n_0 ),
-        .I5(x_coordinate_reg[6]),
-        .O(\vid_out[3]_INST_0_i_98_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair34" *) 
-  LUT2 #(
-    .INIT(4'h7)) 
-    \vid_out[3]_INST_0_i_99 
-       (.I0(x_coordinate_reg[6]),
-        .I1(x_coordinate_reg[5]),
-        .O(\vid_out[3]_INST_0_i_99_n_0 ));
-  LUT4 #(
-    .INIT(16'h8AAA)) 
+    .INIT(64'hAAAAAAAAAAAAA8AA)) 
     \vid_out[4]_INST_0 
        (.I0(video_active),
-        .I1(\vid_out[3]_INST_0_i_1_n_0 ),
+        .I1(\vid_out[3]_INST_0_i_3_n_0 ),
         .I2(\vid_out[3]_INST_0_i_4_n_0 ),
-        .I3(\vid_out[3]_INST_0_i_3_n_0 ),
+        .I3(\vid_out[3]_INST_0_i_2_n_0 ),
+        .I4(\vid_out[4]_INST_0_i_1_n_0 ),
+        .I5(\vid_out[4]_INST_0_i_2_n_0 ),
         .O(vid_out[6]));
   LUT6 #(
-    .INIT(64'h00000000FFF70000)) 
-    \vid_out[6]_INST_0 
-       (.I0(\vid_out[3]_INST_0_i_3_n_0 ),
-        .I1(\vid_out[3]_INST_0_i_4_n_0 ),
-        .I2(\vid_out[3]_INST_0_i_1_n_0 ),
-        .I3(\vid_out[3]_INST_0_i_2_n_0 ),
-        .I4(video_active),
-        .I5(\vid_out[6]_INST_0_i_1_n_0 ),
-        .O(vid_out[5]));
+    .INIT(64'hBBAAFFAABBAAFBAA)) 
+    \vid_out[4]_INST_0_i_1 
+       (.I0(\vid_out[3]_INST_0_i_10_n_0 ),
+        .I1(\vid_out[4]_INST_0_i_3_n_0 ),
+        .I2(\vid_out[4]_INST_0_i_4_n_0 ),
+        .I3(\vid_out[4]_INST_0_i_5_n_0 ),
+        .I4(\vid_out[3]_INST_0_i_8_n_0 ),
+        .I5(\vid_out[4]_INST_0_i_6_n_0 ),
+        .O(\vid_out[4]_INST_0_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'hEEFFEEFEFFFFFEFE)) 
-    \vid_out[6]_INST_0_i_1 
-       (.I0(\vid_out[6]_INST_0_i_2_n_0 ),
-        .I1(\vid_out[6]_INST_0_i_3_n_0 ),
-        .I2(\vid_out[6]_INST_0_i_4_n_0 ),
-        .I3(\vid_out[6]_INST_0_i_5_n_0 ),
-        .I4(\vid_out[6]_INST_0_i_6_n_0 ),
-        .I5(\vid_out[6]_INST_0_i_7_n_0 ),
-        .O(\vid_out[6]_INST_0_i_1_n_0 ));
-  LUT6 #(
-    .INIT(64'hFFFEFFFEFFFFFFFE)) 
-    \vid_out[6]_INST_0_i_10 
-       (.I0(x_coordinate_reg[9]),
-        .I1(x_coordinate_reg[8]),
-        .I2(x_coordinate_reg[7]),
-        .I3(x_coordinate_reg[10]),
-        .I4(x_coordinate_reg[6]),
-        .I5(\vid_out[0]_INST_0_i_8_n_0 ),
-        .O(\vid_out[6]_INST_0_i_10_n_0 ));
-  LUT6 #(
-    .INIT(64'h0001555555555555)) 
-    \vid_out[6]_INST_0_i_11 
-       (.I0(\vid_out[3]_INST_0_i_100_n_0 ),
-        .I1(x_coordinate_reg[4]),
-        .I2(x_coordinate_reg[2]),
-        .I3(x_coordinate_reg[3]),
-        .I4(x_coordinate_reg[6]),
-        .I5(x_coordinate_reg[5]),
-        .O(\vid_out[6]_INST_0_i_11_n_0 ));
-  LUT6 #(
-    .INIT(64'h0000000000000001)) 
-    \vid_out[6]_INST_0_i_12 
-       (.I0(x_coordinate_reg[6]),
-        .I1(x_coordinate_reg[5]),
-        .I2(x_coordinate_reg[3]),
-        .I3(x_coordinate_reg[4]),
-        .I4(x_coordinate_reg[1]),
-        .I5(x_coordinate_reg[2]),
-        .O(\vid_out[6]_INST_0_i_12_n_0 ));
-  LUT2 #(
-    .INIT(4'hE)) 
-    \vid_out[6]_INST_0_i_13 
-       (.I0(y_coordinate_reg[9]),
-        .I1(y_coordinate_reg[10]),
-        .O(\vid_out[6]_INST_0_i_13_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair13" *) 
-  LUT2 #(
-    .INIT(4'h7)) 
-    \vid_out[6]_INST_0_i_14 
-       (.I0(y_coordinate_reg[6]),
-        .I1(y_coordinate_reg[7]),
-        .O(\vid_out[6]_INST_0_i_14_n_0 ));
-  LUT6 #(
-    .INIT(64'hFE00000000000000)) 
-    \vid_out[6]_INST_0_i_15 
-       (.I0(x_coordinate_reg[2]),
-        .I1(x_coordinate_reg[1]),
-        .I2(x_coordinate_reg[0]),
-        .I3(x_coordinate_reg[6]),
-        .I4(x_coordinate_reg[3]),
-        .I5(x_coordinate_reg[4]),
-        .O(\vid_out[6]_INST_0_i_15_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair17" *) 
+    .INIT(64'h0000000000010101)) 
+    \vid_out[4]_INST_0_i_10 
+       (.I0(y_coordinate_reg[3]),
+        .I1(y_coordinate_reg[4]),
+        .I2(y_coordinate_reg[5]),
+        .I3(y_coordinate_reg[0]),
+        .I4(y_coordinate_reg[1]),
+        .I5(y_coordinate_reg[2]),
+        .O(\vid_out[4]_INST_0_i_10_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
   LUT5 #(
-    .INIT(32'h00000001)) 
-    \vid_out[6]_INST_0_i_16 
+    .INIT(32'h01FFFFFF)) 
+    \vid_out[4]_INST_0_i_11 
        (.I0(x_coordinate_reg[3]),
         .I1(x_coordinate_reg[4]),
+        .I2(x_coordinate_reg[2]),
+        .I3(x_coordinate_reg[5]),
+        .I4(x_coordinate_reg[6]),
+        .O(\vid_out[4]_INST_0_i_11_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair12" *) 
+  LUT4 #(
+    .INIT(16'hFFFE)) 
+    \vid_out[4]_INST_0_i_12 
+       (.I0(x_coordinate_reg[4]),
+        .I1(x_coordinate_reg[3]),
         .I2(x_coordinate_reg[5]),
-        .I3(x_coordinate_reg[1]),
-        .I4(x_coordinate_reg[2]),
-        .O(\vid_out[6]_INST_0_i_16_n_0 ));
+        .I3(x_coordinate_reg[6]),
+        .O(\vid_out[4]_INST_0_i_12_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  LUT2 #(
+    .INIT(4'h8)) 
+    \vid_out[4]_INST_0_i_13 
+       (.I0(x_coordinate_reg[6]),
+        .I1(x_coordinate_reg[5]),
+        .O(\vid_out[4]_INST_0_i_13_n_0 ));
+  LUT6 #(
+    .INIT(64'hFFFEAAAAFFFFFFFF)) 
+    \vid_out[4]_INST_0_i_14 
+       (.I0(\vid_out[3]_INST_0_i_32_n_0 ),
+        .I1(y_coordinate_reg[3]),
+        .I2(y_coordinate_reg[4]),
+        .I3(y_coordinate_reg[5]),
+        .I4(\vid_out[4]_INST_0_i_9_n_0 ),
+        .I5(x_coordinate_reg[6]),
+        .O(\vid_out[4]_INST_0_i_14_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair12" *) 
+  LUT4 #(
+    .INIT(16'hFFF8)) 
+    \vid_out[4]_INST_0_i_15 
+       (.I0(x_coordinate_reg[2]),
+        .I1(x_coordinate_reg[3]),
+        .I2(x_coordinate_reg[4]),
+        .I3(x_coordinate_reg[6]),
+        .O(\vid_out[4]_INST_0_i_15_n_0 ));
+  LUT6 #(
+    .INIT(64'h1010101010101011)) 
+    \vid_out[4]_INST_0_i_2 
+       (.I0(\vid_out[3]_INST_0_i_8_n_0 ),
+        .I1(\vid_out[3]_INST_0_i_7_n_0 ),
+        .I2(\vid_out[4]_INST_0_i_7_n_0 ),
+        .I3(y_coordinate_reg[6]),
+        .I4(y_coordinate_reg[5]),
+        .I5(\vid_out[4]_INST_0_i_8_n_0 ),
+        .O(\vid_out[4]_INST_0_i_2_n_0 ));
+  LUT6 #(
+    .INIT(64'hEEEEEEEEEEE0EEEE)) 
+    \vid_out[4]_INST_0_i_3 
+       (.I0(\vid_out[3]_INST_0_i_33_n_0 ),
+        .I1(\vid_out[4]_INST_0_i_8_n_0 ),
+        .I2(\vid_out[3]_INST_0_i_37_n_0 ),
+        .I3(\vid_out[3]_INST_0_i_36_n_0 ),
+        .I4(\vid_out[4]_INST_0_i_9_n_0 ),
+        .I5(\vid_out[4]_INST_0_i_10_n_0 ),
+        .O(\vid_out[4]_INST_0_i_3_n_0 ));
+  LUT6 #(
+    .INIT(64'h0111111100000000)) 
+    \vid_out[4]_INST_0_i_4 
+       (.I0(\vid_out[4]_INST_0_i_11_n_0 ),
+        .I1(x_coordinate_reg[4]),
+        .I2(x_coordinate_reg[3]),
+        .I3(x_coordinate_reg[2]),
+        .I4(x_coordinate_reg[1]),
+        .I5(\vid_out[3]_INST_0_i_46_n_0 ),
+        .O(\vid_out[4]_INST_0_i_4_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair8" *) 
   LUT5 #(
-    .INIT(32'h44444440)) 
-    \vid_out[6]_INST_0_i_2 
-       (.I0(\vid_out[6]_INST_0_i_8_n_0 ),
-        .I1(\vid_out[0]_INST_0_i_3_n_0 ),
-        .I2(\vid_out[6]_INST_0_i_9_n_0 ),
-        .I3(x_coordinate_reg[9]),
-        .I4(x_coordinate_reg[10]),
-        .O(\vid_out[6]_INST_0_i_2_n_0 ));
-  LUT3 #(
-    .INIT(8'h80)) 
-    \vid_out[6]_INST_0_i_3 
-       (.I0(\vid_out[6]_INST_0_i_10_n_0 ),
-        .I1(\vid_out[0]_INST_0_i_3_n_0 ),
-        .I2(\vid_out[6]_INST_0_i_11_n_0 ),
-        .O(\vid_out[6]_INST_0_i_3_n_0 ));
+    .INIT(32'h00004FFF)) 
+    \vid_out[4]_INST_0_i_5 
+       (.I0(y_coordinate_reg[5]),
+        .I1(\vid_out[3]_INST_0_i_53_n_0 ),
+        .I2(y_coordinate_reg[6]),
+        .I3(y_coordinate_reg[7]),
+        .I4(\vid_out[3]_INST_0_i_7_n_0 ),
+        .O(\vid_out[4]_INST_0_i_5_n_0 ));
+  LUT5 #(
+    .INIT(32'h0000FE00)) 
+    \vid_out[4]_INST_0_i_6 
+       (.I0(x_coordinate_reg[1]),
+        .I1(x_coordinate_reg[2]),
+        .I2(\vid_out[4]_INST_0_i_12_n_0 ),
+        .I3(x_coordinate_reg[7]),
+        .I4(\vid_out[7]_INST_0_i_6_n_0 ),
+        .O(\vid_out[4]_INST_0_i_6_n_0 ));
   LUT6 #(
-    .INIT(64'h00000000000000A2)) 
-    \vid_out[6]_INST_0_i_4 
-       (.I0(\vid_out[6]_INST_0_i_10_n_0 ),
+    .INIT(64'h000000007FFF0000)) 
+    \vid_out[4]_INST_0_i_7 
+       (.I0(\vid_out[3]_INST_0_i_61_n_0 ),
+        .I1(\vid_out[4]_INST_0_i_13_n_0 ),
+        .I2(x_coordinate_reg[3]),
+        .I3(x_coordinate_reg[4]),
+        .I4(\vid_out[3]_INST_0_i_46_n_0 ),
+        .I5(\vid_out[4]_INST_0_i_14_n_0 ),
+        .O(\vid_out[4]_INST_0_i_7_n_0 ));
+  LUT5 #(
+    .INIT(32'hFEFEFEF2)) 
+    \vid_out[4]_INST_0_i_8 
+       (.I0(\vid_out[4]_INST_0_i_11_n_0 ),
         .I1(x_coordinate_reg[7]),
-        .I2(\vid_out[6]_INST_0_i_12_n_0 ),
-        .I3(x_coordinate_reg[8]),
-        .I4(x_coordinate_reg[10]),
-        .I5(x_coordinate_reg[9]),
-        .O(\vid_out[6]_INST_0_i_4_n_0 ));
+        .I2(\vid_out[3]_INST_0_i_37_n_0 ),
+        .I3(\vid_out[4]_INST_0_i_15_n_0 ),
+        .I4(x_coordinate_reg[5]),
+        .O(\vid_out[4]_INST_0_i_8_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair15" *) 
+  LUT2 #(
+    .INIT(4'h8)) 
+    \vid_out[4]_INST_0_i_9 
+       (.I0(y_coordinate_reg[6]),
+        .I1(y_coordinate_reg[7]),
+        .O(\vid_out[4]_INST_0_i_9_n_0 ));
   LUT6 #(
-    .INIT(64'h3333333533333337)) 
-    \vid_out[6]_INST_0_i_5 
-       (.I0(\vid_out[3]_INST_0_i_29_n_0 ),
-        .I1(\vid_out[3]_INST_0_i_28_n_0 ),
-        .I2(y_coordinate_reg[11]),
-        .I3(\vid_out[6]_INST_0_i_13_n_0 ),
-        .I4(y_coordinate_reg[8]),
-        .I5(\vid_out[6]_INST_0_i_14_n_0 ),
-        .O(\vid_out[6]_INST_0_i_5_n_0 ));
+    .INIT(64'hAAAAAAAAAAAAA8AA)) 
+    \vid_out[6]_INST_0 
+       (.I0(video_active),
+        .I1(\vid_out[3]_INST_0_i_5_n_0 ),
+        .I2(\vid_out[3]_INST_0_i_4_n_0 ),
+        .I3(\vid_out[3]_INST_0_i_2_n_0 ),
+        .I4(\vid_out[4]_INST_0_i_1_n_0 ),
+        .I5(\vid_out[4]_INST_0_i_2_n_0 ),
+        .O(vid_out[5]));
   LUT6 #(
-    .INIT(64'h4444444444404040)) 
-    \vid_out[6]_INST_0_i_6 
-       (.I0(\vid_out[6]_INST_0_i_8_n_0 ),
-        .I1(x_coordinate_reg[8]),
-        .I2(x_coordinate_reg[7]),
+    .INIT(64'hAAAAAAAAAAAAAA8A)) 
+    \vid_out[7]_INST_0 
+       (.I0(video_active),
+        .I1(\vid_out[3]_INST_0_i_5_n_0 ),
+        .I2(\vid_out[3]_INST_0_i_2_n_0 ),
+        .I3(\vid_out[7]_INST_0_i_1_n_0 ),
+        .I4(\vid_out[7]_INST_0_i_2_n_0 ),
+        .I5(\vid_out[4]_INST_0_i_2_n_0 ),
+        .O(vid_out[3]));
+  LUT6 #(
+    .INIT(64'hAAEAAAEAAAFFAAEA)) 
+    \vid_out[7]_INST_0_i_1 
+       (.I0(\vid_out[3]_INST_0_i_9_n_0 ),
+        .I1(\vid_out[7]_INST_0_i_3_n_0 ),
+        .I2(\vid_out[3]_INST_0_i_17_n_0 ),
+        .I3(\vid_out[7]_INST_0_i_4_n_0 ),
+        .I4(\vid_out[4]_INST_0_i_4_n_0 ),
+        .I5(\vid_out[3]_INST_0_i_8_n_0 ),
+        .O(\vid_out[7]_INST_0_i_1_n_0 ));
+  LUT5 #(
+    .INIT(32'h0F000200)) 
+    \vid_out[7]_INST_0_i_2 
+       (.I0(\vid_out[7]_INST_0_i_5_n_0 ),
+        .I1(\vid_out[7]_INST_0_i_6_n_0 ),
+        .I2(\vid_out[3]_INST_0_i_8_n_0 ),
+        .I3(\vid_out[4]_INST_0_i_5_n_0 ),
+        .I4(\vid_out[4]_INST_0_i_4_n_0 ),
+        .O(\vid_out[7]_INST_0_i_2_n_0 ));
+  LUT6 #(
+    .INIT(64'h0D0D0D000D000D00)) 
+    \vid_out[7]_INST_0_i_3 
+       (.I0(\vid_out[7]_INST_0_i_6_n_0 ),
+        .I1(\vid_out[3]_INST_0_i_46_n_0 ),
+        .I2(\vid_out[7]_INST_0_i_7_n_0 ),
+        .I3(y_coordinate_reg[4]),
+        .I4(y_coordinate_reg[3]),
+        .I5(\vid_out[3]_INST_0_i_45_n_0 ),
+        .O(\vid_out[7]_INST_0_i_3_n_0 ));
+  LUT6 #(
+    .INIT(64'hEAAAAAAAAAAAAAAA)) 
+    \vid_out[7]_INST_0_i_4 
+       (.I0(\vid_out[7]_INST_0_i_8_n_0 ),
+        .I1(y_coordinate_reg[7]),
+        .I2(y_coordinate_reg[5]),
+        .I3(y_coordinate_reg[4]),
+        .I4(y_coordinate_reg[3]),
+        .I5(\vid_out[7]_INST_0_i_9_n_0 ),
+        .O(\vid_out[7]_INST_0_i_4_n_0 ));
+  LUT6 #(
+    .INIT(64'hAAAAAAAAAAAAAAA8)) 
+    \vid_out[7]_INST_0_i_5 
+       (.I0(x_coordinate_reg[7]),
+        .I1(x_coordinate_reg[4]),
+        .I2(x_coordinate_reg[3]),
+        .I3(\vid_out[3]_INST_0_i_66_n_0 ),
+        .I4(x_coordinate_reg[2]),
+        .I5(x_coordinate_reg[1]),
+        .O(\vid_out[7]_INST_0_i_5_n_0 ));
+  LUT6 #(
+    .INIT(64'hFFFFFFFFFFFFFFF8)) 
+    \vid_out[7]_INST_0_i_6 
+       (.I0(x_coordinate_reg[2]),
+        .I1(x_coordinate_reg[3]),
+        .I2(x_coordinate_reg[4]),
         .I3(x_coordinate_reg[6]),
         .I4(x_coordinate_reg[5]),
-        .I5(\vid_out[6]_INST_0_i_15_n_0 ),
-        .O(\vid_out[6]_INST_0_i_6_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair12" *) 
-  LUT5 #(
-    .INIT(32'hAAAAAABA)) 
-    \vid_out[6]_INST_0_i_7 
-       (.I0(\vid_out[3]_INST_0_i_27_n_0 ),
-        .I1(y_coordinate_reg[11]),
-        .I2(\vid_out[3]_INST_0_i_26_n_0 ),
-        .I3(y_coordinate_reg[9]),
-        .I4(y_coordinate_reg[10]),
-        .O(\vid_out[6]_INST_0_i_7_n_0 ));
-  LUT6 #(
-    .INIT(64'hFF88FF80FF88FF88)) 
-    \vid_out[6]_INST_0_i_8 
-       (.I0(x_coordinate_reg[8]),
-        .I1(x_coordinate_reg[7]),
-        .I2(x_coordinate_reg[0]),
-        .I3(\vid_out[3]_INST_0_i_77_n_0 ),
-        .I4(x_coordinate_reg[6]),
-        .I5(\vid_out[6]_INST_0_i_16_n_0 ),
-        .O(\vid_out[6]_INST_0_i_8_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair22" *) 
-  LUT4 #(
-    .INIT(16'hF400)) 
-    \vid_out[6]_INST_0_i_9 
-       (.I0(\vid_out[3]_INST_0_i_96_n_0 ),
-        .I1(x_coordinate_reg[6]),
-        .I2(x_coordinate_reg[7]),
-        .I3(x_coordinate_reg[8]),
-        .O(\vid_out[6]_INST_0_i_9_n_0 ));
-  LUT6 #(
-    .INIT(64'h00000000FFF70000)) 
-    \vid_out[7]_INST_0 
-       (.I0(\vid_out[3]_INST_0_i_3_n_0 ),
-        .I1(\vid_out[3]_INST_0_i_4_n_0 ),
-        .I2(\vid_out[3]_INST_0_i_1_n_0 ),
-        .I3(\vid_out[3]_INST_0_i_2_n_0 ),
-        .I4(video_active),
-        .I5(\vid_out[7]_INST_0_i_1_n_0 ),
-        .O(vid_out[3]));
-  (* SOFT_HLUTNM = "soft_lutpair24" *) 
+        .I5(\vid_out[3]_INST_0_i_37_n_0 ),
+        .O(\vid_out[7]_INST_0_i_6_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair9" *) 
   LUT2 #(
-    .INIT(4'hE)) 
-    \vid_out[7]_INST_0_i_1 
-       (.I0(\vid_out[6]_INST_0_i_1_n_0 ),
-        .I1(\vid_out[18]_INST_0_i_3_n_0 ),
-        .O(\vid_out[7]_INST_0_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
-  LUT5 #(
-    .INIT(32'h0000F700)) 
+    .INIT(4'h7)) 
+    \vid_out[7]_INST_0_i_7 
+       (.I0(y_coordinate_reg[5]),
+        .I1(y_coordinate_reg[7]),
+        .O(\vid_out[7]_INST_0_i_7_n_0 ));
+  LUT6 #(
+    .INIT(64'hFFFFFFFEFFFEFFFE)) 
+    \vid_out[7]_INST_0_i_8 
+       (.I0(y_coordinate_reg[11]),
+        .I1(y_coordinate_reg[10]),
+        .I2(y_coordinate_reg[9]),
+        .I3(y_coordinate_reg[8]),
+        .I4(y_coordinate_reg[7]),
+        .I5(y_coordinate_reg[6]),
+        .O(\vid_out[7]_INST_0_i_8_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair16" *) 
+  LUT3 #(
+    .INIT(8'hFE)) 
+    \vid_out[7]_INST_0_i_9 
+       (.I0(y_coordinate_reg[0]),
+        .I1(y_coordinate_reg[2]),
+        .I2(y_coordinate_reg[1]),
+        .O(\vid_out[7]_INST_0_i_9_n_0 ));
+  LUT6 #(
+    .INIT(64'h00000000FFEF0000)) 
     \vid_out[9]_INST_0 
-       (.I0(\vid_out[3]_INST_0_i_3_n_0 ),
-        .I1(\vid_out[3]_INST_0_i_4_n_0 ),
-        .I2(\vid_out[0]_INST_0_i_1_n_0 ),
-        .I3(video_active),
-        .I4(\vid_out[9]_INST_0_i_1_n_0 ),
+       (.I0(\vid_out[4]_INST_0_i_2_n_0 ),
+        .I1(\vid_out[4]_INST_0_i_1_n_0 ),
+        .I2(\vid_out[3]_INST_0_i_2_n_0 ),
+        .I3(\vid_out[3]_INST_0_i_4_n_0 ),
+        .I4(video_active),
+        .I5(\vid_out[3]_INST_0_i_3_n_0 ),
         .O(vid_out[0]));
-  LUT4 #(
-    .INIT(16'hFEAA)) 
-    \vid_out[9]_INST_0_i_1 
-       (.I0(\vid_out[9]_INST_0_i_2_n_0 ),
-        .I1(\vid_out[6]_INST_0_i_6_n_0 ),
-        .I2(\vid_out[6]_INST_0_i_4_n_0 ),
-        .I3(\vid_out[3]_INST_0_i_8_n_0 ),
-        .O(\vid_out[9]_INST_0_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'h0808AA0808080808)) 
-    \vid_out[9]_INST_0_i_2 
-       (.I0(\vid_out[0]_INST_0_i_3_n_0 ),
-        .I1(\vid_out[6]_INST_0_i_9_n_0 ),
-        .I2(\vid_out[6]_INST_0_i_8_n_0 ),
-        .I3(x_coordinate_reg[6]),
-        .I4(\vid_out[0]_INST_0_i_8_n_0 ),
-        .I5(\vid_out[6]_INST_0_i_11_n_0 ),
-        .O(\vid_out[9]_INST_0_i_2_n_0 ));
-  LUT6 #(
-    .INIT(64'h555555555555D555)) 
+    .INIT(64'h00000080FFFFFFFF)) 
     \x_coordinate[0]_i_1 
-       (.I0(video_active),
-        .I1(\x_coordinate[0]_i_3_n_0 ),
-        .I2(x_coordinate_reg[1]),
-        .I3(x_coordinate_reg[0]),
+       (.I0(x_coordinate_reg[3]),
+        .I1(x_coordinate_reg[2]),
+        .I2(x_coordinate_reg[6]),
+        .I3(\x_coordinate[0]_i_3_n_0 ),
         .I4(\x_coordinate[0]_i_4_n_0 ),
-        .I5(\x_coordinate[0]_i_5_n_0 ),
+        .I5(video_active),
         .O(\x_coordinate[0]_i_1_n_0 ));
   LUT1 #(
     .INIT(2'h1)) 
     \x_coordinate[0]_i_2 
        (.I0(x_coordinate_reg[0]),
         .O(p_0_in[0]));
-  (* SOFT_HLUTNM = "soft_lutpair15" *) 
-  LUT3 #(
-    .INIT(8'h10)) 
+  (* SOFT_HLUTNM = "soft_lutpair11" *) 
+  LUT4 #(
+    .INIT(16'h7FFF)) 
     \x_coordinate[0]_i_3 
+       (.I0(x_coordinate_reg[0]),
+        .I1(x_coordinate_reg[1]),
+        .I2(x_coordinate_reg[4]),
+        .I3(x_coordinate_reg[5]),
+        .O(\x_coordinate[0]_i_3_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair7" *) 
+  LUT4 #(
+    .INIT(16'hEFFF)) 
+    \x_coordinate[0]_i_4 
        (.I0(x_coordinate_reg[8]),
         .I1(x_coordinate_reg[9]),
         .I2(x_coordinate_reg[10]),
-        .O(\x_coordinate[0]_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair31" *) 
-  LUT2 #(
-    .INIT(4'h7)) 
-    \x_coordinate[0]_i_4 
-       (.I0(x_coordinate_reg[3]),
-        .I1(x_coordinate_reg[2]),
+        .I3(x_coordinate_reg[7]),
         .O(\x_coordinate[0]_i_4_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
-  LUT4 #(
-    .INIT(16'h7FFF)) 
-    \x_coordinate[0]_i_5 
-       (.I0(x_coordinate_reg[4]),
-        .I1(x_coordinate_reg[5]),
-        .I2(x_coordinate_reg[7]),
-        .I3(x_coordinate_reg[6]),
-        .O(\x_coordinate[0]_i_5_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \x_coordinate_reg[0] 
@@ -3188,30 +2253,20 @@ module hdmi_out_hdmi_code_0_0_hdmi_code
         .I1(video_active),
         .O(\y_coordinate[0]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'h0000000080000000)) 
+    .INIT(64'h0000008000000000)) 
     \y_coordinate[0]_i_2 
-       (.I0(x_coordinate_reg[7]),
-        .I1(x_coordinate_reg[6]),
-        .I2(x_coordinate_reg[0]),
-        .I3(video_active),
-        .I4(\x_coordinate[0]_i_3_n_0 ),
-        .I5(\y_coordinate[0]_i_4_n_0 ),
+       (.I0(x_coordinate_reg[3]),
+        .I1(x_coordinate_reg[2]),
+        .I2(x_coordinate_reg[6]),
+        .I3(\x_coordinate[0]_i_3_n_0 ),
+        .I4(\x_coordinate[0]_i_4_n_0 ),
+        .I5(video_active),
         .O(\y_coordinate[0]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair0" *) 
-  LUT5 #(
-    .INIT(32'h7FFFFFFF)) 
-    \y_coordinate[0]_i_4 
-       (.I0(x_coordinate_reg[2]),
-        .I1(x_coordinate_reg[1]),
-        .I2(x_coordinate_reg[3]),
-        .I3(x_coordinate_reg[4]),
-        .I4(x_coordinate_reg[5]),
-        .O(\y_coordinate[0]_i_4_n_0 ));
   LUT1 #(
     .INIT(2'h1)) 
-    \y_coordinate[0]_i_5 
+    \y_coordinate[0]_i_4 
        (.I0(y_coordinate_reg[0]),
-        .O(\y_coordinate[0]_i_5_n_0 ));
+        .O(\y_coordinate[0]_i_4_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \y_coordinate_reg[0] 
@@ -3227,7 +2282,7 @@ module hdmi_out_hdmi_code_0_0_hdmi_code
         .CYINIT(1'b0),
         .DI({1'b0,1'b0,1'b0,1'b1}),
         .O({\y_coordinate_reg[0]_i_3_n_4 ,\y_coordinate_reg[0]_i_3_n_5 ,\y_coordinate_reg[0]_i_3_n_6 ,\y_coordinate_reg[0]_i_3_n_7 }),
-        .S({y_coordinate_reg[3:1],\y_coordinate[0]_i_5_n_0 }));
+        .S({y_coordinate_reg[3:1],\y_coordinate[0]_i_4_n_0 }));
   FDRE #(
     .INIT(1'b0)) 
     \y_coordinate_reg[10] 

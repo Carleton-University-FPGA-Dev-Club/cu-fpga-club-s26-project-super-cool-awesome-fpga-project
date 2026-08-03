@@ -61,6 +61,7 @@ module hdmi_out_hdmi_code_0_0 (
   vsync,
   video_active,
   double_dabble,
+  compartment,
   vid_out
 );
 
@@ -71,6 +72,7 @@ input wire hsync;
 input wire vsync;
 input wire video_active;
 input wire [11 : 0] double_dabble;
+input wire [3 : 0] compartment;
 output wire [23 : 0] vid_out;
 
   hdmi_code inst (
@@ -79,6 +81,7 @@ output wire [23 : 0] vid_out;
     .vsync(vsync),
     .video_active(video_active),
     .double_dabble(double_dabble),
+    .compartment(compartment),
     .vid_out(vid_out)
   );
 endmodule

@@ -3,8 +3,8 @@
 # SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
 # IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
 # SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
-# Start of session at: Tue Jul 28 17:49:06 2026
-# Process ID: 14832
+# Start of session at: Sun Aug  2 21:07:19 2026
+# Process ID: 7392
 # Current directory: C:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.runs/hdmi_out_hdmi_code_0_0_synth_1
 # Command line: vivado.exe -log hdmi_out_hdmi_code_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source hdmi_out_hdmi_code_0_0.tcl
 # Log file: C:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.runs/hdmi_out_hdmi_code_0_0_synth_1/hdmi_out_hdmi_code_0_0.vds
@@ -12,7 +12,7 @@
 # Running On: DESKTOP-LRI6JJ9, OS: Windows, CPU Frequency: 2295 MHz, CPU Physical cores: 2, Host memory: 8472 MB
 #-----------------------------------------------------------
 source hdmi_out_hdmi_code_0_0.tcl -notrace
-create_project: Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 459.551 ; gain = 184.430
+create_project: Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 457.664 ; gain = 182.172
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Home/Documents/FPGASummerProject/HDMI_Github/vivado-library-master (1)/vivado-library-master'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Users/Home/vivado/Vivado/2023.2/data/ip'.
@@ -27,15 +27,15 @@ INFO: [Device 21-403] Loading part xc7z020clg400-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
 WARNING: [Common 17-1361] You have specified a new message control rule that is equivalent to an existing rule with attributes ' -id {17-179}  -suppress '. The existing rule will be replaced.
-INFO: [Synth 8-7075] Helper process launched with PID 24936
+INFO: [Synth 8-7075] Helper process launched with PID 15132
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1344.355 ; gain = 439.422
+Starting RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 1343.469 ; gain = 438.633
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'hdmi_out_hdmi_code_0_0' [c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/ip/hdmi_out_hdmi_code_0_0/synth/hdmi_out_hdmi_code_0_0.v:53]
-INFO: [Synth 8-6157] synthesizing module 'hdmi_code' [C:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.srcs/sources_1/new/hdmi_code.v:24]
-INFO: [Synth 8-6155] done synthesizing module 'hdmi_code' (0#1) [C:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.srcs/sources_1/new/hdmi_code.v:24]
+INFO: [Synth 8-6157] synthesizing module 'hdmi_code' [C:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.srcs/sources_1/new/hdmi_code.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'hdmi_code' (0#1) [C:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.srcs/sources_1/new/hdmi_code.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'hdmi_out_hdmi_code_0_0' (0#1) [c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/ip/hdmi_out_hdmi_code_0_0/synth/hdmi_out_hdmi_code_0_0.v:53]
-WARNING: [Synth 8-3848] Net multiply in module/entity hdmi_code does not have driver. [C:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.srcs/sources_1/new/hdmi_code.v:68]
+WARNING: [Synth 8-3848] Net multiply in module/entity hdmi_code does not have driver. [C:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.srcs/sources_1/new/hdmi_code.v:125]
 WARNING: [Synth 8-7129] Port hsync in module hdmi_code is either unconnected or has no load
 WARNING: [Synth 8-7129] Port double_dabble[11] in module hdmi_code is either unconnected or has no load
 WARNING: [Synth 8-7129] Port double_dabble[10] in module hdmi_code is either unconnected or has no load
@@ -49,49 +49,53 @@ WARNING: [Synth 8-7129] Port double_dabble[3] in module hdmi_code is either unco
 WARNING: [Synth 8-7129] Port double_dabble[2] in module hdmi_code is either unconnected or has no load
 WARNING: [Synth 8-7129] Port double_dabble[1] in module hdmi_code is either unconnected or has no load
 WARNING: [Synth 8-7129] Port double_dabble[0] in module hdmi_code is either unconnected or has no load
+WARNING: [Synth 8-7129] Port compartment[3] in module hdmi_code is either unconnected or has no load
+WARNING: [Synth 8-7129] Port compartment[2] in module hdmi_code is either unconnected or has no load
+WARNING: [Synth 8-7129] Port compartment[1] in module hdmi_code is either unconnected or has no load
+WARNING: [Synth 8-7129] Port compartment[0] in module hdmi_code is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1455.848 ; gain = 550.914
+Finished RTL Elaboration : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 1454.238 ; gain = 549.402
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1455.848 ; gain = 550.914
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 1454.238 ; gain = 549.402
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1455.848 ; gain = 550.914
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 1454.238 ; gain = 549.402
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 1455.848 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1454.238 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1550.773 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1553.613 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.058 . Memory (MB): peak = 1550.797 ; gain = 0.023
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.073 . Memory (MB): peak = 1553.633 ; gain = 0.020
 INFO: [Designutils 20-5008] Incremental synthesis strategy off
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 1550.797 ; gain = 645.863
+Finished Constraint Validation : Time (s): cpu = 00:00:29 ; elapsed = 00:00:34 . Memory (MB): peak = 1553.633 ; gain = 648.797
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 1550.797 ; gain = 645.863
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:29 ; elapsed = 00:00:34 . Memory (MB): peak = 1553.633 ; gain = 648.797
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 1550.797 ; gain = 645.863
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:29 ; elapsed = 00:00:34 . Memory (MB): peak = 1553.633 ; gain = 648.797
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:30 ; elapsed = 00:00:33 . Memory (MB): peak = 1550.797 ; gain = 645.863
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:30 ; elapsed = 00:00:35 . Memory (MB): peak = 1553.633 ; gain = 648.797
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -130,26 +134,30 @@ WARNING: [Synth 8-7129] Port double_dabble[3] in module hdmi_out_hdmi_code_0_0 i
 WARNING: [Synth 8-7129] Port double_dabble[2] in module hdmi_out_hdmi_code_0_0 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port double_dabble[1] in module hdmi_out_hdmi_code_0_0 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port double_dabble[0] in module hdmi_out_hdmi_code_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port compartment[3] in module hdmi_out_hdmi_code_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port compartment[2] in module hdmi_out_hdmi_code_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port compartment[1] in module hdmi_out_hdmi_code_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port compartment[0] in module hdmi_out_hdmi_code_0_0 is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 1550.797 ; gain = 645.863
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:34 ; elapsed = 00:00:39 . Memory (MB): peak = 1553.633 ; gain = 648.797
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:44 ; elapsed = 00:00:47 . Memory (MB): peak = 1550.797 ; gain = 645.863
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:43 ; elapsed = 00:00:48 . Memory (MB): peak = 1553.633 ; gain = 648.797
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:44 ; elapsed = 00:00:47 . Memory (MB): peak = 1550.797 ; gain = 645.863
+Finished Timing Optimization : Time (s): cpu = 00:00:43 ; elapsed = 00:00:48 . Memory (MB): peak = 1553.633 ; gain = 648.797
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:44 ; elapsed = 00:00:47 . Memory (MB): peak = 1550.797 ; gain = 645.863
+Finished Technology Mapping : Time (s): cpu = 00:00:43 ; elapsed = 00:00:48 . Memory (MB): peak = 1553.633 ; gain = 648.797
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -167,37 +175,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:54 ; elapsed = 00:00:56 . Memory (MB): peak = 1550.797 ; gain = 645.863
+Finished IO Insertion : Time (s): cpu = 00:00:51 ; elapsed = 00:00:57 . Memory (MB): peak = 1553.633 ; gain = 648.797
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:54 ; elapsed = 00:00:56 . Memory (MB): peak = 1550.797 ; gain = 645.863
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:51 ; elapsed = 00:00:57 . Memory (MB): peak = 1553.633 ; gain = 648.797
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:54 ; elapsed = 00:00:56 . Memory (MB): peak = 1550.797 ; gain = 645.863
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:51 ; elapsed = 00:00:57 . Memory (MB): peak = 1553.633 ; gain = 648.797
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:54 ; elapsed = 00:00:56 . Memory (MB): peak = 1550.797 ; gain = 645.863
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:51 ; elapsed = 00:00:57 . Memory (MB): peak = 1553.633 ; gain = 648.797
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:54 ; elapsed = 00:00:56 . Memory (MB): peak = 1550.797 ; gain = 645.863
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:51 ; elapsed = 00:00:57 . Memory (MB): peak = 1553.633 ; gain = 648.797
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:54 ; elapsed = 00:00:56 . Memory (MB): peak = 1550.797 ; gain = 645.863
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:51 ; elapsed = 00:00:57 . Memory (MB): peak = 1553.633 ; gain = 648.797
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -215,38 +223,38 @@ Report Cell Usage:
 +------+-------+------+
 |1     |CARRY4 |    26|
 |2     |LUT1   |    38|
-|3     |LUT2   |    23|
-|4     |LUT3   |    14|
-|5     |LUT4   |    64|
-|6     |LUT5   |    33|
-|7     |LUT6   |   114|
+|3     |LUT2   |    10|
+|4     |LUT3   |     9|
+|5     |LUT4   |    57|
+|6     |LUT5   |    13|
+|7     |LUT6   |    67|
 |8     |FDRE   |    23|
 +------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:54 ; elapsed = 00:00:56 . Memory (MB): peak = 1550.797 ; gain = 645.863
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:51 ; elapsed = 00:00:57 . Memory (MB): peak = 1553.633 ; gain = 648.797
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 14 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:35 ; elapsed = 00:00:53 . Memory (MB): peak = 1550.797 ; gain = 550.914
-Synthesis Optimization Complete : Time (s): cpu = 00:00:54 ; elapsed = 00:00:56 . Memory (MB): peak = 1550.797 ; gain = 645.863
+Synthesis finished with 0 errors, 0 critical warnings and 18 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:34 ; elapsed = 00:00:52 . Memory (MB): peak = 1553.633 ; gain = 549.402
+Synthesis Optimization Complete : Time (s): cpu = 00:00:52 ; elapsed = 00:00:57 . Memory (MB): peak = 1553.633 ; gain = 648.797
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.011 . Memory (MB): peak = 1550.797 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1553.633 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 26 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1550.797 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1553.633 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete | Checksum: c0725f53
+Synth Design complete | Checksum: c0bf1fba
 INFO: [Common 17-83] Releasing license: Synthesis
-23 Infos, 30 Warnings, 0 Critical Warnings and 0 Errors encountered.
+23 Infos, 38 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:02 ; elapsed = 00:01:08 . Memory (MB): peak = 1550.797 ; gain = 1066.629
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1550.797 ; gain = 0.000
+synth_design: Time (s): cpu = 00:01:01 ; elapsed = 00:01:10 . Memory (MB): peak = 1553.633 ; gain = 1069.723
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1553.633 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.runs/hdmi_out_hdmi_code_0_0_synth_1/hdmi_out_hdmi_code_0_0.dcp' has been generated.
-INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP hdmi_out_hdmi_code_0_0, cache-ID = 2f8fdd047da8d793
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1550.797 ; gain = 0.000
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP hdmi_out_hdmi_code_0_0, cache-ID = e1dc99d852442418
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1553.633 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.runs/hdmi_out_hdmi_code_0_0_synth_1/hdmi_out_hdmi_code_0_0.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file hdmi_out_hdmi_code_0_0_utilization_synth.rpt -pb hdmi_out_hdmi_code_0_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Tue Jul 28 17:50:44 2026...
+INFO: [Common 17-206] Exiting Vivado at Sun Aug  2 21:08:55 2026...

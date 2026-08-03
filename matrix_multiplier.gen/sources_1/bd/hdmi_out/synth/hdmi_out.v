@@ -2,7 +2,7 @@
 //Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-//Date        : Tue Jul 28 17:48:53 2026
+//Date        : Sun Aug  2 21:07:03 2026
 //Host        : DESKTOP-LRI6JJ9 running 64-bit major release  (build 9200)
 //Command     : generate_target hdmi_out.bd
 //Design      : hdmi_out
@@ -57,6 +57,7 @@ module hdmi_out
        (.dout(constant_1_dout));
   hdmi_out_hdmi_code_0_0 hdmi_code_0
        (.clk(clk_wiz_0_clk_out1),
+        .compartment({1'b0,1'b0,1'b0,1'b0}),
         .double_dabble(constant_0_12width_dout),
         .hsync(v_tc_0_hsync_out),
         .vid_out(hdmi_code_0_vid_out),

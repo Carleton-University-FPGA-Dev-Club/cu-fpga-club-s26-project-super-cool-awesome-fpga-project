@@ -2,7 +2,7 @@
 -- Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
--- Date        : Tue Jul 28 17:50:44 2026
+-- Date        : Sun Aug  2 21:08:55 2026
 -- Host        : DESKTOP-LRI6JJ9 running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode synth_stub
 --               c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/ip/hdmi_out_hdmi_code_0_0/hdmi_out_hdmi_code_0_0_stub.vhdl
@@ -20,6 +20,7 @@ entity hdmi_out_hdmi_code_0_0 is
     vsync : in STD_LOGIC;
     video_active : in STD_LOGIC;
     double_dabble : in STD_LOGIC_VECTOR ( 11 downto 0 );
+    compartment : in STD_LOGIC_VECTOR ( 3 downto 0 );
     vid_out : out STD_LOGIC_VECTOR ( 23 downto 0 )
   );
 
@@ -29,7 +30,7 @@ architecture stub of hdmi_out_hdmi_code_0_0 is
 attribute syn_black_box : boolean;
 attribute black_box_pad_pin : string;
 attribute syn_black_box of stub : architecture is true;
-attribute black_box_pad_pin of stub : architecture is "clk,hsync,vsync,video_active,double_dabble[11:0],vid_out[23:0]";
+attribute black_box_pad_pin of stub : architecture is "clk,hsync,vsync,video_active,double_dabble[11:0],compartment[3:0],vid_out[23:0]";
 attribute X_CORE_INFO : string;
 attribute X_CORE_INFO of stub : architecture is "hdmi_code,Vivado 2023.2";
 begin

@@ -198,6 +198,11 @@
             "left": "11",
             "right": "0"
           },
+          "compartment": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
           "vid_out": {
             "direction": "O",
             "left": "23",

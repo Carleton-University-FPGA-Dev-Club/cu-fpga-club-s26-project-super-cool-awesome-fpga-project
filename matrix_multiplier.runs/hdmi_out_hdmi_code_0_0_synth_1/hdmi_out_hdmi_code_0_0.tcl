@@ -70,8 +70,6 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "hdmi_out_hdmi_code_0_0_synth_1" START { ROLLUP_AUTO }
-set_param chipscope.maxJobs 1
-set_param xicom.use_bs_reader 1
 set_msg_config -id {HDL-1065} -limit 10000
 set_msg_config  -id {17-179}  -suppress 
 set_param project.vivado.isBlockSynthRun true

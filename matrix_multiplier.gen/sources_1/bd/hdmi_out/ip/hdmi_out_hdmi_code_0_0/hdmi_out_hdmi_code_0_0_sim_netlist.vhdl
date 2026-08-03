@@ -2,7 +2,7 @@
 -- Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
--- Date        : Tue Jul 28 17:50:44 2026
+-- Date        : Sun Aug  2 21:08:55 2026
 -- Host        : DESKTOP-LRI6JJ9 running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
 --               c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/ip/hdmi_out_hdmi_code_0_0/hdmi_out_hdmi_code_0_0_sim_netlist.vhdl
@@ -18,8 +18,8 @@ use UNISIM.VCOMPONENTS.ALL;
 entity hdmi_out_hdmi_code_0_0_hdmi_code is
   port (
     vid_out : out STD_LOGIC_VECTOR ( 8 downto 0 );
-    clk : in STD_LOGIC;
     video_active : in STD_LOGIC;
+    clk : in STD_LOGIC;
     vsync : in STD_LOGIC
   );
   attribute ORIG_REF_NAME : string;
@@ -184,7 +184,7 @@ architecture STRUCTURE of hdmi_out_hdmi_code_0_0_hdmi_code is
   signal \i__carry__0_i_3_n_0\ : STD_LOGIC;
   signal \i__carry__0_i_4__0_n_0\ : STD_LOGIC;
   signal \i__carry__0_i_4__1_n_0\ : STD_LOGIC;
-  signal \i__carry__0_i_4__2_n_0\ : STD_LOGIC;
+  signal \i__carry__0_i_4_n_0\ : STD_LOGIC;
   signal \i__carry__1_i_1__0_n_0\ : STD_LOGIC;
   signal \i__carry__1_i_1__1_n_0\ : STD_LOGIC;
   signal \i__carry__1_i_2__0_n_0\ : STD_LOGIC;
@@ -218,75 +218,9 @@ architecture STRUCTURE of hdmi_out_hdmi_code_0_0_hdmi_code is
   signal \i__carry_i_8__1_n_0\ : STD_LOGIC;
   signal \i__carry_i_8_n_0\ : STD_LOGIC;
   signal p_0_in : STD_LOGIC_VECTOR ( 10 downto 0 );
-  signal \vid_out[0]_INST_0_i_10_n_0\ : STD_LOGIC;
-  signal \vid_out[0]_INST_0_i_11_n_0\ : STD_LOGIC;
-  signal \vid_out[0]_INST_0_i_12_n_0\ : STD_LOGIC;
-  signal \vid_out[0]_INST_0_i_13_n_0\ : STD_LOGIC;
-  signal \vid_out[0]_INST_0_i_14_n_0\ : STD_LOGIC;
-  signal \vid_out[0]_INST_0_i_1_n_0\ : STD_LOGIC;
-  signal \vid_out[0]_INST_0_i_2_n_0\ : STD_LOGIC;
-  signal \vid_out[0]_INST_0_i_3_n_0\ : STD_LOGIC;
-  signal \vid_out[0]_INST_0_i_4_n_0\ : STD_LOGIC;
-  signal \vid_out[0]_INST_0_i_5_n_0\ : STD_LOGIC;
-  signal \vid_out[0]_INST_0_i_6_n_0\ : STD_LOGIC;
-  signal \vid_out[0]_INST_0_i_7_n_0\ : STD_LOGIC;
-  signal \vid_out[0]_INST_0_i_8_n_0\ : STD_LOGIC;
-  signal \vid_out[0]_INST_0_i_9_n_0\ : STD_LOGIC;
-  signal \vid_out[18]_INST_0_i_10_n_0\ : STD_LOGIC;
-  signal \vid_out[18]_INST_0_i_11_n_0\ : STD_LOGIC;
-  signal \vid_out[18]_INST_0_i_12_n_0\ : STD_LOGIC;
-  signal \vid_out[18]_INST_0_i_13_n_0\ : STD_LOGIC;
-  signal \vid_out[18]_INST_0_i_1_n_0\ : STD_LOGIC;
-  signal \vid_out[18]_INST_0_i_2_n_0\ : STD_LOGIC;
-  signal \vid_out[18]_INST_0_i_3_n_0\ : STD_LOGIC;
-  signal \vid_out[18]_INST_0_i_4_n_0\ : STD_LOGIC;
-  signal \vid_out[18]_INST_0_i_5_n_0\ : STD_LOGIC;
-  signal \vid_out[18]_INST_0_i_6_n_0\ : STD_LOGIC;
-  signal \vid_out[18]_INST_0_i_7_n_0\ : STD_LOGIC;
-  signal \vid_out[18]_INST_0_i_8_n_0\ : STD_LOGIC;
-  signal \vid_out[18]_INST_0_i_9_n_0\ : STD_LOGIC;
-  signal \vid_out[3]_INST_0_i_100_n_0\ : STD_LOGIC;
-  signal \vid_out[3]_INST_0_i_101_n_0\ : STD_LOGIC;
-  signal \vid_out[3]_INST_0_i_102_n_0\ : STD_LOGIC;
-  signal \vid_out[3]_INST_0_i_103_n_0\ : STD_LOGIC;
-  signal \vid_out[3]_INST_0_i_104_n_0\ : STD_LOGIC;
-  signal \vid_out[3]_INST_0_i_105_n_0\ : STD_LOGIC;
-  signal \vid_out[3]_INST_0_i_106_n_0\ : STD_LOGIC;
-  signal \vid_out[3]_INST_0_i_107_n_0\ : STD_LOGIC;
-  signal \vid_out[3]_INST_0_i_108_n_0\ : STD_LOGIC;
-  signal \vid_out[3]_INST_0_i_109_n_0\ : STD_LOGIC;
   signal \vid_out[3]_INST_0_i_10_n_0\ : STD_LOGIC;
-  signal \vid_out[3]_INST_0_i_110_n_0\ : STD_LOGIC;
-  signal \vid_out[3]_INST_0_i_111_n_0\ : STD_LOGIC;
-  signal \vid_out[3]_INST_0_i_112_n_0\ : STD_LOGIC;
-  signal \vid_out[3]_INST_0_i_113_n_0\ : STD_LOGIC;
-  signal \vid_out[3]_INST_0_i_114_n_0\ : STD_LOGIC;
-  signal \vid_out[3]_INST_0_i_115_n_0\ : STD_LOGIC;
-  signal \vid_out[3]_INST_0_i_116_n_0\ : STD_LOGIC;
-  signal \vid_out[3]_INST_0_i_117_n_0\ : STD_LOGIC;
-  signal \vid_out[3]_INST_0_i_118_n_0\ : STD_LOGIC;
-  signal \vid_out[3]_INST_0_i_119_n_0\ : STD_LOGIC;
   signal \vid_out[3]_INST_0_i_11_n_0\ : STD_LOGIC;
-  signal \vid_out[3]_INST_0_i_120_n_0\ : STD_LOGIC;
-  signal \vid_out[3]_INST_0_i_121_n_0\ : STD_LOGIC;
-  signal \vid_out[3]_INST_0_i_122_n_0\ : STD_LOGIC;
-  signal \vid_out[3]_INST_0_i_123_n_0\ : STD_LOGIC;
-  signal \vid_out[3]_INST_0_i_124_n_0\ : STD_LOGIC;
-  signal \vid_out[3]_INST_0_i_125_n_0\ : STD_LOGIC;
-  signal \vid_out[3]_INST_0_i_126_n_0\ : STD_LOGIC;
-  signal \vid_out[3]_INST_0_i_127_n_0\ : STD_LOGIC;
-  signal \vid_out[3]_INST_0_i_128_n_0\ : STD_LOGIC;
-  signal \vid_out[3]_INST_0_i_129_n_0\ : STD_LOGIC;
   signal \vid_out[3]_INST_0_i_12_n_0\ : STD_LOGIC;
-  signal \vid_out[3]_INST_0_i_130_n_0\ : STD_LOGIC;
-  signal \vid_out[3]_INST_0_i_131_n_0\ : STD_LOGIC;
-  signal \vid_out[3]_INST_0_i_132_n_0\ : STD_LOGIC;
-  signal \vid_out[3]_INST_0_i_133_n_0\ : STD_LOGIC;
-  signal \vid_out[3]_INST_0_i_134_n_0\ : STD_LOGIC;
-  signal \vid_out[3]_INST_0_i_135_n_0\ : STD_LOGIC;
-  signal \vid_out[3]_INST_0_i_136_n_0\ : STD_LOGIC;
-  signal \vid_out[3]_INST_0_i_137_n_0\ : STD_LOGIC;
-  signal \vid_out[3]_INST_0_i_138_n_0\ : STD_LOGIC;
   signal \vid_out[3]_INST_0_i_13_n_0\ : STD_LOGIC;
   signal \vid_out[3]_INST_0_i_14_n_0\ : STD_LOGIC;
   signal \vid_out[3]_INST_0_i_15_n_0\ : STD_LOGIC;
@@ -351,66 +285,40 @@ architecture STRUCTURE of hdmi_out_hdmi_code_0_0_hdmi_code is
   signal \vid_out[3]_INST_0_i_69_n_0\ : STD_LOGIC;
   signal \vid_out[3]_INST_0_i_6_n_0\ : STD_LOGIC;
   signal \vid_out[3]_INST_0_i_70_n_0\ : STD_LOGIC;
-  signal \vid_out[3]_INST_0_i_71_n_0\ : STD_LOGIC;
-  signal \vid_out[3]_INST_0_i_72_n_0\ : STD_LOGIC;
-  signal \vid_out[3]_INST_0_i_73_n_0\ : STD_LOGIC;
-  signal \vid_out[3]_INST_0_i_74_n_0\ : STD_LOGIC;
-  signal \vid_out[3]_INST_0_i_75_n_0\ : STD_LOGIC;
-  signal \vid_out[3]_INST_0_i_76_n_0\ : STD_LOGIC;
-  signal \vid_out[3]_INST_0_i_77_n_0\ : STD_LOGIC;
-  signal \vid_out[3]_INST_0_i_78_n_0\ : STD_LOGIC;
-  signal \vid_out[3]_INST_0_i_79_n_0\ : STD_LOGIC;
   signal \vid_out[3]_INST_0_i_7_n_0\ : STD_LOGIC;
-  signal \vid_out[3]_INST_0_i_80_n_0\ : STD_LOGIC;
-  signal \vid_out[3]_INST_0_i_81_n_0\ : STD_LOGIC;
-  signal \vid_out[3]_INST_0_i_82_n_0\ : STD_LOGIC;
-  signal \vid_out[3]_INST_0_i_83_n_0\ : STD_LOGIC;
-  signal \vid_out[3]_INST_0_i_84_n_0\ : STD_LOGIC;
-  signal \vid_out[3]_INST_0_i_85_n_0\ : STD_LOGIC;
-  signal \vid_out[3]_INST_0_i_86_n_0\ : STD_LOGIC;
-  signal \vid_out[3]_INST_0_i_87_n_0\ : STD_LOGIC;
-  signal \vid_out[3]_INST_0_i_88_n_0\ : STD_LOGIC;
-  signal \vid_out[3]_INST_0_i_89_n_0\ : STD_LOGIC;
   signal \vid_out[3]_INST_0_i_8_n_0\ : STD_LOGIC;
-  signal \vid_out[3]_INST_0_i_90_n_0\ : STD_LOGIC;
-  signal \vid_out[3]_INST_0_i_91_n_0\ : STD_LOGIC;
-  signal \vid_out[3]_INST_0_i_92_n_0\ : STD_LOGIC;
-  signal \vid_out[3]_INST_0_i_93_n_0\ : STD_LOGIC;
-  signal \vid_out[3]_INST_0_i_94_n_0\ : STD_LOGIC;
-  signal \vid_out[3]_INST_0_i_95_n_0\ : STD_LOGIC;
-  signal \vid_out[3]_INST_0_i_96_n_0\ : STD_LOGIC;
-  signal \vid_out[3]_INST_0_i_97_n_0\ : STD_LOGIC;
-  signal \vid_out[3]_INST_0_i_98_n_0\ : STD_LOGIC;
-  signal \vid_out[3]_INST_0_i_99_n_0\ : STD_LOGIC;
   signal \vid_out[3]_INST_0_i_9_n_0\ : STD_LOGIC;
-  signal \vid_out[6]_INST_0_i_10_n_0\ : STD_LOGIC;
-  signal \vid_out[6]_INST_0_i_11_n_0\ : STD_LOGIC;
-  signal \vid_out[6]_INST_0_i_12_n_0\ : STD_LOGIC;
-  signal \vid_out[6]_INST_0_i_13_n_0\ : STD_LOGIC;
-  signal \vid_out[6]_INST_0_i_14_n_0\ : STD_LOGIC;
-  signal \vid_out[6]_INST_0_i_15_n_0\ : STD_LOGIC;
-  signal \vid_out[6]_INST_0_i_16_n_0\ : STD_LOGIC;
-  signal \vid_out[6]_INST_0_i_1_n_0\ : STD_LOGIC;
-  signal \vid_out[6]_INST_0_i_2_n_0\ : STD_LOGIC;
-  signal \vid_out[6]_INST_0_i_3_n_0\ : STD_LOGIC;
-  signal \vid_out[6]_INST_0_i_4_n_0\ : STD_LOGIC;
-  signal \vid_out[6]_INST_0_i_5_n_0\ : STD_LOGIC;
-  signal \vid_out[6]_INST_0_i_6_n_0\ : STD_LOGIC;
-  signal \vid_out[6]_INST_0_i_7_n_0\ : STD_LOGIC;
-  signal \vid_out[6]_INST_0_i_8_n_0\ : STD_LOGIC;
-  signal \vid_out[6]_INST_0_i_9_n_0\ : STD_LOGIC;
+  signal \vid_out[4]_INST_0_i_10_n_0\ : STD_LOGIC;
+  signal \vid_out[4]_INST_0_i_11_n_0\ : STD_LOGIC;
+  signal \vid_out[4]_INST_0_i_12_n_0\ : STD_LOGIC;
+  signal \vid_out[4]_INST_0_i_13_n_0\ : STD_LOGIC;
+  signal \vid_out[4]_INST_0_i_14_n_0\ : STD_LOGIC;
+  signal \vid_out[4]_INST_0_i_15_n_0\ : STD_LOGIC;
+  signal \vid_out[4]_INST_0_i_1_n_0\ : STD_LOGIC;
+  signal \vid_out[4]_INST_0_i_2_n_0\ : STD_LOGIC;
+  signal \vid_out[4]_INST_0_i_3_n_0\ : STD_LOGIC;
+  signal \vid_out[4]_INST_0_i_4_n_0\ : STD_LOGIC;
+  signal \vid_out[4]_INST_0_i_5_n_0\ : STD_LOGIC;
+  signal \vid_out[4]_INST_0_i_6_n_0\ : STD_LOGIC;
+  signal \vid_out[4]_INST_0_i_7_n_0\ : STD_LOGIC;
+  signal \vid_out[4]_INST_0_i_8_n_0\ : STD_LOGIC;
+  signal \vid_out[4]_INST_0_i_9_n_0\ : STD_LOGIC;
   signal \vid_out[7]_INST_0_i_1_n_0\ : STD_LOGIC;
-  signal \vid_out[9]_INST_0_i_1_n_0\ : STD_LOGIC;
-  signal \vid_out[9]_INST_0_i_2_n_0\ : STD_LOGIC;
+  signal \vid_out[7]_INST_0_i_2_n_0\ : STD_LOGIC;
+  signal \vid_out[7]_INST_0_i_3_n_0\ : STD_LOGIC;
+  signal \vid_out[7]_INST_0_i_4_n_0\ : STD_LOGIC;
+  signal \vid_out[7]_INST_0_i_5_n_0\ : STD_LOGIC;
+  signal \vid_out[7]_INST_0_i_6_n_0\ : STD_LOGIC;
+  signal \vid_out[7]_INST_0_i_7_n_0\ : STD_LOGIC;
+  signal \vid_out[7]_INST_0_i_8_n_0\ : STD_LOGIC;
+  signal \vid_out[7]_INST_0_i_9_n_0\ : STD_LOGIC;
   signal \x_coordinate[0]_i_1_n_0\ : STD_LOGIC;
   signal \x_coordinate[0]_i_3_n_0\ : STD_LOGIC;
   signal \x_coordinate[0]_i_4_n_0\ : STD_LOGIC;
-  signal \x_coordinate[0]_i_5_n_0\ : STD_LOGIC;
   signal x_coordinate_reg : STD_LOGIC_VECTOR ( 10 downto 0 );
   signal \y_coordinate[0]_i_1_n_0\ : STD_LOGIC;
   signal \y_coordinate[0]_i_2_n_0\ : STD_LOGIC;
   signal \y_coordinate[0]_i_4_n_0\ : STD_LOGIC;
-  signal \y_coordinate[0]_i_5_n_0\ : STD_LOGIC;
   signal y_coordinate_reg : STD_LOGIC_VECTOR ( 11 downto 0 );
   signal \y_coordinate_reg[0]_i_3_n_0\ : STD_LOGIC;
   signal \y_coordinate_reg[0]_i_3_n_1\ : STD_LOGIC;
@@ -469,76 +377,40 @@ architecture STRUCTURE of hdmi_out_hdmi_code_0_0_hdmi_code is
   attribute COMPARATOR_THRESHOLD of \diagonal2_inferred__2/i__carry\ : label is 11;
   attribute COMPARATOR_THRESHOLD of \diagonal2_inferred__2/i__carry__0\ : label is 11;
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of \vid_out[0]_INST_0_i_10\ : label is "soft_lutpair23";
-  attribute SOFT_HLUTNM of \vid_out[0]_INST_0_i_12\ : label is "soft_lutpair32";
-  attribute SOFT_HLUTNM of \vid_out[0]_INST_0_i_13\ : label is "soft_lutpair26";
-  attribute SOFT_HLUTNM of \vid_out[0]_INST_0_i_14\ : label is "soft_lutpair2";
-  attribute SOFT_HLUTNM of \vid_out[0]_INST_0_i_8\ : label is "soft_lutpair0";
-  attribute SOFT_HLUTNM of \vid_out[0]_INST_0_i_9\ : label is "soft_lutpair16";
-  attribute SOFT_HLUTNM of \vid_out[13]_INST_0\ : label is "soft_lutpair5";
-  attribute SOFT_HLUTNM of \vid_out[18]_INST_0_i_1\ : label is "soft_lutpair24";
-  attribute SOFT_HLUTNM of \vid_out[18]_INST_0_i_10\ : label is "soft_lutpair16";
-  attribute SOFT_HLUTNM of \vid_out[18]_INST_0_i_13\ : label is "soft_lutpair27";
-  attribute SOFT_HLUTNM of \vid_out[18]_INST_0_i_7\ : label is "soft_lutpair8";
-  attribute SOFT_HLUTNM of \vid_out[18]_INST_0_i_9\ : label is "soft_lutpair33";
-  attribute SOFT_HLUTNM of \vid_out[3]_INST_0\ : label is "soft_lutpair5";
-  attribute SOFT_HLUTNM of \vid_out[3]_INST_0_i_1\ : label is "soft_lutpair4";
-  attribute SOFT_HLUTNM of \vid_out[3]_INST_0_i_100\ : label is "soft_lutpair7";
-  attribute SOFT_HLUTNM of \vid_out[3]_INST_0_i_104\ : label is "soft_lutpair13";
-  attribute SOFT_HLUTNM of \vid_out[3]_INST_0_i_114\ : label is "soft_lutpair19";
-  attribute SOFT_HLUTNM of \vid_out[3]_INST_0_i_115\ : label is "soft_lutpair6";
-  attribute SOFT_HLUTNM of \vid_out[3]_INST_0_i_116\ : label is "soft_lutpair11";
-  attribute SOFT_HLUTNM of \vid_out[3]_INST_0_i_120\ : label is "soft_lutpair34";
-  attribute SOFT_HLUTNM of \vid_out[3]_INST_0_i_123\ : label is "soft_lutpair26";
-  attribute SOFT_HLUTNM of \vid_out[3]_INST_0_i_125\ : label is "soft_lutpair25";
-  attribute SOFT_HLUTNM of \vid_out[3]_INST_0_i_126\ : label is "soft_lutpair20";
-  attribute SOFT_HLUTNM of \vid_out[3]_INST_0_i_127\ : label is "soft_lutpair3";
-  attribute SOFT_HLUTNM of \vid_out[3]_INST_0_i_128\ : label is "soft_lutpair21";
-  attribute SOFT_HLUTNM of \vid_out[3]_INST_0_i_130\ : label is "soft_lutpair25";
-  attribute SOFT_HLUTNM of \vid_out[3]_INST_0_i_131\ : label is "soft_lutpair17";
-  attribute SOFT_HLUTNM of \vid_out[3]_INST_0_i_132\ : label is "soft_lutpair18";
-  attribute SOFT_HLUTNM of \vid_out[3]_INST_0_i_133\ : label is "soft_lutpair30";
-  attribute SOFT_HLUTNM of \vid_out[3]_INST_0_i_134\ : label is "soft_lutpair32";
-  attribute SOFT_HLUTNM of \vid_out[3]_INST_0_i_135\ : label is "soft_lutpair6";
-  attribute SOFT_HLUTNM of \vid_out[3]_INST_0_i_136\ : label is "soft_lutpair2";
-  attribute SOFT_HLUTNM of \vid_out[3]_INST_0_i_137\ : label is "soft_lutpair10";
-  attribute SOFT_HLUTNM of \vid_out[3]_INST_0_i_138\ : label is "soft_lutpair31";
-  attribute SOFT_HLUTNM of \vid_out[3]_INST_0_i_21\ : label is "soft_lutpair7";
-  attribute SOFT_HLUTNM of \vid_out[3]_INST_0_i_23\ : label is "soft_lutpair15";
-  attribute SOFT_HLUTNM of \vid_out[3]_INST_0_i_25\ : label is "soft_lutpair9";
-  attribute SOFT_HLUTNM of \vid_out[3]_INST_0_i_26\ : label is "soft_lutpair20";
-  attribute SOFT_HLUTNM of \vid_out[3]_INST_0_i_30\ : label is "soft_lutpair29";
-  attribute SOFT_HLUTNM of \vid_out[3]_INST_0_i_31\ : label is "soft_lutpair33";
-  attribute SOFT_HLUTNM of \vid_out[3]_INST_0_i_34\ : label is "soft_lutpair28";
-  attribute SOFT_HLUTNM of \vid_out[3]_INST_0_i_37\ : label is "soft_lutpair22";
-  attribute SOFT_HLUTNM of \vid_out[3]_INST_0_i_38\ : label is "soft_lutpair12";
+  attribute SOFT_HLUTNM of \vid_out[3]_INST_0_i_13\ : label is "soft_lutpair6";
+  attribute SOFT_HLUTNM of \vid_out[3]_INST_0_i_18\ : label is "soft_lutpair4";
+  attribute SOFT_HLUTNM of \vid_out[3]_INST_0_i_24\ : label is "soft_lutpair6";
+  attribute SOFT_HLUTNM of \vid_out[3]_INST_0_i_27\ : label is "soft_lutpair3";
+  attribute SOFT_HLUTNM of \vid_out[3]_INST_0_i_31\ : label is "soft_lutpair8";
+  attribute SOFT_HLUTNM of \vid_out[3]_INST_0_i_33\ : label is "soft_lutpair2";
+  attribute SOFT_HLUTNM of \vid_out[3]_INST_0_i_37\ : label is "soft_lutpair14";
   attribute SOFT_HLUTNM of \vid_out[3]_INST_0_i_39\ : label is "soft_lutpair9";
-  attribute SOFT_HLUTNM of \vid_out[3]_INST_0_i_69\ : label is "soft_lutpair30";
-  attribute SOFT_HLUTNM of \vid_out[3]_INST_0_i_71\ : label is "soft_lutpair27";
-  attribute SOFT_HLUTNM of \vid_out[3]_INST_0_i_72\ : label is "soft_lutpair23";
-  attribute SOFT_HLUTNM of \vid_out[3]_INST_0_i_73\ : label is "soft_lutpair14";
-  attribute SOFT_HLUTNM of \vid_out[3]_INST_0_i_74\ : label is "soft_lutpair3";
-  attribute SOFT_HLUTNM of \vid_out[3]_INST_0_i_75\ : label is "soft_lutpair28";
-  attribute SOFT_HLUTNM of \vid_out[3]_INST_0_i_77\ : label is "soft_lutpair8";
-  attribute SOFT_HLUTNM of \vid_out[3]_INST_0_i_78\ : label is "soft_lutpair10";
-  attribute SOFT_HLUTNM of \vid_out[3]_INST_0_i_81\ : label is "soft_lutpair1";
-  attribute SOFT_HLUTNM of \vid_out[3]_INST_0_i_82\ : label is "soft_lutpair18";
-  attribute SOFT_HLUTNM of \vid_out[3]_INST_0_i_84\ : label is "soft_lutpair19";
-  attribute SOFT_HLUTNM of \vid_out[3]_INST_0_i_85\ : label is "soft_lutpair11";
-  attribute SOFT_HLUTNM of \vid_out[3]_INST_0_i_89\ : label is "soft_lutpair14";
-  attribute SOFT_HLUTNM of \vid_out[3]_INST_0_i_90\ : label is "soft_lutpair21";
-  attribute SOFT_HLUTNM of \vid_out[3]_INST_0_i_97\ : label is "soft_lutpair29";
-  attribute SOFT_HLUTNM of \vid_out[3]_INST_0_i_99\ : label is "soft_lutpair34";
-  attribute SOFT_HLUTNM of \vid_out[6]_INST_0_i_14\ : label is "soft_lutpair13";
-  attribute SOFT_HLUTNM of \vid_out[6]_INST_0_i_16\ : label is "soft_lutpair17";
-  attribute SOFT_HLUTNM of \vid_out[6]_INST_0_i_7\ : label is "soft_lutpair12";
-  attribute SOFT_HLUTNM of \vid_out[6]_INST_0_i_9\ : label is "soft_lutpair22";
-  attribute SOFT_HLUTNM of \vid_out[7]_INST_0_i_1\ : label is "soft_lutpair24";
-  attribute SOFT_HLUTNM of \vid_out[9]_INST_0\ : label is "soft_lutpair4";
-  attribute SOFT_HLUTNM of \x_coordinate[0]_i_3\ : label is "soft_lutpair15";
-  attribute SOFT_HLUTNM of \x_coordinate[0]_i_4\ : label is "soft_lutpair31";
-  attribute SOFT_HLUTNM of \x_coordinate[0]_i_5\ : label is "soft_lutpair1";
-  attribute SOFT_HLUTNM of \y_coordinate[0]_i_4\ : label is "soft_lutpair0";
+  attribute SOFT_HLUTNM of \vid_out[3]_INST_0_i_40\ : label is "soft_lutpair7";
+  attribute SOFT_HLUTNM of \vid_out[3]_INST_0_i_45\ : label is "soft_lutpair16";
+  attribute SOFT_HLUTNM of \vid_out[3]_INST_0_i_46\ : label is "soft_lutpair5";
+  attribute SOFT_HLUTNM of \vid_out[3]_INST_0_i_48\ : label is "soft_lutpair0";
+  attribute SOFT_HLUTNM of \vid_out[3]_INST_0_i_49\ : label is "soft_lutpair10";
+  attribute SOFT_HLUTNM of \vid_out[3]_INST_0_i_50\ : label is "soft_lutpair13";
+  attribute SOFT_HLUTNM of \vid_out[3]_INST_0_i_53\ : label is "soft_lutpair10";
+  attribute SOFT_HLUTNM of \vid_out[3]_INST_0_i_54\ : label is "soft_lutpair15";
+  attribute SOFT_HLUTNM of \vid_out[3]_INST_0_i_59\ : label is "soft_lutpair5";
+  attribute SOFT_HLUTNM of \vid_out[3]_INST_0_i_60\ : label is "soft_lutpair14";
+  attribute SOFT_HLUTNM of \vid_out[3]_INST_0_i_61\ : label is "soft_lutpair11";
+  attribute SOFT_HLUTNM of \vid_out[3]_INST_0_i_65\ : label is "soft_lutpair1";
+  attribute SOFT_HLUTNM of \vid_out[3]_INST_0_i_66\ : label is "soft_lutpair4";
+  attribute SOFT_HLUTNM of \vid_out[3]_INST_0_i_68\ : label is "soft_lutpair2";
+  attribute SOFT_HLUTNM of \vid_out[3]_INST_0_i_69\ : label is "soft_lutpair0";
+  attribute SOFT_HLUTNM of \vid_out[3]_INST_0_i_7\ : label is "soft_lutpair13";
+  attribute SOFT_HLUTNM of \vid_out[4]_INST_0_i_11\ : label is "soft_lutpair1";
+  attribute SOFT_HLUTNM of \vid_out[4]_INST_0_i_12\ : label is "soft_lutpair12";
+  attribute SOFT_HLUTNM of \vid_out[4]_INST_0_i_13\ : label is "soft_lutpair3";
+  attribute SOFT_HLUTNM of \vid_out[4]_INST_0_i_15\ : label is "soft_lutpair12";
+  attribute SOFT_HLUTNM of \vid_out[4]_INST_0_i_5\ : label is "soft_lutpair8";
+  attribute SOFT_HLUTNM of \vid_out[4]_INST_0_i_9\ : label is "soft_lutpair15";
+  attribute SOFT_HLUTNM of \vid_out[7]_INST_0_i_7\ : label is "soft_lutpair9";
+  attribute SOFT_HLUTNM of \vid_out[7]_INST_0_i_9\ : label is "soft_lutpair16";
+  attribute SOFT_HLUTNM of \x_coordinate[0]_i_3\ : label is "soft_lutpair11";
+  attribute SOFT_HLUTNM of \x_coordinate[0]_i_4\ : label is "soft_lutpair7";
   attribute ADDER_THRESHOLD : integer;
   attribute ADDER_THRESHOLD of \y_coordinate_reg[0]_i_3\ : label is 11;
   attribute ADDER_THRESHOLD of \y_coordinate_reg[4]_i_1\ : label is 11;
@@ -740,7 +612,7 @@ diagonal2_carry_i_8: unisim.vcomponents.LUT4
       O(3 downto 0) => \NLW_diagonal2_inferred__0/i__carry__0_O_UNCONNECTED\(3 downto 0),
       S(3 downto 2) => B"00",
       S(1) => \i__carry__0_i_3_n_0\,
-      S(0) => \i__carry__0_i_4__0_n_0\
+      S(0) => \i__carry__0_i_4_n_0\
     );
 \diagonal2_inferred__1/i__carry\: unisim.vcomponents.CARRY4
      port map (
@@ -773,7 +645,7 @@ diagonal2_carry_i_8: unisim.vcomponents.LUT4
       O(3 downto 0) => \NLW_diagonal2_inferred__1/i__carry__0_O_UNCONNECTED\(3 downto 0),
       S(3 downto 2) => B"00",
       S(1) => \i__carry__0_i_3__0_n_0\,
-      S(0) => \i__carry__0_i_4__1_n_0\
+      S(0) => \i__carry__0_i_4__0_n_0\
     );
 \diagonal2_inferred__2/i__carry\: unisim.vcomponents.CARRY4
      port map (
@@ -806,7 +678,7 @@ diagonal2_carry_i_8: unisim.vcomponents.LUT4
       O(3 downto 0) => \NLW_diagonal2_inferred__2/i__carry__0_O_UNCONNECTED\(3 downto 0),
       S(3 downto 2) => B"00",
       S(1) => \i__carry__0_i_3__1_n_0\,
-      S(0) => \i__carry__0_i_4__2_n_0\
+      S(0) => \i__carry__0_i_4__1_n_0\
     );
 \diagonal3__0_carry\: unisim.vcomponents.CARRY4
      port map (
@@ -1333,15 +1205,7 @@ diagonal3_carry_i_4: unisim.vcomponents.LUT1
       I0 => x_coordinate_reg(6),
       O => \i__carry__0_i_3__4_n_0\
     );
-\i__carry__0_i_4\: unisim.vcomponents.LUT1
-    generic map(
-      INIT => X"1"
-    )
-        port map (
-      I0 => x_coordinate_reg(5),
-      O => p_0_in(5)
-    );
-\i__carry__0_i_4__0\: unisim.vcomponents.LUT4
+\i__carry__0_i_4\: unisim.vcomponents.LUT4
     generic map(
       INIT => X"9009"
     )
@@ -1350,9 +1214,9 @@ diagonal3_carry_i_4: unisim.vcomponents.LUT1
       I1 => y_coordinate_reg(9),
       I2 => \diagonal3_inferred__0/i__carry__0_n_4\,
       I3 => y_coordinate_reg(8),
-      O => \i__carry__0_i_4__0_n_0\
+      O => \i__carry__0_i_4_n_0\
     );
-\i__carry__0_i_4__1\: unisim.vcomponents.LUT4
+\i__carry__0_i_4__0\: unisim.vcomponents.LUT4
     generic map(
       INIT => X"9009"
     )
@@ -1361,9 +1225,9 @@ diagonal3_carry_i_4: unisim.vcomponents.LUT1
       I1 => y_coordinate_reg(9),
       I2 => \diagonal3_inferred__1/i__carry__0_n_4\,
       I3 => y_coordinate_reg(8),
-      O => \i__carry__0_i_4__1_n_0\
+      O => \i__carry__0_i_4__0_n_0\
     );
-\i__carry__0_i_4__2\: unisim.vcomponents.LUT4
+\i__carry__0_i_4__1\: unisim.vcomponents.LUT4
     generic map(
       INIT => X"9009"
     )
@@ -1372,7 +1236,15 @@ diagonal3_carry_i_4: unisim.vcomponents.LUT1
       I1 => y_coordinate_reg(9),
       I2 => \diagonal3_inferred__2/i__carry__0_n_4\,
       I3 => y_coordinate_reg(8),
-      O => \i__carry__0_i_4__2_n_0\
+      O => \i__carry__0_i_4__1_n_0\
+    );
+\i__carry__0_i_4__2\: unisim.vcomponents.LUT1
+    generic map(
+      INIT => X"1"
+    )
+        port map (
+      I0 => x_coordinate_reg(5),
+      O => p_0_in(5)
     );
 \i__carry__1_i_1\: unisim.vcomponents.LUT1
     generic map(
@@ -1752,30 +1624,607 @@ diagonal3_carry_i_4: unisim.vcomponents.LUT1
     );
 \vid_out[0]_INST_0\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"000000000000F700"
+      INIT => X"000000000000AA8A"
     )
         port map (
-      I0 => \vid_out[3]_INST_0_i_3_n_0\,
-      I1 => \vid_out[3]_INST_0_i_4_n_0\,
-      I2 => \vid_out[3]_INST_0_i_1_n_0\,
-      I3 => video_active,
-      I4 => \vid_out[0]_INST_0_i_1_n_0\,
-      I5 => \vid_out[3]_INST_0_i_2_n_0\,
+      I0 => video_active,
+      I1 => \vid_out[3]_INST_0_i_1_n_0\,
+      I2 => \vid_out[3]_INST_0_i_2_n_0\,
+      I3 => \vid_out[3]_INST_0_i_3_n_0\,
+      I4 => \vid_out[3]_INST_0_i_4_n_0\,
+      I5 => \vid_out[3]_INST_0_i_5_n_0\,
       O => vid_out(2)
     );
-\vid_out[0]_INST_0_i_1\: unisim.vcomponents.LUT5
+\vid_out[13]_INST_0\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"FFF44444"
+      INIT => X"AAAAAAAAAAAAAA8A"
     )
         port map (
-      I0 => \vid_out[0]_INST_0_i_2_n_0\,
-      I1 => \vid_out[0]_INST_0_i_3_n_0\,
-      I2 => \vid_out[0]_INST_0_i_4_n_0\,
-      I3 => \vid_out[0]_INST_0_i_5_n_0\,
-      I4 => \vid_out[3]_INST_0_i_8_n_0\,
-      O => \vid_out[0]_INST_0_i_1_n_0\
+      I0 => video_active,
+      I1 => \vid_out[3]_INST_0_i_1_n_0\,
+      I2 => \vid_out[3]_INST_0_i_2_n_0\,
+      I3 => \vid_out[3]_INST_0_i_3_n_0\,
+      I4 => \vid_out[3]_INST_0_i_4_n_0\,
+      I5 => \vid_out[3]_INST_0_i_5_n_0\,
+      O => vid_out(7)
     );
-\vid_out[0]_INST_0_i_10\: unisim.vcomponents.LUT4
+\vid_out[18]_INST_0\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"0100000000000000"
+    )
+        port map (
+      I0 => \vid_out[3]_INST_0_i_5_n_0\,
+      I1 => \vid_out[3]_INST_0_i_4_n_0\,
+      I2 => \vid_out[3]_INST_0_i_3_n_0\,
+      I3 => \vid_out[3]_INST_0_i_2_n_0\,
+      I4 => \vid_out[3]_INST_0_i_1_n_0\,
+      I5 => video_active,
+      O => vid_out(4)
+    );
+\vid_out[1]_INST_0\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"0000AAAA0000AA8A"
+    )
+        port map (
+      I0 => video_active,
+      I1 => \vid_out[3]_INST_0_i_1_n_0\,
+      I2 => \vid_out[3]_INST_0_i_2_n_0\,
+      I3 => \vid_out[3]_INST_0_i_3_n_0\,
+      I4 => \vid_out[3]_INST_0_i_4_n_0\,
+      I5 => \vid_out[3]_INST_0_i_5_n_0\,
+      O => vid_out(1)
+    );
+\vid_out[3]_INST_0\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"A0A0A0A0A0A0A080"
+    )
+        port map (
+      I0 => video_active,
+      I1 => \vid_out[3]_INST_0_i_1_n_0\,
+      I2 => \vid_out[3]_INST_0_i_2_n_0\,
+      I3 => \vid_out[3]_INST_0_i_3_n_0\,
+      I4 => \vid_out[3]_INST_0_i_4_n_0\,
+      I5 => \vid_out[3]_INST_0_i_5_n_0\,
+      O => vid_out(8)
+    );
+\vid_out[3]_INST_0_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"FFFFFFFFFFFFFF01"
+    )
+        port map (
+      I0 => \vid_out[3]_INST_0_i_6_n_0\,
+      I1 => \vid_out[3]_INST_0_i_7_n_0\,
+      I2 => \vid_out[3]_INST_0_i_8_n_0\,
+      I3 => \vid_out[7]_INST_0_i_2_n_0\,
+      I4 => \vid_out[3]_INST_0_i_9_n_0\,
+      I5 => \vid_out[3]_INST_0_i_10_n_0\,
+      O => \vid_out[3]_INST_0_i_1_n_0\
+    );
+\vid_out[3]_INST_0_i_10\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"040404040F040404"
+    )
+        port map (
+      I0 => \vid_out[3]_INST_0_i_8_n_0\,
+      I1 => \vid_out[4]_INST_0_i_4_n_0\,
+      I2 => \vid_out[7]_INST_0_i_4_n_0\,
+      I3 => \vid_out[3]_INST_0_i_17_n_0\,
+      I4 => \vid_out[3]_INST_0_i_38_n_0\,
+      I5 => \vid_out[3]_INST_0_i_39_n_0\,
+      O => \vid_out[3]_INST_0_i_10_n_0\
+    );
+\vid_out[3]_INST_0_i_11\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"DDDDDFFFDFFFDFFF"
+    )
+        port map (
+      I0 => \vid_out[3]_INST_0_i_32_n_0\,
+      I1 => \vid_out[3]_INST_0_i_40_n_0\,
+      I2 => diagonal268_in,
+      I3 => diagonal267_in,
+      I4 => diagonal271_in,
+      I5 => diagonal270_in,
+      O => \vid_out[3]_INST_0_i_11_n_0\
+    );
+\vid_out[3]_INST_0_i_12\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"FFFEFEFEEEEEEEEE"
+    )
+        port map (
+      I0 => x_coordinate_reg(6),
+      I1 => x_coordinate_reg(4),
+      I2 => x_coordinate_reg(2),
+      I3 => x_coordinate_reg(1),
+      I4 => x_coordinate_reg(0),
+      I5 => x_coordinate_reg(3),
+      O => \vid_out[3]_INST_0_i_12_n_0\
+    );
+\vid_out[3]_INST_0_i_13\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"88888880"
+    )
+        port map (
+      I0 => x_coordinate_reg(8),
+      I1 => x_coordinate_reg(9),
+      I2 => \vid_out[3]_INST_0_i_23_n_0\,
+      I3 => x_coordinate_reg(6),
+      I4 => x_coordinate_reg(7),
+      O => \vid_out[3]_INST_0_i_13_n_0\
+    );
+\vid_out[3]_INST_0_i_14\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"EFEEEFEFEFEFEFEF"
+    )
+        port map (
+      I0 => \vid_out[3]_INST_0_i_41_n_0\,
+      I1 => \vid_out[3]_INST_0_i_42_n_0\,
+      I2 => x_coordinate_reg(8),
+      I3 => \vid_out[3]_INST_0_i_32_n_0\,
+      I4 => x_coordinate_reg(6),
+      I5 => x_coordinate_reg(7),
+      O => \vid_out[3]_INST_0_i_14_n_0\
+    );
+\vid_out[3]_INST_0_i_15\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AAAAAAFEFEFEFEFE"
+    )
+        port map (
+      I0 => \vid_out[3]_INST_0_i_43_n_0\,
+      I1 => y_coordinate_reg(7),
+      I2 => \vid_out[3]_INST_0_i_44_n_0\,
+      I3 => \vid_out[3]_INST_0_i_45_n_0\,
+      I4 => y_coordinate_reg(3),
+      I5 => y_coordinate_reg(4),
+      O => \vid_out[3]_INST_0_i_15_n_0\
+    );
+\vid_out[3]_INST_0_i_16\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"0000777FFFFFFFFF"
+    )
+        port map (
+      I0 => x_coordinate_reg(4),
+      I1 => x_coordinate_reg(3),
+      I2 => x_coordinate_reg(1),
+      I3 => x_coordinate_reg(2),
+      I4 => x_coordinate_reg(5),
+      I5 => x_coordinate_reg(6),
+      O => \vid_out[3]_INST_0_i_16_n_0\
+    );
+\vid_out[3]_INST_0_i_17\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"D5D5D5D5D5D5D555"
+    )
+        port map (
+      I0 => \vid_out[3]_INST_0_i_46_n_0\,
+      I1 => x_coordinate_reg(6),
+      I2 => x_coordinate_reg(5),
+      I3 => x_coordinate_reg(2),
+      I4 => x_coordinate_reg(4),
+      I5 => x_coordinate_reg(3),
+      O => \vid_out[3]_INST_0_i_17_n_0\
+    );
+\vid_out[3]_INST_0_i_18\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"AAAA0080"
+    )
+        port map (
+      I0 => \vid_out[3]_INST_0_i_47_n_0\,
+      I1 => x_coordinate_reg(5),
+      I2 => x_coordinate_reg(6),
+      I3 => \vid_out[3]_INST_0_i_48_n_0\,
+      I4 => x_coordinate_reg(7),
+      O => \vid_out[3]_INST_0_i_18_n_0\
+    );
+\vid_out[3]_INST_0_i_19\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"1333133300003000"
+    )
+        port map (
+      I0 => \vid_out[3]_INST_0_i_49_n_0\,
+      I1 => \vid_out[3]_INST_0_i_50_n_0\,
+      I2 => y_coordinate_reg(7),
+      I3 => y_coordinate_reg(6),
+      I4 => \vid_out[3]_INST_0_i_51_n_0\,
+      I5 => y_coordinate_reg(8),
+      O => \vid_out[3]_INST_0_i_19_n_0\
+    );
+\vid_out[3]_INST_0_i_2\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"ABABAB00ABABABAB"
+    )
+        port map (
+      I0 => \vid_out[3]_INST_0_i_11_n_0\,
+      I1 => x_coordinate_reg(5),
+      I2 => \vid_out[3]_INST_0_i_12_n_0\,
+      I3 => \vid_out[3]_INST_0_i_13_n_0\,
+      I4 => \vid_out[3]_INST_0_i_14_n_0\,
+      I5 => \vid_out[3]_INST_0_i_15_n_0\,
+      O => \vid_out[3]_INST_0_i_2_n_0\
+    );
+\vid_out[3]_INST_0_i_20\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"FFBA0000FFBAFFBA"
+    )
+        port map (
+      I0 => \vid_out[3]_INST_0_i_37_n_0\,
+      I1 => x_coordinate_reg(7),
+      I2 => \vid_out[3]_INST_0_i_16_n_0\,
+      I3 => \vid_out[7]_INST_0_i_5_n_0\,
+      I4 => \vid_out[3]_INST_0_i_52_n_0\,
+      I5 => \vid_out[3]_INST_0_i_47_n_0\,
+      O => \vid_out[3]_INST_0_i_20_n_0\
+    );
+\vid_out[3]_INST_0_i_21\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"04000400FFFF0400"
+    )
+        port map (
+      I0 => \vid_out[3]_INST_0_i_53_n_0\,
+      I1 => y_coordinate_reg(5),
+      I2 => \vid_out[3]_INST_0_i_54_n_0\,
+      I3 => \vid_out[3]_INST_0_i_55_n_0\,
+      I4 => \vid_out[3]_INST_0_i_56_n_0\,
+      I5 => \vid_out[3]_INST_0_i_57_n_0\,
+      O => \vid_out[3]_INST_0_i_21_n_0\
+    );
+\vid_out[3]_INST_0_i_22\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"00A8AAAA00A800A8"
+    )
+        port map (
+      I0 => \vid_out[3]_INST_0_i_19_n_0\,
+      I1 => \vid_out[3]_INST_0_i_58_n_0\,
+      I2 => \vid_out[3]_INST_0_i_24_n_0\,
+      I3 => \vid_out[3]_INST_0_i_25_n_0\,
+      I4 => \vid_out[3]_INST_0_i_16_n_0\,
+      I5 => \vid_out[3]_INST_0_i_59_n_0\,
+      O => \vid_out[3]_INST_0_i_22_n_0\
+    );
+\vid_out[3]_INST_0_i_23\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AAAAAAAAAAAA8880"
+    )
+        port map (
+      I0 => x_coordinate_reg(5),
+      I1 => x_coordinate_reg(2),
+      I2 => x_coordinate_reg(0),
+      I3 => x_coordinate_reg(1),
+      I4 => x_coordinate_reg(3),
+      I5 => x_coordinate_reg(4),
+      O => \vid_out[3]_INST_0_i_23_n_0\
+    );
+\vid_out[3]_INST_0_i_24\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"7F"
+    )
+        port map (
+      I0 => x_coordinate_reg(7),
+      I1 => x_coordinate_reg(8),
+      I2 => x_coordinate_reg(6),
+      O => \vid_out[3]_INST_0_i_24_n_0\
+    );
+\vid_out[3]_INST_0_i_25\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"FFFFAAAAFFFFFBFF"
+    )
+        port map (
+      I0 => \vid_out[3]_INST_0_i_60_n_0\,
+      I1 => \vid_out[3]_INST_0_i_61_n_0\,
+      I2 => \vid_out[3]_INST_0_i_62_n_0\,
+      I3 => x_coordinate_reg(3),
+      I4 => \vid_out[3]_INST_0_i_63_n_0\,
+      I5 => x_coordinate_reg(6),
+      O => \vid_out[3]_INST_0_i_25_n_0\
+    );
+\vid_out[3]_INST_0_i_26\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AAAAAAAA80000000"
+    )
+        port map (
+      I0 => \vid_out[3]_INST_0_i_59_n_0\,
+      I1 => x_coordinate_reg(2),
+      I2 => x_coordinate_reg(3),
+      I3 => x_coordinate_reg(4),
+      I4 => x_coordinate_reg(5),
+      I5 => x_coordinate_reg(6),
+      O => \vid_out[3]_INST_0_i_26_n_0\
+    );
+\vid_out[3]_INST_0_i_27\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"DDDFFFFF"
+    )
+        port map (
+      I0 => \vid_out[3]_INST_0_i_64_n_0\,
+      I1 => \x_coordinate[0]_i_4_n_0\,
+      I2 => x_coordinate_reg(5),
+      I3 => x_coordinate_reg(6),
+      I4 => \vid_out[3]_INST_0_i_12_n_0\,
+      O => \vid_out[3]_INST_0_i_27_n_0\
+    );
+\vid_out[3]_INST_0_i_28\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"FFFFFFFFFFFF4000"
+    )
+        port map (
+      I0 => \vid_out[3]_INST_0_i_62_n_0\,
+      I1 => x_coordinate_reg(1),
+      I2 => x_coordinate_reg(2),
+      I3 => x_coordinate_reg(3),
+      I4 => x_coordinate_reg(7),
+      I5 => x_coordinate_reg(6),
+      O => \vid_out[3]_INST_0_i_28_n_0\
+    );
+\vid_out[3]_INST_0_i_29\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"00000000FE000000"
+    )
+        port map (
+      I0 => x_coordinate_reg(6),
+      I1 => x_coordinate_reg(7),
+      I2 => \vid_out[3]_INST_0_i_65_n_0\,
+      I3 => x_coordinate_reg(9),
+      I4 => x_coordinate_reg(8),
+      I5 => x_coordinate_reg(10),
+      O => \vid_out[3]_INST_0_i_29_n_0\
+    );
+\vid_out[3]_INST_0_i_3\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"F100FFFFF100F100"
+    )
+        port map (
+      I0 => \vid_out[3]_INST_0_i_16_n_0\,
+      I1 => \vid_out[3]_INST_0_i_17_n_0\,
+      I2 => \vid_out[3]_INST_0_i_18_n_0\,
+      I3 => \vid_out[3]_INST_0_i_19_n_0\,
+      I4 => \vid_out[3]_INST_0_i_20_n_0\,
+      I5 => \vid_out[3]_INST_0_i_21_n_0\,
+      O => \vid_out[3]_INST_0_i_3_n_0\
+    );
+\vid_out[3]_INST_0_i_30\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"BAFF0000BAFFBAFF"
+    )
+        port map (
+      I0 => \x_coordinate[0]_i_4_n_0\,
+      I1 => \vid_out[3]_INST_0_i_66_n_0\,
+      I2 => \vid_out[3]_INST_0_i_48_n_0\,
+      I3 => \vid_out[3]_INST_0_i_64_n_0\,
+      I4 => \vid_out[3]_INST_0_i_67_n_0\,
+      I5 => \vid_out[3]_INST_0_i_29_n_0\,
+      O => \vid_out[3]_INST_0_i_30_n_0\
+    );
+\vid_out[3]_INST_0_i_31\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"E"
+    )
+        port map (
+      I0 => y_coordinate_reg(5),
+      I1 => y_coordinate_reg(6),
+      O => \vid_out[3]_INST_0_i_31_n_0\
+    );
+\vid_out[3]_INST_0_i_32\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"0FFF0FFF0FFF7FFF"
+    )
+        port map (
+      I0 => x_coordinate_reg(1),
+      I1 => x_coordinate_reg(0),
+      I2 => x_coordinate_reg(5),
+      I3 => x_coordinate_reg(4),
+      I4 => x_coordinate_reg(3),
+      I5 => x_coordinate_reg(2),
+      O => \vid_out[3]_INST_0_i_32_n_0\
+    );
+\vid_out[3]_INST_0_i_33\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"01FFFFFF"
+    )
+        port map (
+      I0 => y_coordinate_reg(3),
+      I1 => y_coordinate_reg(4),
+      I2 => y_coordinate_reg(5),
+      I3 => y_coordinate_reg(7),
+      I4 => y_coordinate_reg(6),
+      O => \vid_out[3]_INST_0_i_33_n_0\
+    );
+\vid_out[3]_INST_0_i_34\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"2AAAAAAAAAAAAAAA"
+    )
+        port map (
+      I0 => \vid_out[3]_INST_0_i_46_n_0\,
+      I1 => x_coordinate_reg(4),
+      I2 => x_coordinate_reg(3),
+      I3 => x_coordinate_reg(5),
+      I4 => x_coordinate_reg(6),
+      I5 => \vid_out[3]_INST_0_i_61_n_0\,
+      O => \vid_out[3]_INST_0_i_34_n_0\
+    );
+\vid_out[3]_INST_0_i_35\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"8880808088888888"
+    )
+        port map (
+      I0 => y_coordinate_reg(7),
+      I1 => y_coordinate_reg(6),
+      I2 => y_coordinate_reg(2),
+      I3 => y_coordinate_reg(1),
+      I4 => y_coordinate_reg(0),
+      I5 => \vid_out[3]_INST_0_i_68_n_0\,
+      O => \vid_out[3]_INST_0_i_35_n_0\
+    );
+\vid_out[3]_INST_0_i_36\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"FFFFFFFF07FFFFFF"
+    )
+        port map (
+      I0 => x_coordinate_reg(2),
+      I1 => x_coordinate_reg(1),
+      I2 => x_coordinate_reg(3),
+      I3 => x_coordinate_reg(7),
+      I4 => x_coordinate_reg(4),
+      I5 => \vid_out[3]_INST_0_i_66_n_0\,
+      O => \vid_out[3]_INST_0_i_36_n_0\
+    );
+\vid_out[3]_INST_0_i_37\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"FE"
+    )
+        port map (
+      I0 => x_coordinate_reg(8),
+      I1 => x_coordinate_reg(10),
+      I2 => x_coordinate_reg(9),
+      O => \vid_out[3]_INST_0_i_37_n_0\
+    );
+\vid_out[3]_INST_0_i_38\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"0001000100010003"
+    )
+        port map (
+      I0 => x_coordinate_reg(7),
+      I1 => x_coordinate_reg(8),
+      I2 => x_coordinate_reg(10),
+      I3 => x_coordinate_reg(9),
+      I4 => x_coordinate_reg(5),
+      I5 => \vid_out[4]_INST_0_i_15_n_0\,
+      O => \vid_out[3]_INST_0_i_38_n_0\
+    );
+\vid_out[3]_INST_0_i_39\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"07FFFFFF"
+    )
+        port map (
+      I0 => \vid_out[3]_INST_0_i_45_n_0\,
+      I1 => y_coordinate_reg(3),
+      I2 => y_coordinate_reg(4),
+      I3 => y_coordinate_reg(5),
+      I4 => y_coordinate_reg(7),
+      O => \vid_out[3]_INST_0_i_39_n_0\
+    );
+\vid_out[3]_INST_0_i_4\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"FFFFAAFBAAAAAAAA"
+    )
+        port map (
+      I0 => \vid_out[3]_INST_0_i_22_n_0\,
+      I1 => \vid_out[3]_INST_0_i_23_n_0\,
+      I2 => \vid_out[3]_INST_0_i_24_n_0\,
+      I3 => \vid_out[3]_INST_0_i_25_n_0\,
+      I4 => \vid_out[3]_INST_0_i_26_n_0\,
+      I5 => \vid_out[3]_INST_0_i_21_n_0\,
+      O => \vid_out[3]_INST_0_i_4_n_0\
+    );
+\vid_out[3]_INST_0_i_40\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"FEFFFFFF"
+    )
+        port map (
+      I0 => x_coordinate_reg(9),
+      I1 => x_coordinate_reg(10),
+      I2 => x_coordinate_reg(6),
+      I3 => x_coordinate_reg(7),
+      I4 => x_coordinate_reg(8),
+      O => \vid_out[3]_INST_0_i_40_n_0\
+    );
+\vid_out[3]_INST_0_i_41\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AAAAAAA8AAA8AAA8"
+    )
+        port map (
+      I0 => y_coordinate_reg(7),
+      I1 => y_coordinate_reg(4),
+      I2 => y_coordinate_reg(6),
+      I3 => y_coordinate_reg(5),
+      I4 => y_coordinate_reg(3),
+      I5 => \vid_out[7]_INST_0_i_9_n_0\,
+      O => \vid_out[3]_INST_0_i_41_n_0\
+    );
+\vid_out[3]_INST_0_i_42\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"FFFFABFFFFFFFFFF"
+    )
+        port map (
+      I0 => \vid_out[3]_INST_0_i_50_n_0\,
+      I1 => y_coordinate_reg(7),
+      I2 => y_coordinate_reg(6),
+      I3 => y_coordinate_reg(8),
+      I4 => x_coordinate_reg(10),
+      I5 => x_coordinate_reg(9),
+      O => \vid_out[3]_INST_0_i_42_n_0\
+    );
+\vid_out[3]_INST_0_i_43\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"8000000000000000"
+    )
+        port map (
+      I0 => y_coordinate_reg(1),
+      I1 => y_coordinate_reg(0),
+      I2 => y_coordinate_reg(4),
+      I3 => y_coordinate_reg(5),
+      I4 => y_coordinate_reg(2),
+      I5 => y_coordinate_reg(3),
+      O => \vid_out[3]_INST_0_i_43_n_0\
+    );
+\vid_out[3]_INST_0_i_44\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"5555555540404000"
+    )
+        port map (
+      I0 => y_coordinate_reg(5),
+      I1 => y_coordinate_reg(3),
+      I2 => y_coordinate_reg(2),
+      I3 => y_coordinate_reg(1),
+      I4 => y_coordinate_reg(0),
+      I5 => y_coordinate_reg(4),
+      O => \vid_out[3]_INST_0_i_44_n_0\
+    );
+\vid_out[3]_INST_0_i_45\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"80"
+    )
+        port map (
+      I0 => y_coordinate_reg(0),
+      I1 => y_coordinate_reg(2),
+      I2 => y_coordinate_reg(1),
+      O => \vid_out[3]_INST_0_i_45_n_0\
+    );
+\vid_out[3]_INST_0_i_46\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"0001"
+    )
+        port map (
+      I0 => x_coordinate_reg(7),
+      I1 => x_coordinate_reg(9),
+      I2 => x_coordinate_reg(10),
+      I3 => x_coordinate_reg(8),
+      O => \vid_out[3]_INST_0_i_46_n_0\
+    );
+\vid_out[3]_INST_0_i_47\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"0000000000002F00"
+    )
+        port map (
+      I0 => \vid_out[3]_INST_0_i_69_n_0\,
+      I1 => \vid_out[4]_INST_0_i_12_n_0\,
+      I2 => x_coordinate_reg(7),
+      I3 => x_coordinate_reg(8),
+      I4 => x_coordinate_reg(9),
+      I5 => x_coordinate_reg(10),
+      O => \vid_out[3]_INST_0_i_47_n_0\
+    );
+\vid_out[3]_INST_0_i_48\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"1555FFFF"
+    )
+        port map (
+      I0 => x_coordinate_reg(3),
+      I1 => x_coordinate_reg(0),
+      I2 => x_coordinate_reg(1),
+      I3 => x_coordinate_reg(2),
+      I4 => x_coordinate_reg(4),
+      O => \vid_out[3]_INST_0_i_48_n_0\
+    );
+\vid_out[3]_INST_0_i_49\: unisim.vcomponents.LUT4
     generic map(
       INIT => X"8000"
     )
@@ -1784,673 +2233,609 @@ diagonal3_carry_i_4: unisim.vcomponents.LUT1
       I1 => y_coordinate_reg(2),
       I2 => y_coordinate_reg(5),
       I3 => y_coordinate_reg(4),
-      O => \vid_out[0]_INST_0_i_10_n_0\
+      O => \vid_out[3]_INST_0_i_49_n_0\
     );
-\vid_out[0]_INST_0_i_11\: unisim.vcomponents.LUT6
+\vid_out[3]_INST_0_i_5\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"000000000057FFFF"
+      INIT => X"7500FFFF75007500"
     )
         port map (
-      I0 => y_coordinate_reg(2),
-      I1 => y_coordinate_reg(1),
-      I2 => y_coordinate_reg(0),
-      I3 => y_coordinate_reg(3),
-      I4 => y_coordinate_reg(4),
-      I5 => y_coordinate_reg(5),
-      O => \vid_out[0]_INST_0_i_11_n_0\
-    );
-\vid_out[0]_INST_0_i_12\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"8"
-    )
-        port map (
-      I0 => x_coordinate_reg(5),
-      I1 => x_coordinate_reg(4),
-      O => \vid_out[0]_INST_0_i_12_n_0\
-    );
-\vid_out[0]_INST_0_i_13\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"01"
-    )
-        port map (
-      I0 => x_coordinate_reg(5),
-      I1 => x_coordinate_reg(4),
-      I2 => x_coordinate_reg(3),
-      O => \vid_out[0]_INST_0_i_13_n_0\
-    );
-\vid_out[0]_INST_0_i_14\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"88888880"
-    )
-        port map (
-      I0 => x_coordinate_reg(5),
-      I1 => x_coordinate_reg(6),
-      I2 => x_coordinate_reg(3),
-      I3 => x_coordinate_reg(2),
-      I4 => x_coordinate_reg(4),
-      O => \vid_out[0]_INST_0_i_14_n_0\
-    );
-\vid_out[0]_INST_0_i_2\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"DDDD0DDDDDDDDDDD"
-    )
-        port map (
-      I0 => \vid_out[0]_INST_0_i_6_n_0\,
-      I1 => \vid_out[0]_INST_0_i_7_n_0\,
-      I2 => x_coordinate_reg(7),
-      I3 => x_coordinate_reg(6),
-      I4 => \vid_out[0]_INST_0_i_8_n_0\,
-      I5 => \vid_out[0]_INST_0_i_9_n_0\,
-      O => \vid_out[0]_INST_0_i_2_n_0\
-    );
-\vid_out[0]_INST_0_i_3\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"0000313100000003"
-    )
-        port map (
-      I0 => \vid_out[0]_INST_0_i_10_n_0\,
-      I1 => \vid_out[6]_INST_0_i_13_n_0\,
-      I2 => \vid_out[6]_INST_0_i_14_n_0\,
-      I3 => \vid_out[0]_INST_0_i_11_n_0\,
-      I4 => y_coordinate_reg(11),
-      I5 => y_coordinate_reg(8),
-      O => \vid_out[0]_INST_0_i_3_n_0\
-    );
-\vid_out[0]_INST_0_i_4\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"8880808080808080"
-    )
-        port map (
-      I0 => \vid_out[0]_INST_0_i_9_n_0\,
-      I1 => x_coordinate_reg(7),
-      I2 => x_coordinate_reg(6),
-      I3 => x_coordinate_reg(3),
-      I4 => x_coordinate_reg(2),
-      I5 => \vid_out[0]_INST_0_i_12_n_0\,
-      O => \vid_out[0]_INST_0_i_4_n_0\
-    );
-\vid_out[0]_INST_0_i_5\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"8AAAAAAAAAAAAAAA"
-    )
-        port map (
-      I0 => \vid_out[0]_INST_0_i_6_n_0\,
-      I1 => \vid_out[3]_INST_0_i_39_n_0\,
-      I2 => x_coordinate_reg(5),
-      I3 => x_coordinate_reg(6),
-      I4 => x_coordinate_reg(7),
-      I5 => x_coordinate_reg(8),
-      O => \vid_out[0]_INST_0_i_5_n_0\
-    );
-\vid_out[0]_INST_0_i_6\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"0055005500000040"
-    )
-        port map (
-      I0 => \vid_out[3]_INST_0_i_77_n_0\,
-      I1 => x_coordinate_reg(3),
-      I2 => \vid_out[0]_INST_0_i_12_n_0\,
-      I3 => \vid_out[3]_INST_0_i_31_n_0\,
-      I4 => \vid_out[3]_INST_0_i_71_n_0\,
-      I5 => x_coordinate_reg(6),
-      O => \vid_out[0]_INST_0_i_6_n_0\
-    );
-\vid_out[0]_INST_0_i_7\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"4000000044444444"
-    )
-        port map (
-      I0 => \vid_out[3]_INST_0_i_31_n_0\,
-      I1 => x_coordinate_reg(6),
-      I2 => x_coordinate_reg(2),
-      I3 => x_coordinate_reg(0),
-      I4 => x_coordinate_reg(1),
-      I5 => \vid_out[0]_INST_0_i_13_n_0\,
-      O => \vid_out[0]_INST_0_i_7_n_0\
-    );
-\vid_out[0]_INST_0_i_8\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"11155555"
-    )
-        port map (
-      I0 => x_coordinate_reg(5),
-      I1 => x_coordinate_reg(4),
-      I2 => x_coordinate_reg(1),
-      I3 => x_coordinate_reg(2),
-      I4 => x_coordinate_reg(3),
-      O => \vid_out[0]_INST_0_i_8_n_0\
-    );
-\vid_out[0]_INST_0_i_9\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"00101010"
-    )
-        port map (
-      I0 => x_coordinate_reg(10),
-      I1 => x_coordinate_reg(8),
-      I2 => x_coordinate_reg(9),
-      I3 => \vid_out[0]_INST_0_i_14_n_0\,
-      I4 => x_coordinate_reg(7),
-      O => \vid_out[0]_INST_0_i_9_n_0\
-    );
-\vid_out[13]_INST_0\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"A8AAAAAA"
-    )
-        port map (
-      I0 => video_active,
-      I1 => \vid_out[3]_INST_0_i_2_n_0\,
-      I2 => \vid_out[3]_INST_0_i_1_n_0\,
-      I3 => \vid_out[3]_INST_0_i_4_n_0\,
-      I4 => \vid_out[3]_INST_0_i_3_n_0\,
-      O => vid_out(7)
-    );
-\vid_out[18]_INST_0\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FD000000FF00FF00"
-    )
-        port map (
-      I0 => \vid_out[3]_INST_0_i_3_n_0\,
-      I1 => \vid_out[3]_INST_0_i_1_n_0\,
-      I2 => \vid_out[3]_INST_0_i_2_n_0\,
-      I3 => video_active,
-      I4 => \vid_out[18]_INST_0_i_1_n_0\,
-      I5 => \vid_out[3]_INST_0_i_4_n_0\,
-      O => vid_out(4)
-    );
-\vid_out[18]_INST_0_i_1\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"0004"
-    )
-        port map (
-      I0 => \vid_out[18]_INST_0_i_2_n_0\,
-      I1 => \vid_out[3]_INST_0_i_3_n_0\,
-      I2 => \vid_out[18]_INST_0_i_3_n_0\,
-      I3 => \vid_out[6]_INST_0_i_1_n_0\,
-      O => \vid_out[18]_INST_0_i_1_n_0\
-    );
-\vid_out[18]_INST_0_i_10\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"FFFFF080"
-    )
-        port map (
-      I0 => x_coordinate_reg(7),
-      I1 => \vid_out[0]_INST_0_i_14_n_0\,
-      I2 => x_coordinate_reg(9),
-      I3 => x_coordinate_reg(8),
-      I4 => x_coordinate_reg(10),
-      O => \vid_out[18]_INST_0_i_10_n_0\
-    );
-\vid_out[18]_INST_0_i_11\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AAAAAAAA88800000"
-    )
-        port map (
-      I0 => \vid_out[3]_INST_0_i_37_n_0\,
-      I1 => x_coordinate_reg(3),
-      I2 => x_coordinate_reg(2),
-      I3 => x_coordinate_reg(1),
-      I4 => x_coordinate_reg(4),
-      I5 => x_coordinate_reg(5),
-      O => \vid_out[18]_INST_0_i_11_n_0\
-    );
-\vid_out[18]_INST_0_i_12\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"F4F5F5F5F5F5F5F5"
-    )
-        port map (
-      I0 => x_coordinate_reg(6),
-      I1 => \vid_out[3]_INST_0_i_71_n_0\,
-      I2 => \vid_out[3]_INST_0_i_31_n_0\,
-      I3 => x_coordinate_reg(5),
-      I4 => x_coordinate_reg(4),
-      I5 => x_coordinate_reg(3),
-      O => \vid_out[18]_INST_0_i_12_n_0\
-    );
-\vid_out[18]_INST_0_i_13\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"80"
-    )
-        port map (
-      I0 => x_coordinate_reg(3),
-      I1 => x_coordinate_reg(0),
-      I2 => x_coordinate_reg(1),
-      O => \vid_out[18]_INST_0_i_13_n_0\
-    );
-\vid_out[18]_INST_0_i_2\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"EEFFEEFEFFFFFEFE"
-    )
-        port map (
-      I0 => \vid_out[18]_INST_0_i_4_n_0\,
-      I1 => \vid_out[18]_INST_0_i_5_n_0\,
-      I2 => \vid_out[3]_INST_0_i_7_n_0\,
-      I3 => \vid_out[6]_INST_0_i_5_n_0\,
-      I4 => \vid_out[3]_INST_0_i_6_n_0\,
-      I5 => \vid_out[6]_INST_0_i_7_n_0\,
-      O => \vid_out[18]_INST_0_i_2_n_0\
-    );
-\vid_out[18]_INST_0_i_3\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"EEFFEEFEFFFFFEFE"
-    )
-        port map (
-      I0 => \vid_out[18]_INST_0_i_6_n_0\,
-      I1 => \vid_out[18]_INST_0_i_7_n_0\,
-      I2 => \vid_out[0]_INST_0_i_5_n_0\,
-      I3 => \vid_out[6]_INST_0_i_5_n_0\,
-      I4 => \vid_out[0]_INST_0_i_4_n_0\,
-      I5 => \vid_out[6]_INST_0_i_7_n_0\,
-      O => \vid_out[18]_INST_0_i_3_n_0\
-    );
-\vid_out[18]_INST_0_i_4\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"0000000000400000"
-    )
-        port map (
-      I0 => \vid_out[3]_INST_0_i_24_n_0\,
-      I1 => \vid_out[0]_INST_0_i_3_n_0\,
-      I2 => x_coordinate_reg(10),
-      I3 => x_coordinate_reg(8),
-      I4 => \vid_out[18]_INST_0_i_8_n_0\,
-      I5 => x_coordinate_reg(9),
-      O => \vid_out[18]_INST_0_i_4_n_0\
-    );
-\vid_out[18]_INST_0_i_5\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"0000040000000000"
-    )
-        port map (
-      I0 => \vid_out[3]_INST_0_i_70_n_0\,
-      I1 => \vid_out[0]_INST_0_i_3_n_0\,
-      I2 => x_coordinate_reg(10),
-      I3 => \y_coordinate[0]_i_4_n_0\,
-      I4 => \vid_out[3]_INST_0_i_97_n_0\,
-      I5 => \vid_out[18]_INST_0_i_9_n_0\,
-      O => \vid_out[18]_INST_0_i_5_n_0\
-    );
-\vid_out[18]_INST_0_i_6\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"4444444440404000"
-    )
-        port map (
-      I0 => \vid_out[18]_INST_0_i_10_n_0\,
-      I1 => \vid_out[0]_INST_0_i_3_n_0\,
-      I2 => x_coordinate_reg(9),
-      I3 => \vid_out[18]_INST_0_i_11_n_0\,
-      I4 => x_coordinate_reg(8),
-      I5 => x_coordinate_reg(10),
-      O => \vid_out[18]_INST_0_i_6_n_0\
-    );
-\vid_out[18]_INST_0_i_7\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"00000004"
-    )
-        port map (
-      I0 => \vid_out[18]_INST_0_i_12_n_0\,
-      I1 => \vid_out[0]_INST_0_i_3_n_0\,
-      I2 => x_coordinate_reg(10),
-      I3 => x_coordinate_reg(9),
-      I4 => \vid_out[0]_INST_0_i_7_n_0\,
-      O => \vid_out[18]_INST_0_i_7_n_0\
-    );
-\vid_out[18]_INST_0_i_8\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"A8A8A8A8A888A8A8"
-    )
-        port map (
-      I0 => x_coordinate_reg(7),
-      I1 => x_coordinate_reg(6),
-      I2 => x_coordinate_reg(5),
-      I3 => x_coordinate_reg(4),
-      I4 => \x_coordinate[0]_i_4_n_0\,
-      I5 => \vid_out[18]_INST_0_i_13_n_0\,
-      O => \vid_out[18]_INST_0_i_8_n_0\
-    );
-\vid_out[18]_INST_0_i_9\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"8"
-    )
-        port map (
-      I0 => x_coordinate_reg(9),
-      I1 => x_coordinate_reg(8),
-      O => \vid_out[18]_INST_0_i_9_n_0\
-    );
-\vid_out[1]_INST_0\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"00000000FFF70000"
-    )
-        port map (
-      I0 => \vid_out[3]_INST_0_i_3_n_0\,
-      I1 => \vid_out[3]_INST_0_i_4_n_0\,
-      I2 => \vid_out[3]_INST_0_i_1_n_0\,
-      I3 => \vid_out[3]_INST_0_i_2_n_0\,
-      I4 => video_active,
-      I5 => \vid_out[0]_INST_0_i_1_n_0\,
-      O => vid_out(1)
-    );
-\vid_out[3]_INST_0\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"E000F0F0"
-    )
-        port map (
-      I0 => \vid_out[3]_INST_0_i_1_n_0\,
-      I1 => \vid_out[3]_INST_0_i_2_n_0\,
-      I2 => video_active,
-      I3 => \vid_out[3]_INST_0_i_3_n_0\,
-      I4 => \vid_out[3]_INST_0_i_4_n_0\,
-      O => vid_out(8)
-    );
-\vid_out[3]_INST_0_i_1\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"E"
-    )
-        port map (
-      I0 => \vid_out[9]_INST_0_i_1_n_0\,
-      I1 => \vid_out[0]_INST_0_i_1_n_0\,
-      O => \vid_out[3]_INST_0_i_1_n_0\
-    );
-\vid_out[3]_INST_0_i_10\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FFFFFFFFFFFF0777"
-    )
-        port map (
-      I0 => diagonal270_in,
-      I1 => diagonal271_in,
-      I2 => diagonal267_in,
-      I3 => diagonal268_in,
+      I0 => \vid_out[3]_INST_0_i_27_n_0\,
+      I1 => \vid_out[3]_INST_0_i_28_n_0\,
+      I2 => \vid_out[3]_INST_0_i_29_n_0\,
+      I3 => \vid_out[3]_INST_0_i_19_n_0\,
       I4 => \vid_out[3]_INST_0_i_30_n_0\,
-      I5 => \vid_out[3]_INST_0_i_31_n_0\,
-      O => \vid_out[3]_INST_0_i_10_n_0\
+      I5 => \vid_out[3]_INST_0_i_21_n_0\,
+      O => \vid_out[3]_INST_0_i_5_n_0\
     );
-\vid_out[3]_INST_0_i_100\: unisim.vcomponents.LUT4
+\vid_out[3]_INST_0_i_50\: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"FFFE"
-    )
-        port map (
-      I0 => x_coordinate_reg(10),
-      I1 => x_coordinate_reg(7),
-      I2 => x_coordinate_reg(8),
-      I3 => x_coordinate_reg(9),
-      O => \vid_out[3]_INST_0_i_100_n_0\
-    );
-\vid_out[3]_INST_0_i_101\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"00000007000F000F"
-    )
-        port map (
-      I0 => y_coordinate_reg(1),
-      I1 => y_coordinate_reg(2),
-      I2 => y_coordinate_reg(5),
-      I3 => y_coordinate_reg(6),
-      I4 => y_coordinate_reg(3),
-      I5 => y_coordinate_reg(4),
-      O => \vid_out[3]_INST_0_i_101_n_0\
-    );
-\vid_out[3]_INST_0_i_102\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AAAAAAAAAAAA8880"
-    )
-        port map (
-      I0 => y_coordinate_reg(5),
-      I1 => y_coordinate_reg(2),
-      I2 => y_coordinate_reg(1),
-      I3 => y_coordinate_reg(0),
-      I4 => y_coordinate_reg(3),
-      I5 => y_coordinate_reg(4),
-      O => \vid_out[3]_INST_0_i_102_n_0\
-    );
-\vid_out[3]_INST_0_i_103\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"000000007FFFFFFF"
-    )
-        port map (
-      I0 => \vid_out[3]_INST_0_i_75_n_0\,
-      I1 => y_coordinate_reg(7),
-      I2 => y_coordinate_reg(5),
-      I3 => y_coordinate_reg(4),
-      I4 => y_coordinate_reg(3),
-      I5 => \vid_out[3]_INST_0_i_121_n_0\,
-      O => \vid_out[3]_INST_0_i_103_n_0\
-    );
-\vid_out[3]_INST_0_i_104\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"FF80FF88"
-    )
-        port map (
-      I0 => y_coordinate_reg(6),
-      I1 => y_coordinate_reg(7),
-      I2 => y_coordinate_reg(5),
-      I3 => \vid_out[3]_INST_0_i_89_n_0\,
-      I4 => \vid_out[3]_INST_0_i_72_n_0\,
-      O => \vid_out[3]_INST_0_i_104_n_0\
-    );
-\vid_out[3]_INST_0_i_105\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"0000000000000040"
-    )
-        port map (
-      I0 => \vid_out[3]_INST_0_i_125_n_0\,
-      I1 => x_coordinate_reg(7),
-      I2 => x_coordinate_reg(4),
-      I3 => x_coordinate_reg(6),
-      I4 => x_coordinate_reg(5),
-      I5 => \vid_out[3]_INST_0_i_82_n_0\,
-      O => \vid_out[3]_INST_0_i_105_n_0\
-    );
-\vid_out[3]_INST_0_i_106\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"0000000000010000"
+      INIT => X"FE"
     )
         port map (
       I0 => y_coordinate_reg(11),
       I1 => y_coordinate_reg(10),
       I2 => y_coordinate_reg(9),
-      I3 => y_coordinate_reg(8),
-      I4 => y_coordinate_reg(7),
-      I5 => \vid_out[3]_INST_0_i_101_n_0\,
-      O => \vid_out[3]_INST_0_i_106_n_0\
+      O => \vid_out[3]_INST_0_i_50_n_0\
     );
-\vid_out[3]_INST_0_i_107\: unisim.vcomponents.LUT6
+\vid_out[3]_INST_0_i_51\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"FEFF000000000000"
+      INIT => X"00000000001FFFFF"
     )
         port map (
-      I0 => x_coordinate_reg(0),
-      I1 => x_coordinate_reg(1),
-      I2 => x_coordinate_reg(2),
-      I3 => \vid_out[0]_INST_0_i_13_n_0\,
-      I4 => \vid_out[3]_INST_0_i_128_n_0\,
-      I5 => x_coordinate_reg(6),
-      O => \vid_out[3]_INST_0_i_107_n_0\
+      I0 => y_coordinate_reg(1),
+      I1 => y_coordinate_reg(0),
+      I2 => y_coordinate_reg(2),
+      I3 => y_coordinate_reg(3),
+      I4 => y_coordinate_reg(4),
+      I5 => y_coordinate_reg(5),
+      O => \vid_out[3]_INST_0_i_51_n_0\
     );
-\vid_out[3]_INST_0_i_108\: unisim.vcomponents.LUT6
+\vid_out[3]_INST_0_i_52\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"FFFFFFFFFFE3FFFF"
-    )
-        port map (
-      I0 => \vid_out[3]_INST_0_i_133_n_0\,
-      I1 => x_coordinate_reg(3),
-      I2 => x_coordinate_reg(4),
-      I3 => x_coordinate_reg(5),
-      I4 => \vid_out[3]_INST_0_i_37_n_0\,
-      I5 => \vid_out[3]_INST_0_i_82_n_0\,
-      O => \vid_out[3]_INST_0_i_108_n_0\
-    );
-\vid_out[3]_INST_0_i_109\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"00000000777FFFFF"
-    )
-        port map (
-      I0 => \vid_out[0]_INST_0_i_12_n_0\,
-      I1 => \vid_out[3]_INST_0_i_37_n_0\,
-      I2 => x_coordinate_reg(1),
-      I3 => x_coordinate_reg(2),
-      I4 => x_coordinate_reg(3),
-      I5 => \vid_out[3]_INST_0_i_82_n_0\,
-      O => \vid_out[3]_INST_0_i_109_n_0\
-    );
-\vid_out[3]_INST_0_i_11\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"0001010111111111"
-    )
-        port map (
-      I0 => x_coordinate_reg(5),
-      I1 => x_coordinate_reg(4),
-      I2 => x_coordinate_reg(2),
-      I3 => x_coordinate_reg(1),
-      I4 => x_coordinate_reg(0),
-      I5 => x_coordinate_reg(3),
-      O => \vid_out[3]_INST_0_i_11_n_0\
-    );
-\vid_out[3]_INST_0_i_110\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"0000000000000001"
-    )
-        port map (
-      I0 => x_coordinate_reg(3),
-      I1 => x_coordinate_reg(2),
-      I2 => x_coordinate_reg(4),
-      I3 => x_coordinate_reg(6),
-      I4 => x_coordinate_reg(7),
-      I5 => x_coordinate_reg(5),
-      O => \vid_out[3]_INST_0_i_110_n_0\
-    );
-\vid_out[3]_INST_0_i_111\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FFFEFFFFFEFEFEFE"
-    )
-        port map (
-      I0 => x_coordinate_reg(8),
-      I1 => x_coordinate_reg(10),
-      I2 => x_coordinate_reg(9),
-      I3 => x_coordinate_reg(6),
-      I4 => \y_coordinate[0]_i_4_n_0\,
-      I5 => x_coordinate_reg(7),
-      O => \vid_out[3]_INST_0_i_111_n_0\
-    );
-\vid_out[3]_INST_0_i_112\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"33333333777F7F7F"
+      INIT => X"1033113311331133"
     )
         port map (
       I0 => x_coordinate_reg(5),
       I1 => x_coordinate_reg(7),
-      I2 => x_coordinate_reg(4),
-      I3 => x_coordinate_reg(3),
-      I4 => \vid_out[3]_INST_0_i_133_n_0\,
-      I5 => x_coordinate_reg(6),
-      O => \vid_out[3]_INST_0_i_112_n_0\
+      I2 => \vid_out[3]_INST_0_i_69_n_0\,
+      I3 => x_coordinate_reg(6),
+      I4 => x_coordinate_reg(4),
+      I5 => x_coordinate_reg(3),
+      O => \vid_out[3]_INST_0_i_52_n_0\
     );
-\vid_out[3]_INST_0_i_113\: unisim.vcomponents.LUT6
+\vid_out[3]_INST_0_i_53\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"FEEEEEEECCCCCCCC"
+      INIT => X"01FF"
     )
         port map (
-      I0 => x_coordinate_reg(7),
-      I1 => \vid_out[3]_INST_0_i_77_n_0\,
-      I2 => x_coordinate_reg(5),
-      I3 => x_coordinate_reg(6),
-      I4 => \vid_out[3]_INST_0_i_138_n_0\,
-      I5 => x_coordinate_reg(8),
-      O => \vid_out[3]_INST_0_i_113_n_0\
+      I0 => y_coordinate_reg(1),
+      I1 => y_coordinate_reg(2),
+      I2 => y_coordinate_reg(3),
+      I3 => y_coordinate_reg(4),
+      O => \vid_out[3]_INST_0_i_53_n_0\
     );
-\vid_out[3]_INST_0_i_114\: unisim.vcomponents.LUT4
+\vid_out[3]_INST_0_i_54\: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"0007"
+      INIT => X"7F"
+    )
+        port map (
+      I0 => y_coordinate_reg(8),
+      I1 => y_coordinate_reg(7),
+      I2 => y_coordinate_reg(6),
+      O => \vid_out[3]_INST_0_i_54_n_0\
+    );
+\vid_out[3]_INST_0_i_55\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"0001010101010101"
+    )
+        port map (
+      I0 => y_coordinate_reg(9),
+      I1 => y_coordinate_reg(10),
+      I2 => y_coordinate_reg(11),
+      I3 => y_coordinate_reg(8),
+      I4 => \vid_out[4]_INST_0_i_9_n_0\,
+      I5 => \vid_out[3]_INST_0_i_49_n_0\,
+      O => \vid_out[3]_INST_0_i_55_n_0\
+    );
+\vid_out[3]_INST_0_i_56\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"A888A888A8A8A888"
+    )
+        port map (
+      I0 => \vid_out[4]_INST_0_i_9_n_0\,
+      I1 => y_coordinate_reg(5),
+      I2 => y_coordinate_reg(4),
+      I3 => y_coordinate_reg(3),
+      I4 => y_coordinate_reg(2),
+      I5 => \vid_out[3]_INST_0_i_70_n_0\,
+      O => \vid_out[3]_INST_0_i_56_n_0\
+    );
+\vid_out[3]_INST_0_i_57\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"FAF8F8F8F8F8F8F8"
+    )
+        port map (
+      I0 => \vid_out[4]_INST_0_i_9_n_0\,
+      I1 => y_coordinate_reg(5),
+      I2 => \vid_out[3]_INST_0_i_7_n_0\,
+      I3 => \vid_out[3]_INST_0_i_45_n_0\,
+      I4 => y_coordinate_reg(4),
+      I5 => y_coordinate_reg(3),
+      O => \vid_out[3]_INST_0_i_57_n_0\
+    );
+\vid_out[3]_INST_0_i_58\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"000000000000007F"
+    )
+        port map (
+      I0 => x_coordinate_reg(2),
+      I1 => x_coordinate_reg(1),
+      I2 => x_coordinate_reg(0),
+      I3 => x_coordinate_reg(3),
+      I4 => x_coordinate_reg(4),
+      I5 => x_coordinate_reg(5),
+      O => \vid_out[3]_INST_0_i_58_n_0\
+    );
+\vid_out[3]_INST_0_i_59\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"00200000"
+    )
+        port map (
+      I0 => \vid_out[4]_INST_0_i_11_n_0\,
+      I1 => x_coordinate_reg(8),
+      I2 => x_coordinate_reg(7),
+      I3 => x_coordinate_reg(10),
+      I4 => x_coordinate_reg(9),
+      O => \vid_out[3]_INST_0_i_59_n_0\
+    );
+\vid_out[3]_INST_0_i_6\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"E0EEEEEEEEEEEEEE"
+    )
+        port map (
+      I0 => \vid_out[4]_INST_0_i_8_n_0\,
+      I1 => \vid_out[3]_INST_0_i_31_n_0\,
+      I2 => \vid_out[3]_INST_0_i_32_n_0\,
+      I3 => \vid_out[3]_INST_0_i_33_n_0\,
+      I4 => x_coordinate_reg(6),
+      I5 => \vid_out[3]_INST_0_i_34_n_0\,
+      O => \vid_out[3]_INST_0_i_6_n_0\
+    );
+\vid_out[3]_INST_0_i_60\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"E"
+    )
+        port map (
+      I0 => x_coordinate_reg(9),
+      I1 => x_coordinate_reg(10),
+      O => \vid_out[3]_INST_0_i_60_n_0\
+    );
+\vid_out[3]_INST_0_i_61\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"A8"
+    )
+        port map (
+      I0 => x_coordinate_reg(2),
+      I1 => x_coordinate_reg(0),
+      I2 => x_coordinate_reg(1),
+      O => \vid_out[3]_INST_0_i_61_n_0\
+    );
+\vid_out[3]_INST_0_i_62\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"7"
+    )
+        port map (
+      I0 => x_coordinate_reg(5),
+      I1 => x_coordinate_reg(4),
+      O => \vid_out[3]_INST_0_i_62_n_0\
+    );
+\vid_out[3]_INST_0_i_63\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"7"
+    )
+        port map (
+      I0 => x_coordinate_reg(8),
+      I1 => x_coordinate_reg(7),
+      O => \vid_out[3]_INST_0_i_63_n_0\
+    );
+\vid_out[3]_INST_0_i_64\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"15FF15FF15FF55FF"
+    )
+        port map (
+      I0 => x_coordinate_reg(6),
+      I1 => x_coordinate_reg(4),
+      I2 => x_coordinate_reg(5),
+      I3 => x_coordinate_reg(7),
+      I4 => x_coordinate_reg(3),
+      I5 => \vid_out[3]_INST_0_i_61_n_0\,
+      O => \vid_out[3]_INST_0_i_64_n_0\
+    );
+\vid_out[3]_INST_0_i_65\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"E000"
     )
         port map (
       I0 => x_coordinate_reg(2),
       I1 => x_coordinate_reg(3),
       I2 => x_coordinate_reg(4),
       I3 => x_coordinate_reg(5),
-      O => \vid_out[3]_INST_0_i_114_n_0\
+      O => \vid_out[3]_INST_0_i_65_n_0\
     );
-\vid_out[3]_INST_0_i_115\: unisim.vcomponents.LUT5
+\vid_out[3]_INST_0_i_66\: unisim.vcomponents.LUT2
     generic map(
-      INIT => X"777F7F7F"
+      INIT => X"E"
     )
         port map (
-      I0 => x_coordinate_reg(4),
-      I1 => x_coordinate_reg(7),
-      I2 => x_coordinate_reg(3),
-      I3 => x_coordinate_reg(2),
-      I4 => x_coordinate_reg(1),
-      O => \vid_out[3]_INST_0_i_115_n_0\
+      I0 => x_coordinate_reg(6),
+      I1 => x_coordinate_reg(5),
+      O => \vid_out[3]_INST_0_i_66_n_0\
     );
-\vid_out[3]_INST_0_i_116\: unisim.vcomponents.LUT5
+\vid_out[3]_INST_0_i_67\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"01111111"
+      INIT => X"FFFFFFFFFF008000"
     )
         port map (
-      I0 => x_coordinate_reg(4),
-      I1 => x_coordinate_reg(6),
-      I2 => x_coordinate_reg(3),
-      I3 => x_coordinate_reg(2),
-      I4 => x_coordinate_reg(1),
-      O => \vid_out[3]_INST_0_i_116_n_0\
+      I0 => x_coordinate_reg(2),
+      I1 => x_coordinate_reg(3),
+      I2 => x_coordinate_reg(4),
+      I3 => x_coordinate_reg(6),
+      I4 => x_coordinate_reg(5),
+      I5 => x_coordinate_reg(7),
+      O => \vid_out[3]_INST_0_i_67_n_0\
     );
-\vid_out[3]_INST_0_i_117\: unisim.vcomponents.LUT6
+\vid_out[3]_INST_0_i_68\: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"FFFFFFFF0000FF80"
+      INIT => X"01"
+    )
+        port map (
+      I0 => y_coordinate_reg(5),
+      I1 => y_coordinate_reg(4),
+      I2 => y_coordinate_reg(3),
+      O => \vid_out[3]_INST_0_i_68_n_0\
+    );
+\vid_out[3]_INST_0_i_69\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"01"
+    )
+        port map (
+      I0 => x_coordinate_reg(0),
+      I1 => x_coordinate_reg(1),
+      I2 => x_coordinate_reg(2),
+      O => \vid_out[3]_INST_0_i_69_n_0\
+    );
+\vid_out[3]_INST_0_i_7\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"FFFE"
+    )
+        port map (
+      I0 => y_coordinate_reg(8),
+      I1 => y_coordinate_reg(9),
+      I2 => y_coordinate_reg(10),
+      I3 => y_coordinate_reg(11),
+      O => \vid_out[3]_INST_0_i_7_n_0\
+    );
+\vid_out[3]_INST_0_i_70\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"1"
+    )
+        port map (
+      I0 => y_coordinate_reg(0),
+      I1 => y_coordinate_reg(1),
+      O => \vid_out[3]_INST_0_i_70_n_0\
+    );
+\vid_out[3]_INST_0_i_8\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"11151515FFFFFFFF"
+    )
+        port map (
+      I0 => \vid_out[3]_INST_0_i_31_n_0\,
+      I1 => y_coordinate_reg(4),
+      I2 => y_coordinate_reg(3),
+      I3 => y_coordinate_reg(2),
+      I4 => y_coordinate_reg(1),
+      I5 => y_coordinate_reg(7),
+      O => \vid_out[3]_INST_0_i_8_n_0\
+    );
+\vid_out[3]_INST_0_i_9\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"000800080008AAAA"
+    )
+        port map (
+      I0 => \vid_out[4]_INST_0_i_5_n_0\,
+      I1 => \vid_out[3]_INST_0_i_35_n_0\,
+      I2 => \vid_out[3]_INST_0_i_36_n_0\,
+      I3 => \vid_out[3]_INST_0_i_37_n_0\,
+      I4 => \vid_out[4]_INST_0_i_8_n_0\,
+      I5 => \vid_out[3]_INST_0_i_33_n_0\,
+      O => \vid_out[3]_INST_0_i_9_n_0\
+    );
+\vid_out[4]_INST_0\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AAAAAAAAAAAAA8AA"
+    )
+        port map (
+      I0 => video_active,
+      I1 => \vid_out[3]_INST_0_i_3_n_0\,
+      I2 => \vid_out[3]_INST_0_i_4_n_0\,
+      I3 => \vid_out[3]_INST_0_i_2_n_0\,
+      I4 => \vid_out[4]_INST_0_i_1_n_0\,
+      I5 => \vid_out[4]_INST_0_i_2_n_0\,
+      O => vid_out(6)
+    );
+\vid_out[4]_INST_0_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"BBAAFFAABBAAFBAA"
+    )
+        port map (
+      I0 => \vid_out[3]_INST_0_i_10_n_0\,
+      I1 => \vid_out[4]_INST_0_i_3_n_0\,
+      I2 => \vid_out[4]_INST_0_i_4_n_0\,
+      I3 => \vid_out[4]_INST_0_i_5_n_0\,
+      I4 => \vid_out[3]_INST_0_i_8_n_0\,
+      I5 => \vid_out[4]_INST_0_i_6_n_0\,
+      O => \vid_out[4]_INST_0_i_1_n_0\
+    );
+\vid_out[4]_INST_0_i_10\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"0000000000010101"
+    )
+        port map (
+      I0 => y_coordinate_reg(3),
+      I1 => y_coordinate_reg(4),
+      I2 => y_coordinate_reg(5),
+      I3 => y_coordinate_reg(0),
+      I4 => y_coordinate_reg(1),
+      I5 => y_coordinate_reg(2),
+      O => \vid_out[4]_INST_0_i_10_n_0\
+    );
+\vid_out[4]_INST_0_i_11\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"01FFFFFF"
     )
         port map (
       I0 => x_coordinate_reg(3),
       I1 => x_coordinate_reg(4),
+      I2 => x_coordinate_reg(2),
+      I3 => x_coordinate_reg(5),
+      I4 => x_coordinate_reg(6),
+      O => \vid_out[4]_INST_0_i_11_n_0\
+    );
+\vid_out[4]_INST_0_i_12\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"FFFE"
+    )
+        port map (
+      I0 => x_coordinate_reg(4),
+      I1 => x_coordinate_reg(3),
       I2 => x_coordinate_reg(5),
       I3 => x_coordinate_reg(6),
-      I4 => \vid_out[3]_INST_0_i_31_n_0\,
-      I5 => \vid_out[3]_INST_0_i_77_n_0\,
-      O => \vid_out[3]_INST_0_i_117_n_0\
+      O => \vid_out[4]_INST_0_i_12_n_0\
     );
-\vid_out[3]_INST_0_i_118\: unisim.vcomponents.LUT6
+\vid_out[4]_INST_0_i_13\: unisim.vcomponents.LUT2
     generic map(
-      INIT => X"AAAAAAA8AAA8AAA8"
+      INIT => X"8"
     )
         port map (
-      I0 => x_coordinate_reg(8),
+      I0 => x_coordinate_reg(6),
       I1 => x_coordinate_reg(5),
-      I2 => x_coordinate_reg(7),
-      I3 => x_coordinate_reg(6),
-      I4 => x_coordinate_reg(3),
-      I5 => x_coordinate_reg(4),
-      O => \vid_out[3]_INST_0_i_118_n_0\
+      O => \vid_out[4]_INST_0_i_13_n_0\
     );
-\vid_out[3]_INST_0_i_119\: unisim.vcomponents.LUT6
+\vid_out[4]_INST_0_i_14\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"0000000111111111"
-    )
-        port map (
-      I0 => \vid_out[3]_INST_0_i_97_n_0\,
-      I1 => \vid_out[3]_INST_0_i_77_n_0\,
-      I2 => x_coordinate_reg(4),
-      I3 => x_coordinate_reg(3),
-      I4 => \vid_out[3]_INST_0_i_133_n_0\,
-      I5 => x_coordinate_reg(5),
-      O => \vid_out[3]_INST_0_i_119_n_0\
-    );
-\vid_out[3]_INST_0_i_12\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AAAAAA0202020202"
+      INIT => X"FFFEAAAAFFFFFFFF"
     )
         port map (
       I0 => \vid_out[3]_INST_0_i_32_n_0\,
-      I1 => y_coordinate_reg(7),
-      I2 => \vid_out[3]_INST_0_i_33_n_0\,
-      I3 => \vid_out[3]_INST_0_i_34_n_0\,
-      I4 => y_coordinate_reg(3),
-      I5 => y_coordinate_reg(4),
-      O => \vid_out[3]_INST_0_i_12_n_0\
+      I1 => y_coordinate_reg(3),
+      I2 => y_coordinate_reg(4),
+      I3 => y_coordinate_reg(5),
+      I4 => \vid_out[4]_INST_0_i_9_n_0\,
+      I5 => x_coordinate_reg(6),
+      O => \vid_out[4]_INST_0_i_14_n_0\
     );
-\vid_out[3]_INST_0_i_120\: unisim.vcomponents.LUT2
+\vid_out[4]_INST_0_i_15\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"FFF8"
+    )
+        port map (
+      I0 => x_coordinate_reg(2),
+      I1 => x_coordinate_reg(3),
+      I2 => x_coordinate_reg(4),
+      I3 => x_coordinate_reg(6),
+      O => \vid_out[4]_INST_0_i_15_n_0\
+    );
+\vid_out[4]_INST_0_i_2\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"1010101010101011"
+    )
+        port map (
+      I0 => \vid_out[3]_INST_0_i_8_n_0\,
+      I1 => \vid_out[3]_INST_0_i_7_n_0\,
+      I2 => \vid_out[4]_INST_0_i_7_n_0\,
+      I3 => y_coordinate_reg(6),
+      I4 => y_coordinate_reg(5),
+      I5 => \vid_out[4]_INST_0_i_8_n_0\,
+      O => \vid_out[4]_INST_0_i_2_n_0\
+    );
+\vid_out[4]_INST_0_i_3\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"EEEEEEEEEEE0EEEE"
+    )
+        port map (
+      I0 => \vid_out[3]_INST_0_i_33_n_0\,
+      I1 => \vid_out[4]_INST_0_i_8_n_0\,
+      I2 => \vid_out[3]_INST_0_i_37_n_0\,
+      I3 => \vid_out[3]_INST_0_i_36_n_0\,
+      I4 => \vid_out[4]_INST_0_i_9_n_0\,
+      I5 => \vid_out[4]_INST_0_i_10_n_0\,
+      O => \vid_out[4]_INST_0_i_3_n_0\
+    );
+\vid_out[4]_INST_0_i_4\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"0111111100000000"
+    )
+        port map (
+      I0 => \vid_out[4]_INST_0_i_11_n_0\,
+      I1 => x_coordinate_reg(4),
+      I2 => x_coordinate_reg(3),
+      I3 => x_coordinate_reg(2),
+      I4 => x_coordinate_reg(1),
+      I5 => \vid_out[3]_INST_0_i_46_n_0\,
+      O => \vid_out[4]_INST_0_i_4_n_0\
+    );
+\vid_out[4]_INST_0_i_5\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"00004FFF"
+    )
+        port map (
+      I0 => y_coordinate_reg(5),
+      I1 => \vid_out[3]_INST_0_i_53_n_0\,
+      I2 => y_coordinate_reg(6),
+      I3 => y_coordinate_reg(7),
+      I4 => \vid_out[3]_INST_0_i_7_n_0\,
+      O => \vid_out[4]_INST_0_i_5_n_0\
+    );
+\vid_out[4]_INST_0_i_6\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"0000FE00"
+    )
+        port map (
+      I0 => x_coordinate_reg(1),
+      I1 => x_coordinate_reg(2),
+      I2 => \vid_out[4]_INST_0_i_12_n_0\,
+      I3 => x_coordinate_reg(7),
+      I4 => \vid_out[7]_INST_0_i_6_n_0\,
+      O => \vid_out[4]_INST_0_i_6_n_0\
+    );
+\vid_out[4]_INST_0_i_7\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"000000007FFF0000"
+    )
+        port map (
+      I0 => \vid_out[3]_INST_0_i_61_n_0\,
+      I1 => \vid_out[4]_INST_0_i_13_n_0\,
+      I2 => x_coordinate_reg(3),
+      I3 => x_coordinate_reg(4),
+      I4 => \vid_out[3]_INST_0_i_46_n_0\,
+      I5 => \vid_out[4]_INST_0_i_14_n_0\,
+      O => \vid_out[4]_INST_0_i_7_n_0\
+    );
+\vid_out[4]_INST_0_i_8\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"FEFEFEF2"
+    )
+        port map (
+      I0 => \vid_out[4]_INST_0_i_11_n_0\,
+      I1 => x_coordinate_reg(7),
+      I2 => \vid_out[3]_INST_0_i_37_n_0\,
+      I3 => \vid_out[4]_INST_0_i_15_n_0\,
+      I4 => x_coordinate_reg(5),
+      O => \vid_out[4]_INST_0_i_8_n_0\
+    );
+\vid_out[4]_INST_0_i_9\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"8"
+    )
+        port map (
+      I0 => y_coordinate_reg(6),
+      I1 => y_coordinate_reg(7),
+      O => \vid_out[4]_INST_0_i_9_n_0\
+    );
+\vid_out[6]_INST_0\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AAAAAAAAAAAAA8AA"
+    )
+        port map (
+      I0 => video_active,
+      I1 => \vid_out[3]_INST_0_i_5_n_0\,
+      I2 => \vid_out[3]_INST_0_i_4_n_0\,
+      I3 => \vid_out[3]_INST_0_i_2_n_0\,
+      I4 => \vid_out[4]_INST_0_i_1_n_0\,
+      I5 => \vid_out[4]_INST_0_i_2_n_0\,
+      O => vid_out(5)
+    );
+\vid_out[7]_INST_0\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AAAAAAAAAAAAAA8A"
+    )
+        port map (
+      I0 => video_active,
+      I1 => \vid_out[3]_INST_0_i_5_n_0\,
+      I2 => \vid_out[3]_INST_0_i_2_n_0\,
+      I3 => \vid_out[7]_INST_0_i_1_n_0\,
+      I4 => \vid_out[7]_INST_0_i_2_n_0\,
+      I5 => \vid_out[4]_INST_0_i_2_n_0\,
+      O => vid_out(3)
+    );
+\vid_out[7]_INST_0_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AAEAAAEAAAFFAAEA"
+    )
+        port map (
+      I0 => \vid_out[3]_INST_0_i_9_n_0\,
+      I1 => \vid_out[7]_INST_0_i_3_n_0\,
+      I2 => \vid_out[3]_INST_0_i_17_n_0\,
+      I3 => \vid_out[7]_INST_0_i_4_n_0\,
+      I4 => \vid_out[4]_INST_0_i_4_n_0\,
+      I5 => \vid_out[3]_INST_0_i_8_n_0\,
+      O => \vid_out[7]_INST_0_i_1_n_0\
+    );
+\vid_out[7]_INST_0_i_2\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"0F000200"
+    )
+        port map (
+      I0 => \vid_out[7]_INST_0_i_5_n_0\,
+      I1 => \vid_out[7]_INST_0_i_6_n_0\,
+      I2 => \vid_out[3]_INST_0_i_8_n_0\,
+      I3 => \vid_out[4]_INST_0_i_5_n_0\,
+      I4 => \vid_out[4]_INST_0_i_4_n_0\,
+      O => \vid_out[7]_INST_0_i_2_n_0\
+    );
+\vid_out[7]_INST_0_i_3\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"0D0D0D000D000D00"
+    )
+        port map (
+      I0 => \vid_out[7]_INST_0_i_6_n_0\,
+      I1 => \vid_out[3]_INST_0_i_46_n_0\,
+      I2 => \vid_out[7]_INST_0_i_7_n_0\,
+      I3 => y_coordinate_reg(4),
+      I4 => y_coordinate_reg(3),
+      I5 => \vid_out[3]_INST_0_i_45_n_0\,
+      O => \vid_out[7]_INST_0_i_3_n_0\
+    );
+\vid_out[7]_INST_0_i_4\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"EAAAAAAAAAAAAAAA"
+    )
+        port map (
+      I0 => \vid_out[7]_INST_0_i_8_n_0\,
+      I1 => y_coordinate_reg(7),
+      I2 => y_coordinate_reg(5),
+      I3 => y_coordinate_reg(4),
+      I4 => y_coordinate_reg(3),
+      I5 => \vid_out[7]_INST_0_i_9_n_0\,
+      O => \vid_out[7]_INST_0_i_4_n_0\
+    );
+\vid_out[7]_INST_0_i_5\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AAAAAAAAAAAAAAA8"
+    )
+        port map (
+      I0 => x_coordinate_reg(7),
+      I1 => x_coordinate_reg(4),
+      I2 => x_coordinate_reg(3),
+      I3 => \vid_out[3]_INST_0_i_66_n_0\,
+      I4 => x_coordinate_reg(2),
+      I5 => x_coordinate_reg(1),
+      O => \vid_out[7]_INST_0_i_5_n_0\
+    );
+\vid_out[7]_INST_0_i_6\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"FFFFFFFFFFFFFFF8"
+    )
+        port map (
+      I0 => x_coordinate_reg(2),
+      I1 => x_coordinate_reg(3),
+      I2 => x_coordinate_reg(4),
+      I3 => x_coordinate_reg(6),
+      I4 => x_coordinate_reg(5),
+      I5 => \vid_out[3]_INST_0_i_37_n_0\,
+      O => \vid_out[7]_INST_0_i_6_n_0\
+    );
+\vid_out[7]_INST_0_i_7\: unisim.vcomponents.LUT2
     generic map(
       INIT => X"7"
     )
         port map (
-      I0 => x_coordinate_reg(8),
-      I1 => x_coordinate_reg(6),
-      O => \vid_out[3]_INST_0_i_120_n_0\
+      I0 => y_coordinate_reg(5),
+      I1 => y_coordinate_reg(7),
+      O => \vid_out[7]_INST_0_i_7_n_0\
     );
-\vid_out[3]_INST_0_i_121\: unisim.vcomponents.LUT6
+\vid_out[7]_INST_0_i_8\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"FFFFFFFEFFFEFFFE"
     )
@@ -2461,1630 +2846,42 @@ diagonal3_carry_i_4: unisim.vcomponents.LUT1
       I3 => y_coordinate_reg(8),
       I4 => y_coordinate_reg(7),
       I5 => y_coordinate_reg(6),
-      O => \vid_out[3]_INST_0_i_121_n_0\
+      O => \vid_out[7]_INST_0_i_8_n_0\
     );
-\vid_out[3]_INST_0_i_122\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"8"
-    )
-        port map (
-      I0 => y_coordinate_reg(3),
-      I1 => y_coordinate_reg(4),
-      O => \vid_out[3]_INST_0_i_122_n_0\
-    );
-\vid_out[3]_INST_0_i_123\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"57"
-    )
-        port map (
-      I0 => x_coordinate_reg(4),
-      I1 => x_coordinate_reg(2),
-      I2 => x_coordinate_reg(3),
-      O => \vid_out[3]_INST_0_i_123_n_0\
-    );
-\vid_out[3]_INST_0_i_124\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FFFDFFFDFFFDFFFF"
-    )
-        port map (
-      I0 => \vid_out[0]_INST_0_i_8_n_0\,
-      I1 => x_coordinate_reg(6),
-      I2 => \vid_out[3]_INST_0_i_77_n_0\,
-      I3 => \vid_out[3]_INST_0_i_31_n_0\,
-      I4 => x_coordinate_reg(5),
-      I5 => x_coordinate_reg(4),
-      O => \vid_out[3]_INST_0_i_124_n_0\
-    );
-\vid_out[3]_INST_0_i_125\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"07"
-    )
-        port map (
-      I0 => x_coordinate_reg(1),
-      I1 => x_coordinate_reg(2),
-      I2 => x_coordinate_reg(3),
-      O => \vid_out[3]_INST_0_i_125_n_0\
-    );
-\vid_out[3]_INST_0_i_126\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"7"
-    )
-        port map (
-      I0 => y_coordinate_reg(5),
-      I1 => y_coordinate_reg(7),
-      O => \vid_out[3]_INST_0_i_126_n_0\
-    );
-\vid_out[3]_INST_0_i_127\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"88888000"
-    )
-        port map (
-      I0 => y_coordinate_reg(7),
-      I1 => y_coordinate_reg(6),
-      I2 => y_coordinate_reg(0),
-      I3 => y_coordinate_reg(1),
-      I4 => y_coordinate_reg(2),
-      O => \vid_out[3]_INST_0_i_127_n_0\
-    );
-\vid_out[3]_INST_0_i_128\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"7777777F"
-    )
-        port map (
-      I0 => y_coordinate_reg(7),
-      I1 => y_coordinate_reg(6),
-      I2 => y_coordinate_reg(5),
-      I3 => y_coordinate_reg(3),
-      I4 => y_coordinate_reg(4),
-      O => \vid_out[3]_INST_0_i_128_n_0\
-    );
-\vid_out[3]_INST_0_i_129\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"4444444044404440"
-    )
-        port map (
-      I0 => \vid_out[3]_INST_0_i_31_n_0\,
-      I1 => x_coordinate_reg(6),
-      I2 => x_coordinate_reg(5),
-      I3 => x_coordinate_reg(4),
-      I4 => x_coordinate_reg(3),
-      I5 => x_coordinate_reg(2),
-      O => \vid_out[3]_INST_0_i_129_n_0\
-    );
-\vid_out[3]_INST_0_i_13\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FFFFEEEFFFFFEFEF"
-    )
-        port map (
-      I0 => \vid_out[3]_INST_0_i_35_n_0\,
-      I1 => \vid_out[3]_INST_0_i_36_n_0\,
-      I2 => x_coordinate_reg(8),
-      I3 => \vid_out[3]_INST_0_i_37_n_0\,
-      I4 => \vid_out[3]_INST_0_i_38_n_0\,
-      I5 => \vid_out[3]_INST_0_i_9_n_0\,
-      O => \vid_out[3]_INST_0_i_13_n_0\
-    );
-\vid_out[3]_INST_0_i_130\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"E0"
-    )
-        port map (
-      I0 => x_coordinate_reg(1),
-      I1 => x_coordinate_reg(2),
-      I2 => x_coordinate_reg(3),
-      O => \vid_out[3]_INST_0_i_130_n_0\
-    );
-\vid_out[3]_INST_0_i_131\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"AAAAAAA8"
-    )
-        port map (
-      I0 => x_coordinate_reg(5),
-      I1 => x_coordinate_reg(2),
-      I2 => x_coordinate_reg(1),
-      I3 => x_coordinate_reg(3),
-      I4 => x_coordinate_reg(4),
-      O => \vid_out[3]_INST_0_i_131_n_0\
-    );
-\vid_out[3]_INST_0_i_132\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"00000001"
-    )
-        port map (
-      I0 => x_coordinate_reg(8),
-      I1 => x_coordinate_reg(10),
-      I2 => x_coordinate_reg(9),
-      I3 => x_coordinate_reg(7),
-      I4 => x_coordinate_reg(6),
-      O => \vid_out[3]_INST_0_i_132_n_0\
-    );
-\vid_out[3]_INST_0_i_133\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"E"
-    )
-        port map (
-      I0 => x_coordinate_reg(2),
-      I1 => x_coordinate_reg(1),
-      O => \vid_out[3]_INST_0_i_133_n_0\
-    );
-\vid_out[3]_INST_0_i_134\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"E"
-    )
-        port map (
-      I0 => x_coordinate_reg(6),
-      I1 => x_coordinate_reg(5),
-      O => \vid_out[3]_INST_0_i_134_n_0\
-    );
-\vid_out[3]_INST_0_i_135\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"7FFF"
-    )
-        port map (
-      I0 => x_coordinate_reg(4),
-      I1 => x_coordinate_reg(3),
-      I2 => x_coordinate_reg(1),
-      I3 => x_coordinate_reg(2),
-      O => \vid_out[3]_INST_0_i_135_n_0\
-    );
-\vid_out[3]_INST_0_i_136\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"1555"
-    )
-        port map (
-      I0 => x_coordinate_reg(5),
-      I1 => x_coordinate_reg(3),
-      I2 => x_coordinate_reg(2),
-      I3 => x_coordinate_reg(4),
-      O => \vid_out[3]_INST_0_i_136_n_0\
-    );
-\vid_out[3]_INST_0_i_137\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"7FFF"
-    )
-        port map (
-      I0 => x_coordinate_reg(5),
-      I1 => x_coordinate_reg(6),
-      I2 => x_coordinate_reg(7),
-      I3 => x_coordinate_reg(8),
-      O => \vid_out[3]_INST_0_i_137_n_0\
-    );
-\vid_out[3]_INST_0_i_138\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"E"
-    )
-        port map (
-      I0 => x_coordinate_reg(3),
-      I1 => x_coordinate_reg(4),
-      O => \vid_out[3]_INST_0_i_138_n_0\
-    );
-\vid_out[3]_INST_0_i_14\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"777777777777FF7F"
-    )
-        port map (
-      I0 => x_coordinate_reg(8),
-      I1 => x_coordinate_reg(9),
-      I2 => x_coordinate_reg(5),
-      I3 => \vid_out[3]_INST_0_i_39_n_0\,
-      I4 => x_coordinate_reg(6),
-      I5 => x_coordinate_reg(7),
-      O => \vid_out[3]_INST_0_i_14_n_0\
-    );
-\vid_out[3]_INST_0_i_15\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"0004040400040004"
-    )
-        port map (
-      I0 => \vid_out[3]_INST_0_i_40_n_0\,
-      I1 => \vid_out[3]_INST_0_i_41_n_0\,
-      I2 => \vid_out[3]_INST_0_i_42_n_0\,
-      I3 => \vid_out[3]_INST_0_i_43_n_0\,
-      I4 => \vid_out[3]_INST_0_i_44_n_0\,
-      I5 => \vid_out[3]_INST_0_i_45_n_0\,
-      O => \vid_out[3]_INST_0_i_15_n_0\
-    );
-\vid_out[3]_INST_0_i_16\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"54FF5454"
-    )
-        port map (
-      I0 => \vid_out[3]_INST_0_i_46_n_0\,
-      I1 => \vid_out[3]_INST_0_i_47_n_0\,
-      I2 => \vid_out[3]_INST_0_i_48_n_0\,
-      I3 => \vid_out[3]_INST_0_i_49_n_0\,
-      I4 => \vid_out[3]_INST_0_i_44_n_0\,
-      O => \vid_out[3]_INST_0_i_16_n_0\
-    );
-\vid_out[3]_INST_0_i_17\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FFFEFEFEFFFEFFFE"
-    )
-        port map (
-      I0 => \vid_out[3]_INST_0_i_50_n_0\,
-      I1 => \vid_out[3]_INST_0_i_51_n_0\,
-      I2 => \vid_out[3]_INST_0_i_52_n_0\,
-      I3 => \vid_out[3]_INST_0_i_43_n_0\,
-      I4 => \vid_out[3]_INST_0_i_53_n_0\,
-      I5 => \vid_out[3]_INST_0_i_54_n_0\,
-      O => \vid_out[3]_INST_0_i_17_n_0\
-    );
-\vid_out[3]_INST_0_i_18\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FFAEAEAEFFEEFFEE"
-    )
-        port map (
-      I0 => \vid_out[3]_INST_0_i_55_n_0\,
-      I1 => \vid_out[3]_INST_0_i_48_n_0\,
-      I2 => \vid_out[3]_INST_0_i_56_n_0\,
-      I3 => \vid_out[3]_INST_0_i_57_n_0\,
-      I4 => \vid_out[3]_INST_0_i_58_n_0\,
-      I5 => \vid_out[3]_INST_0_i_59_n_0\,
-      O => \vid_out[3]_INST_0_i_18_n_0\
-    );
-\vid_out[3]_INST_0_i_19\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FFFFFFFFF222F2F2"
-    )
-        port map (
-      I0 => \vid_out[3]_INST_0_i_60_n_0\,
-      I1 => \vid_out[3]_INST_0_i_61_n_0\,
-      I2 => \vid_out[3]_INST_0_i_62_n_0\,
-      I3 => \vid_out[3]_INST_0_i_63_n_0\,
-      I4 => \vid_out[3]_INST_0_i_64_n_0\,
-      I5 => \vid_out[3]_INST_0_i_65_n_0\,
-      O => \vid_out[3]_INST_0_i_19_n_0\
-    );
-\vid_out[3]_INST_0_i_2\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"FEAA"
-    )
-        port map (
-      I0 => \vid_out[3]_INST_0_i_5_n_0\,
-      I1 => \vid_out[3]_INST_0_i_6_n_0\,
-      I2 => \vid_out[3]_INST_0_i_7_n_0\,
-      I3 => \vid_out[3]_INST_0_i_8_n_0\,
-      O => \vid_out[3]_INST_0_i_2_n_0\
-    );
-\vid_out[3]_INST_0_i_20\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FBAAFBFBFBBBFBFB"
-    )
-        port map (
-      I0 => \vid_out[3]_INST_0_i_66_n_0\,
-      I1 => \vid_out[3]_INST_0_i_49_n_0\,
-      I2 => \vid_out[3]_INST_0_i_62_n_0\,
-      I3 => \vid_out[3]_INST_0_i_53_n_0\,
-      I4 => \vid_out[3]_INST_0_i_67_n_0\,
-      I5 => \vid_out[3]_INST_0_i_68_n_0\,
-      O => \vid_out[3]_INST_0_i_20_n_0\
-    );
-\vid_out[3]_INST_0_i_21\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"00000200"
-    )
-        port map (
-      I0 => x_coordinate_reg(7),
-      I1 => x_coordinate_reg(8),
-      I2 => x_coordinate_reg(9),
-      I3 => x_coordinate_reg(10),
-      I4 => \vid_out[3]_INST_0_i_24_n_0\,
-      O => \vid_out[3]_INST_0_i_21_n_0\
-    );
-\vid_out[3]_INST_0_i_22\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"00000000002FFFFF"
-    )
-        port map (
-      I0 => \vid_out[3]_INST_0_i_69_n_0\,
-      I1 => x_coordinate_reg(2),
-      I2 => x_coordinate_reg(3),
-      I3 => x_coordinate_reg(4),
-      I4 => x_coordinate_reg(5),
-      I5 => x_coordinate_reg(6),
-      O => \vid_out[3]_INST_0_i_22_n_0\
-    );
-\vid_out[3]_INST_0_i_23\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"00000040"
-    )
-        port map (
-      I0 => \vid_out[3]_INST_0_i_70_n_0\,
-      I1 => x_coordinate_reg(9),
-      I2 => x_coordinate_reg(8),
-      I3 => x_coordinate_reg(7),
-      I4 => x_coordinate_reg(10),
-      O => \vid_out[3]_INST_0_i_23_n_0\
-    );
-\vid_out[3]_INST_0_i_24\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"C8888888C888C888"
-    )
-        port map (
-      I0 => x_coordinate_reg(6),
-      I1 => x_coordinate_reg(7),
-      I2 => x_coordinate_reg(4),
-      I3 => x_coordinate_reg(5),
-      I4 => x_coordinate_reg(3),
-      I5 => \vid_out[3]_INST_0_i_71_n_0\,
-      O => \vid_out[3]_INST_0_i_24_n_0\
-    );
-\vid_out[3]_INST_0_i_25\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"AAAA8000"
-    )
-        port map (
-      I0 => x_coordinate_reg(4),
-      I1 => x_coordinate_reg(2),
-      I2 => x_coordinate_reg(0),
-      I3 => x_coordinate_reg(1),
-      I4 => x_coordinate_reg(3),
-      O => \vid_out[3]_INST_0_i_25_n_0\
-    );
-\vid_out[3]_INST_0_i_26\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"BFFFFFFF"
-    )
-        port map (
-      I0 => \vid_out[3]_INST_0_i_72_n_0\,
-      I1 => y_coordinate_reg(5),
-      I2 => y_coordinate_reg(7),
-      I3 => y_coordinate_reg(6),
-      I4 => y_coordinate_reg(8),
-      O => \vid_out[3]_INST_0_i_26_n_0\
-    );
-\vid_out[3]_INST_0_i_27\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FEFFFEFEFEFEFEFE"
-    )
-        port map (
-      I0 => y_coordinate_reg(9),
-      I1 => y_coordinate_reg(10),
-      I2 => y_coordinate_reg(11),
-      I3 => \vid_out[6]_INST_0_i_14_n_0\,
-      I4 => y_coordinate_reg(8),
-      I5 => \vid_out[0]_INST_0_i_10_n_0\,
-      O => \vid_out[3]_INST_0_i_27_n_0\
-    );
-\vid_out[3]_INST_0_i_28\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"1555555555555555"
-    )
-        port map (
-      I0 => \vid_out[3]_INST_0_i_73_n_0\,
-      I1 => y_coordinate_reg(0),
-      I2 => y_coordinate_reg(2),
-      I3 => y_coordinate_reg(1),
-      I4 => y_coordinate_reg(3),
-      I5 => y_coordinate_reg(4),
-      O => \vid_out[3]_INST_0_i_28_n_0\
-    );
-\vid_out[3]_INST_0_i_29\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"8880808088808880"
-    )
-        port map (
-      I0 => y_coordinate_reg(7),
-      I1 => y_coordinate_reg(6),
-      I2 => y_coordinate_reg(5),
-      I3 => y_coordinate_reg(4),
-      I4 => y_coordinate_reg(3),
-      I5 => \vid_out[3]_INST_0_i_74_n_0\,
-      O => \vid_out[3]_INST_0_i_29_n_0\
-    );
-\vid_out[3]_INST_0_i_3\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FEFEFE00FEFEFEFE"
-    )
-        port map (
-      I0 => \vid_out[3]_INST_0_i_9_n_0\,
-      I1 => \vid_out[3]_INST_0_i_10_n_0\,
-      I2 => \vid_out[3]_INST_0_i_11_n_0\,
-      I3 => \vid_out[3]_INST_0_i_12_n_0\,
-      I4 => \vid_out[3]_INST_0_i_13_n_0\,
-      I5 => \vid_out[3]_INST_0_i_14_n_0\,
-      O => \vid_out[3]_INST_0_i_3_n_0\
-    );
-\vid_out[3]_INST_0_i_30\: unisim.vcomponents.LUT3
+\vid_out[7]_INST_0_i_9\: unisim.vcomponents.LUT3
     generic map(
       INIT => X"FE"
-    )
-        port map (
-      I0 => x_coordinate_reg(6),
-      I1 => x_coordinate_reg(10),
-      I2 => x_coordinate_reg(9),
-      O => \vid_out[3]_INST_0_i_30_n_0\
-    );
-\vid_out[3]_INST_0_i_31\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"7"
-    )
-        port map (
-      I0 => x_coordinate_reg(8),
-      I1 => x_coordinate_reg(7),
-      O => \vid_out[3]_INST_0_i_31_n_0\
-    );
-\vid_out[3]_INST_0_i_32\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"7FFFFFFFFFFFFFFF"
-    )
-        port map (
-      I0 => y_coordinate_reg(1),
-      I1 => y_coordinate_reg(0),
-      I2 => y_coordinate_reg(4),
-      I3 => y_coordinate_reg(5),
-      I4 => y_coordinate_reg(2),
-      I5 => y_coordinate_reg(3),
-      O => \vid_out[3]_INST_0_i_32_n_0\
-    );
-\vid_out[3]_INST_0_i_33\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"5555555554000000"
-    )
-        port map (
-      I0 => y_coordinate_reg(5),
-      I1 => y_coordinate_reg(1),
-      I2 => y_coordinate_reg(0),
-      I3 => y_coordinate_reg(3),
-      I4 => y_coordinate_reg(2),
-      I5 => y_coordinate_reg(4),
-      O => \vid_out[3]_INST_0_i_33_n_0\
-    );
-\vid_out[3]_INST_0_i_34\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"80"
     )
         port map (
       I0 => y_coordinate_reg(0),
       I1 => y_coordinate_reg(2),
       I2 => y_coordinate_reg(1),
-      O => \vid_out[3]_INST_0_i_34_n_0\
+      O => \vid_out[7]_INST_0_i_9_n_0\
     );
-\vid_out[3]_INST_0_i_35\: unisim.vcomponents.LUT6
+\vid_out[9]_INST_0\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"AAAAAAA8AAA8AAA8"
+      INIT => X"00000000FFEF0000"
     )
         port map (
-      I0 => y_coordinate_reg(7),
-      I1 => y_coordinate_reg(4),
-      I2 => y_coordinate_reg(6),
-      I3 => y_coordinate_reg(5),
-      I4 => y_coordinate_reg(3),
-      I5 => \vid_out[3]_INST_0_i_75_n_0\,
-      O => \vid_out[3]_INST_0_i_35_n_0\
+      I0 => \vid_out[4]_INST_0_i_2_n_0\,
+      I1 => \vid_out[4]_INST_0_i_1_n_0\,
+      I2 => \vid_out[3]_INST_0_i_2_n_0\,
+      I3 => \vid_out[3]_INST_0_i_4_n_0\,
+      I4 => video_active,
+      I5 => \vid_out[3]_INST_0_i_3_n_0\,
+      O => vid_out(0)
     );
-\vid_out[3]_INST_0_i_36\: unisim.vcomponents.LUT5
+\x_coordinate[0]_i_1\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"DFDFDFFF"
-    )
-        port map (
-      I0 => x_coordinate_reg(9),
-      I1 => x_coordinate_reg(10),
-      I2 => y_coordinate_reg(8),
-      I3 => y_coordinate_reg(6),
-      I4 => y_coordinate_reg(7),
-      O => \vid_out[3]_INST_0_i_36_n_0\
-    );
-\vid_out[3]_INST_0_i_37\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"8"
-    )
-        port map (
-      I0 => x_coordinate_reg(6),
-      I1 => x_coordinate_reg(7),
-      O => \vid_out[3]_INST_0_i_37_n_0\
-    );
-\vid_out[3]_INST_0_i_38\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"FE"
-    )
-        port map (
-      I0 => y_coordinate_reg(11),
-      I1 => y_coordinate_reg(10),
-      I2 => y_coordinate_reg(9),
-      O => \vid_out[3]_INST_0_i_38_n_0\
-    );
-\vid_out[3]_INST_0_i_39\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"00000057"
-    )
-        port map (
-      I0 => x_coordinate_reg(2),
-      I1 => x_coordinate_reg(0),
-      I2 => x_coordinate_reg(1),
-      I3 => x_coordinate_reg(4),
-      I4 => x_coordinate_reg(3),
-      O => \vid_out[3]_INST_0_i_39_n_0\
-    );
-\vid_out[3]_INST_0_i_4\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"0000000000000002"
-    )
-        port map (
-      I0 => \vid_out[3]_INST_0_i_15_n_0\,
-      I1 => \vid_out[3]_INST_0_i_16_n_0\,
-      I2 => \vid_out[3]_INST_0_i_17_n_0\,
-      I3 => \vid_out[3]_INST_0_i_18_n_0\,
-      I4 => \vid_out[3]_INST_0_i_19_n_0\,
-      I5 => \vid_out[3]_INST_0_i_20_n_0\,
-      O => \vid_out[3]_INST_0_i_4_n_0\
-    );
-\vid_out[3]_INST_0_i_40\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"1111001000100010"
-    )
-        port map (
-      I0 => \vid_out[3]_INST_0_i_76_n_0\,
-      I1 => \vid_out[3]_INST_0_i_77_n_0\,
-      I2 => \vid_out[3]_INST_0_i_43_n_0\,
-      I3 => \vid_out[3]_INST_0_i_78_n_0\,
-      I4 => \vid_out[3]_INST_0_i_60_n_0\,
-      I5 => \vid_out[3]_INST_0_i_79_n_0\,
-      O => \vid_out[3]_INST_0_i_40_n_0\
-    );
-\vid_out[3]_INST_0_i_41\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FFFFDD0DFFFFFFFF"
-    )
-        port map (
-      I0 => \vid_out[3]_INST_0_i_60_n_0\,
-      I1 => \vid_out[3]_INST_0_i_80_n_0\,
-      I2 => \vid_out[3]_INST_0_i_62_n_0\,
-      I3 => \vid_out[3]_INST_0_i_81_n_0\,
-      I4 => \vid_out[3]_INST_0_i_82_n_0\,
-      I5 => \x_coordinate[0]_i_5_n_0\,
-      O => \vid_out[3]_INST_0_i_41_n_0\
-    );
-\vid_out[3]_INST_0_i_42\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"808080AAAAAAAAAA"
-    )
-        port map (
-      I0 => \vid_out[3]_INST_0_i_60_n_0\,
-      I1 => \vid_out[3]_INST_0_i_83_n_0\,
-      I2 => \vid_out[3]_INST_0_i_84_n_0\,
-      I3 => \vid_out[3]_INST_0_i_85_n_0\,
-      I4 => \vid_out[3]_INST_0_i_86_n_0\,
-      I5 => \vid_out[3]_INST_0_i_87_n_0\,
-      O => \vid_out[3]_INST_0_i_42_n_0\
-    );
-\vid_out[3]_INST_0_i_43\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"0000000000008A00"
-    )
-        port map (
-      I0 => y_coordinate_reg(4),
-      I1 => y_coordinate_reg(3),
-      I2 => \vid_out[3]_INST_0_i_88_n_0\,
-      I3 => y_coordinate_reg(7),
-      I4 => \vid_out[3]_INST_0_i_89_n_0\,
-      I5 => \vid_out[3]_INST_0_i_90_n_0\,
-      O => \vid_out[3]_INST_0_i_43_n_0\
-    );
-\vid_out[3]_INST_0_i_44\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FDDDFDDDFDDDFFFF"
-    )
-        port map (
-      I0 => \vid_out[3]_INST_0_i_91_n_0\,
-      I1 => \vid_out[3]_INST_0_i_83_n_0\,
-      I2 => \vid_out[3]_INST_0_i_92_n_0\,
-      I3 => \vid_out[3]_INST_0_i_93_n_0\,
-      I4 => \vid_out[3]_INST_0_i_94_n_0\,
-      I5 => \vid_out[3]_INST_0_i_95_n_0\,
-      O => \vid_out[3]_INST_0_i_44_n_0\
-    );
-\vid_out[3]_INST_0_i_45\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"0000000002FF0000"
-    )
-        port map (
-      I0 => \vid_out[3]_INST_0_i_96_n_0\,
-      I1 => \vid_out[3]_INST_0_i_97_n_0\,
-      I2 => \vid_out[3]_INST_0_i_82_n_0\,
-      I3 => \vid_out[3]_INST_0_i_98_n_0\,
-      I4 => \vid_out[3]_INST_0_i_67_n_0\,
-      I5 => \vid_out[3]_INST_0_i_63_n_0\,
-      O => \vid_out[3]_INST_0_i_45_n_0\
-    );
-\vid_out[3]_INST_0_i_46\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FFFFFFFFFFFFECCF"
-    )
-        port map (
-      I0 => x_coordinate_reg(1),
-      I1 => \vid_out[3]_INST_0_i_99_n_0\,
-      I2 => x_coordinate_reg(3),
-      I3 => x_coordinate_reg(2),
-      I4 => x_coordinate_reg(4),
-      I5 => \vid_out[3]_INST_0_i_100_n_0\,
-      O => \vid_out[3]_INST_0_i_46_n_0\
-    );
-\vid_out[3]_INST_0_i_47\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"00000004"
-    )
-        port map (
-      I0 => \vid_out[3]_INST_0_i_101_n_0\,
-      I1 => y_coordinate_reg(7),
-      I2 => \vid_out[3]_INST_0_i_89_n_0\,
-      I3 => \vid_out[3]_INST_0_i_102_n_0\,
-      I4 => y_coordinate_reg(6),
-      O => \vid_out[3]_INST_0_i_47_n_0\
-    );
-\vid_out[3]_INST_0_i_48\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"1"
-    )
-        port map (
-      I0 => \vid_out[3]_INST_0_i_103_n_0\,
-      I1 => \vid_out[3]_INST_0_i_104_n_0\,
-      O => \vid_out[3]_INST_0_i_48_n_0\
-    );
-\vid_out[3]_INST_0_i_49\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AAABFFFFFFFFFFFF"
-    )
-        port map (
-      I0 => \vid_out[3]_INST_0_i_104_n_0\,
-      I1 => y_coordinate_reg(4),
-      I2 => y_coordinate_reg(3),
-      I3 => y_coordinate_reg(5),
-      I4 => y_coordinate_reg(6),
-      I5 => y_coordinate_reg(7),
-      O => \vid_out[3]_INST_0_i_49_n_0\
-    );
-\vid_out[3]_INST_0_i_5\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"08AA080808080808"
-    )
-        port map (
-      I0 => \vid_out[0]_INST_0_i_3_n_0\,
-      I1 => \vid_out[3]_INST_0_i_21_n_0\,
-      I2 => \vid_out[3]_INST_0_i_22_n_0\,
-      I3 => x_coordinate_reg(6),
-      I4 => \y_coordinate[0]_i_4_n_0\,
-      I5 => \vid_out[3]_INST_0_i_23_n_0\,
-      O => \vid_out[3]_INST_0_i_5_n_0\
-    );
-\vid_out[3]_INST_0_i_50\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FF00020002000200"
-    )
-        port map (
-      I0 => \vid_out[3]_INST_0_i_105_n_0\,
-      I1 => \vid_out[3]_INST_0_i_102_n_0\,
-      I2 => y_coordinate_reg(6),
-      I3 => \vid_out[3]_INST_0_i_106_n_0\,
-      I4 => \vid_out[3]_INST_0_i_107_n_0\,
-      I5 => \vid_out[3]_INST_0_i_98_n_0\,
-      O => \vid_out[3]_INST_0_i_50_n_0\
-    );
-\vid_out[3]_INST_0_i_51\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"5555775700000000"
-    )
-        port map (
-      I0 => \vid_out[3]_INST_0_i_108_n_0\,
-      I1 => \vid_out[3]_INST_0_i_109_n_0\,
-      I2 => x_coordinate_reg(8),
-      I3 => \vid_out[3]_INST_0_i_110_n_0\,
-      I4 => \vid_out[3]_INST_0_i_77_n_0\,
-      I5 => \vid_out[3]_INST_0_i_57_n_0\,
-      O => \vid_out[3]_INST_0_i_51_n_0\
-    );
-\vid_out[3]_INST_0_i_52\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"101010FF10101010"
-    )
-        port map (
-      I0 => \vid_out[3]_INST_0_i_111_n_0\,
-      I1 => \vid_out[3]_INST_0_i_112_n_0\,
-      I2 => \vid_out[3]_INST_0_i_62_n_0\,
-      I3 => \vid_out[3]_INST_0_i_78_n_0\,
-      I4 => \vid_out[3]_INST_0_i_113_n_0\,
-      I5 => \vid_out[3]_INST_0_i_47_n_0\,
-      O => \vid_out[3]_INST_0_i_52_n_0\
-    );
-\vid_out[3]_INST_0_i_53\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"000000000000005D"
-    )
-        port map (
-      I0 => x_coordinate_reg(7),
-      I1 => \vid_out[3]_INST_0_i_114_n_0\,
-      I2 => x_coordinate_reg(6),
-      I3 => \vid_out[3]_INST_0_i_77_n_0\,
-      I4 => x_coordinate_reg(8),
-      I5 => \vid_out[6]_INST_0_i_11_n_0\,
-      O => \vid_out[3]_INST_0_i_53_n_0\
-    );
-\vid_out[3]_INST_0_i_54\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FDFFFFFFFDFDCCCC"
-    )
-        port map (
-      I0 => \y_coordinate[0]_i_4_n_0\,
-      I1 => \vid_out[3]_INST_0_i_82_n_0\,
-      I2 => x_coordinate_reg(6),
-      I3 => x_coordinate_reg(5),
-      I4 => x_coordinate_reg(7),
-      I5 => \vid_out[3]_INST_0_i_115_n_0\,
-      O => \vid_out[3]_INST_0_i_54_n_0\
-    );
-\vid_out[3]_INST_0_i_55\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"00000000000000A8"
-    )
-        port map (
-      I0 => \vid_out[3]_INST_0_i_60_n_0\,
-      I1 => x_coordinate_reg(6),
-      I2 => x_coordinate_reg(5),
-      I3 => \vid_out[3]_INST_0_i_31_n_0\,
-      I4 => \vid_out[3]_INST_0_i_116_n_0\,
-      I5 => \vid_out[3]_INST_0_i_117_n_0\,
-      O => \vid_out[3]_INST_0_i_55_n_0\
-    );
-\vid_out[3]_INST_0_i_56\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"7070707777777777"
-    )
-        port map (
-      I0 => \vid_out[3]_INST_0_i_118_n_0\,
-      I1 => \vid_out[3]_INST_0_i_119_n_0\,
-      I2 => \vid_out[3]_INST_0_i_120_n_0\,
-      I3 => \vid_out[3]_INST_0_i_85_n_0\,
-      I4 => x_coordinate_reg(5),
-      I5 => \vid_out[3]_INST_0_i_92_n_0\,
-      O => \vid_out[3]_INST_0_i_56_n_0\
-    );
-\vid_out[3]_INST_0_i_57\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"0000000015550000"
-    )
-        port map (
-      I0 => \vid_out[3]_INST_0_i_121_n_0\,
-      I1 => \vid_out[3]_INST_0_i_122_n_0\,
-      I2 => y_coordinate_reg(5),
-      I3 => \vid_out[3]_INST_0_i_75_n_0\,
-      I4 => y_coordinate_reg(7),
-      I5 => \vid_out[3]_INST_0_i_101_n_0\,
-      O => \vid_out[3]_INST_0_i_57_n_0\
-    );
-\vid_out[3]_INST_0_i_58\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"0000000001000000"
-    )
-        port map (
-      I0 => x_coordinate_reg(8),
-      I1 => \vid_out[3]_INST_0_i_77_n_0\,
-      I2 => x_coordinate_reg(6),
-      I3 => \vid_out[3]_INST_0_i_114_n_0\,
-      I4 => x_coordinate_reg(7),
-      I5 => \vid_out[6]_INST_0_i_12_n_0\,
-      O => \vid_out[3]_INST_0_i_58_n_0\
-    );
-\vid_out[3]_INST_0_i_59\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FFFFFFDFFFFFFFFF"
-    )
-        port map (
-      I0 => \y_coordinate[0]_i_4_n_0\,
-      I1 => \vid_out[3]_INST_0_i_82_n_0\,
-      I2 => x_coordinate_reg(7),
-      I3 => x_coordinate_reg(6),
-      I4 => \vid_out[3]_INST_0_i_123_n_0\,
-      I5 => x_coordinate_reg(5),
-      O => \vid_out[3]_INST_0_i_59_n_0\
-    );
-\vid_out[3]_INST_0_i_6\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"4040404040404000"
-    )
-        port map (
-      I0 => \vid_out[3]_INST_0_i_24_n_0\,
-      I1 => \x_coordinate[0]_i_3_n_0\,
-      I2 => x_coordinate_reg(7),
-      I3 => \vid_out[3]_INST_0_i_25_n_0\,
-      I4 => x_coordinate_reg(6),
-      I5 => x_coordinate_reg(5),
-      O => \vid_out[3]_INST_0_i_6_n_0\
-    );
-\vid_out[3]_INST_0_i_60\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"0004000005050000"
-    )
-        port map (
-      I0 => \vid_out[3]_INST_0_i_101_n_0\,
-      I1 => \vid_out[3]_INST_0_i_72_n_0\,
-      I2 => \vid_out[3]_INST_0_i_89_n_0\,
-      I3 => y_coordinate_reg(5),
-      I4 => y_coordinate_reg(7),
-      I5 => y_coordinate_reg(6),
-      O => \vid_out[3]_INST_0_i_60_n_0\
-    );
-\vid_out[3]_INST_0_i_61\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"A8AAA8A8AAAAAAAA"
-    )
-        port map (
-      I0 => \vid_out[3]_INST_0_i_124_n_0\,
-      I1 => \vid_out[3]_INST_0_i_97_n_0\,
-      I2 => \vid_out[3]_INST_0_i_77_n_0\,
-      I3 => \vid_out[3]_INST_0_i_125_n_0\,
-      I4 => \vid_out[0]_INST_0_i_12_n_0\,
-      I5 => \vid_out[3]_INST_0_i_93_n_0\,
-      O => \vid_out[3]_INST_0_i_61_n_0\
-    );
-\vid_out[3]_INST_0_i_62\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"0105050001000500"
-    )
-        port map (
-      I0 => \vid_out[3]_INST_0_i_121_n_0\,
-      I1 => \vid_out[3]_INST_0_i_75_n_0\,
-      I2 => \vid_out[3]_INST_0_i_126_n_0\,
-      I3 => y_coordinate_reg(4),
-      I4 => y_coordinate_reg(3),
-      I5 => \vid_out[3]_INST_0_i_34_n_0\,
-      O => \vid_out[3]_INST_0_i_62_n_0\
-    );
-\vid_out[3]_INST_0_i_63\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"0000000000001550"
-    )
-        port map (
-      I0 => \vid_out[3]_INST_0_i_77_n_0\,
-      I1 => x_coordinate_reg(3),
-      I2 => x_coordinate_reg(4),
-      I3 => x_coordinate_reg(5),
-      I4 => x_coordinate_reg(6),
-      I5 => \vid_out[3]_INST_0_i_31_n_0\,
-      O => \vid_out[3]_INST_0_i_63_n_0\
-    );
-\vid_out[3]_INST_0_i_64\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"555F5D5FFFFFFFFF"
-    )
-        port map (
-      I0 => \vid_out[3]_INST_0_i_92_n_0\,
-      I1 => \x_coordinate[0]_i_4_n_0\,
-      I2 => \vid_out[3]_INST_0_i_97_n_0\,
-      I3 => x_coordinate_reg(5),
-      I4 => x_coordinate_reg(4),
-      I5 => x_coordinate_reg(8),
-      O => \vid_out[3]_INST_0_i_64_n_0\
-    );
-\vid_out[3]_INST_0_i_65\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"30330022"
-    )
-        port map (
-      I0 => \vid_out[3]_INST_0_i_63_n_0\,
-      I1 => \vid_out[3]_INST_0_i_104_n_0\,
-      I2 => \vid_out[3]_INST_0_i_127_n_0\,
-      I3 => \vid_out[3]_INST_0_i_128_n_0\,
-      I4 => \vid_out[3]_INST_0_i_105_n_0\,
-      O => \vid_out[3]_INST_0_i_65_n_0\
-    );
-\vid_out[3]_INST_0_i_66\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"00000000444444F4"
-    )
-        port map (
-      I0 => \vid_out[3]_INST_0_i_95_n_0\,
-      I1 => \vid_out[3]_INST_0_i_62_n_0\,
-      I2 => \vid_out[3]_INST_0_i_57_n_0\,
-      I3 => \vid_out[3]_INST_0_i_129_n_0\,
-      I4 => \vid_out[3]_INST_0_i_77_n_0\,
-      I5 => \vid_out[3]_INST_0_i_94_n_0\,
-      O => \vid_out[3]_INST_0_i_66_n_0\
-    );
-\vid_out[3]_INST_0_i_67\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FFFFFFF0FFDDFFDD"
-    )
-        port map (
-      I0 => \vid_out[3]_INST_0_i_130_n_0\,
-      I1 => \x_coordinate[0]_i_5_n_0\,
-      I2 => \vid_out[3]_INST_0_i_97_n_0\,
-      I3 => \vid_out[3]_INST_0_i_77_n_0\,
-      I4 => \vid_out[3]_INST_0_i_131_n_0\,
-      I5 => x_coordinate_reg(8),
-      O => \vid_out[3]_INST_0_i_67_n_0\
-    );
-\vid_out[3]_INST_0_i_68\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AAAAAAAA00088888"
-    )
-        port map (
-      I0 => \vid_out[3]_INST_0_i_54_n_0\,
-      I1 => \vid_out[3]_INST_0_i_132_n_0\,
-      I2 => x_coordinate_reg(3),
-      I3 => \vid_out[3]_INST_0_i_133_n_0\,
-      I4 => \vid_out[0]_INST_0_i_12_n_0\,
-      I5 => \vid_out[6]_INST_0_i_10_n_0\,
-      O => \vid_out[3]_INST_0_i_68_n_0\
-    );
-\vid_out[3]_INST_0_i_69\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"7"
-    )
-        port map (
-      I0 => x_coordinate_reg(1),
-      I1 => x_coordinate_reg(0),
-      O => \vid_out[3]_INST_0_i_69_n_0\
-    );
-\vid_out[3]_INST_0_i_7\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"02222222AAAAAAAA"
-    )
-        port map (
-      I0 => \vid_out[3]_INST_0_i_23_n_0\,
-      I1 => x_coordinate_reg(5),
-      I2 => x_coordinate_reg(3),
-      I3 => x_coordinate_reg(2),
-      I4 => x_coordinate_reg(4),
-      I5 => x_coordinate_reg(6),
-      O => \vid_out[3]_INST_0_i_7_n_0\
-    );
-\vid_out[3]_INST_0_i_70\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"0101011111111111"
-    )
-        port map (
-      I0 => x_coordinate_reg(7),
-      I1 => x_coordinate_reg(6),
-      I2 => x_coordinate_reg(4),
-      I3 => x_coordinate_reg(2),
-      I4 => x_coordinate_reg(3),
-      I5 => x_coordinate_reg(5),
-      O => \vid_out[3]_INST_0_i_70_n_0\
-    );
-\vid_out[3]_INST_0_i_71\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"1F"
-    )
-        port map (
-      I0 => x_coordinate_reg(1),
-      I1 => x_coordinate_reg(0),
-      I2 => x_coordinate_reg(2),
-      O => \vid_out[3]_INST_0_i_71_n_0\
-    );
-\vid_out[3]_INST_0_i_72\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"01FF"
-    )
-        port map (
-      I0 => y_coordinate_reg(1),
-      I1 => y_coordinate_reg(3),
-      I2 => y_coordinate_reg(2),
-      I3 => y_coordinate_reg(4),
-      O => \vid_out[3]_INST_0_i_72_n_0\
-    );
-\vid_out[3]_INST_0_i_73\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"FFFFFFFE"
-    )
-        port map (
-      I0 => y_coordinate_reg(5),
-      I1 => y_coordinate_reg(11),
-      I2 => y_coordinate_reg(10),
-      I3 => y_coordinate_reg(9),
-      I4 => y_coordinate_reg(8),
-      O => \vid_out[3]_INST_0_i_73_n_0\
-    );
-\vid_out[3]_INST_0_i_74\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"57"
-    )
-        port map (
-      I0 => y_coordinate_reg(2),
-      I1 => y_coordinate_reg(1),
-      I2 => y_coordinate_reg(0),
-      O => \vid_out[3]_INST_0_i_74_n_0\
-    );
-\vid_out[3]_INST_0_i_75\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"FE"
-    )
-        port map (
-      I0 => y_coordinate_reg(2),
-      I1 => y_coordinate_reg(1),
-      I2 => y_coordinate_reg(0),
-      O => \vid_out[3]_INST_0_i_75_n_0\
-    );
-\vid_out[3]_INST_0_i_76\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"5555555555555540"
-    )
-        port map (
-      I0 => \vid_out[3]_INST_0_i_31_n_0\,
-      I1 => x_coordinate_reg(1),
-      I2 => x_coordinate_reg(2),
-      I3 => x_coordinate_reg(3),
-      I4 => x_coordinate_reg(4),
-      I5 => \vid_out[3]_INST_0_i_134_n_0\,
-      O => \vid_out[3]_INST_0_i_76_n_0\
-    );
-\vid_out[3]_INST_0_i_77\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"E"
-    )
-        port map (
-      I0 => x_coordinate_reg(9),
-      I1 => x_coordinate_reg(10),
-      O => \vid_out[3]_INST_0_i_77_n_0\
-    );
-\vid_out[3]_INST_0_i_78\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"07FF05FF"
-    )
-        port map (
-      I0 => x_coordinate_reg(6),
-      I1 => x_coordinate_reg(5),
-      I2 => x_coordinate_reg(7),
-      I3 => x_coordinate_reg(8),
-      I4 => \vid_out[3]_INST_0_i_135_n_0\,
-      O => \vid_out[3]_INST_0_i_78_n_0\
-    );
-\vid_out[3]_INST_0_i_79\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FFFF000080000000"
-    )
-        port map (
-      I0 => x_coordinate_reg(6),
-      I1 => \vid_out[0]_INST_0_i_12_n_0\,
-      I2 => x_coordinate_reg(2),
-      I3 => x_coordinate_reg(3),
-      I4 => x_coordinate_reg(8),
-      I5 => x_coordinate_reg(7),
-      O => \vid_out[3]_INST_0_i_79_n_0\
-    );
-\vid_out[3]_INST_0_i_8\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"F111"
-    )
-        port map (
-      I0 => \vid_out[3]_INST_0_i_26_n_0\,
-      I1 => \vid_out[3]_INST_0_i_27_n_0\,
-      I2 => \vid_out[3]_INST_0_i_28_n_0\,
-      I3 => \vid_out[3]_INST_0_i_29_n_0\,
-      O => \vid_out[3]_INST_0_i_8_n_0\
-    );
-\vid_out[3]_INST_0_i_80\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"55555777FFFFFFFF"
-    )
-        port map (
-      I0 => x_coordinate_reg(5),
-      I1 => x_coordinate_reg(4),
-      I2 => x_coordinate_reg(2),
-      I3 => x_coordinate_reg(1),
-      I4 => x_coordinate_reg(3),
-      I5 => \vid_out[3]_INST_0_i_37_n_0\,
-      O => \vid_out[3]_INST_0_i_80_n_0\
-    );
-\vid_out[3]_INST_0_i_81\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"01FFFFFF"
-    )
-        port map (
-      I0 => x_coordinate_reg(3),
-      I1 => x_coordinate_reg(4),
-      I2 => x_coordinate_reg(5),
-      I3 => x_coordinate_reg(7),
-      I4 => x_coordinate_reg(6),
-      O => \vid_out[3]_INST_0_i_81_n_0\
-    );
-\vid_out[3]_INST_0_i_82\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"FE"
-    )
-        port map (
-      I0 => x_coordinate_reg(8),
-      I1 => x_coordinate_reg(10),
-      I2 => x_coordinate_reg(9),
-      O => \vid_out[3]_INST_0_i_82_n_0\
-    );
-\vid_out[3]_INST_0_i_83\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"0000000000000008"
-    )
-        port map (
-      I0 => x_coordinate_reg(9),
-      I1 => \vid_out[3]_INST_0_i_136_n_0\,
-      I2 => x_coordinate_reg(7),
-      I3 => x_coordinate_reg(6),
-      I4 => x_coordinate_reg(10),
-      I5 => x_coordinate_reg(8),
-      O => \vid_out[3]_INST_0_i_83_n_0\
-    );
-\vid_out[3]_INST_0_i_84\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"FFFEAAAA"
-    )
-        port map (
-      I0 => x_coordinate_reg(5),
-      I1 => x_coordinate_reg(3),
-      I2 => x_coordinate_reg(1),
-      I3 => x_coordinate_reg(2),
-      I4 => x_coordinate_reg(4),
-      O => \vid_out[3]_INST_0_i_84_n_0\
-    );
-\vid_out[3]_INST_0_i_85\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"EEEA"
-    )
-        port map (
-      I0 => x_coordinate_reg(4),
-      I1 => x_coordinate_reg(3),
-      I2 => x_coordinate_reg(2),
-      I3 => x_coordinate_reg(1),
-      O => \vid_out[3]_INST_0_i_85_n_0\
-    );
-\vid_out[3]_INST_0_i_86\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"EFFFFFFFFFFFFFFF"
-    )
-        port map (
-      I0 => x_coordinate_reg(10),
-      I1 => x_coordinate_reg(9),
-      I2 => x_coordinate_reg(8),
-      I3 => x_coordinate_reg(7),
-      I4 => x_coordinate_reg(6),
-      I5 => x_coordinate_reg(5),
-      O => \vid_out[3]_INST_0_i_86_n_0\
-    );
-\vid_out[3]_INST_0_i_87\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FEEEEFEFFFFFFFFF"
-    )
-        port map (
-      I0 => \vid_out[3]_INST_0_i_77_n_0\,
-      I1 => \vid_out[3]_INST_0_i_137_n_0\,
-      I2 => x_coordinate_reg(2),
-      I3 => x_coordinate_reg(1),
-      I4 => x_coordinate_reg(3),
-      I5 => x_coordinate_reg(4),
-      O => \vid_out[3]_INST_0_i_87_n_0\
-    );
-\vid_out[3]_INST_0_i_88\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"7"
-    )
-        port map (
-      I0 => y_coordinate_reg(1),
-      I1 => y_coordinate_reg(2),
-      O => \vid_out[3]_INST_0_i_88_n_0\
-    );
-\vid_out[3]_INST_0_i_89\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"FFFE"
-    )
-        port map (
-      I0 => y_coordinate_reg(8),
-      I1 => y_coordinate_reg(9),
-      I2 => y_coordinate_reg(10),
-      I3 => y_coordinate_reg(11),
-      O => \vid_out[3]_INST_0_i_89_n_0\
-    );
-\vid_out[3]_INST_0_i_9\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"8888888088808880"
-    )
-        port map (
-      I0 => x_coordinate_reg(4),
-      I1 => x_coordinate_reg(5),
-      I2 => x_coordinate_reg(3),
-      I3 => x_coordinate_reg(2),
-      I4 => x_coordinate_reg(1),
-      I5 => x_coordinate_reg(0),
-      O => \vid_out[3]_INST_0_i_9_n_0\
-    );
-\vid_out[3]_INST_0_i_90\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"E"
-    )
-        port map (
-      I0 => y_coordinate_reg(5),
-      I1 => y_coordinate_reg(6),
-      O => \vid_out[3]_INST_0_i_90_n_0\
-    );
-\vid_out[3]_INST_0_i_91\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FFFFFFFFFFFFFF1F"
+      INIT => X"00000080FFFFFFFF"
     )
         port map (
       I0 => x_coordinate_reg(3),
       I1 => x_coordinate_reg(2),
-      I2 => x_coordinate_reg(4),
-      I3 => \vid_out[3]_INST_0_i_137_n_0\,
-      I4 => x_coordinate_reg(9),
-      I5 => x_coordinate_reg(10),
-      O => \vid_out[3]_INST_0_i_91_n_0\
-    );
-\vid_out[3]_INST_0_i_92\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"0000000000FF2FFF"
-    )
-        port map (
-      I0 => \vid_out[3]_INST_0_i_123_n_0\,
-      I1 => x_coordinate_reg(5),
       I2 => x_coordinate_reg(6),
-      I3 => x_coordinate_reg(8),
-      I4 => x_coordinate_reg(7),
-      I5 => \vid_out[3]_INST_0_i_77_n_0\,
-      O => \vid_out[3]_INST_0_i_92_n_0\
-    );
-\vid_out[3]_INST_0_i_93\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AAA0AA80AA80AA80"
-    )
-        port map (
-      I0 => x_coordinate_reg(8),
-      I1 => x_coordinate_reg(4),
-      I2 => x_coordinate_reg(5),
-      I3 => \vid_out[3]_INST_0_i_97_n_0\,
-      I4 => x_coordinate_reg(2),
-      I5 => x_coordinate_reg(3),
-      O => \vid_out[3]_INST_0_i_93_n_0\
-    );
-\vid_out[3]_INST_0_i_94\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"5555555500045555"
-    )
-        port map (
-      I0 => \vid_out[3]_INST_0_i_77_n_0\,
-      I1 => \vid_out[0]_INST_0_i_13_n_0\,
-      I2 => x_coordinate_reg(1),
-      I3 => x_coordinate_reg(2),
-      I4 => x_coordinate_reg(6),
-      I5 => \vid_out[3]_INST_0_i_31_n_0\,
-      O => \vid_out[3]_INST_0_i_94_n_0\
-    );
-\vid_out[3]_INST_0_i_95\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"EAAAAAAAAAAAAAAA"
-    )
-        port map (
-      I0 => \vid_out[3]_INST_0_i_77_n_0\,
-      I1 => x_coordinate_reg(5),
-      I2 => x_coordinate_reg(6),
-      I3 => x_coordinate_reg(7),
-      I4 => x_coordinate_reg(8),
-      I5 => \vid_out[3]_INST_0_i_85_n_0\,
-      O => \vid_out[3]_INST_0_i_95_n_0\
-    );
-\vid_out[3]_INST_0_i_96\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"57777777FFFFFFFF"
-    )
-        port map (
-      I0 => x_coordinate_reg(5),
-      I1 => x_coordinate_reg(3),
-      I2 => x_coordinate_reg(1),
-      I3 => x_coordinate_reg(0),
-      I4 => x_coordinate_reg(2),
-      I5 => x_coordinate_reg(4),
-      O => \vid_out[3]_INST_0_i_96_n_0\
-    );
-\vid_out[3]_INST_0_i_97\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"E"
-    )
-        port map (
-      I0 => x_coordinate_reg(6),
-      I1 => x_coordinate_reg(7),
-      O => \vid_out[3]_INST_0_i_97_n_0\
-    );
-\vid_out[3]_INST_0_i_98\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"0001000000010001"
-    )
-        port map (
-      I0 => x_coordinate_reg(9),
-      I1 => x_coordinate_reg(8),
-      I2 => x_coordinate_reg(7),
-      I3 => x_coordinate_reg(10),
-      I4 => \vid_out[3]_INST_0_i_11_n_0\,
-      I5 => x_coordinate_reg(6),
-      O => \vid_out[3]_INST_0_i_98_n_0\
-    );
-\vid_out[3]_INST_0_i_99\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"7"
-    )
-        port map (
-      I0 => x_coordinate_reg(6),
-      I1 => x_coordinate_reg(5),
-      O => \vid_out[3]_INST_0_i_99_n_0\
-    );
-\vid_out[4]_INST_0\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"8AAA"
-    )
-        port map (
-      I0 => video_active,
-      I1 => \vid_out[3]_INST_0_i_1_n_0\,
-      I2 => \vid_out[3]_INST_0_i_4_n_0\,
-      I3 => \vid_out[3]_INST_0_i_3_n_0\,
-      O => vid_out(6)
-    );
-\vid_out[6]_INST_0\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"00000000FFF70000"
-    )
-        port map (
-      I0 => \vid_out[3]_INST_0_i_3_n_0\,
-      I1 => \vid_out[3]_INST_0_i_4_n_0\,
-      I2 => \vid_out[3]_INST_0_i_1_n_0\,
-      I3 => \vid_out[3]_INST_0_i_2_n_0\,
-      I4 => video_active,
-      I5 => \vid_out[6]_INST_0_i_1_n_0\,
-      O => vid_out(5)
-    );
-\vid_out[6]_INST_0_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"EEFFEEFEFFFFFEFE"
-    )
-        port map (
-      I0 => \vid_out[6]_INST_0_i_2_n_0\,
-      I1 => \vid_out[6]_INST_0_i_3_n_0\,
-      I2 => \vid_out[6]_INST_0_i_4_n_0\,
-      I3 => \vid_out[6]_INST_0_i_5_n_0\,
-      I4 => \vid_out[6]_INST_0_i_6_n_0\,
-      I5 => \vid_out[6]_INST_0_i_7_n_0\,
-      O => \vid_out[6]_INST_0_i_1_n_0\
-    );
-\vid_out[6]_INST_0_i_10\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FFFEFFFEFFFFFFFE"
-    )
-        port map (
-      I0 => x_coordinate_reg(9),
-      I1 => x_coordinate_reg(8),
-      I2 => x_coordinate_reg(7),
-      I3 => x_coordinate_reg(10),
-      I4 => x_coordinate_reg(6),
-      I5 => \vid_out[0]_INST_0_i_8_n_0\,
-      O => \vid_out[6]_INST_0_i_10_n_0\
-    );
-\vid_out[6]_INST_0_i_11\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"0001555555555555"
-    )
-        port map (
-      I0 => \vid_out[3]_INST_0_i_100_n_0\,
-      I1 => x_coordinate_reg(4),
-      I2 => x_coordinate_reg(2),
-      I3 => x_coordinate_reg(3),
-      I4 => x_coordinate_reg(6),
-      I5 => x_coordinate_reg(5),
-      O => \vid_out[6]_INST_0_i_11_n_0\
-    );
-\vid_out[6]_INST_0_i_12\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"0000000000000001"
-    )
-        port map (
-      I0 => x_coordinate_reg(6),
-      I1 => x_coordinate_reg(5),
-      I2 => x_coordinate_reg(3),
-      I3 => x_coordinate_reg(4),
-      I4 => x_coordinate_reg(1),
-      I5 => x_coordinate_reg(2),
-      O => \vid_out[6]_INST_0_i_12_n_0\
-    );
-\vid_out[6]_INST_0_i_13\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"E"
-    )
-        port map (
-      I0 => y_coordinate_reg(9),
-      I1 => y_coordinate_reg(10),
-      O => \vid_out[6]_INST_0_i_13_n_0\
-    );
-\vid_out[6]_INST_0_i_14\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"7"
-    )
-        port map (
-      I0 => y_coordinate_reg(6),
-      I1 => y_coordinate_reg(7),
-      O => \vid_out[6]_INST_0_i_14_n_0\
-    );
-\vid_out[6]_INST_0_i_15\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FE00000000000000"
-    )
-        port map (
-      I0 => x_coordinate_reg(2),
-      I1 => x_coordinate_reg(1),
-      I2 => x_coordinate_reg(0),
-      I3 => x_coordinate_reg(6),
-      I4 => x_coordinate_reg(3),
-      I5 => x_coordinate_reg(4),
-      O => \vid_out[6]_INST_0_i_15_n_0\
-    );
-\vid_out[6]_INST_0_i_16\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"00000001"
-    )
-        port map (
-      I0 => x_coordinate_reg(3),
-      I1 => x_coordinate_reg(4),
-      I2 => x_coordinate_reg(5),
-      I3 => x_coordinate_reg(1),
-      I4 => x_coordinate_reg(2),
-      O => \vid_out[6]_INST_0_i_16_n_0\
-    );
-\vid_out[6]_INST_0_i_2\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"44444440"
-    )
-        port map (
-      I0 => \vid_out[6]_INST_0_i_8_n_0\,
-      I1 => \vid_out[0]_INST_0_i_3_n_0\,
-      I2 => \vid_out[6]_INST_0_i_9_n_0\,
-      I3 => x_coordinate_reg(9),
-      I4 => x_coordinate_reg(10),
-      O => \vid_out[6]_INST_0_i_2_n_0\
-    );
-\vid_out[6]_INST_0_i_3\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"80"
-    )
-        port map (
-      I0 => \vid_out[6]_INST_0_i_10_n_0\,
-      I1 => \vid_out[0]_INST_0_i_3_n_0\,
-      I2 => \vid_out[6]_INST_0_i_11_n_0\,
-      O => \vid_out[6]_INST_0_i_3_n_0\
-    );
-\vid_out[6]_INST_0_i_4\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"00000000000000A2"
-    )
-        port map (
-      I0 => \vid_out[6]_INST_0_i_10_n_0\,
-      I1 => x_coordinate_reg(7),
-      I2 => \vid_out[6]_INST_0_i_12_n_0\,
-      I3 => x_coordinate_reg(8),
-      I4 => x_coordinate_reg(10),
-      I5 => x_coordinate_reg(9),
-      O => \vid_out[6]_INST_0_i_4_n_0\
-    );
-\vid_out[6]_INST_0_i_5\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"3333333533333337"
-    )
-        port map (
-      I0 => \vid_out[3]_INST_0_i_29_n_0\,
-      I1 => \vid_out[3]_INST_0_i_28_n_0\,
-      I2 => y_coordinate_reg(11),
-      I3 => \vid_out[6]_INST_0_i_13_n_0\,
-      I4 => y_coordinate_reg(8),
-      I5 => \vid_out[6]_INST_0_i_14_n_0\,
-      O => \vid_out[6]_INST_0_i_5_n_0\
-    );
-\vid_out[6]_INST_0_i_6\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"4444444444404040"
-    )
-        port map (
-      I0 => \vid_out[6]_INST_0_i_8_n_0\,
-      I1 => x_coordinate_reg(8),
-      I2 => x_coordinate_reg(7),
-      I3 => x_coordinate_reg(6),
-      I4 => x_coordinate_reg(5),
-      I5 => \vid_out[6]_INST_0_i_15_n_0\,
-      O => \vid_out[6]_INST_0_i_6_n_0\
-    );
-\vid_out[6]_INST_0_i_7\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"AAAAAABA"
-    )
-        port map (
-      I0 => \vid_out[3]_INST_0_i_27_n_0\,
-      I1 => y_coordinate_reg(11),
-      I2 => \vid_out[3]_INST_0_i_26_n_0\,
-      I3 => y_coordinate_reg(9),
-      I4 => y_coordinate_reg(10),
-      O => \vid_out[6]_INST_0_i_7_n_0\
-    );
-\vid_out[6]_INST_0_i_8\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FF88FF80FF88FF88"
-    )
-        port map (
-      I0 => x_coordinate_reg(8),
-      I1 => x_coordinate_reg(7),
-      I2 => x_coordinate_reg(0),
-      I3 => \vid_out[3]_INST_0_i_77_n_0\,
-      I4 => x_coordinate_reg(6),
-      I5 => \vid_out[6]_INST_0_i_16_n_0\,
-      O => \vid_out[6]_INST_0_i_8_n_0\
-    );
-\vid_out[6]_INST_0_i_9\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"F400"
-    )
-        port map (
-      I0 => \vid_out[3]_INST_0_i_96_n_0\,
-      I1 => x_coordinate_reg(6),
-      I2 => x_coordinate_reg(7),
-      I3 => x_coordinate_reg(8),
-      O => \vid_out[6]_INST_0_i_9_n_0\
-    );
-\vid_out[7]_INST_0\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"00000000FFF70000"
-    )
-        port map (
-      I0 => \vid_out[3]_INST_0_i_3_n_0\,
-      I1 => \vid_out[3]_INST_0_i_4_n_0\,
-      I2 => \vid_out[3]_INST_0_i_1_n_0\,
-      I3 => \vid_out[3]_INST_0_i_2_n_0\,
-      I4 => video_active,
-      I5 => \vid_out[7]_INST_0_i_1_n_0\,
-      O => vid_out(3)
-    );
-\vid_out[7]_INST_0_i_1\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"E"
-    )
-        port map (
-      I0 => \vid_out[6]_INST_0_i_1_n_0\,
-      I1 => \vid_out[18]_INST_0_i_3_n_0\,
-      O => \vid_out[7]_INST_0_i_1_n_0\
-    );
-\vid_out[9]_INST_0\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"0000F700"
-    )
-        port map (
-      I0 => \vid_out[3]_INST_0_i_3_n_0\,
-      I1 => \vid_out[3]_INST_0_i_4_n_0\,
-      I2 => \vid_out[0]_INST_0_i_1_n_0\,
-      I3 => video_active,
-      I4 => \vid_out[9]_INST_0_i_1_n_0\,
-      O => vid_out(0)
-    );
-\vid_out[9]_INST_0_i_1\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"FEAA"
-    )
-        port map (
-      I0 => \vid_out[9]_INST_0_i_2_n_0\,
-      I1 => \vid_out[6]_INST_0_i_6_n_0\,
-      I2 => \vid_out[6]_INST_0_i_4_n_0\,
-      I3 => \vid_out[3]_INST_0_i_8_n_0\,
-      O => \vid_out[9]_INST_0_i_1_n_0\
-    );
-\vid_out[9]_INST_0_i_2\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"0808AA0808080808"
-    )
-        port map (
-      I0 => \vid_out[0]_INST_0_i_3_n_0\,
-      I1 => \vid_out[6]_INST_0_i_9_n_0\,
-      I2 => \vid_out[6]_INST_0_i_8_n_0\,
-      I3 => x_coordinate_reg(6),
-      I4 => \vid_out[0]_INST_0_i_8_n_0\,
-      I5 => \vid_out[6]_INST_0_i_11_n_0\,
-      O => \vid_out[9]_INST_0_i_2_n_0\
-    );
-\x_coordinate[0]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"555555555555D555"
-    )
-        port map (
-      I0 => video_active,
-      I1 => \x_coordinate[0]_i_3_n_0\,
-      I2 => x_coordinate_reg(1),
-      I3 => x_coordinate_reg(0),
+      I3 => \x_coordinate[0]_i_3_n_0\,
       I4 => \x_coordinate[0]_i_4_n_0\,
-      I5 => \x_coordinate[0]_i_5_n_0\,
+      I5 => video_active,
       O => \x_coordinate[0]_i_1_n_0\
     );
 \x_coordinate[0]_i_2\: unisim.vcomponents.LUT1
@@ -4095,35 +2892,27 @@ diagonal3_carry_i_4: unisim.vcomponents.LUT1
       I0 => x_coordinate_reg(0),
       O => p_0_in(0)
     );
-\x_coordinate[0]_i_3\: unisim.vcomponents.LUT3
+\x_coordinate[0]_i_3\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"10"
+      INIT => X"7FFF"
+    )
+        port map (
+      I0 => x_coordinate_reg(0),
+      I1 => x_coordinate_reg(1),
+      I2 => x_coordinate_reg(4),
+      I3 => x_coordinate_reg(5),
+      O => \x_coordinate[0]_i_3_n_0\
+    );
+\x_coordinate[0]_i_4\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"EFFF"
     )
         port map (
       I0 => x_coordinate_reg(8),
       I1 => x_coordinate_reg(9),
       I2 => x_coordinate_reg(10),
-      O => \x_coordinate[0]_i_3_n_0\
-    );
-\x_coordinate[0]_i_4\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"7"
-    )
-        port map (
-      I0 => x_coordinate_reg(3),
-      I1 => x_coordinate_reg(2),
+      I3 => x_coordinate_reg(7),
       O => \x_coordinate[0]_i_4_n_0\
-    );
-\x_coordinate[0]_i_5\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"7FFF"
-    )
-        port map (
-      I0 => x_coordinate_reg(4),
-      I1 => x_coordinate_reg(5),
-      I2 => x_coordinate_reg(7),
-      I3 => x_coordinate_reg(6),
-      O => \x_coordinate[0]_i_5_n_0\
     );
 \x_coordinate_reg[0]\: unisim.vcomponents.FDRE
     generic map(
@@ -4257,36 +3046,24 @@ diagonal3_carry_i_4: unisim.vcomponents.LUT1
     );
 \y_coordinate[0]_i_2\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"0000000080000000"
+      INIT => X"0000008000000000"
     )
         port map (
-      I0 => x_coordinate_reg(7),
-      I1 => x_coordinate_reg(6),
-      I2 => x_coordinate_reg(0),
-      I3 => video_active,
-      I4 => \x_coordinate[0]_i_3_n_0\,
-      I5 => \y_coordinate[0]_i_4_n_0\,
+      I0 => x_coordinate_reg(3),
+      I1 => x_coordinate_reg(2),
+      I2 => x_coordinate_reg(6),
+      I3 => \x_coordinate[0]_i_3_n_0\,
+      I4 => \x_coordinate[0]_i_4_n_0\,
+      I5 => video_active,
       O => \y_coordinate[0]_i_2_n_0\
     );
-\y_coordinate[0]_i_4\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"7FFFFFFF"
-    )
-        port map (
-      I0 => x_coordinate_reg(2),
-      I1 => x_coordinate_reg(1),
-      I2 => x_coordinate_reg(3),
-      I3 => x_coordinate_reg(4),
-      I4 => x_coordinate_reg(5),
-      O => \y_coordinate[0]_i_4_n_0\
-    );
-\y_coordinate[0]_i_5\: unisim.vcomponents.LUT1
+\y_coordinate[0]_i_4\: unisim.vcomponents.LUT1
     generic map(
       INIT => X"1"
     )
         port map (
       I0 => y_coordinate_reg(0),
-      O => \y_coordinate[0]_i_5_n_0\
+      O => \y_coordinate[0]_i_4_n_0\
     );
 \y_coordinate_reg[0]\: unisim.vcomponents.FDRE
     generic map(
@@ -4313,7 +3090,7 @@ diagonal3_carry_i_4: unisim.vcomponents.LUT1
       O(1) => \y_coordinate_reg[0]_i_3_n_6\,
       O(0) => \y_coordinate_reg[0]_i_3_n_7\,
       S(3 downto 1) => y_coordinate_reg(3 downto 1),
-      S(0) => \y_coordinate[0]_i_5_n_0\
+      S(0) => \y_coordinate[0]_i_4_n_0\
     );
 \y_coordinate_reg[10]\: unisim.vcomponents.FDRE
     generic map(
@@ -4478,6 +3255,7 @@ entity hdmi_out_hdmi_code_0_0 is
     vsync : in STD_LOGIC;
     video_active : in STD_LOGIC;
     double_dabble : in STD_LOGIC_VECTOR ( 11 downto 0 );
+    compartment : in STD_LOGIC_VECTOR ( 3 downto 0 );
     vid_out : out STD_LOGIC_VECTOR ( 23 downto 0 )
   );
   attribute NotValidForBitStream : boolean;

@@ -19,20 +19,27 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-//ADD MULTIPLICATION SIGN, ADDING ADDITIONAL COORDINATION FOR NUMBERS BASED ON MATRIX
-//ADD MATRIX EDGES 
+//ADDING ADDITIONAL COORDINATION FOR NUMBERS BASED ON MATRIX
 module hdmi_code(
     input wire clk, 
-    input wire hsync, //jump to next row (controls x-pixels)
-    input wire vsync, //goes back to top-left corner (controls y-pixels)
-    input wire video_active, //incharge of drawing the pixels
-    input wire [11:0]double_dabble, //used to display the sequence of digits
-    output reg [23:0] vid_out //determines the color
+    //jump to next row (controls x-pixels)
+    input wire hsync, 
+    //goes back to top-left corner (controls y-pixels)
+    input wire vsync, 
+    //incharge of drawing the pixels
+    input wire video_active,
+    //used to display the sequence of digits 
+    input wire [11:0]double_dabble, 
+    //used to know what matrix spot to display numbers
+    input wire [3:0] compartment,
+    //determines the color 
+    output reg [23:0] vid_out 
     );
-    
+    //use to determine where the pixels are being drawn
     reg [11:0] x_coordinate = 0;
     reg [11:0] y_coordinate = 0;
     
+    //during blanking intervals, keeps the x rests as 0, and resets the Y sync
     always @(posedge clk) begin 
         if (!video_active) begin 
             x_coordinate <= 0;
@@ -41,6 +48,7 @@ module hdmi_code(
             end
         end
         else begin
+            //Drawing pixels, from left to right, top to bottom
             if (x_coordinate == 12'd1279) begin 
                 x_coordinate <= 0;
                 y_coordinate <= y_coordinate + 1;
@@ -49,6 +57,55 @@ module hdmi_code(
             end
         end
     end
+    
+    //used to determine where the numbers are going to be drawn based on matrix compartment/index
+    reg [11:0] x_move;
+    reg [11:0] y_move;
+    
+    always @(*) begin
+        case (compartment)
+            //matrix 1, row 1 + column 1
+             4'b0000: begin
+                x_move <= 12'd20;
+                y_move <= 12'd20;
+             end
+             //matrix 1, row 1 + column 2
+             4'b0001: begin 
+                x_move <= 12'd158;
+                y_move <= 12'd20;
+             end
+             //matrix 1, row 2 + column 1
+             4'b0010: begin 
+                x_move <= 12'd20;
+                y_move <= 12'd137;   
+             end
+             //matrix 1, row 2 + column 2
+             4'b0011: begin 
+                x_move <= 12'd158;
+                y_move <= 12'd137;
+             end 
+             //matrix 2, row 1 + column 1
+             4'b0100: begin
+                x_move <= 12'd375;
+                y_move <= 12'd20;
+             end 
+             //matrix 2, row 1 + column 2
+             4'b0101: begin 
+                x_move <= 12'd412;
+                y_move <= 12'd137;
+             end
+             //matrix 2, row 2 + column 1
+             4'b0110: begin 
+                x_move <= 12'd375;
+                y_move <= 12'd137;
+             end 
+             4'b0111: begin
+                x_move <= 12'd412;
+                y_move <= 12'd137;
+             end
+             default: ;
+         endcase 
+     end
     //used to output numbers
     wire number_1; 
     wire number_2;   
@@ -97,12 +154,12 @@ module hdmi_code(
     ((x_coordinate >= 12'd755 && x_coordinate < 12'd805) && (y_coordinate >= 12'd383 && y_coordinate < 12'd393));
         
    //number 1 (50 less)
-    assign number_1 = ((x_coordinate >= 12'd55 && x_coordinate < 12'd75) && (y_coordinate >= 12'd150 && y_coordinate < 12'd160))|| 
-    ((x_coordinate >= 12'd65 && x_coordinate < 12'd75) && (y_coordinate >= 12'd150 && y_coordinate < 12'd200))|| 
-    ((x_coordinate >= 12'd50 && x_coordinate < 12'd90) && (y_coordinate >= 12'd200 && y_coordinate < 12'd210));
-    //((x_coordinate >= 12'd105 && x_coordinate < 12'd125) && (y_coordinate >= 12'd150 && y_coordinate < 12'd160)) || 
-    //((x_coordinate >= 12'd115 && x_coordinate < 12'd125) && (y_coordinate >= 12'd150 && y_coordinate < 12'd200)) || 
-    //((x_coordinate >= 12'd100 && x_coordinate < 12'd140) && (y_coordinate >= 12'd200 && y_coordinate < 12'd210));
+    assign number_1 = //((x_coordinate >= 12'd55 && x_coordinate < 12'd75) && (y_coordinate >= 12'd150 && y_coordinate < 12'd160))|| 
+    //((x_coordinate >= 12'd65 && x_coordinate < 12'd75) && (y_coordinate >= 12'd150 && y_coordinate < 12'd200))|| 
+    //((x_coordinate >= 12'd50 && x_coordinate < 12'd90) && (y_coordinate >= 12'd200 && y_coordinate < 12'd210));
+    ((x_coordinate >= 12'd105 && x_coordinate < 12'd125) && (y_coordinate >= 12'd150 && y_coordinate < 12'd160)) || 
+    ((x_coordinate >= 12'd115 && x_coordinate < 12'd125) && (y_coordinate >= 12'd150 && y_coordinate < 12'd200)) || 
+    ((x_coordinate >= 12'd100 && x_coordinate < 12'd140) && (y_coordinate >= 12'd200 && y_coordinate < 12'd210));
     
     //number 2 (right on edge)
     assign number_2 = ((x_coordinate >=  12'd100 && x_coordinate < 12'd110) && (y_coordinate >= 12'd150 && y_coordinate < 12'd165))|| 
@@ -113,96 +170,96 @@ module hdmi_code(
     ((x_coordinate >= 12'd100 && x_coordinate < 12'd140) && (y_coordinate >= 12'd200 && y_coordinate < 12'd210));
     
     //number 3 (50 pixel more)
-    assign number_3 = ((x_coordinate >=  12'd150 && x_coordinate < 12'd160) && (y_coordinate >= 12'd150 && y_coordinate < 12'd165))|| 
-    ((x_coordinate >= 12'd150 && x_coordinate < 12'd190) && (y_coordinate >= 12'd150 && y_coordinate < 12'd160))||
-    ((x_coordinate >= 12'd180 && x_coordinate < 12'd190) && (y_coordinate >= 12'd150 && y_coordinate < 12'd185))||
-    ((x_coordinate >= 12'd170 && x_coordinate < 12'd190) && (y_coordinate >= 12'd175 && y_coordinate < 12'd185))||
-    ((x_coordinate >= 12'd180 && x_coordinate < 12'd190) && (y_coordinate >= 12'd185 && y_coordinate < 12'd210))||
-    ((x_coordinate >= 12'd150 && x_coordinate < 12'd190) && (y_coordinate >= 12'd200 && y_coordinate < 12'd210))||
-    ((x_coordinate >=  12'd150 && x_coordinate < 12'd160) && (y_coordinate >= 12'd195 && y_coordinate < 12'd210));
-    //((x_coordinate >=  12'd100 && x_coordinate < 12'd110) && (y_coordinate >= 12'd150 && y_coordinate < 12'd165))|| 
-    //((x_coordinate >= 12'd100 && x_coordinate < 12'd140) && (y_coordinate >= 12'd150 && y_coordinate < 12'd160))||
-    //((x_coordinate >= 12'd130 && x_coordinate < 12'd140) && (y_coordinate >= 12'd150 && y_coordinate < 12'd185))||
-    //((x_coordinate >= 12'd120 && x_coordinate < 12'd140) && (y_coordinate >= 12'd175 && y_coordinate < 12'd185))||
-    //((x_coordinate >= 12'd130 && x_coordinate < 12'd140) && (y_coordinate >= 12'd185 && y_coordinate < 12'd210))||
-    //((x_coordinate >= 12'd100 && x_coordinate < 12'd140) && (y_coordinate >= 12'd200 && y_coordinate < 12'd210))||
-    //((x_coordinate >=  12'd100 && x_coordinate < 12'd110) && (y_coordinate >= 12'd195 && y_coordinate < 12'd210));
+    assign number_3 = //((x_coordinate >=  12'd150 && x_coordinate < 12'd160) && (y_coordinate >= 12'd150 && y_coordinate < 12'd165))|| 
+    //((x_coordinate >= 12'd150 && x_coordinate < 12'd190) && (y_coordinate >= 12'd150 && y_coordinate < 12'd160))||
+    //((x_coordinate >= 12'd180 && x_coordinate < 12'd190) && (y_coordinate >= 12'd150 && y_coordinate < 12'd185))||
+    //((x_coordinate >= 12'd170 && x_coordinate < 12'd190) && (y_coordinate >= 12'd175 && y_coordinate < 12'd185))||
+    //((x_coordinate >= 12'd180 && x_coordinate < 12'd190) && (y_coordinate >= 12'd185 && y_coordinate < 12'd210))||
+    //((x_coordinate >= 12'd150 && x_coordinate < 12'd190) && (y_coordinate >= 12'd200 && y_coordinate < 12'd210))||
+    //((x_coordinate >=  12'd150 && x_coordinate < 12'd160) && (y_coordinate >= 12'd195 && y_coordinate < 12'd210));
+    ((x_coordinate >=  12'd100 && x_coordinate < 12'd110) && (y_coordinate >= 12'd150 && y_coordinate < 12'd165))|| 
+    ((x_coordinate >= 12'd100 && x_coordinate < 12'd140) && (y_coordinate >= 12'd150 && y_coordinate < 12'd160))||
+    ((x_coordinate >= 12'd130 && x_coordinate < 12'd140) && (y_coordinate >= 12'd150 && y_coordinate < 12'd185))||
+    ((x_coordinate >= 12'd120 && x_coordinate < 12'd140) && (y_coordinate >= 12'd175 && y_coordinate < 12'd185))||
+    ((x_coordinate >= 12'd130 && x_coordinate < 12'd140) && (y_coordinate >= 12'd185 && y_coordinate < 12'd210))||
+    ((x_coordinate >= 12'd100 && x_coordinate < 12'd140) && (y_coordinate >= 12'd200 && y_coordinate < 12'd210))||
+    ((x_coordinate >=  12'd100 && x_coordinate < 12'd110) && (y_coordinate >= 12'd195 && y_coordinate < 12'd210));
     
     //number 4 (100 pixel more)
-    assign number_4 = ((x_coordinate >= 12'd200 && x_coordinate < 12'd210) && (y_coordinate >= 12'd150 && y_coordinate < 12'd185))||
-    ((x_coordinate >= 12'd200 && x_coordinate < 12'd240) && (y_coordinate >= 12'd175 && y_coordinate < 12'd185))||
-    ((x_coordinate >= 12'd230 && x_coordinate < 12'd240) && (y_coordinate >= 12'd150 && y_coordinate < 12'd210));
-    //((x_coordinate >= 12'd100 && x_coordinate < 12'd110) && (y_coordinate >= 12'd150 && y_coordinate < 12'd185))||
-    //((x_coordinate >= 12'd100 && x_coordinate < 12'd140) && (y_coordinate >= 12'd175 && y_coordinate < 12'd185))||
-    //((x_coordinate >= 12'd130 && x_coordinate < 12'd140) && (y_coordinate >= 12'd150 && y_coordinate < 12'd210));
+    assign number_4 = //((x_coordinate >= 12'd200 && x_coordinate < 12'd210) && (y_coordinate >= 12'd150 && y_coordinate < 12'd185))||
+    //((x_coordinate >= 12'd200 && x_coordinate < 12'd240) && (y_coordinate >= 12'd175 && y_coordinate < 12'd185))||
+    //((x_coordinate >= 12'd230 && x_coordinate < 12'd240) && (y_coordinate >= 12'd150 && y_coordinate < 12'd210));
+    ((x_coordinate >= 12'd100 && x_coordinate < 12'd110) && (y_coordinate >= 12'd150 && y_coordinate < 12'd185))||
+    ((x_coordinate >= 12'd100 && x_coordinate < 12'd140) && (y_coordinate >= 12'd175 && y_coordinate < 12'd185))||
+    ((x_coordinate >= 12'd130 && x_coordinate < 12'd140) && (y_coordinate >= 12'd150 && y_coordinate < 12'd210));
     
     //number 5 (150 pixels more)
-    assign number_5 = ((x_coordinate >= 12'd250 && x_coordinate < 12'd290) && (y_coordinate >= 12'd150 && y_coordinate < 12'd160))||
-    ((x_coordinate >= 12'd250 && x_coordinate < 12'd260) && (y_coordinate >= 12'd150 && y_coordinate < 12'd185))||
-    ((x_coordinate >= 12'd250 && x_coordinate < 12'd290) && (y_coordinate >= 12'd175 && y_coordinate < 12'd185))||
-    ((x_coordinate >= 12'd280 && x_coordinate < 12'd290) && (y_coordinate >= 12'd185 && y_coordinate < 12'd210))||
-    ((x_coordinate >= 12'd250 && x_coordinate < 12'd290) && (y_coordinate >= 12'd200 && y_coordinate < 12'd210));
-    //((x_coordinate >= 12'd100 && x_coordinate < 12'd140) && (y_coordinate >= 12'd150 && y_coordinate < 12'd160))||
-    //((x_coordinate >= 12'd100 && x_coordinate < 12'd110) && (y_coordinate >= 12'd150 && y_coordinate < 12'd185))||
-    //((x_coordinate >= 12'd100 && x_coordinate < 12'd140) && (y_coordinate >= 12'd175 && y_coordinate < 12'd185))||
-    //((x_coordinate >= 12'd130 && x_coordinate < 12'd140) && (y_coordinate >= 12'd185 && y_coordinate < 12'd210))||
-    //((x_coordinate >= 12'd100 && x_coordinate < 12'd140) && (y_coordinate >= 12'd200 && y_coordinate < 12'd210));
+    assign number_5 = //((x_coordinate >= 12'd250 && x_coordinate < 12'd290) && (y_coordinate >= 12'd150 && y_coordinate < 12'd160))||
+    //((x_coordinate >= 12'd250 && x_coordinate < 12'd260) && (y_coordinate >= 12'd150 && y_coordinate < 12'd185))||
+    //((x_coordinate >= 12'd250 && x_coordinate < 12'd290) && (y_coordinate >= 12'd175 && y_coordinate < 12'd185))||
+    //((x_coordinate >= 12'd280 && x_coordinate < 12'd290) && (y_coordinate >= 12'd185 && y_coordinate < 12'd210))||
+    //((x_coordinate >= 12'd250 && x_coordinate < 12'd290) && (y_coordinate >= 12'd200 && y_coordinate < 12'd210));
+    ((x_coordinate >= 12'd100 && x_coordinate < 12'd140) && (y_coordinate >= 12'd150 && y_coordinate < 12'd160))||
+    ((x_coordinate >= 12'd100 && x_coordinate < 12'd110) && (y_coordinate >= 12'd150 && y_coordinate < 12'd185))||
+    ((x_coordinate >= 12'd100 && x_coordinate < 12'd140) && (y_coordinate >= 12'd175 && y_coordinate < 12'd185))||
+    ((x_coordinate >= 12'd130 && x_coordinate < 12'd140) && (y_coordinate >= 12'd185 && y_coordinate < 12'd210))||
+    ((x_coordinate >= 12'd100 && x_coordinate < 12'd140) && (y_coordinate >= 12'd200 && y_coordinate < 12'd210));
  
     //number 6 (200 pixels more)
-    assign number_6 = ((x_coordinate >= 12'd300 && x_coordinate < 12'd340) && (y_coordinate >= 12'd150 && y_coordinate < 12'd160))||
-    ((x_coordinate >= 12'd300 && x_coordinate < 12'd310) && (y_coordinate >= 12'd150 && y_coordinate < 12'd210))||
-    ((x_coordinate >= 12'd300 && x_coordinate < 12'd340) && (y_coordinate >= 12'd175 && y_coordinate < 12'd185))||
-    ((x_coordinate >= 12'd330 && x_coordinate < 12'd340) && (y_coordinate >= 12'd185 && y_coordinate < 12'd210))||
-    ((x_coordinate >= 12'd300 && x_coordinate < 12'd340) && (y_coordinate >= 12'd200 && y_coordinate < 12'd210));
-    //((x_coordinate >= 12'd100 && x_coordinate < 12'd140) && (y_coordinate >= 12'd150 && y_coordinate < 12'd160))||
-    //((x_coordinate >= 12'd100 && x_coordinate < 12'd110) && (y_coordinate >= 12'd150 && y_coordinate < 12'd210))||
-    //((x_coordinate >= 12'd100 && x_coordinate < 12'd140) && (y_coordinate >= 12'd175 && y_coordinate < 12'd185))||
-    //((x_coordinate >= 12'd130 && x_coordinate < 12'd140) && (y_coordinate >= 12'd185 && y_coordinate < 12'd210))||
-    //((x_coordinate >= 12'd100 && x_coordinate < 12'd140) && (y_coordinate >= 12'd200 && y_coordinate < 12'd210));
+    assign number_6 = //((x_coordinate >= 12'd300 && x_coordinate < 12'd340) && (y_coordinate >= 12'd150 && y_coordinate < 12'd160))||
+    //((x_coordinate >= 12'd300 && x_coordinate < 12'd310) && (y_coordinate >= 12'd150 && y_coordinate < 12'd210))||
+    //((x_coordinate >= 12'd300 && x_coordinate < 12'd340) && (y_coordinate >= 12'd175 && y_coordinate < 12'd185))||
+    //((x_coordinate >= 12'd330 && x_coordinate < 12'd340) && (y_coordinate >= 12'd185 && y_coordinate < 12'd210))||
+    //((x_coordinate >= 12'd300 && x_coordinate < 12'd340) && (y_coordinate >= 12'd200 && y_coordinate < 12'd210));
+    ((x_coordinate >= 12'd100 && x_coordinate < 12'd140) && (y_coordinate >= 12'd150 && y_coordinate < 12'd160))||
+    ((x_coordinate >= 12'd100 && x_coordinate < 12'd110) && (y_coordinate >= 12'd150 && y_coordinate < 12'd210))||
+    ((x_coordinate >= 12'd100 && x_coordinate < 12'd140) && (y_coordinate >= 12'd175 && y_coordinate < 12'd185))||
+    ((x_coordinate >= 12'd130 && x_coordinate < 12'd140) && (y_coordinate >= 12'd185 && y_coordinate < 12'd210))||
+    ((x_coordinate >= 12'd100 && x_coordinate < 12'd140) && (y_coordinate >= 12'd200 && y_coordinate < 12'd210));
     
     //number 7 (250 pixels more)
-    assign number_7 = ((x_coordinate >=  12'd350 && x_coordinate < 12'd360) && (y_coordinate >= 12'd150 && y_coordinate < 12'd165))|| 
-    ((x_coordinate >= 12'd350 && x_coordinate < 12'd390) && (y_coordinate >= 12'd150 && y_coordinate < 12'd160))||
-    ((x_coordinate >= 12'd380 && x_coordinate < 12'd390) && (y_coordinate >= 12'd150 && y_coordinate < 12'd210));
-    //((x_coordinate >=  12'd100 && x_coordinate < 12'd110) && (y_coordinate >= 12'd150 && y_coordinate < 12'd165))|| 
-    //((x_coordinate >= 12'd100 && x_coordinate < 12'd140) && (y_coordinate >= 12'd150 && y_coordinate < 12'd160))||
-    //((x_coordinate >= 12'd130 && x_coordinate < 12'd140) && (y_coordinate >= 12'd150 && y_coordinate < 12'd210)));
+    assign number_7 = //((x_coordinate >=  12'd350 && x_coordinate < 12'd360) && (y_coordinate >= 12'd150 && y_coordinate < 12'd165))|| 
+    //((x_coordinate >= 12'd350 && x_coordinate < 12'd390) && (y_coordinate >= 12'd150 && y_coordinate < 12'd160))||
+    //((x_coordinate >= 12'd380 && x_coordinate < 12'd390) && (y_coordinate >= 12'd150 && y_coordinate < 12'd210));
+    ((x_coordinate >=  12'd100 && x_coordinate < 12'd110) && (y_coordinate >= 12'd150 && y_coordinate < 12'd165))|| 
+    ((x_coordinate >= 12'd100 && x_coordinate < 12'd140) && (y_coordinate >= 12'd150 && y_coordinate < 12'd160))||
+    ((x_coordinate >= 12'd130 && x_coordinate < 12'd140) && (y_coordinate >= 12'd150 && y_coordinate < 12'd210));
     
     //number 8 (300 pixels)
-    assign number_8 = ((x_coordinate >= 12'd400 && x_coordinate < 12'd440) && (y_coordinate >= 12'd150 && y_coordinate < 12'd160))||
-    ((x_coordinate >= 12'd400 && x_coordinate < 12'd410) && (y_coordinate >= 12'd150 && y_coordinate < 12'd210))||
-    ((x_coordinate >= 12'd400 && x_coordinate < 12'd440) && (y_coordinate >= 12'd175 && y_coordinate < 12'd185))||
-    ((x_coordinate >= 12'd430 && x_coordinate < 12'd440) && (y_coordinate >= 12'd150 && y_coordinate < 12'd210))||
-    ((x_coordinate >= 12'd400 && x_coordinate < 12'd440) && (y_coordinate >= 12'd200 && y_coordinate < 12'd210));
-    //((x_coordinate >= 12'd100 && x_coordinate < 12'd140) && (y_coordinate >= 12'd150 && y_coordinate < 12'd160))||
-    //((x_coordinate >= 12'd100 && x_coordinate < 12'd110) && (y_coordinate >= 12'd150 && y_coordinate < 12'd210))||
-    //((x_coordinate >= 12'd100 && x_coordinate < 12'd140) && (y_coordinate >= 12'd175 && y_coordinate < 12'd185))||
-    //((x_coordinate >= 12'd130 && x_coordinate < 12'd140) && (y_coordinate >= 12'd150 && y_coordinate < 12'd210))||
-    //((x_coordinate >= 12'd100 && x_coordinate < 12'd140) && (y_coordinate >= 12'd200 && y_coordinate < 12'd210));
+    assign number_8 = //((x_coordinate >= 12'd400 && x_coordinate < 12'd440) && (y_coordinate >= 12'd150 && y_coordinate < 12'd160))||
+    //((x_coordinate >= 12'd400 && x_coordinate < 12'd410) && (y_coordinate >= 12'd150 && y_coordinate < 12'd210))||
+    //((x_coordinate >= 12'd400 && x_coordinate < 12'd440) && (y_coordinate >= 12'd175 && y_coordinate < 12'd185))||
+    //((x_coordinate >= 12'd430 && x_coordinate < 12'd440) && (y_coordinate >= 12'd150 && y_coordinate < 12'd210))||
+    //((x_coordinate >= 12'd400 && x_coordinate < 12'd440) && (y_coordinate >= 12'd200 && y_coordinate < 12'd210));
+    ((x_coordinate >= 12'd100 && x_coordinate < 12'd140) && (y_coordinate >= 12'd150 && y_coordinate < 12'd160))||
+    ((x_coordinate >= 12'd100 && x_coordinate < 12'd110) && (y_coordinate >= 12'd150 && y_coordinate < 12'd210))||
+    ((x_coordinate >= 12'd100 && x_coordinate < 12'd140) && (y_coordinate >= 12'd175 && y_coordinate < 12'd185))||
+    ((x_coordinate >= 12'd130 && x_coordinate < 12'd140) && (y_coordinate >= 12'd150 && y_coordinate < 12'd210))||
+    ((x_coordinate >= 12'd100 && x_coordinate < 12'd140) && (y_coordinate >= 12'd200 && y_coordinate < 12'd210));
     
     //number 9 (350 pixels)
-    assign number_9 = ((x_coordinate >= 12'd450 && x_coordinate < 12'd490) && (y_coordinate >= 12'd150 && y_coordinate < 12'd160))||
-    ((x_coordinate >= 12'd450 && x_coordinate < 12'd460) && (y_coordinate >= 12'd150 && y_coordinate < 12'd185))||
-    ((x_coordinate >= 12'd480 && x_coordinate < 12'd490) && (y_coordinate >= 12'd150 && y_coordinate < 12'd210))||
-    ((x_coordinate >= 12'd450 && x_coordinate < 12'd490) && (y_coordinate >= 12'd175 && y_coordinate < 12'd185))||
-    ((x_coordinate >= 12'd450 && x_coordinate < 12'd490) && (y_coordinate >= 12'd200 && y_coordinate < 12'd210))||
-    ((x_coordinate >=  12'd500 && x_coordinate < 12'd510) && (y_coordinate >= 12'd195 && y_coordinate < 12'd210));
-    //((x_coordinate >= 12'd100 && x_coordinate < 12'd140) && (y_coordinate >= 12'd150 && y_coordinate < 12'd160))||
-    //((x_coordinate >= 12'd100 && x_coordinate < 12'd110) && (y_coordinate >= 12'd150 && y_coordinate < 12'd185))||
-    //((x_coordinate >= 12'd130 && x_coordinate < 12'd140) && (y_coordinate >= 12'd150 && y_coordinate < 12'd210))||
-    //((x_coordinate >= 12'd100 && x_coordinate < 12'd140) && (y_coordinate >= 12'd175 && y_coordinate < 12'd185))||
-    //((x_coordinate >= 12'd100 && x_coordinate < 12'd140) && (y_coordinate >= 12'd200 && y_coordinate < 12'd210))||
-    //((x_coordinate >=  12'd150 && x_coordinate < 12'd160) && (y_coordinate >= 12'd195 && y_coordinate < 12'd210));
+    assign number_9 = //((x_coordinate >= 12'd450 && x_coordinate < 12'd490) && (y_coordinate >= 12'd150 && y_coordinate < 12'd160))||
+    //((x_coordinate >= 12'd450 && x_coordinate < 12'd460) && (y_coordinate >= 12'd150 && y_coordinate < 12'd185))||
+    //((x_coordinate >= 12'd480 && x_coordinate < 12'd490) && (y_coordinate >= 12'd150 && y_coordinate < 12'd210))||
+    //((x_coordinate >= 12'd450 && x_coordinate < 12'd490) && (y_coordinate >= 12'd175 && y_coordinate < 12'd185))||
+    //((x_coordinate >= 12'd450 && x_coordinate < 12'd490) && (y_coordinate >= 12'd200 && y_coordinate < 12'd210))||
+    //((x_coordinate >=  12'd500 && x_coordinate < 12'd510) && (y_coordinate >= 12'd195 && y_coordinate < 12'd210));
+    ((x_coordinate >= 12'd100 && x_coordinate < 12'd140) && (y_coordinate >= 12'd150 && y_coordinate < 12'd160))||
+    ((x_coordinate >= 12'd100 && x_coordinate < 12'd110) && (y_coordinate >= 12'd150 && y_coordinate < 12'd185))||
+    ((x_coordinate >= 12'd130 && x_coordinate < 12'd140) && (y_coordinate >= 12'd150 && y_coordinate < 12'd210))||
+    ((x_coordinate >= 12'd100 && x_coordinate < 12'd140) && (y_coordinate >= 12'd175 && y_coordinate < 12'd185))||
+    ((x_coordinate >= 12'd100 && x_coordinate < 12'd140) && (y_coordinate >= 12'd200 && y_coordinate < 12'd210))||
+    ((x_coordinate >=  12'd150 && x_coordinate < 12'd160) && (y_coordinate >= 12'd195 && y_coordinate < 12'd210));
     
     //number 0 (400 pixels) 
-    assign number_0 = ((x_coordinate >= 12'd500 && x_coordinate < 12'd540) && (y_coordinate >= 12'd150 && y_coordinate < 12'd160))||
-    ((x_coordinate >= 12'd500 && x_coordinate < 12'd510) && (y_coordinate >= 12'd150 && y_coordinate < 12'd210))||
-    ((x_coordinate >= 12'd530 && x_coordinate < 12'd540) && (y_coordinate >= 12'd150 && y_coordinate < 12'd210))||
-    ((x_coordinate >= 12'd500 && x_coordinate < 12'd540) && (y_coordinate >= 12'd200 && y_coordinate < 12'd210));
-    //((x_coordinate >= 12'd100 && x_coordinate < 12'd140) && (y_coordinate >= 12'd150 && y_coordinate < 12'd160))||
-    //((x_coordinate >= 12'd100 && x_coordinate < 12'd110) && (y_coordinate >= 12'd150 && y_coordinate < 12'd210))||
-    //((x_coordinate >= 12'd130 && x_coordinate < 12'd140) && (y_coordinate >= 12'd150 && y_coordinate < 12'd210))||
-    //((x_coordinate >= 12'd100 && x_coordinate < 12'd140) && (y_coordinate >= 12'd200 && y_coordinate < 12'd210));
+    assign number_0 = //((x_coordinate >= 12'd500 && x_coordinate < 12'd540) && (y_coordinate >= 12'd150 && y_coordinate < 12'd160))||
+    //((x_coordinate >= 12'd500 && x_coordinate < 12'd510) && (y_coordinate >= 12'd150 && y_coordinate < 12'd210))||
+    //((x_coordinate >= 12'd530 && x_coordinate < 12'd540) && (y_coordinate >= 12'd150 && y_coordinate < 12'd210))||
+    //((x_coordinate >= 12'd500 && x_coordinate < 12'd540) && (y_coordinate >= 12'd200 && y_coordinate < 12'd210));
+    ((x_coordinate >= 12'd100 && x_coordinate < 12'd140) && (y_coordinate >= 12'd150 && y_coordinate < 12'd160))||
+    ((x_coordinate >= 12'd100 && x_coordinate < 12'd110) && (y_coordinate >= 12'd150 && y_coordinate < 12'd210))||
+    ((x_coordinate >= 12'd130 && x_coordinate < 12'd140) && (y_coordinate >= 12'd150 && y_coordinate < 12'd210))||
+    ((x_coordinate >= 12'd100 && x_coordinate < 12'd140) && (y_coordinate >= 12'd200 && y_coordinate < 12'd210));
     
     always @(*) begin
         if (!video_active) begin

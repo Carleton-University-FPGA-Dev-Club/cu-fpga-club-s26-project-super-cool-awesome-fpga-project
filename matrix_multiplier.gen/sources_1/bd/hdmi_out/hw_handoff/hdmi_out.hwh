@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Tue Jul 28 17:48:54 2026" VIVADOVERSION="2023.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sun Aug  2 21:07:04 2026" VIVADOVERSION="2023.2">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z020" NAME="hdmi_out" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -715,6 +715,7 @@
             <CONNECTION INSTANCE="clk_wiz_0" PORT="clk_out1"/>
           </CONNECTIONS>
         </PORT>
+        <PORT DIR="I" LEFT="3" NAME="compartment" RIGHT="0" SIGIS="undef"/>
         <PORT DIR="I" LEFT="11" NAME="double_dabble" RIGHT="0" SIGIS="undef" SIGNAME="constant_0_12width_dout">
           <CONNECTIONS>
             <CONNECTION INSTANCE="constant_0_12width" PORT="dout"/>
