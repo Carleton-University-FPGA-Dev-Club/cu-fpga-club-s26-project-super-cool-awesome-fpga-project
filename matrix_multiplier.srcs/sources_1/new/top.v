@@ -44,10 +44,10 @@ module top(
     wire [3:0] a21_2_join;
     wire [3:0] a22_2_join;
     //wires used to connect the ports using matrix 3 
-    wire [7:0] a11_3_join;
-    wire [7:0] a12_3_join;
-    wire [7:0] a21_3_join;
-    wire [7:0] a22_3_join;
+    wire [8:0] a11_3_join;
+    wire [8:0] a12_3_join;
+    wire [8:0] a21_3_join;
+    wire [8:0] a22_3_join;
     //wire to connect final results from double_dabble output ports (all matrix numbers)
     wire [11:0] a11_1_final;
     wire [11:0] a12_1_final;
@@ -78,7 +78,7 @@ module top(
         .System_clock(clock),
         .enter(enter_button),
         .reset(reset_button),
-        .number(numbmer_switch),
+        .number(number_switch),
         //connecting the wires to the output variables in module input_numbers
         .index(counter),
         .led(led_out)

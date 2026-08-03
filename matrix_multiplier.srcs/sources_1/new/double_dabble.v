@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 module double_dabble(
-    input wire [7:0] input_number,
+    input wire [8:0] input_number,
     output reg [11:0] final_output
     );
     //used as the shifting double-dabble process 
