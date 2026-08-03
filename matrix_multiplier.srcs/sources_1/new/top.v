@@ -65,6 +65,23 @@ module top(
         //connecting the wires to the output variables in module input_numbers
         .index(counter),
         .led(led_out)
-        );
+    );
         
+    MatrixMultiplierCode u_calculate(
+        //connecting matrix 1 ports 
+        .a11_1_multiply(a11_1_join),
+        .a12_1_multiply(a12_1_join),
+        .a21_1_multiply(a21_1_join),
+        .a22_1_multiply(a22_1_join),
+        //connecting matrix 2 ports
+        .a11_2_multiply(a11_2_join),
+        .a12_2_multiply(a12_2_join),
+        .a21_2_multiply(a21_2_join),
+        .a22_2_multiply(a22_2_join),
+        //connecting matrix 3 ports
+        .a11_3(a11_3_join),
+        .a12_3(a12_3_join),
+        .a21_3(a21_3_join),
+        .a22_3(a22_3_join)
+        );
 endmodule
