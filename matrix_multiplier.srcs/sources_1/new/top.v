@@ -19,15 +19,20 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 module top(
-    //input and output variables that will be used to instatiate the I/O variables from module input_numbers
+    //I/O variables that will be used to instatiate the I/O variables from module input_numbers
     input wire clock,
     input wire enter_button,
     input wire reset_button, 
     input wire [3:0] number_switch,
     output wire [3:0] counter,
-    output wire [3:0] led_out
-    //I/O variables that will be used to instatiate the I/O variables in module MatrixMultiplierCode 
+    output wire [3:0] led_out,
+    //I/O variables that will be used to instatiate the I/O variables from module hdmi_code
+    input wire hysnc_xcoord,
+    input wire vsync_ycoord,
+    input wire active_video,
+    output reg [23:0] video_out
     );
+    
     //wires used to connect the ports using matrix 1
     wire [3:0] a11_1_join;
     wire [3:0] a12_1_join;
@@ -78,7 +83,7 @@ module top(
         .index(counter),
         .led(led_out)
     );
-        
+    //instatiate I/O ports in the module MatrixMultiplierCode     
     MatrixMultiplierCode u_calculate(
         //connecting matrix 1 ports 
         .a11_1_multiply(a11_1_join),
@@ -96,7 +101,6 @@ module top(
         .a21_3(a21_3_join),
         .a22_3(a22_3_join)
     );
-    
     //Instantiate all the different matrix components individually from module double_dabble
     double_dabble converta11_1(.input_number(a11_1_join), .final_output(a11_1_final));
     double_dabble converta12_1(.input_number(a12_1_join), .final_output(a12_1_final));
@@ -110,4 +114,26 @@ module top(
     double_dabble converta12_3(.input_number(a12_3_join), .final_output(a12_3_final));
     double_dabble converta21_3(.input_number(a21_3_join), .final_output(a21_3_final));
     double_dabble converta22_3(.input_number(a22_3_join), .final_output(a22_3_final));
+    //Instantiate all the I/O ports from the module hdmi_code
+    hdmi_code outputDisplay(
+        .clk(clock),
+        .hsync(hsync_xcoord),
+        .vsync(vsync_ycoord),
+        .video_active(active_video),
+        .vid_out(video_out),
+        .compartment(counter),
+        .a11_1_display(a11_1_final),
+        .a12_1_display(a12_1_final),
+        .a21_1_display(a21_1_final),
+        .a22_1_display(a22_1_final),
+        .a11_2_display(a11_2_final),
+        .a12_2_display(a12_2_final),
+        .a21_2_display(a21_2_final),
+        .a22_2_display(a22_2_final),
+        .a11_3_display(a11_3_final),
+        .a12_3_display(a12_3_final),
+        .a21_3_display(a21_3_final),
+        .a22_3_display(a22_3_final)
+    );
+    
 endmodule
