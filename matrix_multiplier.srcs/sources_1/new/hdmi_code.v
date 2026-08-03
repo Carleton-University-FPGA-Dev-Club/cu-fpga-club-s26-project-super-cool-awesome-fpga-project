@@ -28,8 +28,19 @@ module hdmi_code(
     input wire vsync, 
     //incharge of drawing the pixels
     input wire video_active,
-    //used to display the sequence of digits 
-    input wire [11:0]double_dabble, 
+    //used to display the sequence of digits for all of the matrix compartments
+    input wire [11:0] a11_1_display, 
+    input wire [11:0] a12_1_display, 
+    input wire [11:0] a21_1_display, 
+    input wire [11:0] a22_1_display, 
+    input wire [11:0] a11_2_display, 
+    input wire [11:0] a12_2_display, 
+    input wire [11:0] a21_2_display, 
+    input wire [11:0] a22_2_display,
+    input wire [11:0] a11_3_display, 
+    input wire [11:0] a12_3_display, 
+    input wire [11:0] a21_3_display, 
+    input wire [11:0] a22_3_display,
     //used to know what matrix spot to display numbers
     input wire [3:0] compartment,
     //determines the color 
