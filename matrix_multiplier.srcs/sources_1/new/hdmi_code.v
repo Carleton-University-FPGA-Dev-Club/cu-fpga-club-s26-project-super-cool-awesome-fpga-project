@@ -50,6 +50,124 @@ module hdmi_code(
     reg [11:0] x_coordinate = 0;
     reg [11:0] y_coordinate = 0;
     
+    //used to output numbers, matrix outlines and operations
+    wire number_1; 
+    wire number_2;   
+    wire number_3;
+    wire number_4;
+    wire number_5;
+    wire number_6;
+    wire number_7;
+    wire number_8;
+    wire number_9;
+    wire number_0;
+    wire matrix_outline1;
+    wire matrix_outline2;
+    wire matrix_outline3;
+    wire multiply; 
+    wire equals;
+    //used to determine where the numbers are going to be drawn based on matrix compartment/index
+    reg [11:0] x_move;
+    reg [11:0] y_move;
+    
+    //function to draw 1 anywhere on the display
+    function automatic draw_1(input [11:0] x_move, y_move, x_coordinate, y_coordinate);
+        begin
+        draw_1 = ((x_coordinate >= 12'd105 + x_move && x_coordinate < 12'd125 + x_move) && (y_coordinate >= 12'd150 + y_move && y_coordinate < 12'd160 + y_move)) || 
+        ((x_coordinate >= 12'd115 + x_move && x_coordinate < 12'd125 + x_move) && (y_coordinate >= 12'd150 + y_move && y_coordinate < 12'd200 + y_move)) || 
+        ((x_coordinate >= 12'd100 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd200 + y_move && y_coordinate < 12'd210 + y_move));
+        end 
+    endfunction 
+    //function to draw 2 anywhere on the display
+    function automatic draw_2(input [11:0] x_move, y_move, x_coordinate, y_coordinate);
+        begin
+        draw_2 = ((x_coordinate >=  12'd100 + x_move && x_coordinate < 12'd110 + x_move) && (y_coordinate >= 12'd150 + y_move && y_coordinate < 12'd165 + y_move))|| 
+        ((x_coordinate >= 12'd100 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd150 + y_move && y_coordinate < 12'd160 + y_move))||
+        ((x_coordinate >= 12'd130 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd150 + y_move && y_coordinate < 12'd185 + y_move))||
+        ((x_coordinate >= 12'd100 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd175 + y_move && y_coordinate < 12'd185 + y_move))||
+        ((x_coordinate >= 12'd100 + x_move && x_coordinate < 12'd110 + x_move) && (y_coordinate >= 12'd185 + y_move && y_coordinate < 12'd210 + y_move))||
+        ((x_coordinate >= 12'd100 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd200 + y_move && y_coordinate < 12'd210 + y_move));
+        end
+    endfunction
+    //function to draw 3 anywhere on the display
+    function automatic draw_3(input [11:0] x_move, y_move, x_coordinate, y_coordinate);
+        begin
+        draw_3 = ((x_coordinate >= 12'd100 + x_move && x_coordinate < 12'd110 + x_move) && (y_coordinate >= 12'd150 + y_move && y_coordinate < 12'd165 + y_move))|| 
+        ((x_coordinate >= 12'd100 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd150 + y_move && y_coordinate < 12'd160 + y_move))||
+        ((x_coordinate >= 12'd130 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd150 + y_move && y_coordinate < 12'd185 + y_move))||
+        ((x_coordinate >= 12'd120 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd175 + y_move && y_coordinate < 12'd185 + y_move))||
+        ((x_coordinate >= 12'd130 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd185 + y_move && y_coordinate < 12'd210 + y_move))||
+        ((x_coordinate >= 12'd100 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd200 + y_move && y_coordinate < 12'd210 + y_move))||
+        ((x_coordinate >= 12'd100 + x_move && x_coordinate < 12'd110 + x_move) && (y_coordinate >= 12'd195 + y_move && y_coordinate < 12'd210 + y_move));
+        end
+    endfunction
+    //function to draw 4 anywhere on the display
+    function automatic draw_4(input [11:0] x_move, y_move, x_coordinate, y_coordinate);
+        begin
+        draw_4 = ((x_coordinate >= 12'd100 + x_move && x_coordinate < 12'd110 + x_move) && (y_coordinate >= 12'd150 + y_move && y_coordinate < 12'd185 + y_move))||
+        ((x_coordinate >= 12'd100 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd175 + y_move && y_coordinate < 12'd185 + y_move))||
+        ((x_coordinate >= 12'd130 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd150 + y_move && y_coordinate < 12'd210 + y_move));
+        end
+    endfunction
+    //function to draw 5 anywhere on the display
+    function automatic draw_5(input [11:0] x_move, y_move, x_coordinate, y_coordinate);
+        begin
+        draw_5 = ((x_coordinate >= 12'd100 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd150 + y_move && y_coordinate < 12'd160 + y_move))||
+        ((x_coordinate >= 12'd100 + x_move && x_coordinate < 12'd110 + x_move) && (y_coordinate >= 12'd150 + y_move && y_coordinate < 12'd185 + y_move))||
+        ((x_coordinate >= 12'd100 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd175 + y_move && y_coordinate < 12'd185 + y_move))||
+        ((x_coordinate >= 12'd130 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd185 + y_move && y_coordinate < 12'd210 + y_move))||
+        ((x_coordinate >= 12'd100 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd200 + y_move && y_coordinate < 12'd210 + y_move));
+        end
+    endfunction
+    //function to draw 6 anywhere on the display
+    function automatic draw_6(input [11:0] x_move, y_move, x_coordinate, y_coordinate);
+        begin
+        draw_6 = ((x_coordinate >= 12'd100 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd150 + y_move && y_coordinate < 12'd160 + y_move))||
+        ((x_coordinate >= 12'd100 + x_move && x_coordinate < 12'd110 + x_move) && (y_coordinate >= 12'd150 + y_move && y_coordinate < 12'd210 + y_move))||
+        ((x_coordinate >= 12'd100 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd175 + y_move && y_coordinate < 12'd185 + y_move))||
+        ((x_coordinate >= 12'd130 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd185 + y_move && y_coordinate < 12'd210 + y_move))||
+        ((x_coordinate >= 12'd100 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd200 + y_move && y_coordinate < 12'd210 + y_move));
+        end
+    endfunction
+    //function to draw 7 anywhere on the display
+    function automatic draw_7(input [11:0] x_move, y_move, x_coordinate, y_coordinate);
+        begin
+        draw_7 = ((x_coordinate >= 12'd100 + x_move && x_coordinate < 12'd110 + x_move) && (y_coordinate >= 12'd150 + y_move && y_coordinate < 12'd165 + y_move))|| 
+        ((x_coordinate >= 12'd100 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd150 + y_move && y_coordinate < 12'd160 + y_move))||
+        ((x_coordinate >= 12'd130 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd150 + y_move && y_coordinate < 12'd210 + y_move));  
+        end
+    endfunction
+    //function to draw 8 anywhere on the display
+    function automatic draw_8(input [11:0] x_move, y_move, x_coordinate, y_coordinate);
+        begin
+        draw_8 = ((x_coordinate >= 12'd100 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd150 + y_move && y_coordinate < 12'd160 + y_move))||
+        ((x_coordinate >= 12'd100 + x_move && x_coordinate < 12'd110 + x_move) && (y_coordinate >= 12'd150 + y_move && y_coordinate < 12'd210 + y_move))||
+        ((x_coordinate >= 12'd100 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd175 + y_move && y_coordinate < 12'd185 + y_move))||
+        ((x_coordinate >= 12'd130 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd150 + y_move && y_coordinate < 12'd210 + y_move))||
+        ((x_coordinate >= 12'd100 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd200 + y_move && y_coordinate < 12'd210 + y_move));
+        end
+    endfunction
+    //function to draw 9 anywhere on the display
+    function automatic draw_9(input [11:0] x_move, y_move, x_coordinate, y_coordinate);
+        begin
+        draw_9 = ((x_coordinate >= 12'd100 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd150 + y_move && y_coordinate < 12'd160 + y_move))||
+        ((x_coordinate >= 12'd100 + x_move && x_coordinate < 12'd110 + x_move) && (y_coordinate >= 12'd150 + y_move && y_coordinate < 12'd185 + y_move))||
+        ((x_coordinate >= 12'd130 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd150 + y_move && y_coordinate < 12'd210 + y_move))||
+        ((x_coordinate >= 12'd100 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd175 + y_move && y_coordinate < 12'd185 + y_move))||
+        ((x_coordinate >= 12'd100 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd200 + y_move && y_coordinate < 12'd210 + y_move))||
+        ((x_coordinate >= 12'd150 + x_move && x_coordinate < 12'd160 + x_move) && (y_coordinate >= 12'd195 + y_move && y_coordinate < 12'd210 + y_move));
+        end
+    endfunction
+    //function to draw 0 anywhere on the display
+    function automatic draw_0(input [11:0] x_move, y_move, x_coordinate, y_coordinate);
+        begin
+        draw_0 = ((x_coordinate >= 12'd100 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd150 + y_move && y_coordinate < 12'd160 + y_move))||
+        ((x_coordinate >= 12'd100 + x_move && x_coordinate < 12'd110 + x_move) && (y_coordinate >= 12'd150 + y_move && y_coordinate < 12'd210 + y_move))||
+        ((x_coordinate >= 12'd130 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd150 + y_move && y_coordinate < 12'd210 + y_move))||
+        ((x_coordinate >= 12'd100 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd200 + y_move && y_coordinate < 12'd210 + y_move));
+        end
+    endfunction
+    
     //during blanking intervals, keeps the x rests as 0, and resets the Y sync
     always @(posedge clk) begin 
         if (!video_active) begin 
@@ -69,21 +187,7 @@ module hdmi_code(
         end
     end
     
-    //used to determine where the numbers are going to be drawn based on matrix compartment/index
-    reg [11:0] x_move;
-    reg [11:0] y_move;
-    
-    //determining which numbers to display and where 
-    always @(*) begin 
-        
-    
-    
-    
-    
-    
-    
-    end 
-    
+    //determining which numbers to display and where based on matrix compartment/index
     always @(*) begin
         case (compartment)
             //matrix 1, row 1 + column 1
@@ -128,24 +232,7 @@ module hdmi_code(
              default: ;
          endcase 
      end
-    //used to output numbers
-    wire number_1; 
-    wire number_2;   
-    wire number_3;
-    wire number_4;
-    wire number_5;
-    wire number_6;
-    wire number_7;
-    wire number_8;
-    wire number_9;
-    wire number_0;
-                
-    wire matrix_outline1;
-    wire matrix_outline2;
-    wire matrix_outline3;
     
-    wire multiply; 
-    wire equals;
     
     assign matrix_outline1 = ((x_coordinate >= 12'd90 && x_coordinate < 12'd130) && (y_coordinate >= 12'd213 && y_coordinate < 12'd223))|| //left side, left matrix
     ((x_coordinate >= 12'd90 && x_coordinate < 12'd100) && (y_coordinate >= 12'd213 && y_coordinate < 12'd508))||
@@ -174,73 +261,7 @@ module hdmi_code(
     assign equals = ((x_coordinate >= 12'd755 && x_coordinate < 12'd805) && (y_coordinate >= 12'd333 && y_coordinate < 12'd343))||
     ((x_coordinate >= 12'd755 && x_coordinate < 12'd805) && (y_coordinate >= 12'd383 && y_coordinate < 12'd393));
         
-   //number 1 (50 less)
-    assign number_1 = ((x_coordinate >= 12'd105 + x_move && x_coordinate < 12'd125 + x_move) && (y_coordinate >= 12'd150 + y_move && y_coordinate < 12'd160 + y_move)) || 
-    ((x_coordinate >= 12'd115 + x_move && x_coordinate < 12'd125 + x_move) && (y_coordinate >= 12'd150 + y_move && y_coordinate < 12'd200 + y_move)) || 
-    ((x_coordinate >= 12'd100 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd200 + y_move && y_coordinate < 12'd210 + y_move));
-    
-    //number 2 (right on edge)
-    assign number_2 = ((x_coordinate >=  12'd100 + x_move && x_coordinate < 12'd110 + x_move) && (y_coordinate >= 12'd150 + y_move && y_coordinate < 12'd165 + y_move))|| 
-    ((x_coordinate >= 12'd100 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd150 + y_move && y_coordinate < 12'd160 + y_move))||
-    ((x_coordinate >= 12'd130 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd150 + y_move && y_coordinate < 12'd185 + y_move))||
-    ((x_coordinate >= 12'd100 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd175 + y_move && y_coordinate < 12'd185 + y_move))||
-    ((x_coordinate >= 12'd100 + x_move && x_coordinate < 12'd110 + x_move) && (y_coordinate >= 12'd185 + y_move && y_coordinate < 12'd210 + y_move))||
-    ((x_coordinate >= 12'd100 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd200 + y_move && y_coordinate < 12'd210 + y_move));
-    
-    //number 3 (50 pixel more)
-    assign number_3 = ((x_coordinate >= 12'd100 + x_move && x_coordinate < 12'd110 + x_move) && (y_coordinate >= 12'd150 + y_move && y_coordinate < 12'd165 + y_move))|| 
-    ((x_coordinate >= 12'd100 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd150 + y_move && y_coordinate < 12'd160 + y_move))||
-    ((x_coordinate >= 12'd130 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd150 + y_move && y_coordinate < 12'd185 + y_move))||
-    ((x_coordinate >= 12'd120 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd175 + y_move && y_coordinate < 12'd185 + y_move))||
-    ((x_coordinate >= 12'd130 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd185 + y_move && y_coordinate < 12'd210 + y_move))||
-    ((x_coordinate >= 12'd100 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd200 + y_move && y_coordinate < 12'd210 + y_move))||
-    ((x_coordinate >= 12'd100 + x_move && x_coordinate < 12'd110 + x_move) && (y_coordinate >= 12'd195 + y_move && y_coordinate < 12'd210 + y_move));
-    
-    //number 4 (100 pixel more)
-    assign number_4 = ((x_coordinate >= 12'd100 + x_move && x_coordinate < 12'd110 + x_move) && (y_coordinate >= 12'd150 + y_move && y_coordinate < 12'd185 + y_move))||
-    ((x_coordinate >= 12'd100 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd175 + y_move && y_coordinate < 12'd185 + y_move))||
-    ((x_coordinate >= 12'd130 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd150 + y_move && y_coordinate < 12'd210 + y_move));
-    
-    //number 5 (150 pixels more)
-    assign number_5 = ((x_coordinate >= 12'd100 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd150 + y_move && y_coordinate < 12'd160 + y_move))||
-    ((x_coordinate >= 12'd100 + x_move && x_coordinate < 12'd110 + x_move) && (y_coordinate >= 12'd150 + y_move && y_coordinate < 12'd185 + y_move))||
-    ((x_coordinate >= 12'd100 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd175 + y_move && y_coordinate < 12'd185 + y_move))||
-    ((x_coordinate >= 12'd130 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd185 + y_move && y_coordinate < 12'd210 + y_move))||
-    ((x_coordinate >= 12'd100 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd200 + y_move && y_coordinate < 12'd210 + y_move));
- 
-    //number 6 (200 pixels more)
-    assign number_6 = ((x_coordinate >= 12'd100 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd150 + y_move && y_coordinate < 12'd160 + y_move))||
-    ((x_coordinate >= 12'd100 + x_move && x_coordinate < 12'd110 + x_move) && (y_coordinate >= 12'd150 + y_move && y_coordinate < 12'd210 + y_move))||
-    ((x_coordinate >= 12'd100 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd175 + y_move && y_coordinate < 12'd185 + y_move))||
-    ((x_coordinate >= 12'd130 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd185 + y_move && y_coordinate < 12'd210 + y_move))||
-    ((x_coordinate >= 12'd100 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd200 + y_move && y_coordinate < 12'd210 + y_move));
-    
-    //number 7 (250 pixels more)
-    assign number_7 = ((x_coordinate >= 12'd100 + x_move && x_coordinate < 12'd110 + x_move) && (y_coordinate >= 12'd150 + y_move && y_coordinate < 12'd165 + y_move))|| 
-    ((x_coordinate >= 12'd100 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd150 + y_move && y_coordinate < 12'd160 + y_move))||
-    ((x_coordinate >= 12'd130 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd150 + y_move && y_coordinate < 12'd210 + y_move));
-    
-    //number 8 (300 pixels)
-    assign number_8 = ((x_coordinate >= 12'd100 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd150 + y_move && y_coordinate < 12'd160 + y_move))||
-    ((x_coordinate >= 12'd100 + x_move && x_coordinate < 12'd110 + x_move) && (y_coordinate >= 12'd150 + y_move && y_coordinate < 12'd210 + y_move))||
-    ((x_coordinate >= 12'd100 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd175 + y_move && y_coordinate < 12'd185 + y_move))||
-    ((x_coordinate >= 12'd130 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd150 + y_move && y_coordinate < 12'd210 + y_move))||
-    ((x_coordinate >= 12'd100 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd200 + y_move && y_coordinate < 12'd210 + y_move));
-    
-    //number 9 (350 pixels)
-    assign number_9 = ((x_coordinate >= 12'd100 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd150 + y_move && y_coordinate < 12'd160 + y_move))||
-    ((x_coordinate >= 12'd100 + x_move && x_coordinate < 12'd110 + x_move) && (y_coordinate >= 12'd150 + y_move && y_coordinate < 12'd185 + y_move))||
-    ((x_coordinate >= 12'd130 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd150 + y_move && y_coordinate < 12'd210 + y_move))||
-    ((x_coordinate >= 12'd100 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd175 + y_move && y_coordinate < 12'd185 + y_move))||
-    ((x_coordinate >= 12'd100 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd200 + y_move && y_coordinate < 12'd210 + y_move))||
-    ((x_coordinate >= 12'd150 + x_move && x_coordinate < 12'd160 + x_move) && (y_coordinate >= 12'd195 + y_move && y_coordinate < 12'd210 + y_move));
-    
-    //number 0 (400 pixels) 
-    assign number_0 = ((x_coordinate >= 12'd100 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd150 + y_move && y_coordinate < 12'd160 + y_move))||
-    ((x_coordinate >= 12'd100 + x_move && x_coordinate < 12'd110 + x_move) && (y_coordinate >= 12'd150 + y_move && y_coordinate < 12'd210 + y_move))||
-    ((x_coordinate >= 12'd130 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd150 + y_move && y_coordinate < 12'd210 + y_move))||
-    ((x_coordinate >= 12'd100 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd200 + y_move && y_coordinate < 12'd210 + y_move));
-    
+   
     always @(*) begin
         if (!video_active) begin
             vid_out = 24'h000000;
