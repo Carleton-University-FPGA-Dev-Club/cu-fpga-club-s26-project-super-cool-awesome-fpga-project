@@ -7,8 +7,7 @@
       "name": "hdmi_out",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
       "synth_flow_mode": "Hierarchical",
-      "tool_version": "2023.2",
-      "validated": "true"
+      "tool_version": "2023.2"
     },
     "design_tree": {
       "rgb2dvi_0": "",
@@ -53,24 +52,8 @@
         "type": "clk",
         "direction": "I",
         "parameters": {
-          "CLK_DOMAIN": {
-            "value": "hdmi_out_clk_in1_0",
-            "value_src": "default"
-          },
           "FREQ_HZ": {
             "value": "125000000"
-          },
-          "FREQ_TOLERANCE_HZ": {
-            "value": "0",
-            "value_src": "default"
-          },
-          "INSERT_VIP": {
-            "value": "0",
-            "value_src": "default"
-          },
-          "PHASE": {
-            "value": "0.0",
-            "value_src": "default"
           }
         }
       },
@@ -168,21 +151,7 @@
         "ports": {
           "clk": {
             "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "FREQ_HZ": {
-                "value": "74250000",
-                "value_src": "ip_prop"
-              },
-              "PHASE": {
-                "value": "0.0",
-                "value_src": "ip_prop"
-              },
-              "CLK_DOMAIN": {
-                "value": "/clk_wiz_0_clk_out1",
-                "value_src": "ip_prop"
-              }
-            }
+            "direction": "I"
           },
           "hsync": {
             "direction": "I"
@@ -193,7 +162,62 @@
           "video_active": {
             "direction": "I"
           },
-          "double_dabble": {
+          "a11_1_display": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "a12_1_display": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "a21_1_display": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "a22_1_display": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "a11_2_display": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "a12_2_display": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "a21_2_display": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "a22_2_display": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "a11_3_display": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "a12_3_display": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "a21_3_display": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "a22_3_display": {
             "direction": "I",
             "left": "11",
             "right": "0"
@@ -252,7 +276,19 @@
       "constant_0_12width_dout": {
         "ports": [
           "constant_0_12width/dout",
-          "hdmi_code_0/double_dabble"
+          "hdmi_code_0/a11_1_display",
+          "hdmi_code_0/a12_1_display",
+          "hdmi_code_0/a21_1_display",
+          "hdmi_code_0/a22_1_display",
+          "hdmi_code_0/a11_2_display",
+          "hdmi_code_0/a12_2_display",
+          "hdmi_code_0/a21_2_display",
+          "hdmi_code_0/a22_2_display",
+          "hdmi_code_0/a11_3_display",
+          "hdmi_code_0/a12_3_display",
+          "hdmi_code_0/a21_3_display",
+          "hdmi_code_0/a22_3_display",
+          "hdmi_code_0/compartment"
         ]
       },
       "constant_0_dout": {

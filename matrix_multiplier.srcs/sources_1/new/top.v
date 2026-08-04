@@ -27,10 +27,10 @@ module top(
     output wire [3:0] counter,
     output wire [3:0] led_out,
     //I/O variables that will be used to instatiate the I/O variables from module hdmi_code
-    input wire hysnc_xcoord,
+    input wire hsync_xcoord,
     input wire vsync_ycoord,
     input wire active_video,
-    output reg [23:0] video_out
+    output wire [23:0] video_out
     );
     
     //wires used to connect the ports using matrix 1
