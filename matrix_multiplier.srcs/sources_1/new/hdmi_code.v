@@ -201,37 +201,37 @@ module hdmi_code(
         ((x_coordinate >= 12'd100 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd200 + y_move && y_coordinate < 12'd210 + y_move));
         end
     endfunction
-    
+    //function is used to incrment the placement of digits within number (1's, 10's, 100's)
     function automatic increment (input [1:0] place);
         begin
             case(place)
-                2'b00: begin
+                2'b00: begin //if place is 0 --> increment by 1 --> place = 1
                     increment = place + 2'b01;
                 end
-                2'b01: begin
+                2'b01: begin //if place is 1 --> increment by 1 --> place = 2
                     increment = place + 2'b01;
                 end    
-                2'b10: begin
+                2'b10: begin //if place is 2 --> place = 0 (restart counter)
                     increment = 2'b00;
                 end
-                default: begin
+                default: begin //default place is 0
                     increment = 2'b00;
                 end
             endcase
         end
     endfunction
-    
+    //function used to display which place within number (1's, 10's, 100's)
     function automatic new_xcoord(input [11:0] xcoord, input [1:0] place);
         begin
         case (place)
-                    2'b00: begin 
+                    2'b00: begin //if the place = 0 --> standard placement (100's)
                         new_xcoord = xcoord;
                     end
-                    2'b01: begin 
-                        new_xcoord = xcoord + 12'd50;
+                    2'b01: begin //if the place = 1 --> 60 pixels right (10's)
+                        new_xcoord = xcoord + 12'd60;
                     end
-                    2'b10: begin 
-                        new_xcoord = xcoord + 12'd100;
+                    2'b10: begin //if the place = 2 --> 120 pixels right (1's)
+                        new_xcoord = xcoord + 12'd120;
                     end
                     default:;
                 endcase
@@ -264,56 +264,56 @@ module hdmi_code(
              4'b0000: begin
                 y_move <= 12'd20;
                 x_move <= 12'd20;
-                x_move <= new_xcoord(x_move, place);
-                place <= increment(place);
+                x_move <= new_xcoord(x_move, place); //calling x_move function to determine what place the digit is in
+                place <= increment(place); //increment the place counter
              end
              //matrix 1, row 1 + column 2
              4'b0001: begin 
                 x_move <= 12'd158;
                 y_move <= 12'd20;
-                x_move <= new_xcoord(x_move, place);
-                place <= increment(place);
+                x_move <= new_xcoord(x_move, place); //calling x_move function to determine what place the digit is in
+                place <= increment(place); //increment the place counter);
              end
              //matrix 1, row 2 + column 1
              4'b0010: begin 
                 x_move <= 12'd20;
                 y_move <= 12'd137;   
-                x_move <= new_xcoord(x_move, place);
-                place <= increment(place);
+                x_move <= new_xcoord(x_move, place); //calling x_move function to determine what place the digit is in
+                place <= increment(place); //increment the place counter
              end
              //matrix 1, row 2 + column 2
              4'b0011: begin 
                 x_move <= 12'd158;
                 y_move <= 12'd137;
-                x_move <= new_xcoord(x_move, place);
-                place <= increment(place);
+                x_move <= new_xcoord(x_move, place); //calling x_move function to determine what place the digit is in
+                place <= increment(place); //increment the place counter
              end 
              //matrix 2, row 1 + column 1
              4'b0100: begin
                 x_move <= 12'd375;
                 y_move <= 12'd20;
-                x_move <= new_xcoord(x_move, place);
-                place <= increment(place);
+                x_move <= new_xcoord(x_move, place); //calling x_move function to determine what place the digit is in
+                place <= increment(place); //increment the place counter
              end 
              //matrix 2, row 1 + column 2
              4'b0101: begin 
                 x_move <= 12'd412;
                 y_move <= 12'd137;
-                x_move <= new_xcoord(x_move, place);
-                place <= increment(place);
+                x_move <= new_xcoord(x_move, place); //calling x_move function to determine what place the digit is in
+                place <= increment(place); //increment the place counter
              end
              //matrix 2, row 2 + column 1
              4'b0110: begin 
                 x_move <= 12'd375;
                 y_move <= 12'd137;
-                x_move <= new_xcoord(x_move, place);
-                place <= increment(place);
+                x_move <= new_xcoord(x_move, place); //calling x_move function to determine what place the digit is in
+                place <= increment(place); //increment the place counter
              end 
              4'b0111: begin
                 x_move <= 12'd412;
                 y_move <= 12'd137;
-                x_move <= new_xcoord(x_move, place);
-                place <= increment(place);
+                x_move <= new_xcoord(x_move, place); //calling x_move function to determine what place the digit is in
+                place <= increment(place); //increment the place counter
              end
              default: ;
          endcase 
