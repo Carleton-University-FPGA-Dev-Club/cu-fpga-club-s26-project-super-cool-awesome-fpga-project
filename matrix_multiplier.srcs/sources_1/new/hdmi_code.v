@@ -69,6 +69,8 @@ module hdmi_code(
     //used to determine where the numbers are going to be drawn based on matrix compartment/index
     reg [11:0] x_move = 0;
     reg [11:0] y_move = 0;
+    //used to figure out where the number is going to place within the same compartment (1's, 10's, 100's)
+    reg [1:0] place = 2'b00;
     //function to display matrix outline 1 
     function automatic matrix_1(input [11:0] x_coordinate, y_coordinate);
         begin
@@ -200,6 +202,42 @@ module hdmi_code(
         end
     endfunction
     
+    function automatic increment (input [1:0] place);
+        begin
+            case(place)
+                2'b00: begin
+                    increment = place + 2'b01;
+                end
+                2'b01: begin
+                    increment = place + 2'b01;
+                end    
+                2'b10: begin
+                    increment = 2'b00;
+                end
+                default: begin
+                    increment = 2'b00;
+                end
+            endcase
+        end
+    endfunction
+    
+    function automatic new_xcoord(input [11:0] xcoord, input [1:0] place);
+        begin
+        case (place)
+                    2'b00: begin 
+                        new_xcoord = xcoord;
+                    end
+                    2'b01: begin 
+                        new_xcoord = xcoord + 12'd50;
+                    end
+                    2'b10: begin 
+                        new_xcoord = xcoord + 12'd100;
+                    end
+                    default:;
+                endcase
+        end 
+    endfunction
+    
     //during blanking intervals, keeps the x rests as 0, and resets the Y sync
     always @(posedge clk) begin 
         if (!video_active) begin 
@@ -224,42 +262,58 @@ module hdmi_code(
         case (compartment)
             //matrix 1, row 1 + column 1
              4'b0000: begin
-                x_move <= 12'd20;
                 y_move <= 12'd20;
+                x_move <= 12'd20;
+                x_move <= new_xcoord(x_move, place);
+                place <= increment(place);
              end
              //matrix 1, row 1 + column 2
              4'b0001: begin 
                 x_move <= 12'd158;
                 y_move <= 12'd20;
+                x_move <= new_xcoord(x_move, place);
+                place <= increment(place);
              end
              //matrix 1, row 2 + column 1
              4'b0010: begin 
                 x_move <= 12'd20;
                 y_move <= 12'd137;   
+                x_move <= new_xcoord(x_move, place);
+                place <= increment(place);
              end
              //matrix 1, row 2 + column 2
              4'b0011: begin 
                 x_move <= 12'd158;
                 y_move <= 12'd137;
+                x_move <= new_xcoord(x_move, place);
+                place <= increment(place);
              end 
              //matrix 2, row 1 + column 1
              4'b0100: begin
                 x_move <= 12'd375;
                 y_move <= 12'd20;
+                x_move <= new_xcoord(x_move, place);
+                place <= increment(place);
              end 
              //matrix 2, row 1 + column 2
              4'b0101: begin 
                 x_move <= 12'd412;
                 y_move <= 12'd137;
+                x_move <= new_xcoord(x_move, place);
+                place <= increment(place);
              end
              //matrix 2, row 2 + column 1
              4'b0110: begin 
                 x_move <= 12'd375;
                 y_move <= 12'd137;
+                x_move <= new_xcoord(x_move, place);
+                place <= increment(place);
              end 
              4'b0111: begin
                 x_move <= 12'd412;
                 y_move <= 12'd137;
+                x_move <= new_xcoord(x_move, place);
+                place <= increment(place);
              end
              default: ;
          endcase 

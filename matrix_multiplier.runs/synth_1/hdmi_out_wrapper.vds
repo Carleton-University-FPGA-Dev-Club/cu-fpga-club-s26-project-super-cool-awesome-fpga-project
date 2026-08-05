@@ -1,0 +1,302 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Tue Aug  4 18:58:43 2026
+# Process ID: 15268
+# Current directory: C:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.runs/synth_1
+# Command line: vivado.exe -log hdmi_out_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source hdmi_out_wrapper.tcl
+# Log file: C:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.runs/synth_1/hdmi_out_wrapper.vds
+# Journal file: C:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.runs/synth_1\vivado.jou
+# Running On: DESKTOP-LRI6JJ9, OS: Windows, CPU Frequency: 2295 MHz, CPU Physical cores: 2, Host memory: 8472 MB
+#-----------------------------------------------------------
+source hdmi_out_wrapper.tcl -notrace
+create_project: Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 457.609 ; gain = 181.426
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Home/Documents/FPGASummerProject/HDMI_Github/vivado-library-master (1)/vivado-library-master'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Users/Home/vivado/Vivado/2023.2/data/ip'.
+update_ip_catalog: Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 462.539 ; gain = 4.930
+WARNING: [IP_Flow 19-4995] The host OS only allows 260 characters in a normal path. The IP cache path is more than 80 characters. If you experience issues with IP caching, please consider changing the IP cache to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. 
+Current IP cache path is c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.cache/ip 
+Command: read_checkpoint -auto_incremental -incremental C:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.srcs/utils_1/imports/synth_1/matrix_multiplier.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.srcs/utils_1/imports/synth_1/matrix_multiplier.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top hdmi_out_wrapper -part xc7z020clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+WARNING: [Common 17-1361] You have specified a new message control rule that is equivalent to an existing rule with attributes ' -id {17-179}  -suppress '. The existing rule will be replaced.
+INFO: [Synth 8-7075] Helper process launched with PID 2600
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1346.910 ; gain = 439.621
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'hdmi_out_wrapper' [C:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/hdl/hdmi_out_wrapper.v:13]
+INFO: [Synth 8-6157] synthesizing module 'hdmi_out' [c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/synth/hdmi_out.v:13]
+INFO: [Synth 8-6157] synthesizing module 'hdmi_out_clk_wiz_0_0' [C:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.runs/synth_1/.Xil/Vivado-15268-DESKTOP-LRI6JJ9/realtime/hdmi_out_clk_wiz_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'hdmi_out_clk_wiz_0_0' (0#1) [C:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.runs/synth_1/.Xil/Vivado-15268-DESKTOP-LRI6JJ9/realtime/hdmi_out_clk_wiz_0_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'locked' of module 'hdmi_out_clk_wiz_0_0' is unconnected for instance 'clk_wiz_0' [c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/synth/hdmi_out.v:48]
+WARNING: [Synth 8-7023] instance 'clk_wiz_0' of module 'hdmi_out_clk_wiz_0_0' has 4 connections declared, but only 3 given [c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/synth/hdmi_out.v:48]
+INFO: [Synth 8-6157] synthesizing module 'hdmi_out_xlconstant_0_1' [c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/ip/hdmi_out_xlconstant_0_1/synth/hdmi_out_xlconstant_0_1.v:53]
+INFO: [Synth 8-6157] synthesizing module 'xlconstant_v1_1_8_xlconstant' [c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/ipshared/d390/hdl/xlconstant_v1_1_vl_rfs.v:68]
+INFO: [Synth 8-6155] done synthesizing module 'xlconstant_v1_1_8_xlconstant' (0#1) [c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/ipshared/d390/hdl/xlconstant_v1_1_vl_rfs.v:68]
+INFO: [Synth 8-6155] done synthesizing module 'hdmi_out_xlconstant_0_1' (0#1) [c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/ip/hdmi_out_xlconstant_0_1/synth/hdmi_out_xlconstant_0_1.v:53]
+INFO: [Synth 8-6157] synthesizing module 'hdmi_out_constant_0_0' [c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/ip/hdmi_out_constant_0_0/synth/hdmi_out_constant_0_0.v:53]
+INFO: [Synth 8-6157] synthesizing module 'xlconstant_v1_1_8_xlconstant__parameterized0' [c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/ipshared/d390/hdl/xlconstant_v1_1_vl_rfs.v:68]
+INFO: [Synth 8-6155] done synthesizing module 'xlconstant_v1_1_8_xlconstant__parameterized0' (0#1) [c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/ipshared/d390/hdl/xlconstant_v1_1_vl_rfs.v:68]
+INFO: [Synth 8-6155] done synthesizing module 'hdmi_out_constant_0_0' (0#1) [c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/ip/hdmi_out_constant_0_0/synth/hdmi_out_constant_0_0.v:53]
+INFO: [Synth 8-6157] synthesizing module 'hdmi_out_xlconstant_0_2' [c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/ip/hdmi_out_xlconstant_0_2/synth/hdmi_out_xlconstant_0_2.v:53]
+INFO: [Synth 8-6157] synthesizing module 'xlconstant_v1_1_8_xlconstant__parameterized1' [c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/ipshared/d390/hdl/xlconstant_v1_1_vl_rfs.v:68]
+INFO: [Synth 8-6155] done synthesizing module 'xlconstant_v1_1_8_xlconstant__parameterized1' (0#1) [c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/ipshared/d390/hdl/xlconstant_v1_1_vl_rfs.v:68]
+INFO: [Synth 8-6155] done synthesizing module 'hdmi_out_xlconstant_0_2' (0#1) [c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/ip/hdmi_out_xlconstant_0_2/synth/hdmi_out_xlconstant_0_2.v:53]
+INFO: [Synth 8-6157] synthesizing module 'hdmi_out_hdmi_code_0_0' [C:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.runs/synth_1/.Xil/Vivado-15268-DESKTOP-LRI6JJ9/realtime/hdmi_out_hdmi_code_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'hdmi_out_hdmi_code_0_0' (0#1) [C:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.runs/synth_1/.Xil/Vivado-15268-DESKTOP-LRI6JJ9/realtime/hdmi_out_hdmi_code_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'hdmi_out_rgb2dvi_0_0' [C:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.runs/synth_1/.Xil/Vivado-15268-DESKTOP-LRI6JJ9/realtime/hdmi_out_rgb2dvi_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'hdmi_out_rgb2dvi_0_0' (0#1) [C:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.runs/synth_1/.Xil/Vivado-15268-DESKTOP-LRI6JJ9/realtime/hdmi_out_rgb2dvi_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'hdmi_out_v_tc_0_0' [C:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.runs/synth_1/.Xil/Vivado-15268-DESKTOP-LRI6JJ9/realtime/hdmi_out_v_tc_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'hdmi_out_v_tc_0_0' (0#1) [C:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.runs/synth_1/.Xil/Vivado-15268-DESKTOP-LRI6JJ9/realtime/hdmi_out_v_tc_0_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'hblank_out' of module 'hdmi_out_v_tc_0_0' is unconnected for instance 'v_tc_0' [c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/synth/hdmi_out.v:88]
+WARNING: [Synth 8-7071] port 'vblank_out' of module 'hdmi_out_v_tc_0_0' is unconnected for instance 'v_tc_0' [c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/synth/hdmi_out.v:88]
+WARNING: [Synth 8-7071] port 'fsync_out' of module 'hdmi_out_v_tc_0_0' is unconnected for instance 'v_tc_0' [c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/synth/hdmi_out.v:88]
+WARNING: [Synth 8-7023] instance 'v_tc_0' of module 'hdmi_out_v_tc_0_0' has 11 connections declared, but only 8 given [c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/synth/hdmi_out.v:88]
+INFO: [Synth 8-6155] done synthesizing module 'hdmi_out' (0#1) [c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/synth/hdmi_out.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'hdmi_out_wrapper' (0#1) [C:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/hdl/hdmi_out_wrapper.v:13]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1455.262 ; gain = 547.973
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1455.262 ; gain = 547.973
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1455.262 ; gain = 547.973
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1455.262 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/ip/hdmi_out_rgb2dvi_0_0/hdmi_out_rgb2dvi_0_0/hdmi_out_rgb2dvi_0_0_in_context.xdc] for cell 'hdmi_out_i/rgb2dvi_0'
+Finished Parsing XDC File [c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/ip/hdmi_out_rgb2dvi_0_0/hdmi_out_rgb2dvi_0_0/hdmi_out_rgb2dvi_0_0_in_context.xdc] for cell 'hdmi_out_i/rgb2dvi_0'
+Parsing XDC File [c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/ip/hdmi_out_clk_wiz_0_0/hdmi_out_clk_wiz_0_0/hdmi_out_clk_wiz_0_0_in_context.xdc] for cell 'hdmi_out_i/clk_wiz_0'
+Finished Parsing XDC File [c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/ip/hdmi_out_clk_wiz_0_0/hdmi_out_clk_wiz_0_0/hdmi_out_clk_wiz_0_0_in_context.xdc] for cell 'hdmi_out_i/clk_wiz_0'
+Parsing XDC File [c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/ip/hdmi_out_v_tc_0_0/hdmi_out_v_tc_0_0/hdmi_out_v_tc_0_0_in_context.xdc] for cell 'hdmi_out_i/v_tc_0'
+Finished Parsing XDC File [c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/ip/hdmi_out_v_tc_0_0/hdmi_out_v_tc_0_0/hdmi_out_v_tc_0_0_in_context.xdc] for cell 'hdmi_out_i/v_tc_0'
+Parsing XDC File [c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/ip/hdmi_out_hdmi_code_0_0/hdmi_out_hdmi_code_0_0/hdmi_out_hdmi_code_0_0_in_context.xdc] for cell 'hdmi_out_i/hdmi_code_0'
+Finished Parsing XDC File [c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/ip/hdmi_out_hdmi_code_0_0/hdmi_out_hdmi_code_0_0/hdmi_out_hdmi_code_0_0_in_context.xdc] for cell 'hdmi_out_i/hdmi_code_0'
+Parsing XDC File [C:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.srcs/constrs_1/new/hdmi.xdc]
+WARNING: [Constraints 18-619] A clock with name 'System_clock' already exists, overwriting the previous clock with the same name. [C:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.srcs/constrs_1/new/hdmi.xdc:5]
+WARNING: [Vivado 12-584] No ports matched 'enter'. [C:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.srcs/constrs_1/new/hdmi.xdc:20]
+WARNING: [Vivado 12-584] No ports matched 'reset'. [C:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.srcs/constrs_1/new/hdmi.xdc:21]
+WARNING: [Vivado 12-584] No ports matched 'number[0]'. [C:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.srcs/constrs_1/new/hdmi.xdc:24]
+WARNING: [Vivado 12-584] No ports matched 'number[1]'. [C:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.srcs/constrs_1/new/hdmi.xdc:25]
+WARNING: [Vivado 12-584] No ports matched 'number[2]'. [C:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.srcs/constrs_1/new/hdmi.xdc:26]
+WARNING: [Vivado 12-584] No ports matched 'number[3]'. [C:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.srcs/constrs_1/new/hdmi.xdc:27]
+WARNING: [Vivado 12-584] No ports matched 'led[0]'. [C:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.srcs/constrs_1/new/hdmi.xdc:30]
+WARNING: [Vivado 12-584] No ports matched 'led[1]'. [C:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.srcs/constrs_1/new/hdmi.xdc:31]
+WARNING: [Vivado 12-584] No ports matched 'led[2]'. [C:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.srcs/constrs_1/new/hdmi.xdc:32]
+WARNING: [Vivado 12-584] No ports matched 'led[3]'. [C:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.srcs/constrs_1/new/hdmi.xdc:33]
+Finished Parsing XDC File [C:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.srcs/constrs_1/new/hdmi.xdc]
+WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [C:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.srcs/constrs_1/new/hdmi.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/hdmi_out_wrapper_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.srcs/constrs_1/new/hdmi.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/hdmi_out_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/hdmi_out_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [C:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [C:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.runs/synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1463.848 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1463.848 ; gain = 0.000
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:28 ; elapsed = 00:00:30 . Memory (MB): peak = 1463.848 ; gain = 556.559
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:28 ; elapsed = 00:00:30 . Memory (MB): peak = 1463.848 ; gain = 556.559
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property IO_BUFFER_TYPE = NONE for hdmi_out_clk_n. (constraint file  c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/ip/hdmi_out_rgb2dvi_0_0/hdmi_out_rgb2dvi_0_0/hdmi_out_rgb2dvi_0_0_in_context.xdc, line 1).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for hdmi_out_clk_n. (constraint file  c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/ip/hdmi_out_rgb2dvi_0_0/hdmi_out_rgb2dvi_0_0/hdmi_out_rgb2dvi_0_0_in_context.xdc, line 2).
+Applied set_property IO_BUFFER_TYPE = NONE for hdmi_out_clk_p. (constraint file  c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/ip/hdmi_out_rgb2dvi_0_0/hdmi_out_rgb2dvi_0_0/hdmi_out_rgb2dvi_0_0_in_context.xdc, line 3).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for hdmi_out_clk_p. (constraint file  c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/ip/hdmi_out_rgb2dvi_0_0/hdmi_out_rgb2dvi_0_0/hdmi_out_rgb2dvi_0_0_in_context.xdc, line 4).
+Applied set_property IO_BUFFER_TYPE = NONE for hdmi_out_data_n[0]. (constraint file  c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/ip/hdmi_out_rgb2dvi_0_0/hdmi_out_rgb2dvi_0_0/hdmi_out_rgb2dvi_0_0_in_context.xdc, line 5).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for hdmi_out_data_n[0]. (constraint file  c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/ip/hdmi_out_rgb2dvi_0_0/hdmi_out_rgb2dvi_0_0/hdmi_out_rgb2dvi_0_0_in_context.xdc, line 6).
+Applied set_property IO_BUFFER_TYPE = NONE for hdmi_out_data_n[1]. (constraint file  c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/ip/hdmi_out_rgb2dvi_0_0/hdmi_out_rgb2dvi_0_0/hdmi_out_rgb2dvi_0_0_in_context.xdc, line 7).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for hdmi_out_data_n[1]. (constraint file  c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/ip/hdmi_out_rgb2dvi_0_0/hdmi_out_rgb2dvi_0_0/hdmi_out_rgb2dvi_0_0_in_context.xdc, line 8).
+Applied set_property IO_BUFFER_TYPE = NONE for hdmi_out_data_n[2]. (constraint file  c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/ip/hdmi_out_rgb2dvi_0_0/hdmi_out_rgb2dvi_0_0/hdmi_out_rgb2dvi_0_0_in_context.xdc, line 9).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for hdmi_out_data_n[2]. (constraint file  c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/ip/hdmi_out_rgb2dvi_0_0/hdmi_out_rgb2dvi_0_0/hdmi_out_rgb2dvi_0_0_in_context.xdc, line 10).
+Applied set_property IO_BUFFER_TYPE = NONE for hdmi_out_data_p[0]. (constraint file  c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/ip/hdmi_out_rgb2dvi_0_0/hdmi_out_rgb2dvi_0_0/hdmi_out_rgb2dvi_0_0_in_context.xdc, line 11).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for hdmi_out_data_p[0]. (constraint file  c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/ip/hdmi_out_rgb2dvi_0_0/hdmi_out_rgb2dvi_0_0/hdmi_out_rgb2dvi_0_0_in_context.xdc, line 12).
+Applied set_property IO_BUFFER_TYPE = NONE for hdmi_out_data_p[1]. (constraint file  c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/ip/hdmi_out_rgb2dvi_0_0/hdmi_out_rgb2dvi_0_0/hdmi_out_rgb2dvi_0_0_in_context.xdc, line 13).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for hdmi_out_data_p[1]. (constraint file  c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/ip/hdmi_out_rgb2dvi_0_0/hdmi_out_rgb2dvi_0_0/hdmi_out_rgb2dvi_0_0_in_context.xdc, line 14).
+Applied set_property IO_BUFFER_TYPE = NONE for hdmi_out_data_p[2]. (constraint file  c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/ip/hdmi_out_rgb2dvi_0_0/hdmi_out_rgb2dvi_0_0/hdmi_out_rgb2dvi_0_0_in_context.xdc, line 15).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for hdmi_out_data_p[2]. (constraint file  c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/ip/hdmi_out_rgb2dvi_0_0/hdmi_out_rgb2dvi_0_0/hdmi_out_rgb2dvi_0_0_in_context.xdc, line 16).
+Applied set_property IO_BUFFER_TYPE = NONE for System_clock. (constraint file  c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/ip/hdmi_out_clk_wiz_0_0/hdmi_out_clk_wiz_0_0/hdmi_out_clk_wiz_0_0_in_context.xdc, line 3).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for System_clock. (constraint file  c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/ip/hdmi_out_clk_wiz_0_0/hdmi_out_clk_wiz_0_0/hdmi_out_clk_wiz_0_0_in_context.xdc, line 4).
+Applied set_property KEEP_HIERARCHY = SOFT for hdmi_out_i. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for hdmi_out_i/rgb2dvi_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for hdmi_out_i/clk_wiz_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for hdmi_out_i/constant_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for hdmi_out_i/constant_1. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for hdmi_out_i/v_tc_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for hdmi_out_i/hdmi_code_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for hdmi_out_i/constant_0_12width. (constraint file  auto generated constraint).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:28 ; elapsed = 00:00:30 . Memory (MB): peak = 1463.848 ; gain = 556.559
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:28 ; elapsed = 00:00:30 . Memory (MB): peak = 1463.848 ; gain = 556.559
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 1463.848 ; gain = 556.559
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-565] redefining clock 'System_clock'
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:40 ; elapsed = 00:00:42 . Memory (MB): peak = 1463.848 ; gain = 556.559
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:40 ; elapsed = 00:00:42 . Memory (MB): peak = 1463.848 ; gain = 556.559
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:40 ; elapsed = 00:00:42 . Memory (MB): peak = 1463.848 ; gain = 556.559
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:49 ; elapsed = 00:00:51 . Memory (MB): peak = 1472.738 ; gain = 565.449
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:49 ; elapsed = 00:00:51 . Memory (MB): peak = 1472.738 ; gain = 565.449
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:49 ; elapsed = 00:00:51 . Memory (MB): peak = 1472.738 ; gain = 565.449
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:49 ; elapsed = 00:00:51 . Memory (MB): peak = 1472.738 ; gain = 565.449
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:49 ; elapsed = 00:00:51 . Memory (MB): peak = 1472.738 ; gain = 565.449
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:49 ; elapsed = 00:00:51 . Memory (MB): peak = 1472.738 ; gain = 565.449
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+-----------------------+----------+
+|      |BlackBox name          |Instances |
++------+-----------------------+----------+
+|1     |hdmi_out_clk_wiz_0_0   |         1|
+|2     |hdmi_out_hdmi_code_0_0 |         1|
+|3     |hdmi_out_rgb2dvi_0_0   |         1|
+|4     |hdmi_out_v_tc_0_0      |         1|
++------+-----------------------+----------+
+
+Report Cell Usage: 
++------+---------------------+------+
+|      |Cell                 |Count |
++------+---------------------+------+
+|1     |hdmi_out_clk_wiz_0   |     1|
+|2     |hdmi_out_hdmi_code_0 |     1|
+|3     |hdmi_out_rgb2dvi_0   |     1|
+|4     |hdmi_out_v_tc_0      |     1|
+|5     |OBUF                 |     1|
++------+---------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:49 ; elapsed = 00:00:51 . Memory (MB): peak = 1472.738 ; gain = 565.449
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 2 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:32 ; elapsed = 00:00:47 . Memory (MB): peak = 1472.738 ; gain = 556.863
+Synthesis Optimization Complete : Time (s): cpu = 00:00:49 ; elapsed = 00:00:51 . Memory (MB): peak = 1472.738 ; gain = 565.449
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1484.789 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1494.375 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: a233e0f
+INFO: [Common 17-83] Releasing license: Synthesis
+46 Infos, 22 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:57 ; elapsed = 00:01:02 . Memory (MB): peak = 1494.375 ; gain = 1011.102
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1494.375 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.runs/synth_1/hdmi_out_wrapper.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file hdmi_out_wrapper_utilization_synth.rpt -pb hdmi_out_wrapper_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Tue Aug  4 19:00:10 2026...
