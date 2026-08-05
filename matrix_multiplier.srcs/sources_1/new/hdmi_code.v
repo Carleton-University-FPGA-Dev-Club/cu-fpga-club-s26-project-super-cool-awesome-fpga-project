@@ -223,7 +223,7 @@ module hdmi_code(
     //function used to display which place within number (1's, 10's, 100's)
     function automatic new_xcoord(input [11:0] xcoord, input [1:0] place);
         begin
-        case (place)
+            case (place)
                     2'b00: begin //if the place = 0 --> standard placement (100's)
                         new_xcoord = xcoord;
                     end
@@ -234,8 +234,17 @@ module hdmi_code(
                         new_xcoord = xcoord + 12'd120;
                     end
                     default:;
-                endcase
+            endcase
         end 
+    endfunction
+    
+    function automatic return_number(input [11:0] number_doubledabble, [1:0] placement);
+        begin
+            case(placement)
+                2'b00: begin 
+                    
+                end
+        end
     endfunction
     
     //during blanking intervals, keeps the x rests as 0, and resets the Y sync
@@ -256,6 +265,16 @@ module hdmi_code(
             end
         end
     end
+    
+    assign multiply = ((x_coordinate >= 12'd395 && x_coordinate < 12'd435) && (y_coordinate >= (x_coordinate - 12'd59) && y_coordinate < (x_coordinate - 12'd49)))||
+    ((x_coordinate >= 12'd395 && x_coordinate < 12'd435) && (y_coordinate >= (12'd771 - x_coordinate) && y_coordinate < (12'd781 - x_coordinate)));
+    
+    assign equals = ((x_coordinate >= 12'd755 && x_coordinate < 12'd805) && (y_coordinate >= 12'd333 && y_coordinate < 12'd343))||
+    ((x_coordinate >= 12'd755 && x_coordinate < 12'd805) && (y_coordinate >= 12'd383 && y_coordinate < 12'd393));
+    
+    assign matrix_outline1 = matrix_1(x_coordinate, y_coordinate);
+    assign matrix_outline2 = matrix_2(x_coordinate, y_coordinate);
+    assign matrix_outline3 = matrix_3(x_coordinate, y_coordinate);
     
     //determining which numbers to display and where based on matrix compartment/index
     always @(*) begin
@@ -318,16 +337,6 @@ module hdmi_code(
              default: ;
          endcase 
      end
-    
-    assign multiply = ((x_coordinate >= 12'd395 && x_coordinate < 12'd435) && (y_coordinate >= (x_coordinate - 12'd59) && y_coordinate < (x_coordinate - 12'd49)))||
-    ((x_coordinate >= 12'd395 && x_coordinate < 12'd435) && (y_coordinate >= (12'd771 - x_coordinate) && y_coordinate < (12'd781 - x_coordinate)));
-    
-    assign equals = ((x_coordinate >= 12'd755 && x_coordinate < 12'd805) && (y_coordinate >= 12'd333 && y_coordinate < 12'd343))||
-    ((x_coordinate >= 12'd755 && x_coordinate < 12'd805) && (y_coordinate >= 12'd383 && y_coordinate < 12'd393));
-    
-    assign matrix_outline1 = matrix_1(x_coordinate, y_coordinate);
-    assign matrix_outline2 = matrix_2(x_coordinate, y_coordinate);
-    assign matrix_outline3 = matrix_3(x_coordinate, y_coordinate);
         
     always @(*) begin
         if (!video_active) begin
