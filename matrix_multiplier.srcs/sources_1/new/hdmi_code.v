@@ -452,37 +452,37 @@ module hdmi_code(
                 place <= increment(place); //increment the place counter (2)
                 digit_3 <= return_number(a22_3_display, place, x_move, y_move, x_coordinate, y_coordinate); //determine the 1's digit
                 place <= increment(place); //increment the place counter (0)
-             
              end
              default: ;
          endcase 
      end
         
+    //displaying the proper image if pixels are being drawn (color are in hexadecimal)
     always @(*) begin
         if (!video_active) begin
-            vid_out = 24'h000000;
+            vid_out = 24'h000000; //color black 
         end
         else begin 
             if (digit_1||digit_2||digit_3||multiply||equals||matrix_outline1||matrix_outline2||matrix_outline3) begin 
-               vid_out = 24'hFFFFFF;
+               vid_out = 24'hFFFFFF; //color is white
                if (matrix_outline1)begin
-                    vid_out = 24'hEAFC3F;
+                    vid_out = 24'hEAFC3F; //color is pink
                     end
                if (matrix_outline2)begin
-                    vid_out = 24'hFA2378;
+                    vid_out = 24'hFA2378; //color is orange
                     end
                if (matrix_outline3)begin
-                    vid_out = 24'hDB29CA;
+                    vid_out = 24'hDB29CA; //color is yellow
                     end
                if (multiply||equals)begin
-                    vid_out = 24'h79FFF7;
+                    vid_out = 24'h79FFF7; // color is blue
                     end
                if (digit_1||digit_2||digit_3)begin 
-                    vid_out = 24'hFFFFFF;
+                    vid_out = 24'hFFFFFF; //color is white
                     end
             end
             else begin 
-                vid_out = 24'h000000;
+                vid_out = 24'h000000; //color is black
             end
         end
    end
