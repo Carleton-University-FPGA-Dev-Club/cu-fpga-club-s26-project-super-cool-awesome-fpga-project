@@ -1,14 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1785884198" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/matrix_multiplier.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1785991463" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/matrix_multiplier.dcp">
   <File Type="PA-TCL" Name="hdmi_out_wrapper.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="hdmi_out_wrapper_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="hdmi_out_wrapper_reports.tcl"/>
   <File Type="RDS-RDS" Name="hdmi_out_wrapper.vds"/>
   <File Type="RDS-UTIL" Name="hdmi_out_wrapper_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="hdmi_out_wrapper_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="hdmi_out_wrapper.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="hdmi_out_wrapper_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="hdmi_out_wrapper_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/MatrixMultiplierCode.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/double_dabble.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/hdmi_code.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/input_numbers.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/top.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -29,39 +60,7 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/input_numbers.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PSRCDIR/sources_1/new/matrix_multiplier.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/MatrixMultiplierCode.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/double_dabble.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/top.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -122,5 +121,5 @@
   <BlockFileSet Type="BlockSrcs" Name="hdmi_out_rgb2dvi_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="hdmi_out_clk_wiz_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="hdmi_out_v_tc_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="hdmi_out_hdmi_code_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="hdmi_out_top_0_0"/>
 </GenRun>

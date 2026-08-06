@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x5A57E9580D8BCB80",
+      "boundary_crc": "0xE513DCF120EC6D78",
       "device": "xc7z020clg400-1",
       "gen_directory": "../../../../matrix_multiplier.gen/sources_1/bd/hdmi_out",
       "name": "hdmi_out",
@@ -16,8 +16,7 @@
       "constant_0": "",
       "constant_1": "",
       "v_tc_0": "",
-      "hdmi_code_0": "",
-      "constant_0_12width": ""
+      "top_0": ""
     },
     "interface_ports": {
       "hdmi_out": {
@@ -77,6 +76,38 @@
       "hdmi_hdp": {
         "direction": "O",
         "left": "0",
+        "right": "0"
+      },
+      "enter_button_0": {
+        "direction": "I"
+      },
+      "reset_button_0": {
+        "type": "rst",
+        "direction": "I",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_LOW",
+            "value_src": "default"
+          }
+        }
+      },
+      "number_switch_0": {
+        "direction": "I",
+        "left": "3",
+        "right": "0"
+      },
+      "counter_0": {
+        "direction": "O",
+        "left": "3",
+        "right": "0"
+      },
+      "led_out_0": {
+        "direction": "O",
+        "left": "3",
         "right": "0"
       }
     },
@@ -154,19 +185,19 @@
           }
         }
       },
-      "hdmi_code_0": {
-        "vlnv": "xilinx.com:module_ref:hdmi_code:1.0",
+      "top_0": {
+        "vlnv": "xilinx.com:module_ref:top:1.0",
         "ip_revision": "1",
-        "xci_name": "hdmi_out_hdmi_code_0_0",
-        "xci_path": "ip\\hdmi_out_hdmi_code_0_0\\hdmi_out_hdmi_code_0_0.xci",
-        "inst_hier_path": "hdmi_code_0",
+        "xci_name": "hdmi_out_top_0_0",
+        "xci_path": "ip\\hdmi_out_top_0_0\\hdmi_out_top_0_0.xci",
+        "inst_hier_path": "top_0",
         "reference_info": {
           "ref_type": "hdl",
-          "ref_name": "hdmi_code",
+          "ref_name": "top",
           "boundary_crc": "0x0"
         },
         "ports": {
-          "clk": {
+          "clock": {
             "type": "clk",
             "direction": "I",
             "parameters": {
@@ -184,99 +215,41 @@
               }
             }
           },
-          "hsync": {
+          "enter_button": {
             "direction": "I"
           },
-          "vsync": {
+          "reset_button": {
+            "type": "rst",
             "direction": "I"
           },
-          "video_active": {
-            "direction": "I"
-          },
-          "a11_1_display": {
-            "direction": "I",
-            "left": "11",
-            "right": "0"
-          },
-          "a12_1_display": {
-            "direction": "I",
-            "left": "11",
-            "right": "0"
-          },
-          "a21_1_display": {
-            "direction": "I",
-            "left": "11",
-            "right": "0"
-          },
-          "a22_1_display": {
-            "direction": "I",
-            "left": "11",
-            "right": "0"
-          },
-          "a11_2_display": {
-            "direction": "I",
-            "left": "11",
-            "right": "0"
-          },
-          "a12_2_display": {
-            "direction": "I",
-            "left": "11",
-            "right": "0"
-          },
-          "a21_2_display": {
-            "direction": "I",
-            "left": "11",
-            "right": "0"
-          },
-          "a22_2_display": {
-            "direction": "I",
-            "left": "11",
-            "right": "0"
-          },
-          "a11_3_display": {
-            "direction": "I",
-            "left": "11",
-            "right": "0"
-          },
-          "a12_3_display": {
-            "direction": "I",
-            "left": "11",
-            "right": "0"
-          },
-          "a21_3_display": {
-            "direction": "I",
-            "left": "11",
-            "right": "0"
-          },
-          "a22_3_display": {
-            "direction": "I",
-            "left": "11",
-            "right": "0"
-          },
-          "compartment": {
+          "number_switch": {
             "direction": "I",
             "left": "3",
             "right": "0"
           },
-          "vid_out": {
+          "counter": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "led_out": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "hsync_xcoord": {
+            "direction": "I"
+          },
+          "vsync_ycoord": {
+            "direction": "I"
+          },
+          "active_video": {
+            "direction": "I"
+          },
+          "video_out": {
             "direction": "O",
             "left": "23",
             "right": "0"
-          }
-        }
-      },
-      "constant_0_12width": {
-        "vlnv": "xilinx.com:ip:xlconstant:1.1",
-        "ip_revision": "8",
-        "xci_name": "hdmi_out_constant_0_0",
-        "xci_path": "ip\\hdmi_out_constant_0_0\\hdmi_out_constant_0_0.xci",
-        "inst_hier_path": "constant_0_12width",
-        "parameters": {
-          "CONST_VAL": {
-            "value": "0"
-          },
-          "CONST_WIDTH": {
-            "value": "12"
           }
         }
       }
@@ -301,25 +274,7 @@
           "clk_wiz_0/clk_out1",
           "rgb2dvi_0/PixelClk",
           "v_tc_0/clk",
-          "hdmi_code_0/clk"
-        ]
-      },
-      "constant_0_12width_dout": {
-        "ports": [
-          "constant_0_12width/dout",
-          "hdmi_code_0/a11_1_display",
-          "hdmi_code_0/a12_1_display",
-          "hdmi_code_0/a21_1_display",
-          "hdmi_code_0/a22_1_display",
-          "hdmi_code_0/a11_2_display",
-          "hdmi_code_0/a12_2_display",
-          "hdmi_code_0/a21_2_display",
-          "hdmi_code_0/a22_2_display",
-          "hdmi_code_0/a11_3_display",
-          "hdmi_code_0/a12_3_display",
-          "hdmi_code_0/a21_3_display",
-          "hdmi_code_0/a22_3_display",
-          "hdmi_code_0/compartment"
+          "top_0/clock"
         ]
       },
       "constant_0_dout": {
@@ -337,9 +292,39 @@
           "v_tc_0/resetn"
         ]
       },
-      "hdmi_code_0_vid_out": {
+      "enter_button_0_1": {
         "ports": [
-          "hdmi_code_0/vid_out",
+          "enter_button_0",
+          "top_0/enter_button"
+        ]
+      },
+      "number_switch_0_1": {
+        "ports": [
+          "number_switch_0",
+          "top_0/number_switch"
+        ]
+      },
+      "reset_button_0_1": {
+        "ports": [
+          "reset_button_0",
+          "top_0/reset_button"
+        ]
+      },
+      "top_0_counter": {
+        "ports": [
+          "top_0/counter",
+          "counter_0"
+        ]
+      },
+      "top_0_led_out": {
+        "ports": [
+          "top_0/led_out",
+          "led_out_0"
+        ]
+      },
+      "top_0_video_out": {
+        "ports": [
+          "top_0/video_out",
           "rgb2dvi_0/vid_pData"
         ]
       },
@@ -347,21 +332,21 @@
         "ports": [
           "v_tc_0/active_video_out",
           "rgb2dvi_0/vid_pVDE",
-          "hdmi_code_0/video_active"
+          "top_0/active_video"
         ]
       },
       "v_tc_0_hsync_out": {
         "ports": [
           "v_tc_0/hsync_out",
           "rgb2dvi_0/vid_pHSync",
-          "hdmi_code_0/hsync"
+          "top_0/hsync_xcoord"
         ]
       },
       "v_tc_0_vsync_out": {
         "ports": [
           "v_tc_0/vsync_out",
           "rgb2dvi_0/vid_pVSync",
-          "hdmi_code_0/vsync"
+          "top_0/vsync_ycoord"
         ]
       }
     }
