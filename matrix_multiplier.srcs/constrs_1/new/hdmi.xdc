@@ -17,17 +17,17 @@ set_property -dict { PACKAGE_PIN A20 IOSTANDARD TMDS_33 } [get_ports { hdmi_out_
 set_property -dict { PACKAGE_PIN B19 IOSTANDARD TMDS_33 } [get_ports { hdmi_out_data_p[2] }]; 
 
 ## Clock Definition (Using BTN0 as a manual clock signal)
-set_property -dict { PACKAGE_PIN K18 IOSTANDARD LVCMOS33 } [get_ports { enter }]; # Sch=BTN0 
-set_property -dict { PACKAGE_PIN P16 IOSTANDARD LVCMOS33 } [get_ports { reset }];
+set_property -dict { PACKAGE_PIN K18 IOSTANDARD LVCMOS33 } [get_ports { enter_button }]; # Sch=BTN0 
+set_property -dict { PACKAGE_PIN P16 IOSTANDARD LVCMOS33 } [get_ports { reset_button }];
 
 ## Switches (Input Data)
-set_property -dict { PACKAGE_PIN G15 IOSTANDARD LVCMOS33 } [get_ports { number[0] }]; # Sch=SW0 
-set_property -dict { PACKAGE_PIN P15 IOSTANDARD LVCMOS33 } [get_ports { number[1] }]; # Sch=SW1 
-set_property -dict { PACKAGE_PIN W13 IOSTANDARD LVCMOS33 } [get_ports { number[2] }]; # Sch=SW2 
-set_property -dict { PACKAGE_PIN T16 IOSTANDARD LVCMOS33 } [get_ports { number[3] }]; # Sch=SW3
+set_property -dict { PACKAGE_PIN G15 IOSTANDARD LVCMOS33 } [get_ports { number_switch_0[0] }]; # Sch=SW0 
+set_property -dict { PACKAGE_PIN P15 IOSTANDARD LVCMOS33 } [get_ports { number_switch_0[1] }]; # Sch=SW1 
+set_property -dict { PACKAGE_PIN W13 IOSTANDARD LVCMOS33 } [get_ports { number_switch_0[2] }]; # Sch=SW2 
+set_property -dict { PACKAGE_PIN T16 IOSTANDARD LVCMOS33 } [get_ports { number_switch_)[3] }]; # Sch=SW3
 
 ##LEDs
-set_property -dict { PACKAGE_PIN M14 IOSTANDARD LVCMOS33 } [get_ports { led[0] }]; #IO_L23P_T3_35 Sch=LED0 
-set_property -dict { PACKAGE_PIN M15 IOSTANDARD LVCMOS33 } [get_ports { led[1] }]; #IO_L23N_T3_35 Sch=LED1 
-set_property -dict { PACKAGE_PIN G14 IOSTANDARD LVCMOS33 } [get_ports { led[2] }]; #IO_0_35=Sch=LED2
-set_property -dict { PACKAGE_PIN D18 IOSTANDARD LVCMOS33 } [get_ports { led[3] }]; #IO_L3N_T0_DQS_AD1N_35 Sch=LED3
+set_property -dict { PACKAGE_PIN M14 IOSTANDARD LVCMOS33 } [get_ports { led_out_0[0] }]; #IO_L23P_T3_35 Sch=LED0 
+set_property -dict { PACKAGE_PIN M15 IOSTANDARD LVCMOS33 } [get_ports { led_out_0[1] }]; #IO_L23N_T3_35 Sch=LED1 
+set_property -dict { PACKAGE_PIN G14 IOSTANDARD LVCMOS33 } [get_ports { led_out_0[2] }]; #IO_0_35=Sch=LED2
+set_property -dict { PACKAGE_PIN D18 IOSTANDARD LVCMOS33 } [get_ports { led_out_0[3] }]; #IO_L3N_T0_DQS_AD1N_35 Sch=LED3
