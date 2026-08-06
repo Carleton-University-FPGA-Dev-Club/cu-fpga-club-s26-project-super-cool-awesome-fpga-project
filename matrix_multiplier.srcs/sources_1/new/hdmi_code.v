@@ -51,16 +51,9 @@ module hdmi_code(
     reg [11:0] y_coordinate = 0;
     
     //used to output numbers, matrix outlines and operations
-    wire number_1; 
-    wire number_2;   
-    wire number_3;
-    wire number_4;
-    wire number_5;
-    wire number_6;
-    wire number_7;
-    wire number_8;
-    wire number_9;
-    wire number_0;
+    reg digit_1;
+    reg digit_2;
+    reg digit_3;
     wire matrix_outline1;
     wire matrix_outline2;
     wire matrix_outline3;
@@ -240,39 +233,39 @@ module hdmi_code(
             endcase
         end 
     endfunction
-    
-    function automatic decide_number(input [3:0] num);
+    //this decides what number to diplay based on the slice of binary numbers
+    function automatic decide_number(input [3:0] num, [11:0]x_move, [11:0] y_move, [11:0] x_coordinate, [11:0] y_coordinate);
         begin
             case(num)
                 4'b0000: begin
-                    //decide_number = draw_0();
+                    decide_number = draw_0(x_move, y_move, x_coordinate, y_coordinate);
                 end
                  4'b0001: begin
-                    //decide_number = draw_1();
+                    decide_number = draw_1(x_move, y_move, x_coordinate, y_coordinate);
                 end
                  4'b0010: begin
-                    //decide_number = draw_2();
+                    decide_number = draw_2(x_move, y_move, x_coordinate, y_coordinate);
                 end
                  4'b0011: begin
-                    //decide_number = draw_3();
+                    decide_number = draw_3(x_move, y_move, x_coordinate, y_coordinate);
                 end
                  4'b0100: begin
-                    //decide_number = draw_4();
+                    decide_number = draw_4(x_move, y_move, x_coordinate, y_coordinate);
                 end
                  4'b0101: begin
-                    //decide_number = draw_5();
+                    decide_number = draw_5(x_move, y_move, x_coordinate, y_coordinate);
                 end
                  4'b0110: begin
-                    //decide_number = draw_6();
+                    decide_number = draw_6(x_move, y_move, x_coordinate, y_coordinate);
                 end
                  4'b0111: begin
-                    //decide_number = draw_7();
+                    decide_number = draw_7(x_move, y_move, x_coordinate, y_coordinate);
                 end
                  4'b1000: begin
-                    //decide_number = draw_8();
+                    decide_number = draw_8(x_move, y_move, x_coordinate, y_coordinate);
                 end
                  4'b1001: begin
-                    //decide_number = draw_9();
+                    decide_number = draw_9(x_move, y_move, x_coordinate, y_coordinate);
                 end
                 default:; 
             endcase
@@ -286,17 +279,17 @@ module hdmi_code(
                 2'b00: begin 
                     slice = number_doubledabble[11:8]; 
                     x_move = new_xcoord(x_move, placement);
-                    //function
+                    return_number = decide_number(number_doubledabble, x_move, y_move, x_coordinate, y_coordinate);
                 end
                 2'b01: begin
                     slice = number_doubledabble[7:4];
                     x_move = new_xcoord(x_move, placement);
-                    //function
+                    return_number = decide_number(number_doubledabble, x_move, y_move, x_coordinate, y_coordinate);
                 end
                 2'b10: begin
                     slice = number_doubledabble[3:0];
                     x_move = new_xcoord(x_move, placement);
-                    //function
+                    return_number = decide_number(number_doubledabble, x_move, y_move, x_coordinate, y_coordinate);
                 end
                 default:;
             endcase
@@ -339,56 +332,127 @@ module hdmi_code(
              4'b0000: begin
                 y_move <= 12'd20;
                 x_move <= 12'd20;
-                x_move <= new_xcoord(x_move, place); //calling x_move function to determine what place the digit is in
-                place <= increment(place); //increment the place counter
+                digit_1 <= return_number(a11_1_display, place, x_move, y_move, x_coordinate, y_coordinate); //determine the 100's digit
+                place <= increment(place); //increment the place counter (1)
+                digit_2 <= return_number(a11_1_display, place, x_move, y_move, x_coordinate, y_coordinate); //determine the 10's digit
+                place <= increment(place); //increment the place counter (2)
+                digit_3 <= return_number(a11_1_display, place, x_move, y_move, x_coordinate, y_coordinate); //determine the 1's digit
+                place <= increment(place); //increment the place counter (0)
              end
              //matrix 1, row 1 + column 2
              4'b0001: begin 
                 x_move <= 12'd158;
                 y_move <= 12'd20;
-                x_move <= new_xcoord(x_move, place); //calling x_move function to determine what place the digit is in
-                place <= increment(place); //increment the place counter);
+                digit_1 <= return_number(a12_1_display, place, x_move, y_move, x_coordinate, y_coordinate); //determine the 100's digit
+                place <= increment(place); //increment the place counter (1)
+                digit_2 <= return_number(a12_1_display, place, x_move, y_move, x_coordinate, y_coordinate); //determine the 10's digit
+                place <= increment(place); //increment the place counter (2)
+                digit_3 <= return_number(a12_1_display, place, x_move, y_move, x_coordinate, y_coordinate); //determine the 1's digit
+                place <= increment(place); //increment the place counter (0)
              end
              //matrix 1, row 2 + column 1
              4'b0010: begin 
                 x_move <= 12'd20;
                 y_move <= 12'd137;   
-                x_move <= new_xcoord(x_move, place); //calling x_move function to determine what place the digit is in
-                place <= increment(place); //increment the place counter
+                digit_1 <= return_number(a21_1_display, place, x_move, y_move, x_coordinate, y_coordinate); //determine the 100's digit
+                place <= increment(place); //increment the place counter (1)
+                digit_2 <= return_number(a21_1_display, place, x_move, y_move, x_coordinate, y_coordinate); //determine the 10's digit
+                place <= increment(place); //increment the place counter (2)
+                digit_3 <= return_number(a21_1_display, place, x_move, y_move, x_coordinate, y_coordinate); //determine the 1's digit
+                place <= increment(place); //increment the place counter (0)
              end
              //matrix 1, row 2 + column 2
              4'b0011: begin 
                 x_move <= 12'd158;
                 y_move <= 12'd137;
-                x_move <= new_xcoord(x_move, place); //calling x_move function to determine what place the digit is in
-                place <= increment(place); //increment the place counter
+                digit_1 <= return_number(a22_1_display, place, x_move, y_move, x_coordinate, y_coordinate); //determine the 100's digit
+                place <= increment(place); //increment the place counter (1)
+                digit_2 <= return_number(a22_1_display, place, x_move, y_move, x_coordinate, y_coordinate); //determine the 10's digit
+                place <= increment(place); //increment the place counter (2)
+                digit_3 <= return_number(a22_1_display, place, x_move, y_move, x_coordinate, y_coordinate); //determine the 1's digit
+                place <= increment(place); //increment the place counter (0)
              end 
              //matrix 2, row 1 + column 1
              4'b0100: begin
                 x_move <= 12'd375;
                 y_move <= 12'd20;
-                x_move <= new_xcoord(x_move, place); //calling x_move function to determine what place the digit is in
-                place <= increment(place); //increment the place counter
+                digit_1 <= return_number(a11_2_display, place, x_move, y_move, x_coordinate, y_coordinate); //determine the 100's digit
+                place <= increment(place); //increment the place counter (1)
+                digit_2 <= return_number(a11_2_display, place, x_move, y_move, x_coordinate, y_coordinate); //determine the 10's digit
+                place <= increment(place); //increment the place counter (2)
+                digit_3 <= return_number(a11_2_display, place, x_move, y_move, x_coordinate, y_coordinate); //determine the 1's digit
+                place <= increment(place); //increment the place counter (0)
              end 
              //matrix 2, row 1 + column 2
              4'b0101: begin 
                 x_move <= 12'd412;
-                y_move <= 12'd137;
-                x_move <= new_xcoord(x_move, place); //calling x_move function to determine what place the digit is in
-                place <= increment(place); //increment the place counter
+                y_move <= 12'd20;
+                digit_1 <= return_number(a12_1_display, place, x_move, y_move, x_coordinate, y_coordinate); //determine the 100's digit
+                place <= increment(place); //increment the place counter (1)
+                digit_2 <= return_number(a12_1_display, place, x_move, y_move, x_coordinate, y_coordinate); //determine the 10's digit
+                place <= increment(place); //increment the place counter (2)
+                digit_3 <= return_number(a12_1_display, place, x_move, y_move, x_coordinate, y_coordinate); //determine the 1's digit
+                place <= increment(place); //increment the place counter (0)
              end
              //matrix 2, row 2 + column 1
              4'b0110: begin 
                 x_move <= 12'd375;
                 y_move <= 12'd137;
-                x_move <= new_xcoord(x_move, place); //calling x_move function to determine what place the digit is in
-                place <= increment(place); //increment the place counter
+                digit_1 <= return_number(a21_1_display, place, x_move, y_move, x_coordinate, y_coordinate); //determine the 100's digit
+                place <= increment(place); //increment the place counter (1)
+                digit_2 <= return_number(a21_1_display, place, x_move, y_move, x_coordinate, y_coordinate); //determine the 10's digit
+                place <= increment(place); //increment the place counter (2)
+                digit_3 <= return_number(a21_1_display, place, x_move, y_move, x_coordinate, y_coordinate); //determine the 1's digit
+                place <= increment(place); //increment the place counter (0)
              end 
              4'b0111: begin
                 x_move <= 12'd412;
                 y_move <= 12'd137;
-                x_move <= new_xcoord(x_move, place); //calling x_move function to determine what place the digit is in
-                place <= increment(place); //increment the place counter
+                digit_1 <= return_number(a22_1_display, place, x_move, y_move, x_coordinate, y_coordinate); //determine the 100's digit
+                place <= increment(place); //increment the place counter (1)
+                digit_2 <= return_number(a22_1_display, place, x_move, y_move, x_coordinate, y_coordinate); //determine the 10's digit
+                place <= increment(place); //increment the place counter (2)
+                digit_3 <= return_number(a22_1_display, place, x_move, y_move, x_coordinate, y_coordinate); //determine the 1's digit
+                place <= increment(place); //increment the place counter (0)
+             end
+             4'b1000: begin
+                //matrix 3, row 1, column 1
+                x_move <= 12'd740;
+                y_move <= 12'd20;
+                digit_1 <= return_number(a11_3_display, place, x_move, y_move, x_coordinate, y_coordinate); //determine the 100's digit
+                place <= increment(place); //increment the place counter (1)
+                digit_2 <= return_number(a11_3_display, place, x_move, y_move, x_coordinate, y_coordinate); //determine the 10's digit
+                place <= increment(place); //increment the place counter (2)
+                digit_3 <= return_number(a11_3_display, place, x_move, y_move, x_coordinate, y_coordinate); //determine the 1's digit
+                place <= increment(place); //increment the place counter (0)
+                //matrix 3, row 1, column 2
+                x_move <= 12'd922;
+                y_move <= 12'd20;
+                digit_1 <= return_number(a12_3_display, place, x_move, y_move, x_coordinate, y_coordinate); //determine the 100's digit
+                place <= increment(place); //increment the place counter (1)
+                digit_2 <= return_number(a12_3_display, place, x_move, y_move, x_coordinate, y_coordinate); //determine the 10's digit
+                place <= increment(place); //increment the place counter (2)
+                digit_3 <= return_number(a12_3_display, place, x_move, y_move, x_coordinate, y_coordinate); //determine the 1's digit
+                place <= increment(place); //increment the place counter (0)
+                //matrix 3, row 2, column 1
+                x_move <= 12'd740;
+                y_move <= 12'd137;
+                digit_1 <= return_number(a21_3_display, place, x_move, y_move, x_coordinate, y_coordinate); //determine the 100's digit
+                place <= increment(place); //increment the place counter (1)
+                digit_2 <= return_number(a21_3_display, place, x_move, y_move, x_coordinate, y_coordinate); //determine the 10's digit
+                place <= increment(place); //increment the place counter (2)
+                digit_3 <= return_number(a21_3_display, place, x_move, y_move, x_coordinate, y_coordinate); //determine the 1's digit
+                place <= increment(place); //increment the place counter (0)
+                //matrix 3, row 2, column 2
+                x_move <= 12'd922;
+                y_move <= 12'd137;
+                digit_1 <= return_number(a22_3_display, place, x_move, y_move, x_coordinate, y_coordinate); //determine the 100's digit
+                place <= increment(place); //increment the place counter (1)
+                digit_2 <= return_number(a22_3_display, place, x_move, y_move, x_coordinate, y_coordinate); //determine the 10's digit
+                place <= increment(place); //increment the place counter (2)
+                digit_3 <= return_number(a22_3_display, place, x_move, y_move, x_coordinate, y_coordinate); //determine the 1's digit
+                place <= increment(place); //increment the place counter (0)
+             
              end
              default: ;
          endcase 
@@ -399,7 +463,7 @@ module hdmi_code(
             vid_out = 24'h000000;
         end
         else begin 
-            if (number_1||number_2||number_3||number_4||number_5||number_6||number_7||number_8||number_9||number_0||multiply||equals||matrix_outline1||matrix_outline2||matrix_outline3) begin 
+            if (digit_1||digit_2||digit_3||multiply||equals||matrix_outline1||matrix_outline2||matrix_outline3) begin 
                vid_out = 24'hFFFFFF;
                if (matrix_outline1)begin
                     vid_out = 24'hEAFC3F;
@@ -413,7 +477,7 @@ module hdmi_code(
                if (multiply||equals)begin
                     vid_out = 24'h79FFF7;
                     end
-               if (number_1||number_2||number_3||number_4||number_5||number_6||number_7||number_8||number_9||number_0)begin 
+               if (digit_1||digit_2||digit_3)begin 
                     vid_out = 24'hFFFFFF;
                     end
             end
