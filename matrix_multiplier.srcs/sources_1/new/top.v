@@ -102,14 +102,14 @@ module top(
         .a22_3(a22_3_join)
     );
     //Instantiate all the different matrix components individually from module double_dabble
-    double_dabble converta11_1(.input_number(a11_1_join), .final_output(a11_1_final));
-    double_dabble converta12_1(.input_number(a12_1_join), .final_output(a12_1_final));
-    double_dabble converta21_1(.input_number(a21_1_join), .final_output(a21_1_final));
-    double_dabble converta22_1(.input_number(a22_1_join), .final_output(a22_1_final));
-    double_dabble converta11_2(.input_number(a11_2_join), .final_output(a11_2_final));
-    double_dabble converta12_2(.input_number(a12_2_join), .final_output(a12_2_final));
-    double_dabble converta21_2(.input_number(a21_2_join), .final_output(a21_2_final));
-    double_dabble converta22_2(.input_number(a22_2_join), .final_output(a22_2_final));
+    double_dabble converta11_1(.input_number({5'b0000, a11_1_join}), .final_output(a11_1_final));
+    double_dabble converta12_1(.input_number({5'b0000, a12_1_join}), .final_output(a12_1_final));
+    double_dabble converta21_1(.input_number({5'b0000, a21_1_join}), .final_output(a21_1_final));
+    double_dabble converta22_1(.input_number({5'b0000, a22_1_join}), .final_output(a22_1_final));
+    double_dabble converta11_2(.input_number({5'b0000, a11_2_join}), .final_output(a11_2_final));
+    double_dabble converta12_2(.input_number({5'b0000, a12_2_join}), .final_output(a12_2_final));
+    double_dabble converta21_2(.input_number({5'b0000, a21_2_join}), .final_output(a21_2_final));
+    double_dabble converta22_2(.input_number({5'b0000, a22_2_join}), .final_output(a22_2_final));
     double_dabble converta11_3(.input_number(a11_3_join), .final_output(a11_3_final));
     double_dabble converta12_3(.input_number(a12_3_join), .final_output(a12_3_final));
     double_dabble converta21_3(.input_number(a21_3_join), .final_output(a21_3_final));
