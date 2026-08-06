@@ -71,6 +71,9 @@ module hdmi_code(
     reg [11:0] y_move = 0;
     //used to figure out where the number is going to place within the same compartment (1's, 10's, 100's)
     reg [1:0] place = 2'b00;
+    //slicer
+    reg [3:0] slice = 4'b0000;
+    
     //function to display matrix outline 1 
     function automatic matrix_1(input [11:0] x_coordinate, y_coordinate);
         begin
@@ -238,12 +241,65 @@ module hdmi_code(
         end 
     endfunction
     
-    function automatic return_number(input [11:0] number_doubledabble, [1:0] placement);
+    function automatic decide_number(input [3:0] num);
+        begin
+            case(num)
+                4'b0000: begin
+                    //decide_number = draw_0();
+                end
+                 4'b0001: begin
+                    //decide_number = draw_1();
+                end
+                 4'b0010: begin
+                    //decide_number = draw_2();
+                end
+                 4'b0011: begin
+                    //decide_number = draw_3();
+                end
+                 4'b0100: begin
+                    //decide_number = draw_4();
+                end
+                 4'b0101: begin
+                    //decide_number = draw_5();
+                end
+                 4'b0110: begin
+                    //decide_number = draw_6();
+                end
+                 4'b0111: begin
+                    //decide_number = draw_7();
+                end
+                 4'b1000: begin
+                    //decide_number = draw_8();
+                end
+                 4'b1001: begin
+                    //decide_number = draw_9();
+                end
+                default:; 
+            endcase
+        end
+    endfunction
+    
+    //this function returns the number needed to print based on what place the digit is
+    function automatic return_number(input [11:0] number_doubledabble, [1:0] placement, [11:0]x_move, [11:0] y_move, [11:0] x_coordinate, [11:0] y_coordinate);
         begin
             case(placement)
                 2'b00: begin 
-                    
+                    slice = number_doubledabble[11:8]; 
+                    x_move = new_xcoord(x_move, placement);
+                    //function
                 end
+                2'b01: begin
+                    slice = number_doubledabble[7:4];
+                    x_move = new_xcoord(x_move, placement);
+                    //function
+                end
+                2'b10: begin
+                    slice = number_doubledabble[3:0];
+                    x_move = new_xcoord(x_move, placement);
+                    //function
+                end
+                default:;
+            endcase
         end
     endfunction
     
