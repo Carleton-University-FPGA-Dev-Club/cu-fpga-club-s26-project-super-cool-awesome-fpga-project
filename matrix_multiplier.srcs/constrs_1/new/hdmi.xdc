@@ -17,8 +17,8 @@ set_property -dict { PACKAGE_PIN A20 IOSTANDARD TMDS_33 } [get_ports { hdmi_out_
 set_property -dict { PACKAGE_PIN B19 IOSTANDARD TMDS_33 } [get_ports { hdmi_out_data_p[2] }]; 
 
 ## Clock Definition (Using BTN0 as a manual clock signal)
-set_property -dict { PACKAGE_PIN K18 IOSTANDARD LVCMOS33 } [get_ports { enter_button }]; # Sch=BTN0 
-set_property -dict { PACKAGE_PIN P16 IOSTANDARD LVCMOS33 } [get_ports { reset_button }];
+set_property -dict { PACKAGE_PIN K18 IOSTANDARD LVCMOS33 } [get_ports { enter_button_0 }]; # Sch=BTN0 
+set_property -dict { PACKAGE_PIN P16 IOSTANDARD LVCMOS33 } [get_ports { reset_button_0 }];
 
 ## Switches (Input Data)
 set_property -dict { PACKAGE_PIN G15 IOSTANDARD LVCMOS33 } [get_ports { number_switch_0[0] }]; # Sch=SW0 
