@@ -31,7 +31,7 @@ module double_dabble(
     always @(*) begin
         //initializing first 12 digs as 0 then making last 8 the input binary value
         shifter[19:8] = 12'b0; 
-        shifter[7:0] = input_number;
+        shifter[8:0] = input_number;
         //first 3 shifts using concantenation
         shifter = {shifter[16:0], 3'b0};
         //check if the first 3 digits are greater than 5 if it is add 3

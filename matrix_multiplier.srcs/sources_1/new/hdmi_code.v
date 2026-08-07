@@ -10,7 +10,6 @@
 // Target Devices: 
 // Tool Versions: 
 // Description: 
-// 
 // Dependencies: 
 // 
 // Revision:
@@ -221,9 +220,12 @@ module hdmi_code(
     
     //determining which numbers to display and where based on matrix compartment/index
     always @(*) begin
+        digit_1 = 1'b0;
+        digit_2 = 1'b0;
+        digit_3 = 1'b0;
         case (compartment)
             //matrix 1, row 1 + column 1
-             4'b0000: begin
+             4'b0001: begin
                 case(a11_1_display[11:8])
                     4'b0000: begin
                        digit_1 <= draw_0(12'd30, 12'd80, x_coordinate, y_coordinate);
@@ -290,7 +292,7 @@ module hdmi_code(
                     end
                     default:;
                 endcase
-                case(a11_1_display[7:4])
+                case(a11_1_display[3:0])
                     4'b0000: begin
                        digit_3 <= draw_0(12'd150, 12'd80, x_coordinate, y_coordinate);
                     end
@@ -382,7 +384,7 @@ module hdmi_code(
                                 4'b0110: begin
                                     digit_3 <= draw_6(x_move, y_move, x_coordinate, y_coordinate);
                                 end
-                                4'b0111: begin
+                             
                                     digit_3 <= draw_7(x_move, y_move, x_coordinate, y_coordinate);
                                 end
                                 4'b1000: begin
