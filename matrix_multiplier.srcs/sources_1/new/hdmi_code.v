@@ -208,6 +208,46 @@ module hdmi_code(
         end
     end
     
+    function automatic draw_number(input [3:0] number, input [11:0] x_move, [11:0] y_move, input [11:0] x_coordinate, input [11:0] y_coordinate);
+        begin 
+            case(number)
+                4'b0000: begin
+                    draw_number = draw_0(x_move, y_move, x_coordinate, y_coordinate);
+                end
+                4'b0001: begin
+                    draw_number = draw_1(x_move, y_move, x_coordinate, y_coordinate);
+                end
+                4'b010: begin
+                    draw_number = draw_2(x_move, y_move, x_coordinate, y_coordinate);
+                end
+                4'b0011: begin
+                    draw_number = draw_3(x_move, y_move, x_coordinate, y_coordinate);
+                end
+                4'b0100: begin
+                    draw_number = draw_4(x_move, y_move, x_coordinate, y_coordinate);
+                end
+                4'b0101: begin
+                    draw_number = draw_5(x_move, y_move, x_coordinate, y_coordinate);
+                end
+                4'b0110: begin
+                    draw_number = draw_6(x_move, y_move, x_coordinate, y_coordinate);
+                end
+                4'b0111: begin
+                    draw_number = draw_7(x_move, y_move, x_coordinate, y_coordinate);
+                end
+                4'b1000: begin
+                    draw_number = draw_8(x_move, y_move, x_coordinate, y_coordinate);
+                end
+                4'b1001: begin
+                    draw_number = draw_9(x_move, y_move, x_coordinate, y_coordinate);
+                end
+                default: begin 
+                    draw_number = 1;
+                end
+            endcase   
+        end
+    endfunction
+    
     assign multiply = ((x_coordinate >= 12'd395 && x_coordinate < 12'd435) && (y_coordinate >= (x_coordinate - 12'd59) && y_coordinate < (x_coordinate - 12'd49)))||
     ((x_coordinate >= 12'd395 && x_coordinate < 12'd435) && (y_coordinate >= (12'd771 - x_coordinate) && y_coordinate < (12'd781 - x_coordinate)));
     
@@ -326,129 +366,7 @@ module hdmi_code(
                     default:;
                 endcase
             end    
-                   /* 2'b01: begin
-                        case(a11_1_display[7:4])
-                                4'b0000: begin
-                                    digit_2 <= draw_0(12'd90, 12'd20, x_coordinate, y_coordinate);
-                                end
-                                4'b0001: begin
-                                    digit_2 <= draw_1(x_move, y_move, x_coordinate, y_coordinate);
-                                end
-                                4'b0010: begin
-                                    digit_2 <= draw_2(x_move, y_move, x_coordinate, y_coordinate);
-                                end
-                                4'b0011: begin
-                                    digit_2 <= draw_3(x_move, y_move, x_coordinate, y_coordinate);
-                                end
-                                4'b0100: begin
-                                    digit_2 <= draw_4(x_move, y_move, x_coordinate, y_coordinate);
-                                end
-                                4'b0101: begin
-                                    digit_2 <= draw_5(x_move, y_move, x_coordinate, y_coordinate);
-                                end
-                                4'b0110: begin
-                                    digit_2 <= draw_6(x_move, y_move, x_coordinate, y_coordinate);
-                                end
-                                4'b0111: begin
-                                    digit_2 <= draw_7(x_move, y_move, x_coordinate, y_coordinate);
-                                end
-                                4'b1000: begin
-                                    digit_2 <= draw_8(x_move, y_move, x_coordinate, y_coordinate);
-                                end
-                                4'b1001: begin
-                                    digit_2 <= draw_9(x_move, y_move, x_coordinate, y_coordinate);
-                                end
-                                default:;
-                            endcase
-                    end
-                    2'b10: begin 
-                            case(a11_1_display[3:0])
-                                4'b0000: begin
-                                    digit_3 <= draw_0(12'd150, 12'd20, x_coordinate, y_coordinate);
-                                end
-                                4'b0001: begin
-                                    digit_3 <= draw_1(x_move, y_move, x_coordinate, y_coordinate);
-                                end
-                                4'b0010: begin
-                                    digit_3 <= draw_2(x_move, y_move, x_coordinate, y_coordinate);
-                                end
-                                4'b0011: begin
-                                    digit_3 <= draw_3(x_move, y_move, x_coordinate, y_coordinate);
-                                end
-                                4'b0100: begin
-                                    digit_3 <= draw_4(x_move, y_move, x_coordinate, y_coordinate);
-                                end
-                                4'b0101: begin
-                                    digit_3 <= draw_5(x_move, y_move, x_coordinate, y_coordinate);
-                                end
-                                4'b0110: begin
-                                    digit_3 <= draw_6(x_move, y_move, x_coordinate, y_coordinate);
-                                end
-                             
-                                    digit_3 <= draw_7(x_move, y_move, x_coordinate, y_coordinate);
-                                end
-                                4'b1000: begin
-                                    digit_3 <= draw_8(x_move, y_move, x_coordinate, y_coordinate);
-                                end
-                                4'b1001: begin
-                                    digit_3 <= draw_9(x_move, y_move, x_coordinate, y_coordinate);
-                                end
-                                default:;
-                            endcase
-                    end
-                    default:;
-                endcase 
-             end*/
-             //matrix 1, row 1 + column 2
-            /* 4'b0001: begin 
-                x_move <= 12'd158;
-                y_move <= 12'd20;
-                digit_2 <= draw_2(x_move, y_move, x_coordinate, y_coordinate);
-             end
-             //matrix 1, row 2 + column 1
-             4'b0010: begin 
-                x_move <= 12'd20;
-                y_move <= 12'd137;   
-                digit_3 <= draw_3(x_move, y_move, x_coordinate, y_coordinate);
-             end
-             //matrix 1, row 2 + column 2
-             4'b0011: begin 
-                x_move <= 12'd158;
-                y_move <= 12'd137;
-             end 
-             //matrix 2, row 1 + column 1
-             4'b0100: begin
-                x_move <= 12'd375;
-                y_move <= 12'd20;
-             end 
-             //matrix 2, row 1 + column 2
-             4'b0101: begin 
-                x_move <= 12'd412;
-                y_move <= 12'd20;
-             end
-             //matrix 2, row 2 + column 1
-             4'b0110: begin 
-                x_move <= 12'd375;
-                y_move <= 12'd137;
-             end 
-             4'b0111: begin
-                x_move <= 12'd412;
-                y_move <= 12'd137;
-             end
-             4'b1000: begin
-                //matrix 3, row 1, column 1
-                x_move <= 12'd740;
-                y_move <= 12'd20;
-                //matrix 3, row 1, column 2
-                x_move <= 12'd922;
-                y_move <= 12'd20;
-                //matrix 3, row 2, column 1
-                x_move <= 12'd740;
-                y_move <= 12'd137;
-                //matrix 3, row 2, column 2
-                x_move <= 12'd922;
-                y_move <= 12'd137;
-             end*/
+                 
              default: ;
          endcase 
      end
