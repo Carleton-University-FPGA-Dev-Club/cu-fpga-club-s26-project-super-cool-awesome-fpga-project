@@ -275,13 +275,10 @@ module hdmi_code(
         else if (multiply||equals) begin 
             vid_out = 24'h79FFF7; // color is blue
         end
-        else if () begin 
-               vid_out = 24'hFFFFFF; //color is white
-       
-             
-               if (digit_1||digit_2||digit_3)begin 
-                    vid_out = 24'hFFFFFF; //color is white
-                    end
+        else if (draw_number(a11_1_display[11:8], 12'd30, 12'd80, x_coordinate, y_coordinate)||
+                 draw_number(a11_1_display[7:4], 12'd90, 12'd80, x_coordinate, y_coordinate)||
+                 draw_number(a11_1_display[3:0], 12'd150, 12'd80, x_coordinate, y_coordinate)) begin 
+            vid_out = 24'hFFFFFF; //color is white
          end
          else begin 
              vid_out = 24'h000000; //color is black
