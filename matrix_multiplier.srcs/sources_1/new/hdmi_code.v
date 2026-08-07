@@ -62,12 +62,6 @@ module hdmi_code(
     //used to determine where the numbers are going to be drawn based on matrix compartment/index
     reg [11:0] x_move = 0;
     reg [11:0] y_move = 0;
-    //used to figure out where the number is going to place within the same compartment (1's, 10's, 100's)
-    reg [1:0] place = 2'b00;
-    //slice for the individual digits in a number
-    reg [3:0] hundereds = 4'b0000;
-    reg [3:0] tens = 4'b0000;
-    reg [3:0] ones = 4'b0000;
     //function to display matrix outline 1 
     function automatic matrix_1(input [11:0] x_coordinate, y_coordinate);
         begin
@@ -198,105 +192,7 @@ module hdmi_code(
         ((x_coordinate >= 12'd100 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd200 + y_move && y_coordinate < 12'd210 + y_move));
         end
     endfunction
-    //function is used to incrment the placement of digits within number (1's, 10's, 100's)
-    function automatic increment (input [1:0] place);
-        begin
-            case(place)
-                2'b00: begin //if place is 0 --> increment by 1 --> place = 1
-                    increment = place + 2'b01;
-                end
-                2'b01: begin //if place is 1 --> increment by 1 --> place = 2
-                    increment = place + 2'b01;
-                end    
-                2'b10: begin //if place is 2 --> place = 0 (restart counter)
-                    increment = 2'b00;
-                end
-                default: begin //default place is 0
-                    increment = 2'b00;
-                end
-            endcase
-        end
-    endfunction
-    //function used to display which place within number (1's, 10's, 100's)
-    function automatic new_xcoord(input [11:0] xcoord, input [1:0] place);
-        begin
-            case (place)
-                    2'b00: begin //if the place = 0 --> standard placement (100's)
-                        new_xcoord = xcoord;
-                    end
-                    2'b01: begin //if the place = 1 --> 60 pixels right (10's)
-                        new_xcoord = xcoord + 12'd60;
-                    end
-                    2'b10: begin //if the place = 2 --> 120 pixels right (1's)
-                        new_xcoord = xcoord + 12'd120;
-                    end
-                    default:;
-            endcase
-        end 
-    endfunction
-    //this decides what number to diplay based on the slice of binary numbers
-    function automatic decide_number(input [3:0] num, [11:0]x_move, [11:0] y_move, [11:0] x_coordinate, [11:0] y_coordinate);
-        begin
-            case(num)
-                4'b0000: begin
-                    decide_number = draw_0(x_move, y_move, x_coordinate, y_coordinate);
-                end
-                 4'b0001: begin
-                    decide_number = draw_1(x_move, y_move, x_coordinate, y_coordinate);
-                end
-                 4'b0010: begin
-                    decide_number = draw_2(x_move, y_move, x_coordinate, y_coordinate);
-                end
-                 4'b0011: begin
-                    decide_number = draw_3(x_move, y_move, x_coordinate, y_coordinate);
-                end
-                 4'b0100: begin
-                    decide_number = draw_4(x_move, y_move, x_coordinate, y_coordinate);
-                end
-                 4'b0101: begin
-                    decide_number = draw_5(x_move, y_move, x_coordinate, y_coordinate);
-                end
-                 4'b0110: begin
-                    decide_number = draw_6(x_move, y_move, x_coordinate, y_coordinate);
-                end
-                 4'b0111: begin
-                    decide_number = draw_7(x_move, y_move, x_coordinate, y_coordinate);
-                end
-                 4'b1000: begin
-                    decide_number = draw_8(x_move, y_move, x_coordinate, y_coordinate);
-                end
-                 4'b1001: begin
-                    decide_number = draw_9(x_move, y_move, x_coordinate, y_coordinate);
-                end
-                default:; 
-            endcase
-        end
-    endfunction
-    
-    //this function returns the number needed to print based on what place the digit is
-    function automatic return_number(input [11:0] number_doubledabble, [1:0] placement, [11:0]x_move, [11:0] y_move, [11:0] x_coordinate, [11:0] y_coordinate);
-        begin
-            case(placement)
-                2'b00: begin 
-                    slice = number_doubledabble[11:8]; 
-                    x_move = new_xcoord(x_move, placement);
-                    return_number = decide_number(number_doubledabble, x_move, y_move, x_coordinate, y_coordinate);
-                end
-                2'b01: begin
-                    slice = number_doubledabble[7:4];
-                    x_move = new_xcoord(x_move, placement);
-                    return_number = decide_number(number_doubledabble, x_move, y_move, x_coordinate, y_coordinate);
-                end
-                2'b10: begin
-                    slice = number_doubledabble[3:0];
-                    x_move = new_xcoord(x_move, placement);
-                    return_number = decide_number(number_doubledabble, x_move, y_move, x_coordinate, y_coordinate);
-                end
-                default:;
-            endcase
-        end
-    endfunction
-    
+        
     //during blanking intervals, keeps the x rests as 0, and resets the Y sync
     always @(posedge clk) begin 
         if (!video_active) begin 
@@ -331,52 +227,44 @@ module hdmi_code(
         case (compartment)
             //matrix 1, row 1 + column 1
              4'b0000: begin
-                y_move <= 12'd20;
-                x_move <= 12'd30;
-                case(place)
-                    2'b00: begin
-                        slice <= a11_1_display[11:8];
-                            case(slice)
+                case(a11_1_display[11:8])
+                    4'b0000: begin
+                       digit_1 <= draw_0(12'd30, 12'd20, x_coordinate, y_coordinate);
+                    end
+                    4'b0001: begin
+                       digit_1 <= draw_1(12'd30, 12'd20, x_coordinate, y_coordinate);
+                    end
+                    4'b0010: begin
+                       digit_1 <= draw_2(12'd30, 12'd20, x_coordinate, y_coordinate);
+                    end
+                    4'b0011: begin
+                       digit_1 <= draw_3(12'd30, 12'd20, x_coordinate, y_coordinate);
+                    end
+                    4'b0100: begin
+                       digit_1 <= draw_4(12'd30, 12'd20, x_coordinate, y_coordinate);
+                    end
+                    4'b0101: begin
+                       digit_1 <= draw_5(12'd30, 12'd20, x_coordinate, y_coordinate);
+                    end
+                    4'b0110: begin
+                       digit_1 <= draw_6(12'd30, 12'd20, x_coordinate, y_coordinate);
+                    end
+                    4'b0111: begin
+                       digit_1 <= draw_7(12'd30, 12'd20, x_coordinate, y_coordinate);
+                    end
+                    4'b1000: begin
+                       digit_1 <= draw_8(12'd30, 12'd20, x_coordinate, y_coordinate);
+                    end
+                    4'b1001: begin
+                       digit_1 <= draw_9(12'd30, 12'd20, x_coordinate, y_coordinate);
+                    end
+                    default:;
+                endcase
+            end    
+                   /* 2'b01: begin
+                        case(a11_1_display[7:4])
                                 4'b0000: begin
-                                    digit_1 <= draw_0(x_move, y_move, x_coordinate, y_coordinate);
-                                end
-                                4'b0001: begin
-                                    digit_1 <= draw_1(x_move, y_move, x_coordinate, y_coordinate);
-                                end
-                                4'b0010: begin
-                                    digit_1 <= draw_2(x_move, y_move, x_coordinate, y_coordinate);
-                                end
-                                4'b0011: begin
-                                    digit_1 <= draw_3(x_move, y_move, x_coordinate, y_coordinate);
-                                end
-                                4'b0100: begin
-                                    digit_1 <= draw_4(x_move, y_move, x_coordinate, y_coordinate);
-                                end
-                                4'b0101: begin
-                                    digit_1 <= draw_5(x_move, y_move, x_coordinate, y_coordinate);
-                                end
-                                4'b0110: begin
-                                    digit_1 <= draw_6(x_move, y_move, x_coordinate, y_coordinate);
-                                end
-                                4'b0111: begin
-                                    digit_1 <= draw_7(x_move, y_move, x_coordinate, y_coordinate);
-                                end
-                                4'b1000: begin
-                                    digit_1 <= draw_8(x_move, y_move, x_coordinate, y_coordinate);
-                                end
-                                4'b1001: begin
-                                    digit_1 <= draw_9(x_move, y_move, x_coordinate, y_coordinate);
-                                end
-                                default:;
-                            endcase
-                        place <= place + 2'b01;
-                    end    
-                    2'b01: begin
-                        slice <= a11_1_display[7:4];
-                        x_move <= 12'd90;
-                        case(slice)
-                                4'b0000: begin
-                                    digit_2 <= draw_0(x_move, y_move, x_coordinate, y_coordinate);
+                                    digit_2 <= draw_0(12'd90, 12'd20, x_coordinate, y_coordinate);
                                 end
                                 4'b0001: begin
                                     digit_2 <= draw_1(x_move, y_move, x_coordinate, y_coordinate);
@@ -407,14 +295,11 @@ module hdmi_code(
                                 end
                                 default:;
                             endcase
-                        place <= place + 2'b01;
                     end
                     2'b10: begin 
-                        slice <= a11_1_display[3:0];
-                        x_move <= 12'd150;
-                            case(slice)
+                            case(a11_1_display[3:0])
                                 4'b0000: begin
-                                    digit_3 <= draw_0(x_move, y_move, x_coordinate, y_coordinate);
+                                    digit_3 <= draw_0(12'd150, 12'd20, x_coordinate, y_coordinate);
                                 end
                                 4'b0001: begin
                                     digit_3 <= draw_1(x_move, y_move, x_coordinate, y_coordinate);
@@ -445,11 +330,10 @@ module hdmi_code(
                                 end
                                 default:;
                             endcase
-                        place <= 2'b00;
                     end
                     default:;
                 endcase 
-             end
+             end*/
              //matrix 1, row 1 + column 2
             /* 4'b0001: begin 
                 x_move <= 12'd158;
