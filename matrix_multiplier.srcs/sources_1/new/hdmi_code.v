@@ -64,9 +64,10 @@ module hdmi_code(
     reg [11:0] y_move = 0;
     //used to figure out where the number is going to place within the same compartment (1's, 10's, 100's)
     reg [1:0] place = 2'b00;
-    //slicer
-    reg [3:0] slice = 4'b0000;
-    
+    //slice for the individual digits in a number
+    reg [3:0] hundereds = 4'b0000;
+    reg [3:0] tens = 4'b0000;
+    reg [3:0] ones = 4'b0000;
     //function to display matrix outline 1 
     function automatic matrix_1(input [11:0] x_coordinate, y_coordinate);
         begin
@@ -335,63 +336,119 @@ module hdmi_code(
                 case(place)
                     2'b00: begin
                         slice <= a11_1_display[11:8];
+                            case(slice)
+                                4'b0000: begin
+                                    digit_1 <= draw_0(x_move, y_move, x_coordinate, y_coordinate);
+                                end
+                                4'b0001: begin
+                                    digit_1 <= draw_1(x_move, y_move, x_coordinate, y_coordinate);
+                                end
+                                4'b0010: begin
+                                    digit_1 <= draw_2(x_move, y_move, x_coordinate, y_coordinate);
+                                end
+                                4'b0011: begin
+                                    digit_1 <= draw_3(x_move, y_move, x_coordinate, y_coordinate);
+                                end
+                                4'b0100: begin
+                                    digit_1 <= draw_4(x_move, y_move, x_coordinate, y_coordinate);
+                                end
+                                4'b0101: begin
+                                    digit_1 <= draw_5(x_move, y_move, x_coordinate, y_coordinate);
+                                end
+                                4'b0110: begin
+                                    digit_1 <= draw_6(x_move, y_move, x_coordinate, y_coordinate);
+                                end
+                                4'b0111: begin
+                                    digit_1 <= draw_7(x_move, y_move, x_coordinate, y_coordinate);
+                                end
+                                4'b1000: begin
+                                    digit_1 <= draw_8(x_move, y_move, x_coordinate, y_coordinate);
+                                end
+                                4'b1001: begin
+                                    digit_1 <= draw_9(x_move, y_move, x_coordinate, y_coordinate);
+                                end
+                                default:;
+                            endcase
                         place <= place + 2'b01;
                     end    
                     2'b01: begin
                         slice <= a11_1_display[7:4];
                         x_move <= 12'd90;
-                        
+                        case(slice)
+                                4'b0000: begin
+                                    digit_2 <= draw_0(x_move, y_move, x_coordinate, y_coordinate);
+                                end
+                                4'b0001: begin
+                                    digit_2 <= draw_1(x_move, y_move, x_coordinate, y_coordinate);
+                                end
+                                4'b0010: begin
+                                    digit_2 <= draw_2(x_move, y_move, x_coordinate, y_coordinate);
+                                end
+                                4'b0011: begin
+                                    digit_2 <= draw_3(x_move, y_move, x_coordinate, y_coordinate);
+                                end
+                                4'b0100: begin
+                                    digit_2 <= draw_4(x_move, y_move, x_coordinate, y_coordinate);
+                                end
+                                4'b0101: begin
+                                    digit_2 <= draw_5(x_move, y_move, x_coordinate, y_coordinate);
+                                end
+                                4'b0110: begin
+                                    digit_2 <= draw_6(x_move, y_move, x_coordinate, y_coordinate);
+                                end
+                                4'b0111: begin
+                                    digit_2 <= draw_7(x_move, y_move, x_coordinate, y_coordinate);
+                                end
+                                4'b1000: begin
+                                    digit_2 <= draw_8(x_move, y_move, x_coordinate, y_coordinate);
+                                end
+                                4'b1001: begin
+                                    digit_2 <= draw_9(x_move, y_move, x_coordinate, y_coordinate);
+                                end
+                                default:;
+                            endcase
                         place <= place + 2'b01;
                     end
                     2'b10: begin 
                         slice <= a11_1_display[3:0];
                         x_move <= 12'd150;
-                        
+                            case(slice)
+                                4'b0000: begin
+                                    digit_3 <= draw_0(x_move, y_move, x_coordinate, y_coordinate);
+                                end
+                                4'b0001: begin
+                                    digit_3 <= draw_1(x_move, y_move, x_coordinate, y_coordinate);
+                                end
+                                4'b0010: begin
+                                    digit_3 <= draw_2(x_move, y_move, x_coordinate, y_coordinate);
+                                end
+                                4'b0011: begin
+                                    digit_3 <= draw_3(x_move, y_move, x_coordinate, y_coordinate);
+                                end
+                                4'b0100: begin
+                                    digit_3 <= draw_4(x_move, y_move, x_coordinate, y_coordinate);
+                                end
+                                4'b0101: begin
+                                    digit_3 <= draw_5(x_move, y_move, x_coordinate, y_coordinate);
+                                end
+                                4'b0110: begin
+                                    digit_3 <= draw_6(x_move, y_move, x_coordinate, y_coordinate);
+                                end
+                                4'b0111: begin
+                                    digit_3 <= draw_7(x_move, y_move, x_coordinate, y_coordinate);
+                                end
+                                4'b1000: begin
+                                    digit_3 <= draw_8(x_move, y_move, x_coordinate, y_coordinate);
+                                end
+                                4'b1001: begin
+                                    digit_3 <= draw_9(x_move, y_move, x_coordinate, y_coordinate);
+                                end
+                                default:;
+                            endcase
                         place <= 2'b00;
-                    end
-                    default: begin
-                        slice <= 4'd0000;
-                        
-                        place <= 2'b00;
-                    end
-                endcase 
- 
-                case(slice)
-                    4'b0000: begin
-                        digit_1 <= draw_0(x_move, y_move, x_coordinate, y_coordinate);
-                    end
-                    4'b0001: begin
-                        digit_1 <= draw_1(x_move, y_move, x_coordinate, y_coordinate);
-                    end
-                    4'b0010: begin
-                        digit_1 <= draw_2(x_move, y_move, x_coordinate, y_coordinate);
-                    end
-                    4'b0011: begin
-                        digit_1 <= draw_3(x_move, y_move, x_coordinate, y_coordinate);
-                    end
-                    4'b0100: begin
-                        digit_1 <= draw_4(x_move, y_move, x_coordinate, y_coordinate);
-                    end
-                    4'b0101: begin
-                        digit_1 <= draw_5(x_move, y_move, x_coordinate, y_coordinate);
-                    end
-                    4'b0110: begin
-                        digit_1 <= draw_6(x_move, y_move, x_coordinate, y_coordinate);
-                    end
-                    4'b0111: begin
-                        digit_1 <= draw_7(x_move, y_move, x_coordinate, y_coordinate);
-                    end
-                    4'b1000: begin
-                        digit_1 <= draw_8(x_move, y_move, x_coordinate, y_coordinate);
-                    end
-                    4'b1001: begin
-                        digit_1 <= draw_9(x_move, y_move, x_coordinate, y_coordinate);
                     end
                     default:;
-                
-                
-                endcase
-                //digit_1 <= draw_1(x_move, y_move, x_coordinate, y_coordinate);
+                endcase 
              end
              //matrix 1, row 1 + column 2
             /* 4'b0001: begin 
