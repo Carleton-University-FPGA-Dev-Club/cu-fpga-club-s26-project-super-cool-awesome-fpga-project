@@ -59,9 +59,6 @@ module hdmi_code(
     wire matrix_outline3;
     wire multiply; 
     wire equals;
-    //used to determine where the numbers are going to be drawn based on matrix compartment/index
-    reg [11:0] x_move = 0;
-    reg [11:0] y_move = 0;
     //function to display matrix outline 1 
     function automatic matrix_1(input [11:0] x_coordinate, y_coordinate);
         begin
