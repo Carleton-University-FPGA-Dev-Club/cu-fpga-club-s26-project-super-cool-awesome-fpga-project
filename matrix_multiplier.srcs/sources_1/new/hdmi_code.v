@@ -208,7 +208,7 @@ module hdmi_code(
         end
     end
     
-    function automatic draw_number(input [3:0] number, input [11:0] x_move, [11:0] y_move, input [11:0] x_coordinate, input [11:0] y_coordinate);
+    function automatic draw_number(input [3:0] number, input [11:0] x_move, input [11:0] y_move, input [11:0] x_coordinate, input [11:0] y_coordinate);
         begin 
             case(number)
                 4'b0000: begin
@@ -263,28 +263,28 @@ module hdmi_code(
         if (!video_active) begin
             vid_out = 24'h000000; //color black 
         end
-        else begin 
-            if (digit_1||digit_2||digit_3||multiply||equals||matrix_outline1||matrix_outline2||matrix_outline3) begin 
+        else if (matrix_outline1) begin
+            vid_out = 24'hEAFC3F; //color is pink
+        end
+        else if (matrix_outline2) begin
+           vid_out = 24'hFA2378; //color is orange
+        end
+        else if (matrix_outline2) begin
+           vid_out = 24'hDB29CA; //color is yellow
+        end
+        else if (multiply||equals) begin 
+            vid_out = 24'h79FFF7; // color is blue
+        end
+        else if () begin 
                vid_out = 24'hFFFFFF; //color is white
-               if (matrix_outline1)begin
-                    vid_out = 24'hEAFC3F; //color is pink
-                    end
-               if (matrix_outline2)begin
-                    vid_out = 24'hFA2378; //color is orange
-                    end
-               if (matrix_outline3)begin
-                    vid_out = 24'hDB29CA; //color is yellow
-                    end
-               if (multiply||equals)begin
-                    vid_out = 24'h79FFF7; // color is blue
-                    end
+       
+             
                if (digit_1||digit_2||digit_3)begin 
                     vid_out = 24'hFFFFFF; //color is white
                     end
-            end
-            else begin 
-                vid_out = 24'h000000; //color is black
-            end
-        end
+         end
+         else begin 
+             vid_out = 24'h000000; //color is black
+         end
    end
 endmodule
