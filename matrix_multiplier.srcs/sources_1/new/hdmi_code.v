@@ -22,9 +22,9 @@
 module hdmi_code(
     input wire clk, 
     //jump to next row (controls x-pixels)
-    input wire hsync, 
-    //goes back to top-left corner (controls y-pixels)
-    input wire vsync, 
+    input wire [11:0] x_coordinate,
+    //controls y-pixels
+    input wire [11:0] y_coordinate,
     //incharge of drawing the pixels
     input wire video_active,
     //used to display the sequence of digits for all of the matrix compartments
@@ -45,9 +45,6 @@ module hdmi_code(
     //determines the color 
     output reg [23:0] vid_out 
     );
-    //use to determine where the pixels are being drawn
-    reg [11:0] x_coordinate = 0;
-    reg [11:0] y_coordinate = 0;
     
     //used to output numbers, matrix outlines and operations
     reg digit_1;
@@ -188,25 +185,6 @@ module hdmi_code(
         ((x_coordinate >= 12'd100 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd200 + y_move && y_coordinate < 12'd210 + y_move));
         end
     endfunction
-        
-    //during blanking intervals, keeps the x rests as 0, and resets the Y sync
-    always @(posedge clk) begin 
-        if (!video_active) begin 
-            x_coordinate <= 0;
-            if (vsync) begin
-                y_coordinate <= 0;
-            end
-        end
-        else begin
-            //Drawing pixels, from left to right, top to bottom
-            if (x_coordinate == 12'd1279) begin 
-                x_coordinate <= 0;
-                y_coordinate <= y_coordinate + 1;
-            end else begin 
-                x_coordinate <= x_coordinate + 1;
-            end
-        end
-    end
     
     function automatic draw_number(input [3:0] number, input [11:0] x_move, input [11:0] y_move, input [11:0] x_coordinate, input [11:0] y_coordinate);
         begin 
@@ -242,7 +220,7 @@ module hdmi_code(
                     draw_number = draw_9(x_move, y_move, x_coordinate, y_coordinate);
                 end
                 default: begin 
-                    draw_number = 1;
+                    draw_number = 1'b0;
                 end
             endcase   
         end

@@ -1,40 +1,40 @@
 {
    "ActiveEmotionalView":"Default View",
-   "Default View_ScaleFactor":"0.0193072",
-   "Default View_TopLeft":"-207,-8909",
+   "Default View_ScaleFactor":"0.514234",
+   "Default View_TopLeft":"-191,-62",
    "ExpandedHierarchyInLayout":"",
    "guistr":"# # String gsaved with Nlview 7.5.8 2022-09-21 7111 VDI=41 GEI=38 GUI=JA:10.0
 #  -string -flagsOSRD
-preplace port hdmi_out -pg 1 -lvl 6 -x 1390 -y 320 -defaultsOSRD
-preplace port port-id_System_clock -pg 1 -lvl 0 -x -40 -y 300 -defaultsOSRD
-preplace port port-id_enter_button_0 -pg 1 -lvl 0 -x -40 -y 440 -defaultsOSRD
-preplace port port-id_reset_button_0 -pg 1 -lvl 0 -x -40 -y 460 -defaultsOSRD
-preplace portBus hdmi_hdp -pg 1 -lvl 6 -x 1390 -y 140 -defaultsOSRD
-preplace portBus number_switch_0 -pg 1 -lvl 0 -x -40 -y 480 -defaultsOSRD
-preplace portBus counter_0 -pg 1 -lvl 6 -x 1390 -y 460 -defaultsOSRD
-preplace portBus led_out_0 -pg 1 -lvl 6 -x 1390 -y 480 -defaultsOSRD
-preplace inst rgb2dvi_0 -pg 1 -lvl 5 -x 1240 -y 330 -defaultsOSRD
-preplace inst clk_wiz_0 -pg 1 -lvl 2 -x 280 -y 290 -defaultsOSRD
-preplace inst constant_0 -pg 1 -lvl 1 -x 90 -y 230 -defaultsOSRD -resize 124 88
-preplace inst constant_1 -pg 1 -lvl 5 -x 1240 -y 140 -defaultsOSRD
-preplace inst v_tc_0 -pg 1 -lvl 3 -x 530 -y 100 -defaultsOSRD
-preplace inst top_0 -pg 1 -lvl 4 -x 890 -y 480 -defaultsOSRD
-preplace netloc System_clock_1 1 0 2 NJ 300 NJ
-preplace netloc clk_wiz_0_clk_out1 1 2 3 390 280 700 600 1060J
-preplace netloc constant_1_dout 1 2 4 400 0 NJ 0 NJ 0 1370
-preplace netloc v_tc_0_active_video_out 1 3 2 720 350 NJ
-preplace netloc v_tc_0_hsync_out 1 3 2 730 310 NJ
-preplace netloc v_tc_0_vsync_out 1 3 2 710 330 NJ
-preplace netloc top_0_video_out 1 4 1 1050 290n
-preplace netloc enter_button_0_1 1 0 4 NJ 440 NJ 440 NJ 440 NJ
-preplace netloc reset_button_0_1 1 0 4 NJ 460 NJ 460 NJ 460 NJ
-preplace netloc number_switch_0_1 1 0 4 NJ 480 NJ 480 NJ 480 NJ
-preplace netloc top_0_counter 1 4 2 NJ 460 NJ
-preplace netloc top_0_led_out 1 4 2 NJ 480 NJ
-preplace netloc constant_0_dout 1 1 4 190 360 N 360 N 360 1060
-preplace netloc rgb2dvi_0_TMDS 1 5 1 1370J 320n
-levelinfo -pg 1 -40 90 280 530 890 1240 1390
-pagesize -pg 1 -db -bbox -sgen -230 -60 1530 800
+preplace port hdmi_out -pg 1 -lvl 6 -x 1320 -y 450 -defaultsOSRD
+preplace port port-id_System_clock -pg 1 -lvl 0 -x 0 -y 490 -defaultsOSRD
+preplace port port-id_enter_button_0 -pg 1 -lvl 0 -x 0 -y 130 -defaultsOSRD
+preplace port port-id_reset_button_0 -pg 1 -lvl 0 -x 0 -y 350 -defaultsOSRD
+preplace portBus hdmi_hdp -pg 1 -lvl 6 -x 1320 -y 60 -defaultsOSRD
+preplace portBus number_switch_0 -pg 1 -lvl 0 -x 0 -y 330 -defaultsOSRD
+preplace portBus counter_0 -pg 1 -lvl 6 -x 1320 -y 310 -defaultsOSRD
+preplace portBus led_out_0 -pg 1 -lvl 6 -x 1320 -y 330 -defaultsOSRD
+preplace inst rgb2dvi_0 -pg 1 -lvl 5 -x 1170 -y 450 -defaultsOSRD
+preplace inst clk_wiz_0 -pg 1 -lvl 2 -x 290 -y 480 -defaultsOSRD
+preplace inst constant_0 -pg 1 -lvl 1 -x 110 -y 420 -defaultsOSRD -resize 124 88
+preplace inst constant_1 -pg 1 -lvl 5 -x 1170 -y 60 -defaultsOSRD
+preplace inst v_tc_0 -pg 1 -lvl 3 -x 520 -y 230 -defaultsOSRD
+preplace inst top_0 -pg 1 -lvl 4 -x 860 -y 330 -defaultsOSRD
+preplace netloc System_clock_1 1 0 2 NJ 490 NJ
+preplace netloc clk_wiz_0_clk_out1 1 2 3 380 110 700 210 1030J
+preplace netloc constant_0_dout 1 1 4 200 550 NJ 550 NJ 550 1040
+preplace netloc constant_1_dout 1 2 4 390 120 NJ 120 NJ 120 1300
+preplace netloc enter_button_0_1 1 0 4 NJ 130 NJ 130 NJ 130 690J
+preplace netloc number_switch_0_1 1 0 4 NJ 330 NJ 330 NJ 330 NJ
+preplace netloc reset_button_0_1 1 0 4 NJ 350 NJ 350 NJ 350 660J
+preplace netloc top_0_counter 1 4 2 NJ 310 NJ
+preplace netloc top_0_led_out 1 4 2 NJ 330 NJ
+preplace netloc top_0_video_out 1 4 1 1020 350n
+preplace netloc v_tc_0_active_video_out 1 3 2 680 470 N
+preplace netloc v_tc_0_hsync_out 1 3 2 670 460 1020
+preplace netloc v_tc_0_vsync_out 1 3 2 650 450 N
+preplace netloc rgb2dvi_0_TMDS 1 5 1 NJ 450
+levelinfo -pg 1 0 110 290 520 860 1170 1320
+pagesize -pg 1 -db -bbox -sgen -190 0 1460 570
 "
 }
 0

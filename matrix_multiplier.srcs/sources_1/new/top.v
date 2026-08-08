@@ -117,8 +117,8 @@ module top(
     //Instantiate all the I/O ports from the module hdmi_code
     hdmi_code outputDisplay(
         .clk(clock),
-        .hsync(hsync_xcoord),
-        .vsync(vsync_ycoord),
+        .x_coordinate(hsync_xcoord),
+        .y_coordinate(vsync_ycoord),
         .video_active(active_video),
         .vid_out(video_out),
         .compartment(counter),
