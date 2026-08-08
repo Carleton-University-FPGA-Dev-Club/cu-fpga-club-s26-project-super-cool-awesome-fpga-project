@@ -269,7 +269,7 @@ module hdmi_code(
         else if (matrix_outline2) begin
            vid_out = 24'hFA2378; //color is orange
         end
-        else if (matrix_outline2) begin
+        else if (matrix_outline3) begin
            vid_out = 24'hDB29CA; //color is yellow
         end
         else if (multiply||equals) begin 
@@ -278,6 +278,21 @@ module hdmi_code(
         else if (draw_number(a11_1_display[11:8], 12'd30, 12'd80, x_coordinate, y_coordinate)||
                  draw_number(a11_1_display[7:4], 12'd90, 12'd80, x_coordinate, y_coordinate)||
                  draw_number(a11_1_display[3:0], 12'd150, 12'd80, x_coordinate, y_coordinate)) begin 
+            vid_out = 24'hFFFFFF; //color is white
+         end
+         else if (draw_number(a12_1_display[11:8], 12'd220, 12'd80, x_coordinate, y_coordinate)||
+                 draw_number(a12_1_display[7:4], 12'd280, 12'd80, x_coordinate, y_coordinate)||
+                 draw_number(a12_1_display[3:0], 12'd340, 12'd80, x_coordinate, y_coordinate)) begin 
+            vid_out = 24'hFFFFFF; //color is white
+         end
+         else if (draw_number(a21_1_display[11:8], 12'd30, 12'd150, x_coordinate, y_coordinate)||
+                 draw_number(a21_1_display[7:4], 12'd90, 12'd150, x_coordinate, y_coordinate)||
+                 draw_number(a21_1_display[3:0], 12'd150, 12'd150, x_coordinate, y_coordinate)) begin 
+            vid_out = 24'hFFFFFF; //color is white
+         end
+         else if (draw_number(a22_1_display[11:8], 12'd220, 12'd150, x_coordinate, y_coordinate)||
+                 draw_number(a22_1_display[7:4], 12'd280, 12'd150, x_coordinate, y_coordinate)||
+                 draw_number(a22_1_display[3:0], 12'd340, 12'd150, x_coordinate, y_coordinate)) begin 
             vid_out = 24'hFFFFFF; //color is white
          end
          else begin 
