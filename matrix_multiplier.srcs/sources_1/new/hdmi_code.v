@@ -27,6 +27,8 @@ module hdmi_code(
     input wire [11:0] y_coordinate,
     //incharge of drawing the pixels
     input wire video_active,
+    input wire hsync_in,
+    input wire vsync_in,
     //used to display the sequence of digits for all of the matrix compartments
     input wire [11:0] a11_1_display, 
     input wire [11:0] a12_1_display, 
@@ -46,10 +48,7 @@ module hdmi_code(
     output reg [23:0] vid_out 
     );
     
-    //used to output numbers, matrix outlines and operations
-    reg digit_1;
-    reg digit_2;
-    reg digit_3;
+    //used matrix outlines and operations
     wire matrix_outline1;
     wire matrix_outline2;
     wire matrix_outline3;
@@ -195,7 +194,7 @@ module hdmi_code(
                 4'b0001: begin
                     draw_number = draw_1(x_move, y_move, x_coordinate, y_coordinate);
                 end
-                4'b010: begin
+                4'b0010: begin
                     draw_number = draw_2(x_move, y_move, x_coordinate, y_coordinate);
                 end
                 4'b0011: begin
@@ -237,7 +236,7 @@ module hdmi_code(
     assign matrix_outline3 = matrix_3(x_coordinate, y_coordinate);
     
     //displaying the proper image if pixels are being drawn (color are in hexadecimal)
-    always @(*) begin
+   /* always @(posedge clk) begin
         if (!video_active) begin
             vid_out = 24'h000000; //color black 
         end
@@ -276,5 +275,9 @@ module hdmi_code(
          else begin 
              vid_out = 24'h000000; //color is black
          end
-   end
+   end*/
+   always @(posedge clk) begin
+    if (video_active)
+        vid_out <= 24'hFF0000; // Pure Red
+    else
 endmodule
