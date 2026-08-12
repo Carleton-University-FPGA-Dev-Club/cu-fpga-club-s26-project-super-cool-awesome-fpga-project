@@ -102,6 +102,8 @@ set_property used_in_implementation false [get_files -all c:/Users/Home/Document
 set_property used_in_implementation false [get_files -all c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/ip/hdmi_out_clk_wiz_0_0/hdmi_out_clk_wiz_0_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/ip/hdmi_out_v_tc_0_0/hdmi_out_v_tc_0_0_clocks.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/ip/hdmi_out_v_tc_0_0/hdmi_out_v_tc_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/ip/hdmi_out_c_counter_binary_0_0/hdmi_out_c_counter_binary_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/ip/hdmi_out_c_counter_binary_1_0/hdmi_out_c_counter_binary_1_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/hdmi_out_ooc.xdc]
 
 OPTRACE "Adding files" END { }

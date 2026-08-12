@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1786156819" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/matrix_multiplier.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1786497780" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/matrix_multiplier.dcp">
   <File Type="PA-TCL" Name="hdmi_out_wrapper.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="hdmi_out_wrapper_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="hdmi_out_wrapper_reports.tcl"/>
@@ -119,7 +119,10 @@
     <Step Id="synth_design"/>
   </Strategy>
   <BlockFileSet Type="BlockSrcs" Name="hdmi_out_rgb2dvi_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="hdmi_out_top_0_6"/>
   <BlockFileSet Type="BlockSrcs" Name="hdmi_out_clk_wiz_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="hdmi_out_c_counter_binary_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="hdmi_out_v_tc_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="hdmi_out_top_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="hdmi_out_c_counter_binary_1_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="hdmi_out_util_vector_logic_0_0"/>
 </GenRun>

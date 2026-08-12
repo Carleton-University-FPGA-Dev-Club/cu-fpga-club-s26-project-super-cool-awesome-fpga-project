@@ -24,7 +24,7 @@ set_property -dict { PACKAGE_PIN P16 IOSTANDARD LVCMOS33 } [get_ports { reset_bu
 set_property -dict { PACKAGE_PIN G15 IOSTANDARD LVCMOS33 } [get_ports { number_switch_0[0] }]; # Sch=SW0 
 set_property -dict { PACKAGE_PIN P15 IOSTANDARD LVCMOS33 } [get_ports { number_switch_0[1] }]; # Sch=SW1 
 set_property -dict { PACKAGE_PIN W13 IOSTANDARD LVCMOS33 } [get_ports { number_switch_0[2] }]; # Sch=SW2 
-set_property -dict { PACKAGE_PIN T16 IOSTANDARD LVCMOS33 } [get_ports { number_switch_)[3] }]; # Sch=SW3
+set_property -dict { PACKAGE_PIN T16 IOSTANDARD LVCMOS33 } [get_ports { number_switch_0[3] }]; # Sch=SW3
 
 ##LEDs
 set_property -dict { PACKAGE_PIN M14 IOSTANDARD LVCMOS33 } [get_ports { led_out_0[0] }]; #IO_L23P_T3_35 Sch=LED0 

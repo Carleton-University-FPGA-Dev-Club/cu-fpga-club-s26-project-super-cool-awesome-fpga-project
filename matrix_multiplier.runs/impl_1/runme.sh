@@ -42,7 +42,7 @@ EAStep()
 }
 
 # pre-commands:
-/bin/touch .write_bitstream.begin.rst
+/bin/touch .init_design.begin.rst
 EAStep vivado -log hdmi_out_wrapper.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source hdmi_out_wrapper.tcl -notrace
 
 

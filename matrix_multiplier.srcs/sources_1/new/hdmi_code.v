@@ -241,15 +241,13 @@ module hdmi_code(
     assign matrix_outline2 = matrix_2(x_coordinate, y_coordinate);
     assign matrix_outline3 = matrix_3(x_coordinate, y_coordinate);
     
-    always @(posedge clk) begin
-    //pass sync signals 1-cycle delay
+    //displaying the proper image if pixels are being drawn (color are in hexadecimal)
+   always @(posedge clk) begin
+        //pass sync signals 1-cycle delay
         hsync_out <= hsync_in;
         vsync_out <= vsync_in;
         active_video_out <= video_active;
-    end
-    
-    //displaying the proper image if pixels are being drawn (color are in hexadecimal)
-   always @(posedge clk) begin
+        
         if (!video_active) begin
             vid_out = 24'h000000; //color black 
         end
@@ -288,11 +286,5 @@ module hdmi_code(
          else begin 
              vid_out = 24'h000000; //color is black
          end
-    end
-    always @(posedge clk) begin
-        if (video_active)
-            vid_out <= 24'hFF0000; // Pure Red
-        else
-            vid_out <= 24'h79FFF7;
     end
 endmodule

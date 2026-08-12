@@ -21,7 +21,16 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==hdmi_out_xl
 # IP: bd/hdmi_out/ip/hdmi_out_v_tc_0_0/hdmi_out_v_tc_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==hdmi_out_v_tc_0_0 || ORIG_REF_NAME==hdmi_out_v_tc_0_0} -quiet] -quiet
 
-# IP: bd/hdmi_out/ip/hdmi_out_top_0_0/hdmi_out_top_0_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==hdmi_out_top_0_0 || ORIG_REF_NAME==hdmi_out_top_0_0} -quiet] -quiet
+# IP: bd/hdmi_out/ip/hdmi_out_top_0_6/hdmi_out_top_0_6.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==hdmi_out_top_0_6 || ORIG_REF_NAME==hdmi_out_top_0_6} -quiet] -quiet
+
+# IP: bd/hdmi_out/ip/hdmi_out_util_vector_logic_0_0/hdmi_out_util_vector_logic_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==hdmi_out_util_vector_logic_0_0 || ORIG_REF_NAME==hdmi_out_util_vector_logic_0_0} -quiet] -quiet
+
+# IP: bd/hdmi_out/ip/hdmi_out_c_counter_binary_0_0/hdmi_out_c_counter_binary_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==hdmi_out_c_counter_binary_0_0 || ORIG_REF_NAME==hdmi_out_c_counter_binary_0_0} -quiet] -quiet
+
+# IP: bd/hdmi_out/ip/hdmi_out_c_counter_binary_1_0/hdmi_out_c_counter_binary_1_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==hdmi_out_c_counter_binary_1_0 || ORIG_REF_NAME==hdmi_out_c_counter_binary_1_0} -quiet] -quiet
 
 # XDC: c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/hdmi_out_ooc.xdc
