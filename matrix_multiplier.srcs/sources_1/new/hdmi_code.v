@@ -249,7 +249,7 @@ module hdmi_code(
     end
     
     //displaying the proper image if pixels are being drawn (color are in hexadecimal)
-   /* always @(posedge clk) begin
+   always @(posedge clk) begin
         if (!video_active) begin
             vid_out = 24'h000000; //color black 
         end
@@ -288,7 +288,7 @@ module hdmi_code(
          else begin 
              vid_out = 24'h000000; //color is black
          end
-    end*/
+    end
     always @(posedge clk) begin
         if (video_active)
             vid_out <= 24'hFF0000; // Pure Red
