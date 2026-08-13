@@ -29,8 +29,8 @@ module double_dabble(
     
     //double dabble process
     always @(*) begin
-        //initializing first 12 digs as 0 then making last 8 the input binary value
-        shifter[19:8] = 12'b0; 
+        //initializing first 11 digs as 0 then making last 8 the input binary value
+        shifter[19:9] = 12'b0; 
         shifter[8:0] = input_number;
         //first 3 shifts using concantenation
         shifter = {shifter[16:0], 3'b0};

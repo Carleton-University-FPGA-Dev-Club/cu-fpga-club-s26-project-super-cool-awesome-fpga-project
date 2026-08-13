@@ -176,7 +176,7 @@ module hdmi_code(
         ((x_coordinate >= 12'd130 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd150 + y_move && y_coordinate < 12'd210 + y_move))||
         ((x_coordinate >= 12'd100 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd175 + y_move && y_coordinate < 12'd185 + y_move))||
         ((x_coordinate >= 12'd100 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd200 + y_move && y_coordinate < 12'd210 + y_move))||
-        ((x_coordinate >= 12'd150 + x_move && x_coordinate < 12'd160 + x_move) && (y_coordinate >= 12'd195 + y_move && y_coordinate < 12'd210 + y_move));
+        ((x_coordinate >= 12'd130 + x_move && x_coordinate < 12'd160 + x_move) && (y_coordinate >= 12'd195 + y_move && y_coordinate < 12'd210 + y_move));
         end
     endfunction
     //function to draw 0 anywhere on the display
@@ -275,9 +275,8 @@ module hdmi_code(
         else if (multiply||equals) begin 
             vid_out = 24'h79FFF7; // color is blue
         end
-        else if (draw_number(a11_1_display[11:8], 12'd30, 12'd80, x_coordinate, y_coordinate)||
-                 draw_number(a11_1_display[7:4], 12'd90, 12'd80, x_coordinate, y_coordinate)||
-                 draw_number(a11_1_display[3:0], 12'd150, 12'd80, x_coordinate, y_coordinate)) begin 
+        else if (draw_number(a11_1_display[7:4], 12'd20, 12'd80, x_coordinate, y_coordinate)||
+                 draw_number(a11_1_display[3:0], 12'd50, 12'd80, x_coordinate, y_coordinate)) begin 
             vid_out = 24'hFFFFFF; //color is white
          end
          else begin 

@@ -99,7 +99,7 @@ read_verilog -library xil_defaultlib {
   C:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.srcs/sources_1/new/input_numbers.v
   C:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.srcs/sources_1/new/top.v
 }
-read_ip -quiet c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.srcs/sources_1/bd/hdmi_out/ip/hdmi_out_top_0_0/hdmi_out_top_0_0.xci
+read_ip -quiet C:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.srcs/sources_1/bd/hdmi_out/ip/hdmi_out_top_0_0/hdmi_out_top_0_0.xci
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
