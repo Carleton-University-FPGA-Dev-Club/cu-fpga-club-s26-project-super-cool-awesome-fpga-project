@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-| Date         : Tue Aug 11 21:32:34 2026
+| Date         : Thu Aug 13 12:12:15 2026
 | Host         : DESKTOP-LRI6JJ9 running 64-bit major release  (build 9200)
 | Command      : report_utilization -file hdmi_out_wrapper_utilization_synth.rpt -pb hdmi_out_wrapper_utilization_synth.pb
 | Design       : hdmi_out_wrapper
@@ -164,8 +164,6 @@ Warning! LUT value is adjusted to account for LUT combining.
 | hdmi_out_top_0_6               |    1 |
 | hdmi_out_rgb2dvi_0_0           |    1 |
 | hdmi_out_clk_wiz_0_0           |    1 |
-| hdmi_out_c_counter_binary_1_0  |    1 |
-| hdmi_out_c_counter_binary_0_0  |    1 |
 +--------------------------------+------+
 
 

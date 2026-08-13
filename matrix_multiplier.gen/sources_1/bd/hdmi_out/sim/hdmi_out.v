@@ -2,7 +2,7 @@
 //Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-//Date        : Tue Aug 11 21:22:40 2026
+//Date        : Wed Aug 12 11:43:23 2026
 //Host        : DESKTOP-LRI6JJ9 running 64-bit major release  (build 9200)
 //Command     : generate_target hdmi_out.bd
 //Design      : hdmi_out
@@ -10,7 +10,7 @@
 //--------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CORE_GENERATION_INFO = "hdmi_out,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=hdmi_out,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=9,numReposBlks=9,numNonXlnxBlks=1,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=1,numPkgbdBlks=0,bdsource=USER,synth_mode=Hierarchical}" *) (* HW_HANDOFF = "hdmi_out.hwdef" *) 
+(* CORE_GENERATION_INFO = "hdmi_out,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=hdmi_out,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=7,numReposBlks=7,numNonXlnxBlks=1,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=1,numPkgbdBlks=0,bdsource=USER,synth_mode=Hierarchical}" *) (* HW_HANDOFF = "hdmi_out.hwdef" *) 
 module hdmi_out
    (System_clock,
     counter_0,
@@ -36,8 +36,6 @@ module hdmi_out
   (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 RST.RESET_BUTTON_0 RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME RST.RESET_BUTTON_0, INSERT_VIP 0, POLARITY ACTIVE_LOW" *) input reset_button_0;
 
   wire System_clock_1;
-  wire [11:0]c_counter_binary_0_Q;
-  wire [11:0]c_counter_binary_1_Q;
   wire clk_wiz_0_clk_out1;
   wire clk_wiz_0_locked;
   wire [0:0]constant_0_dout;
@@ -70,12 +68,6 @@ module hdmi_out
   assign led_out_0[3:0] = top_0_led_out;
   assign number_switch_0_1 = number_switch_0[3:0];
   assign reset_button_0_1 = reset_button_0;
-  hdmi_out_c_counter_binary_0_0 c_counter_binary_0
-       (.CLK(clk_wiz_0_clk_out1),
-        .Q(c_counter_binary_0_Q));
-  hdmi_out_c_counter_binary_1_0 c_counter_binary_1
-       (.CLK(clk_wiz_0_clk_out1),
-        .Q(c_counter_binary_1_Q));
   hdmi_out_clk_wiz_0_0 clk_wiz_0
        (.clk_in1(System_clock_1),
         .clk_out1(clk_wiz_0_clk_out1),
@@ -103,14 +95,14 @@ module hdmi_out
         .enter_button(enter_button_0_1),
         .hsync_in(v_tc_0_hsync_out),
         .hsync_out(top_0_hsync_out),
-        .hsync_xcoord(c_counter_binary_0_Q),
+        .hsync_xcoord({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
         .led_out(top_0_led_out),
         .number_switch(number_switch_0_1),
         .reset_button(reset_button_0_1),
         .video_out(top_0_video_out),
         .vsync_in(v_tc_0_vsync_out),
         .vsync_out(top_0_vsync_out),
-        .vsync_ycoord(c_counter_binary_1_Q));
+        .vsync_ycoord({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}));
   hdmi_out_util_vector_logic_0_0 util_vector_logic_0
        (.Op1(clk_wiz_0_locked),
         .Res(util_vector_logic_0_Res));

@@ -14,7 +14,7 @@ ECHO is off.
     ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 
 source hdmi_out_wrapper.tcl -notrace
-create_project: Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 457.035 ; gain = 179.445
+create_project: Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 457.883 ; gain = 183.297
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Home/Documents/FPGASummerProject/HDMI_Github/vivado-library-master (1)/vivado-library-master'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Users/Home/vivado/Vivado/2023.2/data/ip'.
@@ -24,16 +24,14 @@ Command: link_design -top hdmi_out_wrapper -part xc7z020clg400-1
 Design is defaulting to srcset: sources_1
 Design is defaulting to constrset: constrs_1
 INFO: [Device 21-403] Loading part xc7z020clg400-1
-INFO: [Project 1-454] Reading design checkpoint 'c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/ip/hdmi_out_c_counter_binary_0_0/hdmi_out_c_counter_binary_0_0.dcp' for cell 'hdmi_out_i/c_counter_binary_0'
-INFO: [Project 1-454] Reading design checkpoint 'c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/ip/hdmi_out_c_counter_binary_1_0/hdmi_out_c_counter_binary_1_0.dcp' for cell 'hdmi_out_i/c_counter_binary_1'
 INFO: [Project 1-454] Reading design checkpoint 'c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/ip/hdmi_out_clk_wiz_0_0/hdmi_out_clk_wiz_0_0.dcp' for cell 'hdmi_out_i/clk_wiz_0'
 INFO: [Project 1-454] Reading design checkpoint 'c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/ip/hdmi_out_rgb2dvi_0_0/hdmi_out_rgb2dvi_0_0.dcp' for cell 'hdmi_out_i/rgb2dvi_0'
 INFO: [Project 1-454] Reading design checkpoint 'c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/ip/hdmi_out_top_0_6/hdmi_out_top_0_6.dcp' for cell 'hdmi_out_i/top_0'
 INFO: [Project 1-454] Reading design checkpoint 'c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/ip/hdmi_out_util_vector_logic_0_0/hdmi_out_util_vector_logic_0_0.dcp' for cell 'hdmi_out_i/util_vector_logic_0'
 INFO: [Project 1-454] Reading design checkpoint 'c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/ip/hdmi_out_v_tc_0_0/hdmi_out_v_tc_0_0.dcp' for cell 'hdmi_out_i/v_tc_0'
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.068 . Memory (MB): peak = 940.680 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 77 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.056 . Memory (MB): peak = 939.879 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 71 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-479] Netlist was created with Vivado 2023.2
 INFO: [Project 1-570] Preparing netlist for logic optimization
 Parsing XDC File [c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/ip/hdmi_out_rgb2dvi_0_0/src/rgb2dvi.xdc] for cell 'hdmi_out_i/rgb2dvi_0/U0'
@@ -43,13 +41,10 @@ Finished Parsing XDC File [c:/Users/Home/Documents/FPGASummerProject/Project/mat
 Parsing XDC File [c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/ip/hdmi_out_clk_wiz_0_0/hdmi_out_clk_wiz_0_0.xdc] for cell 'hdmi_out_i/clk_wiz_0/inst'
 INFO: [Timing 38-35] Done setting XDC timing constraints. [c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/ip/hdmi_out_clk_wiz_0_0/hdmi_out_clk_wiz_0_0.xdc:54]
 INFO: [Timing 38-2] Deriving generated clocks [c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/ip/hdmi_out_clk_wiz_0_0/hdmi_out_clk_wiz_0_0.xdc:54]
-get_clocks: Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1637.965 ; gain = 578.898
+get_clocks: Time (s): cpu = 00:00:17 ; elapsed = 00:00:23 . Memory (MB): peak = 1636.305 ; gain = 578.477
 Finished Parsing XDC File [c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/ip/hdmi_out_clk_wiz_0_0/hdmi_out_clk_wiz_0_0.xdc] for cell 'hdmi_out_i/clk_wiz_0/inst'
 Parsing XDC File [C:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.srcs/constrs_1/new/hdmi.xdc]
 WARNING: [Constraints 18-619] A clock with name 'System_clock' already exists, overwriting the previous clock with the same name. [C:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.srcs/constrs_1/new/hdmi.xdc:5]
-WARNING: [Vivado 12-584] No ports matched 'number_switch_)[3]'. [C:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.srcs/constrs_1/new/hdmi.xdc:27]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.srcs/constrs_1/new/hdmi.xdc:27]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
 Finished Parsing XDC File [C:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.srcs/constrs_1/new/hdmi.xdc]
 Parsing XDC File [c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/ip/hdmi_out_rgb2dvi_0_0/src/rgb2dvi_clocks.xdc] for cell 'hdmi_out_i/rgb2dvi_0/U0'
 Finished Parsing XDC File [c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/ip/hdmi_out_rgb2dvi_0_0/src/rgb2dvi_clocks.xdc] for cell 'hdmi_out_i/rgb2dvi_0/U0'
@@ -57,14 +52,14 @@ Parsing XDC File [c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multi
 Finished Parsing XDC File [c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/ip/hdmi_out_v_tc_0_0/hdmi_out_v_tc_0_0_clocks.xdc] for cell 'hdmi_out_i/v_tc_0/U0'
 INFO: [Project 1-1714] 1 XPM XDC files have been applied to the design.
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1639.000 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1637.375 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 The system cannot find the path specified.
-20 Infos, 3 Warnings, 1 Critical Warnings and 0 Errors encountered.
+18 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
 link_design completed successfully
-link_design: Time (s): cpu = 00:00:27 ; elapsed = 00:00:32 . Memory (MB): peak = 1639.000 ; gain = 1154.477
+link_design: Time (s): cpu = 00:00:31 ; elapsed = 00:00:42 . Memory (MB): peak = 1637.375 ; gain = 1152.203
 Command: opt_design
 Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
@@ -77,27 +72,27 @@ ERROR: [DRC MDRV-1] Multiple Driver Nets: Net hdmi_out_i/top_0/inst/outputDispla
 ERROR: [DRC MDRV-1] Multiple Driver Nets: Net hdmi_out_i/top_0/inst/outputDisplay/video_out[11] has multiple drivers: hdmi_out_i/top_0/inst/outputDisplay/vid_out_reg[12]/Q, and hdmi_out_i/top_0/inst/outputDisplay/vid_out_reg[12]__0/Q.
 ERROR: [DRC MDRV-1] Multiple Driver Nets: Net hdmi_out_i/top_0/inst/outputDisplay/video_out[12] has multiple drivers: hdmi_out_i/top_0/inst/outputDisplay/vid_out_reg[13]/Q, and hdmi_out_i/top_0/inst/outputDisplay/vid_out_reg[13]__0/Q.
 ERROR: [DRC MDRV-1] Multiple Driver Nets: Net hdmi_out_i/top_0/inst/outputDisplay/video_out[13] has multiple drivers: hdmi_out_i/top_0/inst/outputDisplay/vid_out_reg[14]/Q, and hdmi_out_i/top_0/inst/outputDisplay/vid_out_reg[14]__0/Q.
-ERROR: [DRC MDRV-1] Multiple Driver Nets: Net hdmi_out_i/top_0/inst/outputDisplay/video_out[14] has multiple drivers: hdmi_out_i/top_0/inst/outputDisplay/vid_out_reg[15]__0/Q, and hdmi_out_i/top_0/inst/outputDisplay/vid_out_reg[15]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net hdmi_out_i/top_0/inst/outputDisplay/video_out[14] has multiple drivers: hdmi_out_i/top_0/inst/outputDisplay/vid_out_reg[15]/Q, and hdmi_out_i/top_0/inst/outputDisplay/vid_out_reg[15]__0/Q.
 ERROR: [DRC MDRV-1] Multiple Driver Nets: Net hdmi_out_i/top_0/inst/outputDisplay/video_out[15] has multiple drivers: hdmi_out_i/top_0/inst/outputDisplay/vid_out_reg[17]/Q, and hdmi_out_i/top_0/inst/outputDisplay/vid_out_reg[17]__0/Q.
-ERROR: [DRC MDRV-1] Multiple Driver Nets: Net hdmi_out_i/top_0/inst/outputDisplay/video_out[16] has multiple drivers: hdmi_out_i/top_0/inst/outputDisplay/vid_out_reg[18]/Q, and hdmi_out_i/top_0/inst/outputDisplay/vid_out_reg[18]__0/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net hdmi_out_i/top_0/inst/outputDisplay/video_out[16] has multiple drivers: hdmi_out_i/top_0/inst/outputDisplay/vid_out_reg[18]__0/Q, and hdmi_out_i/top_0/inst/outputDisplay/vid_out_reg[18]/Q.
 ERROR: [DRC MDRV-1] Multiple Driver Nets: Net hdmi_out_i/top_0/inst/outputDisplay/video_out[17] has multiple drivers: hdmi_out_i/top_0/inst/outputDisplay/vid_out_reg[23]/Q, and hdmi_out_i/top_0/inst/outputDisplay/vid_out_reg[23]__0/Q.
-ERROR: [DRC MDRV-1] Multiple Driver Nets: Net hdmi_out_i/top_0/inst/outputDisplay/video_out[1] has multiple drivers: hdmi_out_i/top_0/inst/outputDisplay/vid_out_reg[1]__0/Q, and hdmi_out_i/top_0/inst/outputDisplay/vid_out_reg[1]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net hdmi_out_i/top_0/inst/outputDisplay/video_out[1] has multiple drivers: hdmi_out_i/top_0/inst/outputDisplay/vid_out_reg[1]/Q, and hdmi_out_i/top_0/inst/outputDisplay/vid_out_reg[1]__0/Q.
 ERROR: [DRC MDRV-1] Multiple Driver Nets: Net hdmi_out_i/top_0/inst/outputDisplay/video_out[2] has multiple drivers: hdmi_out_i/top_0/inst/outputDisplay/vid_out_reg[2]/Q, and hdmi_out_i/top_0/inst/outputDisplay/vid_out_reg[2]__0/Q.
-ERROR: [DRC MDRV-1] Multiple Driver Nets: Net hdmi_out_i/top_0/inst/outputDisplay/video_out[3] has multiple drivers: hdmi_out_i/top_0/inst/outputDisplay/vid_out_reg[4]/Q, and hdmi_out_i/top_0/inst/outputDisplay/vid_out_reg[4]__0/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net hdmi_out_i/top_0/inst/outputDisplay/video_out[3] has multiple drivers: hdmi_out_i/top_0/inst/outputDisplay/vid_out_reg[4]__0/Q, and hdmi_out_i/top_0/inst/outputDisplay/vid_out_reg[4]/Q.
 ERROR: [DRC MDRV-1] Multiple Driver Nets: Net hdmi_out_i/top_0/inst/outputDisplay/video_out[4] has multiple drivers: hdmi_out_i/top_0/inst/outputDisplay/vid_out_reg[5]/Q, and hdmi_out_i/top_0/inst/outputDisplay/vid_out_reg[5]__0/Q.
-ERROR: [DRC MDRV-1] Multiple Driver Nets: Net hdmi_out_i/top_0/inst/outputDisplay/video_out[5] has multiple drivers: hdmi_out_i/top_0/inst/outputDisplay/vid_out_reg[6]__0/Q, and hdmi_out_i/top_0/inst/outputDisplay/vid_out_reg[6]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net hdmi_out_i/top_0/inst/outputDisplay/video_out[5] has multiple drivers: hdmi_out_i/top_0/inst/outputDisplay/vid_out_reg[6]/Q, and hdmi_out_i/top_0/inst/outputDisplay/vid_out_reg[6]__0/Q.
 ERROR: [DRC MDRV-1] Multiple Driver Nets: Net hdmi_out_i/top_0/inst/outputDisplay/video_out[6] has multiple drivers: hdmi_out_i/top_0/inst/outputDisplay/vid_out_reg[7]/Q, and hdmi_out_i/top_0/inst/outputDisplay/vid_out_reg[7]__0/Q.
-ERROR: [DRC MDRV-1] Multiple Driver Nets: Net hdmi_out_i/top_0/inst/outputDisplay/video_out[7] has multiple drivers: hdmi_out_i/top_0/inst/outputDisplay/vid_out_reg[8]__0/Q, and hdmi_out_i/top_0/inst/outputDisplay/vid_out_reg[8]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net hdmi_out_i/top_0/inst/outputDisplay/video_out[7] has multiple drivers: hdmi_out_i/top_0/inst/outputDisplay/vid_out_reg[8]/Q, and hdmi_out_i/top_0/inst/outputDisplay/vid_out_reg[8]__0/Q.
 ERROR: [DRC MDRV-1] Multiple Driver Nets: Net hdmi_out_i/top_0/inst/outputDisplay/video_out[8] has multiple drivers: hdmi_out_i/top_0/inst/outputDisplay/vid_out_reg[9]/Q, and hdmi_out_i/top_0/inst/outputDisplay/vid_out_reg[9]__0/Q.
-ERROR: [DRC MDRV-1] Multiple Driver Nets: Net hdmi_out_i/top_0/inst/outputDisplay/video_out[9] has multiple drivers: hdmi_out_i/top_0/inst/outputDisplay/vid_out_reg[10]__0/Q, and hdmi_out_i/top_0/inst/outputDisplay/vid_out_reg[10]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net hdmi_out_i/top_0/inst/outputDisplay/video_out[9] has multiple drivers: hdmi_out_i/top_0/inst/outputDisplay/vid_out_reg[10]/Q, and hdmi_out_i/top_0/inst/outputDisplay/vid_out_reg[10]__0/Q.
 INFO: [Project 1-461] DRC finished with 18 Errors
 INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
 ERROR: [Vivado_Tcl 4-78] Error(s) found during DRC. Opt_design not run.
 
-Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 1639.000 ; gain = 0.000
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 1637.375 ; gain = 0.000
 INFO: [Common 17-83] Releasing license: Implementation
-25 Infos, 3 Warnings, 1 Critical Warnings and 19 Errors encountered.
+23 Infos, 2 Warnings, 0 Critical Warnings and 19 Errors encountered.
 opt_design failed
 ERROR: [Common 17-39] 'opt_design' failed due to earlier errors.
 
-INFO: [Common 17-206] Exiting Vivado at Tue Aug 11 21:44:37 2026...
+INFO: [Common 17-206] Exiting Vivado at Thu Aug 13 12:14:03 2026...

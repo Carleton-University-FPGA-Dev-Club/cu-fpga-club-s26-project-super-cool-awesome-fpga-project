@@ -71,8 +71,6 @@ proc create_report { reportName command } {
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param chipscope.maxJobs 1
-set_param xicom.use_bs_reader 1
-set_msg_config -id {HDL-1065} -limit 10000
 set_msg_config  -id {17-179}  -suppress 
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7z020clg400-1
@@ -102,8 +100,6 @@ set_property used_in_implementation false [get_files -all c:/Users/Home/Document
 set_property used_in_implementation false [get_files -all c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/ip/hdmi_out_clk_wiz_0_0/hdmi_out_clk_wiz_0_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/ip/hdmi_out_v_tc_0_0/hdmi_out_v_tc_0_0_clocks.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/ip/hdmi_out_v_tc_0_0/hdmi_out_v_tc_0_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/ip/hdmi_out_c_counter_binary_0_0/hdmi_out_c_counter_binary_0_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/ip/hdmi_out_c_counter_binary_1_0/hdmi_out_c_counter_binary_1_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/hdmi_out_ooc.xdc]
 
 OPTRACE "Adding files" END { }

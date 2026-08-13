@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7z020clg400-1" LaunchTime="1786499005">
+<GenRun Id="impl_1" LaunchPart="xc7z020clg400-1" LaunchTime="1786637557">
   <File Type="ROUTE-PWR" Name="hdmi_out_wrapper_power_routed.rpt"/>
   <File Type="PA-TCL" Name="hdmi_out_wrapper.tcl"/>
   <File Type="ROUTE-PWR-SUM" Name="hdmi_out_wrapper_power_summary_routed.pb"/>
@@ -204,8 +204,6 @@
   <BlockFileSet Type="BlockSrcs" Name="hdmi_out_rgb2dvi_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="hdmi_out_top_0_6"/>
   <BlockFileSet Type="BlockSrcs" Name="hdmi_out_clk_wiz_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="hdmi_out_c_counter_binary_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="hdmi_out_v_tc_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="hdmi_out_c_counter_binary_1_0"/>
   <BlockFileSet Type="BlockSrcs" Name="hdmi_out_util_vector_logic_0_0"/>
 </GenRun>

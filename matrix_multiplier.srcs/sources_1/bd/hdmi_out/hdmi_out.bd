@@ -17,9 +17,7 @@
       "constant_1": "",
       "v_tc_0": "",
       "top_0": "",
-      "util_vector_logic_0": "",
-      "c_counter_binary_0": "",
-      "c_counter_binary_1": ""
+      "util_vector_logic_0": ""
     },
     "interface_ports": {
       "hdmi_out": {
@@ -310,30 +308,6 @@
             "value": "1"
           }
         }
-      },
-      "c_counter_binary_0": {
-        "vlnv": "xilinx.com:ip:c_counter_binary:12.0",
-        "ip_revision": "17",
-        "xci_name": "hdmi_out_c_counter_binary_0_0",
-        "xci_path": "ip\\hdmi_out_c_counter_binary_0_0\\hdmi_out_c_counter_binary_0_0.xci",
-        "inst_hier_path": "c_counter_binary_0",
-        "parameters": {
-          "Output_Width": {
-            "value": "12"
-          }
-        }
-      },
-      "c_counter_binary_1": {
-        "vlnv": "xilinx.com:ip:c_counter_binary:12.0",
-        "ip_revision": "17",
-        "xci_name": "hdmi_out_c_counter_binary_1_0",
-        "xci_path": "ip\\hdmi_out_c_counter_binary_1_0\\hdmi_out_c_counter_binary_1_0.xci",
-        "inst_hier_path": "c_counter_binary_1",
-        "parameters": {
-          "Output_Width": {
-            "value": "12"
-          }
-        }
       }
     },
     "interface_nets": {
@@ -351,26 +325,12 @@
           "clk_wiz_0/clk_in1"
         ]
       },
-      "c_counter_binary_0_Q": {
-        "ports": [
-          "c_counter_binary_0/Q",
-          "top_0/hsync_xcoord"
-        ]
-      },
-      "c_counter_binary_1_Q": {
-        "ports": [
-          "c_counter_binary_1/Q",
-          "top_0/vsync_ycoord"
-        ]
-      },
       "clk_wiz_0_clk_out1": {
         "ports": [
           "clk_wiz_0/clk_out1",
           "rgb2dvi_0/PixelClk",
           "v_tc_0/clk",
-          "top_0/clock",
-          "c_counter_binary_1/CLK",
-          "c_counter_binary_0/CLK"
+          "top_0/clock"
         ]
       },
       "clk_wiz_0_locked": {

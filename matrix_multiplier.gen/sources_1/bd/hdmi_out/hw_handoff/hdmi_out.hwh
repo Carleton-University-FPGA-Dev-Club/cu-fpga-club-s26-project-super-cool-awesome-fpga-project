@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Tue Aug 11 21:22:43 2026" VIVADOVERSION="2023.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Aug 12 11:43:23 2026" VIVADOVERSION="2023.2">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z020" NAME="hdmi_out" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -73,138 +73,6 @@
   </EXTERNALINTERFACES>
 
   <MODULES>
-    <MODULE COREREVISION="17" FULLNAME="/c_counter_binary_0" HWVERSION="12.0" INSTANCE="c_counter_binary_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="c_counter_binary" VLNV="xilinx.com:ip:c_counter_binary:12.0">
-      <DOCUMENTS>
-        <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=c_counter_binary;v=v12_0;d=pg121-c-counter-binary.pdf"/>
-      </DOCUMENTS>
-      <PARAMETERS>
-        <PARAMETER NAME="C_AINIT_VAL" VALUE="0"/>
-        <PARAMETER NAME="C_CE_OVERRIDES_SYNC" VALUE="0"/>
-        <PARAMETER NAME="C_COUNT_BY" VALUE="1"/>
-        <PARAMETER NAME="C_COUNT_MODE" VALUE="0"/>
-        <PARAMETER NAME="C_COUNT_TO" VALUE="1"/>
-        <PARAMETER NAME="C_FB_LATENCY" VALUE="0"/>
-        <PARAMETER NAME="C_HAS_CE" VALUE="0"/>
-        <PARAMETER NAME="C_HAS_LOAD" VALUE="0"/>
-        <PARAMETER NAME="C_HAS_SCLR" VALUE="0"/>
-        <PARAMETER NAME="C_HAS_SINIT" VALUE="0"/>
-        <PARAMETER NAME="C_HAS_SSET" VALUE="0"/>
-        <PARAMETER NAME="C_HAS_THRESH0" VALUE="0"/>
-        <PARAMETER NAME="C_IMPLEMENTATION" VALUE="0"/>
-        <PARAMETER NAME="C_LATENCY" VALUE="1"/>
-        <PARAMETER NAME="C_LOAD_LOW" VALUE="0"/>
-        <PARAMETER NAME="C_RESTRICT_COUNT" VALUE="0"/>
-        <PARAMETER NAME="C_SCLR_OVERRIDES_SSET" VALUE="1"/>
-        <PARAMETER NAME="C_SINIT_VAL" VALUE="0"/>
-        <PARAMETER NAME="C_THRESH0_VALUE" VALUE="1"/>
-        <PARAMETER NAME="C_VERBOSITY" VALUE="0"/>
-        <PARAMETER NAME="C_WIDTH" VALUE="12"/>
-        <PARAMETER NAME="C_XDEVICEFAMILY" VALUE="zynq"/>
-        <PARAMETER NAME="AINIT_Value" VALUE="0"/>
-        <PARAMETER NAME="CE" VALUE="false"/>
-        <PARAMETER NAME="Component_Name" VALUE="hdmi_out_c_counter_binary_0_0"/>
-        <PARAMETER NAME="Count_Mode" VALUE="UP"/>
-        <PARAMETER NAME="Fb_Latency" VALUE="0"/>
-        <PARAMETER NAME="Fb_Latency_Configuration" VALUE="Manual"/>
-        <PARAMETER NAME="Final_Count_Value" VALUE="1"/>
-        <PARAMETER NAME="Implementation" VALUE="Fabric"/>
-        <PARAMETER NAME="Increment_Value" VALUE="1"/>
-        <PARAMETER NAME="Latency" VALUE="1"/>
-        <PARAMETER NAME="Latency_Configuration" VALUE="Manual"/>
-        <PARAMETER NAME="Load" VALUE="false"/>
-        <PARAMETER NAME="Load_Sense" VALUE="Active_High"/>
-        <PARAMETER NAME="Output_Width" VALUE="12"/>
-        <PARAMETER NAME="Restrict_Count" VALUE="false"/>
-        <PARAMETER NAME="SCLR" VALUE="false"/>
-        <PARAMETER NAME="SINIT" VALUE="false"/>
-        <PARAMETER NAME="SINIT_Value" VALUE="0"/>
-        <PARAMETER NAME="SSET" VALUE="false"/>
-        <PARAMETER NAME="SyncCtrlPriority" VALUE="Reset_Overrides_Set"/>
-        <PARAMETER NAME="Sync_CE_Priority" VALUE="Sync_Overrides_CE"/>
-        <PARAMETER NAME="Sync_Threshold_Output" VALUE="false"/>
-        <PARAMETER NAME="Threshold_Value" VALUE="1"/>
-        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
-      </PARAMETERS>
-      <PORTS>
-        <PORT CLKFREQUENCY="74250000" DIR="I" NAME="CLK" SIGIS="clk" SIGNAME="clk_wiz_0_clk_out1">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="clk_wiz_0" PORT="clk_out1"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="11" NAME="Q" RIGHT="0" SIGIS="data" SIGNAME="c_counter_binary_0_Q">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="top_0" PORT="hsync_xcoord"/>
-          </CONNECTIONS>
-        </PORT>
-      </PORTS>
-      <BUSINTERFACES/>
-    </MODULE>
-    <MODULE COREREVISION="17" FULLNAME="/c_counter_binary_1" HWVERSION="12.0" INSTANCE="c_counter_binary_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="c_counter_binary" VLNV="xilinx.com:ip:c_counter_binary:12.0">
-      <DOCUMENTS>
-        <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=c_counter_binary;v=v12_0;d=pg121-c-counter-binary.pdf"/>
-      </DOCUMENTS>
-      <PARAMETERS>
-        <PARAMETER NAME="C_AINIT_VAL" VALUE="0"/>
-        <PARAMETER NAME="C_CE_OVERRIDES_SYNC" VALUE="0"/>
-        <PARAMETER NAME="C_COUNT_BY" VALUE="1"/>
-        <PARAMETER NAME="C_COUNT_MODE" VALUE="0"/>
-        <PARAMETER NAME="C_COUNT_TO" VALUE="1"/>
-        <PARAMETER NAME="C_FB_LATENCY" VALUE="0"/>
-        <PARAMETER NAME="C_HAS_CE" VALUE="0"/>
-        <PARAMETER NAME="C_HAS_LOAD" VALUE="0"/>
-        <PARAMETER NAME="C_HAS_SCLR" VALUE="0"/>
-        <PARAMETER NAME="C_HAS_SINIT" VALUE="0"/>
-        <PARAMETER NAME="C_HAS_SSET" VALUE="0"/>
-        <PARAMETER NAME="C_HAS_THRESH0" VALUE="0"/>
-        <PARAMETER NAME="C_IMPLEMENTATION" VALUE="0"/>
-        <PARAMETER NAME="C_LATENCY" VALUE="1"/>
-        <PARAMETER NAME="C_LOAD_LOW" VALUE="0"/>
-        <PARAMETER NAME="C_RESTRICT_COUNT" VALUE="0"/>
-        <PARAMETER NAME="C_SCLR_OVERRIDES_SSET" VALUE="1"/>
-        <PARAMETER NAME="C_SINIT_VAL" VALUE="0"/>
-        <PARAMETER NAME="C_THRESH0_VALUE" VALUE="1"/>
-        <PARAMETER NAME="C_VERBOSITY" VALUE="0"/>
-        <PARAMETER NAME="C_WIDTH" VALUE="12"/>
-        <PARAMETER NAME="C_XDEVICEFAMILY" VALUE="zynq"/>
-        <PARAMETER NAME="AINIT_Value" VALUE="0"/>
-        <PARAMETER NAME="CE" VALUE="false"/>
-        <PARAMETER NAME="Component_Name" VALUE="hdmi_out_c_counter_binary_1_0"/>
-        <PARAMETER NAME="Count_Mode" VALUE="UP"/>
-        <PARAMETER NAME="Fb_Latency" VALUE="0"/>
-        <PARAMETER NAME="Fb_Latency_Configuration" VALUE="Manual"/>
-        <PARAMETER NAME="Final_Count_Value" VALUE="1"/>
-        <PARAMETER NAME="Implementation" VALUE="Fabric"/>
-        <PARAMETER NAME="Increment_Value" VALUE="1"/>
-        <PARAMETER NAME="Latency" VALUE="1"/>
-        <PARAMETER NAME="Latency_Configuration" VALUE="Manual"/>
-        <PARAMETER NAME="Load" VALUE="false"/>
-        <PARAMETER NAME="Load_Sense" VALUE="Active_High"/>
-        <PARAMETER NAME="Output_Width" VALUE="12"/>
-        <PARAMETER NAME="Restrict_Count" VALUE="false"/>
-        <PARAMETER NAME="SCLR" VALUE="false"/>
-        <PARAMETER NAME="SINIT" VALUE="false"/>
-        <PARAMETER NAME="SINIT_Value" VALUE="0"/>
-        <PARAMETER NAME="SSET" VALUE="false"/>
-        <PARAMETER NAME="SyncCtrlPriority" VALUE="Reset_Overrides_Set"/>
-        <PARAMETER NAME="Sync_CE_Priority" VALUE="Sync_Overrides_CE"/>
-        <PARAMETER NAME="Sync_Threshold_Output" VALUE="false"/>
-        <PARAMETER NAME="Threshold_Value" VALUE="1"/>
-        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
-      </PARAMETERS>
-      <PORTS>
-        <PORT CLKFREQUENCY="74250000" DIR="I" NAME="CLK" SIGIS="clk" SIGNAME="clk_wiz_0_clk_out1">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="clk_wiz_0" PORT="clk_out1"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="11" NAME="Q" RIGHT="0" SIGIS="data" SIGNAME="c_counter_binary_1_Q">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="top_0" PORT="vsync_ycoord"/>
-          </CONNECTIONS>
-        </PORT>
-      </PORTS>
-      <BUSINTERFACES/>
-    </MODULE>
     <MODULE COREREVISION="13" FULLNAME="/clk_wiz_0" HWVERSION="6.0" INSTANCE="clk_wiz_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="clk_wiz" VLNV="xilinx.com:ip:clk_wiz:6.0">
       <DOCUMENTS>
         <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=clk_wiz;v=v6_0;d=pg065-clk-wiz.pdf"/>
@@ -795,8 +663,6 @@
             <CONNECTION INSTANCE="rgb2dvi_0" PORT="PixelClk"/>
             <CONNECTION INSTANCE="v_tc_0" PORT="clk"/>
             <CONNECTION INSTANCE="top_0" PORT="clock"/>
-            <CONNECTION INSTANCE="c_counter_binary_1" PORT="CLK"/>
-            <CONNECTION INSTANCE="c_counter_binary_0" PORT="CLK"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="locked" SIGIS="undef" SIGNAME="clk_wiz_0_locked">
@@ -973,11 +839,7 @@
             <CONNECTION INSTANCE="rgb2dvi_0" PORT="vid_pHSync"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="11" NAME="hsync_xcoord" RIGHT="0" SIGIS="undef" SIGNAME="c_counter_binary_0_Q">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="c_counter_binary_0" PORT="Q"/>
-          </CONNECTIONS>
-        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="hsync_xcoord" RIGHT="0" SIGIS="undef"/>
         <PORT DIR="O" LEFT="3" NAME="led_out" RIGHT="0" SIGIS="undef" SIGNAME="top_0_led_out">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="led_out_0"/>
@@ -1008,11 +870,7 @@
             <CONNECTION INSTANCE="rgb2dvi_0" PORT="vid_pVSync"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="11" NAME="vsync_ycoord" RIGHT="0" SIGIS="undef" SIGNAME="c_counter_binary_1_Q">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="c_counter_binary_1" PORT="Q"/>
-          </CONNECTIONS>
-        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="vsync_ycoord" RIGHT="0" SIGIS="undef"/>
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>

@@ -115,7 +115,6 @@ proc step_failed { step } {
 OPTRACE "impl_1" END { }
 }
 
-set_msg_config -id {HDL-1065} -limit 10000
 set_msg_config  -id {17-179}  -suppress 
 
 OPTRACE "impl_1" START { ROLLUP_1 }
@@ -125,7 +124,6 @@ set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
   set_param chipscope.maxJobs 1
-  set_param xicom.use_bs_reader 1
   set_param runs.launchOptions { -jobs 2  }
 OPTRACE "create in-memory project" START { }
   create_project -in_memory -part xc7z020clg400-1
