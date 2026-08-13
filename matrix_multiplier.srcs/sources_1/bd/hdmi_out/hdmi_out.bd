@@ -6,7 +6,7 @@
       "gen_directory": "../../../../matrix_multiplier.gen/sources_1/bd/hdmi_out",
       "name": "hdmi_out",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
-      "synth_flow_mode": "Hierarchical",
+      "synth_flow_mode": "None",
       "tool_version": "2023.2",
       "validated": "true"
     },

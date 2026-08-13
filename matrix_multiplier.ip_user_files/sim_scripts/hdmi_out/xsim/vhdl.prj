@@ -1,0 +1,13 @@
+vhdl xil_defaultlib  \
+"../../../../matrix_multiplier.gen/sources_1/bd/hdmi_out/ipshared/d57c/src/ClockGen.vhd" \
+"../../../../matrix_multiplier.gen/sources_1/bd/hdmi_out/ipshared/d57c/src/SyncAsync.vhd" \
+"../../../../matrix_multiplier.gen/sources_1/bd/hdmi_out/ipshared/d57c/src/SyncAsyncReset.vhd" \
+"../../../../matrix_multiplier.gen/sources_1/bd/hdmi_out/ipshared/d57c/src/DVI_Constants.vhd" \
+"../../../../matrix_multiplier.gen/sources_1/bd/hdmi_out/ipshared/d57c/src/OutputSERDES.vhd" \
+"../../../../matrix_multiplier.gen/sources_1/bd/hdmi_out/ipshared/d57c/src/TMDS_Encoder.vhd" \
+"../../../../matrix_multiplier.gen/sources_1/bd/hdmi_out/ipshared/d57c/src/rgb2dvi.vhd" \
+"../../../bd/hdmi_out/ip/hdmi_out_rgb2dvi_0_0/sim/hdmi_out_rgb2dvi_0_0.vhd" \
+"../../../bd/hdmi_out/ip/hdmi_out_v_tc_0_0/sim/hdmi_out_v_tc_0_0.vhd" \
+
+# Do not sort compile order
+nosort
