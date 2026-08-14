@@ -117,7 +117,7 @@ module hdmi_code(
         draw_3 = ((x_coordinate >= 12'd100 + x_move && x_coordinate < 12'd110 + x_move) && (y_coordinate >= 12'd150 + y_move && y_coordinate < 12'd165 + y_move))|| 
         ((x_coordinate >= 12'd100 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd150 + y_move && y_coordinate < 12'd160 + y_move))||
         ((x_coordinate >= 12'd130 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd150 + y_move && y_coordinate < 12'd185 + y_move))||
-        ((x_coordinate >= 12'd120 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd175 + y_move && y_coordinate < 12'd185 + y_move))||
+        ((x_coordinate >= 12'd115 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd175 + y_move && y_coordinate < 12'd185 + y_move))||
         ((x_coordinate >= 12'd130 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd185 + y_move && y_coordinate < 12'd210 + y_move))||
         ((x_coordinate >= 12'd100 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd200 + y_move && y_coordinate < 12'd210 + y_move))||
         ((x_coordinate >= 12'd100 + x_move && x_coordinate < 12'd110 + x_move) && (y_coordinate >= 12'd195 + y_move && y_coordinate < 12'd210 + y_move));
@@ -277,7 +277,19 @@ module hdmi_code(
                           draw_number(a22_2_display[7:4], 12'd520, 12'd265, x_coordinate, y_coordinate)||
                           draw_number(a22_2_display[3:0], 12'd570, 12'd265, x_coordinate, y_coordinate);
                           
-    //assign matrix_3_num = ;
+    assign matrix_3_num = draw_number(a11_3_display[11:8], 12'd700, 12'd90, x_coordinate, y_coordinate)||
+                          draw_number(a11_3_display[7:4], 12'd750, 12'd90, x_coordinate, y_coordinate)||
+                          draw_number(a11_3_display[3:0], 12'd800, 12'd90, x_coordinate, y_coordinate)||
+                          draw_number(a12_3_display[11:8], 12'd900, 12'd90, x_coordinate, y_coordinate)||
+                          draw_number(a12_3_display[7:4], 12'd950, 12'd90, x_coordinate, y_coordinate)||
+                          draw_number(a12_3_display[3:0], 12'd1000, 12'd90, x_coordinate, y_coordinate)||
+                          draw_number(a21_3_display[11:8], 12'd700, 12'd265, x_coordinate, y_coordinate)||
+                          draw_number(a21_3_display[7:4], 12'd750, 12'd265, x_coordinate, y_coordinate)||
+                          draw_number(a21_3_display[3:0], 12'd800, 12'd265, x_coordinate, y_coordinate)||
+                          draw_number(a22_3_display[11:8], 12'd900, 12'd265, x_coordinate, y_coordinate)||
+                          draw_number(a22_3_display[7:4], 12'd950, 12'd265, x_coordinate, y_coordinate)||
+                          draw_number(a22_3_display[3:0], 12'd1000, 12'd265, x_coordinate, y_coordinate);
+                          
     //displaying the proper image if pixels are being drawn (color are in hexadecimal)
     always @(*) begin
         if (!video_active) begin
@@ -295,7 +307,7 @@ module hdmi_code(
         else if (multiply||equals) begin 
             vid_out = 24'h79FFF7; // color is blue
         end
-        else if (matrix_1_num||matrix_2_num) begin 
+        else if (matrix_1_num||matrix_2_num||matrix_3_num) begin 
             vid_out = 24'hFFFFFF; //color is white
          end
          else begin 
