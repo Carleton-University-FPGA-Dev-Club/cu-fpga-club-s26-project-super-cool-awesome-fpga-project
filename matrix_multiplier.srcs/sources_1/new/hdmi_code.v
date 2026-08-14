@@ -294,7 +294,7 @@ module hdmi_code(
         else if (multiply||equals) begin 
             vid_out = 24'h79FFF7; // color is blue
         end
-        else if (matrix_1_num) begin 
+        else if (matrix_1_num||matrix_2_num) begin 
             vid_out = 24'hFFFFFF; //color is white
          end
          else begin 
