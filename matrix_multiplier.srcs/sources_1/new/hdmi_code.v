@@ -259,14 +259,23 @@ module hdmi_code(
     assign matrix_outline2 = matrix_2(x_coordinate, y_coordinate);
     assign matrix_outline3 = matrix_3(x_coordinate, y_coordinate);
     
-    assign matrix_1_num = draw_number(a11_1_display[7:4], 12'd10, 12'd80, x_coordinate, y_coordinate)||
-                          draw_number(a11_1_display[3:0], 12'd60, 12'd80, x_coordinate, y_coordinate)||
-                          draw_number(a12_1_display[7:4], 12'd130, 12'd80, x_coordinate, y_coordinate)||
-                          draw_number(a12_1_display[3:0], 12'd190, 12'd80, x_coordinate, y_coordinate)||
-                          draw_number(a21_1_display[7:4], 12'd10, 12'd190, x_coordinate, y_coordinate)||
-                          draw_number(a21_1_display[3:0], 12'd60, 12'd190, x_coordinate, y_coordinate)||
-                          draw_number(a22_1_display[7:4], 12'd130, 12'd140, x_coordinate, y_coordinate)||
-                          draw_number(a22_1_display[3:0], 12'd190, 12'd140, x_coordinate, y_coordinate);
+    assign matrix_1_num = draw_number(a11_1_display[7:4], 12'd20, 12'd90, x_coordinate, y_coordinate)||
+                          draw_number(a11_1_display[3:0], 12'd70, 12'd90, x_coordinate, y_coordinate)||
+                          draw_number(a12_1_display[7:4], 12'd165, 12'd90, x_coordinate, y_coordinate)||
+                          draw_number(a12_1_display[3:0], 12'd215, 12'd90, x_coordinate, y_coordinate)||
+                          draw_number(a21_1_display[7:4], 12'd20, 12'd265, x_coordinate, y_coordinate)||
+                          draw_number(a21_1_display[3:0], 12'd70, 12'd265, x_coordinate, y_coordinate)||
+                          draw_number(a22_1_display[7:4], 12'd165, 12'd265, x_coordinate, y_coordinate)||
+                          draw_number(a22_1_display[3:0], 12'd215, 12'd265, x_coordinate, y_coordinate);
+    
+    assign matrix_2_num = draw_number(a11_2_display[7:4], 12'd475, 12'd90, x_coordinate, y_coordinate)||
+                          draw_number(a11_2_display[3:0], 12'd525, 12'd90, x_coordinate, y_coordinate)||
+                          draw_number(a12_2_display[7:4], 12'd620, 12'd90, x_coordinate, y_coordinate)||
+                          draw_number(a12_2_display[3:0], 12'd670, 12'd90, x_coordinate, y_coordinate)||
+                          draw_number(a21_2_display[7:4], 12'd475, 12'd265, x_coordinate, y_coordinate)||
+                          draw_number(a21_2_display[3:0], 12'd525, 12'd265, x_coordinate, y_coordinate)||
+                          draw_number(a22_2_display[7:4], 12'd620, 12'd265, x_coordinate, y_coordinate)||
+                          draw_number(a22_2_display[3:0], 12'd670, 12'd265, x_coordinate, y_coordinate);
                           
     //displaying the proper image if pixels are being drawn (color are in hexadecimal)
     always @(*) begin
