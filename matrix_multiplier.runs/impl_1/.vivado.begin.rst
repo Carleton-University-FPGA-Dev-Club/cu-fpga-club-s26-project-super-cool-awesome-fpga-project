@@ -1,90 +1,10 @@
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="Home" Host="DESKTOP-LRI6JJ9" Pid="23464" HostCore="4" HostMemory="08472915968">
+    <Process Command="vivado.bat" Owner="Home" Host="DESKTOP-LRI6JJ9" Pid="428" HostCore="4" HostMemory="08472915968">
     </Process>
 </ProcessHandle>
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="Home" Host="DESKTOP-LRI6JJ9" Pid="10616" HostCore="4" HostMemory="08472915968">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="Home" Host="DESKTOP-LRI6JJ9" Pid="19808" HostCore="4" HostMemory="08472915968">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="Home" Host="DESKTOP-LRI6JJ9" Pid="6288" HostCore="4" HostMemory="08472915968">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="Home" Host="DESKTOP-LRI6JJ9" Pid="23276" HostCore="4" HostMemory="08472915968">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="Home" Host="DESKTOP-LRI6JJ9" Pid="1368" HostCore="4" HostMemory="08472915968">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="Home" Host="DESKTOP-LRI6JJ9" Pid="2560" HostCore="4" HostMemory="08472915968">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="Home" Host="DESKTOP-LRI6JJ9" Pid="26784" HostCore="4" HostMemory="08472915968">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="Home" Host="DESKTOP-LRI6JJ9" Pid="7844" HostCore="4" HostMemory="08472915968">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="Home" Host="DESKTOP-LRI6JJ9" Pid="14044" HostCore="4" HostMemory="08472915968">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="Home" Host="DESKTOP-LRI6JJ9" Pid="16752" HostCore="4" HostMemory="08472915968">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="Home" Host="DESKTOP-LRI6JJ9" Pid="22572" HostCore="4" HostMemory="08472915968">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="Home" Host="DESKTOP-LRI6JJ9" Pid="22392" HostCore="4" HostMemory="08472915968">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="Home" Host="DESKTOP-LRI6JJ9" Pid="20016" HostCore="4" HostMemory="08472915968">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="Home" Host="DESKTOP-LRI6JJ9" Pid="27032" HostCore="4" HostMemory="08472915968">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="Home" Host="DESKTOP-LRI6JJ9" Pid="9236" HostCore="4" HostMemory="08472915968">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="Home" Host="DESKTOP-LRI6JJ9" Pid="25872" HostCore="4" HostMemory="08472915968">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="Home" Host="DESKTOP-LRI6JJ9" Pid="29040" HostCore="4" HostMemory="08472915968">
+    <Process Command="vivado.bat" Owner="Home" Host="DESKTOP-LRI6JJ9" Pid="16788" HostCore="4" HostMemory="08472915968">
     </Process>
 </ProcessHandle>

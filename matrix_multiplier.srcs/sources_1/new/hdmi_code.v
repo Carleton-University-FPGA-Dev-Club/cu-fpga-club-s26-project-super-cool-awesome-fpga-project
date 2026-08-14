@@ -261,12 +261,12 @@ module hdmi_code(
     
     assign matrix_1_num = draw_number(a11_1_display[7:4], 12'd10, 12'd80, x_coordinate, y_coordinate)||
                           draw_number(a11_1_display[3:0], 12'd60, 12'd80, x_coordinate, y_coordinate)||
-                          draw_number(a12_1_display[7:4], 12'd10, 12'd140, x_coordinate, y_coordinate)||
-                          draw_number(a12_1_display[3:0], 12'd60, 12'd140, x_coordinate, y_coordinate)||
-                          draw_number(a11_1_display[7:4], 12'd110, 12'd80, x_coordinate, y_coordinate)||
-                          draw_number(a11_1_display[3:0], 12'd160, 12'd80, x_coordinate, y_coordinate)||
-                          draw_number(a12_1_display[7:4], 12'd110, 12'd140, x_coordinate, y_coordinate)||
-                          draw_number(a12_1_display[3:0], 12'd160, 12'd140, x_coordinate, y_coordinate);
+                          draw_number(a12_1_display[7:4], 12'd130, 12'd80, x_coordinate, y_coordinate)||
+                          draw_number(a12_1_display[3:0], 12'd190, 12'd80, x_coordinate, y_coordinate)||
+                          draw_number(a21_1_display[7:4], 12'd10, 12'd190, x_coordinate, y_coordinate)||
+                          draw_number(a21_1_display[3:0], 12'd60, 12'd190, x_coordinate, y_coordinate)||
+                          draw_number(a22_1_display[7:4], 12'd130, 12'd140, x_coordinate, y_coordinate)||
+                          draw_number(a22_1_display[3:0], 12'd190, 12'd140, x_coordinate, y_coordinate);
                           
     //displaying the proper image if pixels are being drawn (color are in hexadecimal)
     always @(*) begin
