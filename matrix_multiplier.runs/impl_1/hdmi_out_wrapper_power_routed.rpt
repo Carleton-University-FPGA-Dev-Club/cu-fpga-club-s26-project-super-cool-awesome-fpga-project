@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-| Date             : Fri Aug 14 13:16:09 2026
+| Date             : Fri Aug 14 14:41:58 2026
 | Host             : DESKTOP-LRI6JJ9 running 64-bit major release  (build 9200)
 | Command          : report_power -file hdmi_out_wrapper_power_routed.rpt -pb hdmi_out_wrapper_power_summary_routed.pb -rpx hdmi_out_wrapper_power_routed.rpx
 | Design           : hdmi_out_wrapper
@@ -53,12 +53,12 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.006 |        8 |       --- |             --- |
-| Slice Logic    |    <0.001 |     1294 |       --- |             --- |
-|   LUT as Logic |    <0.001 |      697 |     53200 |            1.31 |
+| Slice Logic    |    <0.001 |     1305 |       --- |             --- |
+|   LUT as Logic |    <0.001 |      701 |     53200 |            1.32 |
 |   CARRY4       |    <0.001 |       50 |     13300 |            0.38 |
 |   Register     |    <0.001 |      308 |    106400 |            0.29 |
 |   Others       |     0.000 |       47 |       --- |             --- |
-| Signals        |     0.001 |     1072 |       --- |             --- |
+| Signals        |     0.001 |     1082 |       --- |             --- |
 | MMCM           |     0.114 |        1 |         4 |           25.00 |
 | PLL            |     0.131 |        1 |         4 |           25.00 |
 | I/O            |     0.137 |       24 |       125 |           19.20 |
@@ -155,7 +155,7 @@ Table of Contents
 | Name             | Power (W) |
 +------------------+-----------+
 | hdmi_out_wrapper |     0.389 |
-|   hdmi_out_i     |     0.388 |
+|   hdmi_out_i     |     0.389 |
 |     clk_wiz_0    |     0.114 |
 |       inst       |     0.114 |
 |     rgb2dvi_0    |     0.272 |

@@ -277,6 +277,7 @@ module hdmi_code(
                           draw_number(a22_2_display[7:4], 12'd520, 12'd265, x_coordinate, y_coordinate)||
                           draw_number(a22_2_display[3:0], 12'd570, 12'd265, x_coordinate, y_coordinate);
                           
+    //assign matrix_3_num = ;
     //displaying the proper image if pixels are being drawn (color are in hexadecimal)
     always @(*) begin
         if (!video_active) begin
@@ -288,7 +289,7 @@ module hdmi_code(
         else if (matrix_outline2) begin
            vid_out = 24'hFA2378; //color is orange
         end
-        else if (matrix_outline2) begin
+        else if (matrix_outline3) begin
            vid_out = 24'hDB29CA; //color is yellow
         end
         else if (multiply||equals) begin 
