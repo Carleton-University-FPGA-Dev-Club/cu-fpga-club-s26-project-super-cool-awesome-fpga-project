@@ -268,14 +268,14 @@ module hdmi_code(
                           draw_number(a22_1_display[7:4], 12'd165, 12'd265, x_coordinate, y_coordinate)||
                           draw_number(a22_1_display[3:0], 12'd215, 12'd265, x_coordinate, y_coordinate);
     
-    assign matrix_2_num = draw_number(a11_2_display[7:4], 12'd475, 12'd90, x_coordinate, y_coordinate)||
-                          draw_number(a11_2_display[3:0], 12'd525, 12'd90, x_coordinate, y_coordinate)||
-                          draw_number(a12_2_display[7:4], 12'd620, 12'd90, x_coordinate, y_coordinate)||
-                          draw_number(a12_2_display[3:0], 12'd670, 12'd90, x_coordinate, y_coordinate)||
-                          draw_number(a21_2_display[7:4], 12'd475, 12'd265, x_coordinate, y_coordinate)||
-                          draw_number(a21_2_display[3:0], 12'd525, 12'd265, x_coordinate, y_coordinate)||
-                          draw_number(a22_2_display[7:4], 12'd620, 12'd265, x_coordinate, y_coordinate)||
-                          draw_number(a22_2_display[3:0], 12'd670, 12'd265, x_coordinate, y_coordinate);
+    assign matrix_2_num = draw_number(a11_2_display[7:4], 12'd375, 12'd90, x_coordinate, y_coordinate)||
+                          draw_number(a11_2_display[3:0], 12'd425, 12'd90, x_coordinate, y_coordinate)||
+                          draw_number(a12_2_display[7:4], 12'd520, 12'd90, x_coordinate, y_coordinate)||
+                          draw_number(a12_2_display[3:0], 12'd570, 12'd90, x_coordinate, y_coordinate)||
+                          draw_number(a21_2_display[7:4], 12'd375, 12'd265, x_coordinate, y_coordinate)||
+                          draw_number(a21_2_display[3:0], 12'd425, 12'd265, x_coordinate, y_coordinate)||
+                          draw_number(a22_2_display[7:4], 12'd520, 12'd265, x_coordinate, y_coordinate)||
+                          draw_number(a22_2_display[3:0], 12'd570, 12'd265, x_coordinate, y_coordinate);
                           
     //displaying the proper image if pixels are being drawn (color are in hexadecimal)
     always @(*) begin
