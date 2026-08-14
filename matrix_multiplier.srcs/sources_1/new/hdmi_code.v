@@ -50,14 +50,15 @@ module hdmi_code(
     reg [11:0] y_coordinate = 0;
     
     //used to output numbers, matrix outlines and operations
-    reg digit_1;
-    reg digit_2;
-    reg digit_3;
     wire matrix_outline1;
     wire matrix_outline2;
     wire matrix_outline3;
     wire multiply; 
     wire equals;
+    wire matrix_1_num;
+    wire matrix_2_num;
+    wire matrix_3_num;
+    
     //function to display matrix outline 1 
     function automatic matrix_1(input [11:0] x_coordinate, y_coordinate);
         begin
@@ -258,6 +259,15 @@ module hdmi_code(
     assign matrix_outline2 = matrix_2(x_coordinate, y_coordinate);
     assign matrix_outline3 = matrix_3(x_coordinate, y_coordinate);
     
+    assign matrix_1_num = draw_number(a11_1_display[7:4], 12'd10, 12'd80, x_coordinate, y_coordinate)||
+                          draw_number(a11_1_display[3:0], 12'd60, 12'd80, x_coordinate, y_coordinate)||
+                          draw_number(a12_1_display[7:4], 12'd10, 12'd140, x_coordinate, y_coordinate)||
+                          draw_number(a12_1_display[3:0], 12'd60, 12'd140, x_coordinate, y_coordinate)||
+                          draw_number(a11_1_display[7:4], 12'd110, 12'd80, x_coordinate, y_coordinate)||
+                          draw_number(a11_1_display[3:0], 12'd160, 12'd80, x_coordinate, y_coordinate)||
+                          draw_number(a12_1_display[7:4], 12'd110, 12'd140, x_coordinate, y_coordinate)||
+                          draw_number(a12_1_display[3:0], 12'd160, 12'd140, x_coordinate, y_coordinate);
+                          
     //displaying the proper image if pixels are being drawn (color are in hexadecimal)
     always @(*) begin
         if (!video_active) begin
@@ -275,8 +285,7 @@ module hdmi_code(
         else if (multiply||equals) begin 
             vid_out = 24'h79FFF7; // color is blue
         end
-        else if (draw_number(a11_1_display[7:4], 12'd10, 12'd80, x_coordinate, y_coordinate)||
-                 draw_number(a11_1_display[3:0], 12'd60, 12'd80, x_coordinate, y_coordinate)) begin 
+        else if (matrix_1_num) begin 
             vid_out = 24'hFFFFFF; //color is white
          end
          else begin 
