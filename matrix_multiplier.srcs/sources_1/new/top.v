@@ -27,14 +27,10 @@ module top(
     output wire [3:0] counter,
     output wire [3:0] led_out,
     //I/O variables that will be used to instatiate the I/O variables from module hdmi_code
-    input wire [11:0] hsync_xcoord,
-    input wire [11:0] vsync_ycoord,
+    input wire hsync_xcoord,
+    input wire vsync_ycoord,
     input wire active_video,
-    output wire [23:0] video_out,
-    input wire hsync_in,
-    input wire vsync_in,
-    output wire hsync_out,
-    output wire vsync_out
+    output wire [23:0] video_out
     );
     
     //wires used to connect the ports using matrix 1
@@ -121,13 +117,9 @@ module top(
     //Instantiate all the I/O ports from the module hdmi_code
     hdmi_code outputDisplay(
         .clk(clock),
-        .x_coordinate(hsync_xcoord),
-        .y_coordinate(vsync_ycoord),
+        .hsync(hsync_xcoord),
+        .vsync(vsync_ycoord),
         .video_active(active_video),
-        .hsync_in(hsync_in),
-        .vsync_in(vsync_in),
-        .hsync_out(hsync_out),
-        .vsync_out(vsync_out),
         .vid_out(video_out),
         .compartment(counter),
         .a11_1_display(a11_1_final),

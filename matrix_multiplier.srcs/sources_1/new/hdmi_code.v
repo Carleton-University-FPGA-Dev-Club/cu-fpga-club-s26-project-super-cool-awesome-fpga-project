@@ -20,19 +20,13 @@
 
 //ADDING ADDITIONAL COORDINATION FOR NUMBERS BASED ON MATRIX
 module hdmi_code(
-    input wire clk, 
+    input wire clk, //every clk cycle draw one pixel
     //jump to next row (controls x-pixels)
-    input wire [11:0] x_coordinate,
-    //controls y-pixels
-    input wire [11:0] y_coordinate,
+    input wire hsync, 
+    //goes back to top-left corner (controls y-pixels)
+    input wire vsync, 
     //incharge of drawing the pixels
     input wire video_active,
-    input wire hsync_in,
-    input wire vsync_in,
-    //used ad new delay outputs
-    output reg hsync_out,
-    output reg vsync_out,
-    output reg active_video_out,
     //used to display the sequence of digits for all of the matrix compartments
     input wire [11:0] a11_1_display, 
     input wire [11:0] a12_1_display, 
@@ -51,8 +45,11 @@ module hdmi_code(
     //determines the color 
     output reg [23:0] vid_out 
     );
+    //use to determine where the pixels are being drawn
+    reg [11:0] x_coordinate = 0;
+    reg [11:0] y_coordinate = 0;
     
-    //used matrix outlines and operations
+    //used to output numbers, matrix outlines and operations
     wire matrix_outline1;
     wire matrix_outline2;
     wire matrix_outline3;
@@ -120,7 +117,7 @@ module hdmi_code(
         draw_3 = ((x_coordinate >= 12'd100 + x_move && x_coordinate < 12'd110 + x_move) && (y_coordinate >= 12'd150 + y_move && y_coordinate < 12'd165 + y_move))|| 
         ((x_coordinate >= 12'd100 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd150 + y_move && y_coordinate < 12'd160 + y_move))||
         ((x_coordinate >= 12'd130 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd150 + y_move && y_coordinate < 12'd185 + y_move))||
-        ((x_coordinate >= 12'd120 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd175 + y_move && y_coordinate < 12'd185 + y_move))||
+        ((x_coordinate >= 12'd115 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd175 + y_move && y_coordinate < 12'd185 + y_move))||
         ((x_coordinate >= 12'd130 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd185 + y_move && y_coordinate < 12'd210 + y_move))||
         ((x_coordinate >= 12'd100 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd200 + y_move && y_coordinate < 12'd210 + y_move))||
         ((x_coordinate >= 12'd100 + x_move && x_coordinate < 12'd110 + x_move) && (y_coordinate >= 12'd195 + y_move && y_coordinate < 12'd210 + y_move));
@@ -180,7 +177,7 @@ module hdmi_code(
         ((x_coordinate >= 12'd130 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd150 + y_move && y_coordinate < 12'd210 + y_move))||
         ((x_coordinate >= 12'd100 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd175 + y_move && y_coordinate < 12'd185 + y_move))||
         ((x_coordinate >= 12'd100 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd200 + y_move && y_coordinate < 12'd210 + y_move))||
-        ((x_coordinate >= 12'd130 + x_move && x_coordinate < 12'd160 + x_move) && (y_coordinate >= 12'd195 + y_move && y_coordinate < 12'd210 + y_move));
+        ((x_coordinate >= 12'd130 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd195 + y_move && y_coordinate < 12'd210 + y_move));
         end
     endfunction
     //function to draw 0 anywhere on the display
@@ -192,6 +189,26 @@ module hdmi_code(
         ((x_coordinate >= 12'd100 + x_move && x_coordinate < 12'd140 + x_move) && (y_coordinate >= 12'd200 + y_move && y_coordinate < 12'd210 + y_move));
         end
     endfunction
+        
+    //function used to output results onto the display
+    always @(posedge clk) begin 
+        //goes back to the top left corner (reset the drawing state)
+        if (!video_active) begin //pixels are not visible
+            x_coordinate <= 0;
+            if (vsync) begin //reached the end of the whole screen the go back to the corner
+                y_coordinate <= 0;
+            end
+        end
+        else begin
+            //Drawing pixels, from left to right, top to bottom
+            if (x_coordinate == 12'd1279) begin //when beam is at the very end (to the right)
+                x_coordinate <= 0;
+                y_coordinate <= y_coordinate + 1;//goes down one row 
+            end else begin 
+                x_coordinate <= x_coordinate + 1;//goes through the whole process again (left-right)
+            end
+        end
+    end
     
     function automatic draw_number(input [3:0] number, input [11:0] x_move, input [11:0] y_move, input [11:0] x_coordinate, input [11:0] y_coordinate);
         begin 
@@ -202,7 +219,7 @@ module hdmi_code(
                 4'b0001: begin
                     draw_number = draw_1(x_move, y_move, x_coordinate, y_coordinate);
                 end
-                4'b0010: begin
+                4'b010: begin
                     draw_number = draw_2(x_move, y_move, x_coordinate, y_coordinate);
                 end
                 4'b0011: begin
@@ -227,7 +244,7 @@ module hdmi_code(
                     draw_number = draw_9(x_move, y_move, x_coordinate, y_coordinate);
                 end
                 default: begin 
-                    draw_number = 1'b0;
+                    draw_number = 1;
                 end
             endcase   
         end
@@ -243,47 +260,59 @@ module hdmi_code(
     assign matrix_outline2 = matrix_2(x_coordinate, y_coordinate);
     assign matrix_outline3 = matrix_3(x_coordinate, y_coordinate);
     
+    assign matrix_1_num = draw_number(a11_1_display[7:4], 12'd20, 12'd90, x_coordinate, y_coordinate)||
+                          draw_number(a11_1_display[3:0], 12'd70, 12'd90, x_coordinate, y_coordinate)||
+                          draw_number(a12_1_display[7:4], 12'd165, 12'd90, x_coordinate, y_coordinate)||
+                          draw_number(a12_1_display[3:0], 12'd215, 12'd90, x_coordinate, y_coordinate)||
+                          draw_number(a21_1_display[7:4], 12'd20, 12'd265, x_coordinate, y_coordinate)||
+                          draw_number(a21_1_display[3:0], 12'd70, 12'd265, x_coordinate, y_coordinate)||
+                          draw_number(a22_1_display[7:4], 12'd165, 12'd265, x_coordinate, y_coordinate)||
+                          draw_number(a22_1_display[3:0], 12'd215, 12'd265, x_coordinate, y_coordinate);
     
-    assign matrix_1_num = draw_number(a11_1_display[11:8], 12'd30, 12'd80, x_coordinate, y_coordinate)||
-                 draw_number(a11_1_display[7:4], 12'd90, 12'd80, x_coordinate, y_coordinate)||
-                 draw_number(a11_1_display[3:0], 12'd150, 12'd80, x_coordinate, y_coordinate) || 
-                 draw_number(a12_1_display[11:8], 12'd220, 12'd80, x_coordinate, y_coordinate)||
-                 draw_number(a12_1_display[7:4], 12'd280, 12'd80, x_coordinate, y_coordinate)||
-                 draw_number(a12_1_display[3:0], 12'd340, 12'd80, x_coordinate, y_coordinate) ||
-                 draw_number(a21_1_display[11:8], 12'd30, 12'd150, x_coordinate, y_coordinate)||
-                 draw_number(a21_1_display[7:4], 12'd90, 12'd150, x_coordinate, y_coordinate)||
-                 draw_number(a21_1_display[3:0], 12'd150, 12'd150, x_coordinate, y_coordinate)||
-                 draw_number(a22_1_display[11:8], 12'd220, 12'd150, x_coordinate, y_coordinate)||
-                 draw_number(a22_1_display[7:4], 12'd280, 12'd150, x_coordinate, y_coordinate)||
-                 draw_number(a22_1_display[3:0], 12'd340, 12'd150, x_coordinate, y_coordinate);
-                 
+    assign matrix_2_num = draw_number(a11_2_display[7:4], 12'd375, 12'd90, x_coordinate, y_coordinate)||
+                          draw_number(a11_2_display[3:0], 12'd425, 12'd90, x_coordinate, y_coordinate)||
+                          draw_number(a12_2_display[7:4], 12'd520, 12'd90, x_coordinate, y_coordinate)||
+                          draw_number(a12_2_display[3:0], 12'd570, 12'd90, x_coordinate, y_coordinate)||
+                          draw_number(a21_2_display[7:4], 12'd375, 12'd265, x_coordinate, y_coordinate)||
+                          draw_number(a21_2_display[3:0], 12'd425, 12'd265, x_coordinate, y_coordinate)||
+                          draw_number(a22_2_display[7:4], 12'd520, 12'd265, x_coordinate, y_coordinate)||
+                          draw_number(a22_2_display[3:0], 12'd570, 12'd265, x_coordinate, y_coordinate);
+                          
+    assign matrix_3_num = draw_number(a11_3_display[11:8], 12'd750, 12'd90, x_coordinate, y_coordinate)||
+                          draw_number(a11_3_display[7:4], 12'd800, 12'd90, x_coordinate, y_coordinate)||
+                          draw_number(a11_3_display[3:0], 12'd850, 12'd90, x_coordinate, y_coordinate)||
+                          draw_number(a12_3_display[11:8], 12'd930, 12'd90, x_coordinate, y_coordinate)||
+                          draw_number(a12_3_display[7:4], 12'd980, 12'd90, x_coordinate, y_coordinate)||
+                          draw_number(a12_3_display[3:0], 12'd1030, 12'd90, x_coordinate, y_coordinate)||
+                          draw_number(a21_3_display[11:8], 12'd750, 12'd265, x_coordinate, y_coordinate)||
+                          draw_number(a21_3_display[7:4], 12'd800, 12'd265, x_coordinate, y_coordinate)||
+                          draw_number(a21_3_display[3:0], 12'd850, 12'd265, x_coordinate, y_coordinate)||
+                          draw_number(a22_3_display[11:8], 12'd930, 12'd265, x_coordinate, y_coordinate)||
+                          draw_number(a22_3_display[7:4], 12'd980, 12'd265, x_coordinate, y_coordinate)||
+                          draw_number(a22_3_display[3:0], 12'd1030, 12'd265, x_coordinate, y_coordinate);
+                          
     //displaying the proper image if pixels are being drawn (color are in hexadecimal)
-   always @(posedge clk) begin
-        //pass sync signals 1-cycle delay
-        hsync_out <= hsync_in;
-        vsync_out <= vsync_in;
-       // active_video_out <= video_active;
-        
-        if (!video_active) begin
-            vid_out <= 24'h000000; //color black 
+    always @(*) begin
+        if (!video_active) begin //blanking state when it goes back to the top-left corner
+            vid_out = 24'h000000; //color black 
         end
         else if (matrix_outline1) begin
-            vid_out <= 24'hEAFC3F; //color is pink
+            vid_out = 24'hEAFC3F; //color is pink
         end
         else if (matrix_outline2) begin
-           vid_out <= 24'hFA2378; //color is orange
+           vid_out = 24'hFA2378; //color is orange
         end
         else if (matrix_outline3) begin
-           vid_out <= 24'hDB29CA; //color is yellow
+           vid_out = 24'hDB29CA; //color is yellow
         end
         else if (multiply||equals) begin 
-            vid_out <= 24'h79FFF7; // color is blue
+            vid_out = 24'h79FFF7; // color is blue
         end
-        else if (matrix_1_num) begin 
-            vid_out <= 24'hFFFFFF; //color is white
+        else if (matrix_1_num||matrix_2_num||matrix_3_num) begin 
+            vid_out = 24'hFFFFFF; //color is white
          end
          else begin 
-             vid_out <= 24'h000000; //color is black
+             vid_out = 24'h000000; //color is black
          end
-    end
+   end
 endmodule

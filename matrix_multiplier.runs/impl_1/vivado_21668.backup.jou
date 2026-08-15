@@ -3,13 +3,8 @@
 # SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
 # IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
 # SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
-<<<<<<<< HEAD:matrix_multiplier.runs/impl_1/vivado_18796.backup.jou
-# Start of session at: Fri Aug  7 21:54:08 2026
-# Process ID: 18796
-========
 # Start of session at: Sat Aug 15 16:06:16 2026
 # Process ID: 21668
->>>>>>>> display_working:matrix_multiplier.runs/impl_1/vivado_21668.backup.jou
 # Current directory: C:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.runs/impl_1
 # Command line: vivado.exe -log hdmi_out_wrapper.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source hdmi_out_wrapper.tcl -notrace
 # Log file: C:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.runs/impl_1/hdmi_out_wrapper.vdi

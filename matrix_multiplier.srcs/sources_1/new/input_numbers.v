@@ -23,7 +23,7 @@ module input_numbers(
     //represents clock
     input System_clock,
     //represents the enter button 
-    input enter,
+    input enter, //current value 
     //represents reset 
     input reset,
     //input number value
@@ -46,17 +46,18 @@ module input_numbers(
     );
     
     //egde detectors
-    reg enter_d;
+    reg enter_d; //remembers what the value was one clock cycle ago
     wire enter_pulse; 
     
-    //detecting if the clock cyle changed
+    //detecting if the clock cyle changed at every rising edge
     always @(posedge System_clock or posedge reset)begin
         if (reset)
             enter_d <= 1'b0;
         else 
             enter_d <= enter;
     end
-    assign enter_pulse = enter && !enter_d; //stays high for one clock cycle
+    //detects rising edge
+    assign enter_pulse = enter && !enter_d; //stays high for one clock cycle when its rising edge in clock cycle
     
     //passing through each register and putting the right value within it, based on the number of times the button was clicked            
     always @(posedge System_clock or posedge reset)

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Aug 12 11:43:23 2026" VIVADOVERSION="2023.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu Aug 13 17:41:43 2026" VIVADOVERSION="2023.2">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z020" NAME="hdmi_out" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -665,11 +665,7 @@
             <CONNECTION INSTANCE="top_0" PORT="clock"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="locked" SIGIS="undef" SIGNAME="clk_wiz_0_locked">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="util_vector_logic_0" PORT="Op1"/>
-          </CONNECTIONS>
-        </PORT>
+        <PORT DIR="O" NAME="locked" SIGIS="undef"/>
         <PORT DIR="I" NAME="reset" POLARITY="ACTIVE_HIGH" SIGIS="rst" SIGNAME="constant_0_dout">
           <CONNECTIONS>
             <CONNECTION INSTANCE="constant_0" PORT="dout"/>
@@ -690,6 +686,7 @@
         <PORT DIR="O" LEFT="0" NAME="dout" RIGHT="0" SIGIS="undef" SIGNAME="constant_0_dout">
           <CONNECTIONS>
             <CONNECTION INSTANCE="clk_wiz_0" PORT="reset"/>
+            <CONNECTION INSTANCE="rgb2dvi_0" PORT="aRst"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -757,9 +754,9 @@
             <CONNECTION INSTANCE="hdmi_out_imp" PORT="hdmi_out_data_p"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="aRst" POLARITY="ACTIVE_HIGH" SIGIS="rst" SIGNAME="util_vector_logic_0_Res">
+        <PORT DIR="I" NAME="aRst" POLARITY="ACTIVE_HIGH" SIGIS="rst" SIGNAME="constant_0_dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="util_vector_logic_0" PORT="Res"/>
+            <CONNECTION INSTANCE="constant_0" PORT="dout"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="23" NAME="vid_pData" RIGHT="0" SIGIS="undef" SIGNAME="top_0_video_out">
@@ -767,9 +764,9 @@
             <CONNECTION INSTANCE="top_0" PORT="video_out"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="vid_pHSync" SIGIS="undef" SIGNAME="top_0_hsync_out">
+        <PORT DIR="I" NAME="vid_pHSync" SIGIS="undef" SIGNAME="v_tc_0_hsync_out">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="top_0" PORT="hsync_out"/>
+            <CONNECTION INSTANCE="v_tc_0" PORT="hsync_out"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="vid_pVDE" SIGIS="undef" SIGNAME="v_tc_0_active_video_out">
@@ -777,9 +774,9 @@
             <CONNECTION INSTANCE="v_tc_0" PORT="active_video_out"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="vid_pVSync" SIGIS="undef" SIGNAME="top_0_vsync_out">
+        <PORT DIR="I" NAME="vid_pVSync" SIGIS="undef" SIGNAME="v_tc_0_vsync_out">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="top_0" PORT="vsync_out"/>
+            <CONNECTION INSTANCE="v_tc_0" PORT="vsync_out"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -805,7 +802,7 @@
     <MODULE COREREVISION="1" FULLNAME="/top_0" HWVERSION="1.0" INSTANCE="top_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="top" VLNV="xilinx.com:module_ref:top:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
-        <PARAMETER NAME="Component_Name" VALUE="hdmi_out_top_0_6"/>
+        <PARAMETER NAME="Component_Name" VALUE="hdmi_out_top_0_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
@@ -829,17 +826,11 @@
             <CONNECTION INSTANCE="External_Ports" PORT="enter_button_0"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="hsync_in" SIGIS="undef" SIGNAME="v_tc_0_hsync_out">
+        <PORT DIR="I" NAME="hsync_xcoord" SIGIS="undef" SIGNAME="v_tc_0_hsync_out">
           <CONNECTIONS>
             <CONNECTION INSTANCE="v_tc_0" PORT="hsync_out"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="hsync_out" SIGIS="undef" SIGNAME="top_0_hsync_out">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="rgb2dvi_0" PORT="vid_pHSync"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="11" NAME="hsync_xcoord" RIGHT="0" SIGIS="undef"/>
         <PORT DIR="O" LEFT="3" NAME="led_out" RIGHT="0" SIGIS="undef" SIGNAME="top_0_led_out">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="led_out_0"/>
@@ -860,38 +851,9 @@
             <CONNECTION INSTANCE="rgb2dvi_0" PORT="vid_pData"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="vsync_in" SIGIS="undef" SIGNAME="v_tc_0_vsync_out">
+        <PORT DIR="I" NAME="vsync_ycoord" SIGIS="undef" SIGNAME="v_tc_0_vsync_out">
           <CONNECTIONS>
             <CONNECTION INSTANCE="v_tc_0" PORT="vsync_out"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="vsync_out" SIGIS="undef" SIGNAME="top_0_vsync_out">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="rgb2dvi_0" PORT="vid_pVSync"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="11" NAME="vsync_ycoord" RIGHT="0" SIGIS="undef"/>
-      </PORTS>
-      <BUSINTERFACES/>
-    </MODULE>
-    <MODULE COREREVISION="3" FULLNAME="/util_vector_logic_0" HWVERSION="2.0" INSTANCE="util_vector_logic_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="util_vector_logic" VLNV="xilinx.com:ip:util_vector_logic:2.0">
-      <DOCUMENTS/>
-      <PARAMETERS>
-        <PARAMETER NAME="C_OPERATION" VALUE="not"/>
-        <PARAMETER NAME="C_SIZE" VALUE="1"/>
-        <PARAMETER NAME="Component_Name" VALUE="hdmi_out_util_vector_logic_0_0"/>
-        <PARAMETER NAME="LOGO_FILE" VALUE="data/sym_notgate.png"/>
-        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
-      </PARAMETERS>
-      <PORTS>
-        <PORT DIR="I" LEFT="0" NAME="Op1" RIGHT="0" SIGIS="undef" SIGNAME="clk_wiz_0_locked">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="clk_wiz_0" PORT="locked"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="0" NAME="Res" RIGHT="0" SIGIS="undef" SIGNAME="util_vector_logic_0_Res">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="rgb2dvi_0" PORT="aRst"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -1084,8 +1046,8 @@
       <PORTS>
         <PORT DIR="O" NAME="active_video_out" SIGIS="undef" SIGNAME="v_tc_0_active_video_out">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="top_0" PORT="active_video"/>
             <CONNECTION INSTANCE="rgb2dvi_0" PORT="vid_pVDE"/>
+            <CONNECTION INSTANCE="top_0" PORT="active_video"/>
           </CONNECTIONS>
         </PORT>
         <PORT CLKFREQUENCY="74250000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="clk_wiz_0_clk_out1">
@@ -1103,7 +1065,8 @@
         <PORT DIR="O" NAME="hblank_out" SIGIS="undef"/>
         <PORT DIR="O" NAME="hsync_out" SIGIS="undef" SIGNAME="v_tc_0_hsync_out">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="top_0" PORT="hsync_in"/>
+            <CONNECTION INSTANCE="rgb2dvi_0" PORT="vid_pHSync"/>
+            <CONNECTION INSTANCE="top_0" PORT="hsync_xcoord"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="resetn" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="constant_1_dout">
@@ -1115,7 +1078,8 @@
         <PORT DIR="O" NAME="vblank_out" SIGIS="undef"/>
         <PORT DIR="O" NAME="vsync_out" SIGIS="undef" SIGNAME="v_tc_0_vsync_out">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="top_0" PORT="vsync_in"/>
+            <CONNECTION INSTANCE="rgb2dvi_0" PORT="vid_pVSync"/>
+            <CONNECTION INSTANCE="top_0" PORT="vsync_ycoord"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>

@@ -6,7 +6,7 @@
       "gen_directory": "../../../../matrix_multiplier.gen/sources_1/bd/hdmi_out",
       "name": "hdmi_out",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
-      "synth_flow_mode": "Hierarchical",
+      "synth_flow_mode": "None",
       "tool_version": "2023.2",
       "validated": "true"
     },
@@ -16,8 +16,7 @@
       "constant_0": "",
       "constant_1": "",
       "v_tc_0": "",
-      "top_0": "",
-      "util_vector_logic_0": ""
+      "top_0": ""
     },
     "interface_ports": {
       "hdmi_out": {
@@ -189,8 +188,8 @@
       "top_0": {
         "vlnv": "xilinx.com:module_ref:top:1.0",
         "ip_revision": "1",
-        "xci_name": "hdmi_out_top_0_6",
-        "xci_path": "ip\\hdmi_out_top_0_6\\hdmi_out_top_0_6.xci",
+        "xci_name": "hdmi_out_top_0_0",
+        "xci_path": "ip\\hdmi_out_top_0_0\\hdmi_out_top_0_0.xci",
         "inst_hier_path": "top_0",
         "reference_info": {
           "ref_type": "hdl",
@@ -239,38 +238,10 @@
             "right": "0"
           },
           "hsync_xcoord": {
-            "direction": "I",
-            "left": "11",
-            "right": "0",
-            "parameters": {
-              "LAYERED_METADATA": {
-                "value": [
-                  "xilinx.com:interface:datatypes:1.0 {",
-                  "DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value data} bitwidth {attribs {resolve_type generated dependency bitwidth format long minimum",
-                  "{} maximum {}} value 12} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool",
-                  "minimum {} maximum {}} value false}}}} DATA_WIDTH 12",
-                  "}"
-                ],
-                "value_src": "ip_prop"
-              }
-            }
+            "direction": "I"
           },
           "vsync_ycoord": {
-            "direction": "I",
-            "left": "11",
-            "right": "0",
-            "parameters": {
-              "LAYERED_METADATA": {
-                "value": [
-                  "xilinx.com:interface:datatypes:1.0 {",
-                  "DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value data} bitwidth {attribs {resolve_type generated dependency bitwidth format long minimum",
-                  "{} maximum {}} value 12} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool",
-                  "minimum {} maximum {}} value false}}}} DATA_WIDTH 12",
-                  "}"
-                ],
-                "value_src": "ip_prop"
-              }
-            }
+            "direction": "I"
           },
           "active_video": {
             "direction": "I"
@@ -279,33 +250,6 @@
             "direction": "O",
             "left": "23",
             "right": "0"
-          },
-          "hsync_in": {
-            "direction": "I"
-          },
-          "vsync_in": {
-            "direction": "I"
-          },
-          "hsync_out": {
-            "direction": "O"
-          },
-          "vsync_out": {
-            "direction": "O"
-          }
-        }
-      },
-      "util_vector_logic_0": {
-        "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
-        "ip_revision": "3",
-        "xci_name": "hdmi_out_util_vector_logic_0_0",
-        "xci_path": "ip\\hdmi_out_util_vector_logic_0_0\\hdmi_out_util_vector_logic_0_0.xci",
-        "inst_hier_path": "util_vector_logic_0",
-        "parameters": {
-          "C_OPERATION": {
-            "value": "not"
-          },
-          "C_SIZE": {
-            "value": "1"
           }
         }
       }
@@ -333,16 +277,11 @@
           "top_0/clock"
         ]
       },
-      "clk_wiz_0_locked": {
-        "ports": [
-          "clk_wiz_0/locked",
-          "util_vector_logic_0/Op1"
-        ]
-      },
       "constant_0_dout": {
         "ports": [
           "constant_0/dout",
-          "clk_wiz_0/reset"
+          "clk_wiz_0/reset",
+          "rgb2dvi_0/aRst"
         ]
       },
       "constant_1_dout": {
@@ -377,12 +316,6 @@
           "counter_0"
         ]
       },
-      "top_0_hsync_out": {
-        "ports": [
-          "top_0/hsync_out",
-          "rgb2dvi_0/vid_pHSync"
-        ]
-      },
       "top_0_led_out": {
         "ports": [
           "top_0/led_out",
@@ -395,35 +328,25 @@
           "rgb2dvi_0/vid_pData"
         ]
       },
-      "top_0_vsync_out": {
-        "ports": [
-          "top_0/vsync_out",
-          "rgb2dvi_0/vid_pVSync"
-        ]
-      },
-      "util_vector_logic_0_Res": {
-        "ports": [
-          "util_vector_logic_0/Res",
-          "rgb2dvi_0/aRst"
-        ]
-      },
       "v_tc_0_active_video_out": {
         "ports": [
           "v_tc_0/active_video_out",
-          "top_0/active_video",
-          "rgb2dvi_0/vid_pVDE"
+          "rgb2dvi_0/vid_pVDE",
+          "top_0/active_video"
         ]
       },
       "v_tc_0_hsync_out": {
         "ports": [
           "v_tc_0/hsync_out",
-          "top_0/hsync_in"
+          "rgb2dvi_0/vid_pHSync",
+          "top_0/hsync_xcoord"
         ]
       },
       "v_tc_0_vsync_out": {
         "ports": [
           "v_tc_0/vsync_out",
-          "top_0/vsync_in"
+          "rgb2dvi_0/vid_pVSync",
+          "top_0/vsync_ycoord"
         ]
       }
     }

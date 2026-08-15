@@ -21,10 +21,26 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==hdmi_out_xl
 # IP: bd/hdmi_out/ip/hdmi_out_v_tc_0_0/hdmi_out_v_tc_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==hdmi_out_v_tc_0_0 || ORIG_REF_NAME==hdmi_out_v_tc_0_0} -quiet] -quiet
 
-# IP: bd/hdmi_out/ip/hdmi_out_top_0_6/hdmi_out_top_0_6.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==hdmi_out_top_0_6 || ORIG_REF_NAME==hdmi_out_top_0_6} -quiet] -quiet
+# IP: bd/hdmi_out/ip/hdmi_out_top_0_0/hdmi_out_top_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==hdmi_out_top_0_0 || ORIG_REF_NAME==hdmi_out_top_0_0} -quiet] -quiet
 
-# IP: bd/hdmi_out/ip/hdmi_out_util_vector_logic_0_0/hdmi_out_util_vector_logic_0_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==hdmi_out_util_vector_logic_0_0 || ORIG_REF_NAME==hdmi_out_util_vector_logic_0_0} -quiet] -quiet
+# XDC: c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/ip/hdmi_out_rgb2dvi_0_0/src/rgb2dvi.xdc
+set_property KEEP_HIERARCHY SOFT [get_cells [split [join [get_cells -hier -filter {REF_NAME==hdmi_out_rgb2dvi_0_0 || ORIG_REF_NAME==hdmi_out_rgb2dvi_0_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/ip/hdmi_out_rgb2dvi_0_0/src/rgb2dvi_ooc.xdc
+
+# XDC: c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/ip/hdmi_out_rgb2dvi_0_0/src/rgb2dvi_clocks.xdc
+#dup# set_property KEEP_HIERARCHY SOFT [get_cells [split [join [get_cells -hier -filter {REF_NAME==hdmi_out_rgb2dvi_0_0 || ORIG_REF_NAME==hdmi_out_rgb2dvi_0_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/ip/hdmi_out_clk_wiz_0_0/hdmi_out_clk_wiz_0_0_board.xdc
+set_property KEEP_HIERARCHY SOFT [get_cells [split [join [get_cells -hier -filter {REF_NAME==hdmi_out_clk_wiz_0_0 || ORIG_REF_NAME==hdmi_out_clk_wiz_0_0} -quiet] {/inst } ]/inst ] -quiet] -quiet
+
+# XDC: c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/ip/hdmi_out_clk_wiz_0_0/hdmi_out_clk_wiz_0_0.xdc
+#dup# set_property KEEP_HIERARCHY SOFT [get_cells [split [join [get_cells -hier -filter {REF_NAME==hdmi_out_clk_wiz_0_0 || ORIG_REF_NAME==hdmi_out_clk_wiz_0_0} -quiet] {/inst } ]/inst ] -quiet] -quiet
+
+# XDC: c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/ip/hdmi_out_clk_wiz_0_0/hdmi_out_clk_wiz_0_0_ooc.xdc
+
+# XDC: c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/ip/hdmi_out_v_tc_0_0/hdmi_out_v_tc_0_0_clocks.xdc
+set_property KEEP_HIERARCHY SOFT [get_cells [split [join [get_cells -hier -filter {REF_NAME==hdmi_out_v_tc_0_0 || ORIG_REF_NAME==hdmi_out_v_tc_0_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
 
 # XDC: c:/Users/Home/Documents/FPGASummerProject/Project/matrix_multiplier/matrix_multiplier.gen/sources_1/bd/hdmi_out/hdmi_out_ooc.xdc
