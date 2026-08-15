@@ -20,7 +20,7 @@
 
 //ADDING ADDITIONAL COORDINATION FOR NUMBERS BASED ON MATRIX
 module hdmi_code(
-    input wire clk, 
+    input wire clk, //every clk cycle draw one pixel
     //jump to next row (controls x-pixels)
     input wire hsync, 
     //goes back to top-left corner (controls y-pixels)
@@ -190,21 +190,22 @@ module hdmi_code(
         end
     endfunction
         
-    //during blanking intervals, keeps the x rests as 0, and resets the Y sync
+    //function used to output results onto the display
     always @(posedge clk) begin 
-        if (!video_active) begin 
+        //goes back to the top left corner (reset the drawing state)
+        if (!video_active) begin //pixels are not visible
             x_coordinate <= 0;
-            if (vsync) begin
+            if (vsync) begin //reached the end of the whole screen the go back to the corner
                 y_coordinate <= 0;
             end
         end
         else begin
             //Drawing pixels, from left to right, top to bottom
-            if (x_coordinate == 12'd1279) begin 
+            if (x_coordinate == 12'd1279) begin //when beam is at the very end (to the right)
                 x_coordinate <= 0;
-                y_coordinate <= y_coordinate + 1;
+                y_coordinate <= y_coordinate + 1;//goes down one row 
             end else begin 
-                x_coordinate <= x_coordinate + 1;
+                x_coordinate <= x_coordinate + 1;//goes through the whole process again (left-right)
             end
         end
     end
@@ -292,7 +293,7 @@ module hdmi_code(
                           
     //displaying the proper image if pixels are being drawn (color are in hexadecimal)
     always @(*) begin
-        if (!video_active) begin
+        if (!video_active) begin //blanking state when it goes back to the top-left corner
             vid_out = 24'h000000; //color black 
         end
         else if (matrix_outline1) begin
