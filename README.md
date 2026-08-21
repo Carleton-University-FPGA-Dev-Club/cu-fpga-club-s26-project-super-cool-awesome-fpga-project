@@ -1,5 +1,5 @@
-# 2 x 2 Matrix Multiplier using FPGA board and Signal Processing 
-This projects explores the concept of signal processing, allowing the matrix inputs and results calculated to be displayed on a monitor. 
+# 2 x 2 Matrix Multiplier using FPGA board and Video Interfacing
+This projects explores the concept of video interfacing, allowing the matrix inputs and results calculated to be displayed on a monitor. 
 It allows the FPGA board to collect the inputs, execute the 2x2 matrix multiplying algorithm and output the eqaution and results on 
 a monitor.
 
